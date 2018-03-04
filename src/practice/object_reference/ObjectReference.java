@@ -5,22 +5,58 @@ package practice.object_reference;
 * */
 public class ObjectReference {
     public static void main(String[] args) {
-        swapTwoObjectAndShowResult();
+//        swapTwoNumberAndShowResult();
+//        swapTwoObjectAndShowResult();
+//        swapTwoColorAndShowResult();
+        swapTwoColorObjectAndShowResult();
+    }
 
-//        checkUpdateStudentInfo();
-//        checkUpdateStudentInfoByCreateNewStudent();
+    public static void swapTwoColorObjectAndShowResult(){
+        Color redColor = new Color("red");
+        Color subColorRed = new Color("orange");
+        redColor.setSubColor(subColorRed);
+
+        Color greenColor = new Color("green");
+        Color subColorGreen = new Color("lightgreen");
+        greenColor.setSubColor(subColorGreen);
+
+        System.out.println("What we want: ");
+        System.out.println("Sub __red color is lightgreen");
+        System.out.println("Sub Green color is orange");
+
+        swapTwoColorBySubColor(redColor, greenColor);
+
+        System.out.println("And result is: ");
+        System.out.println("What we want: ");
+        System.out.println("Sub __red color is " +  redColor.getSubColor().getColor());
+        System.out.println("Sub Green color is " +  greenColor.getSubColor().getColor());
+
+    }
+
+    public static void swapTwoColorAndShowResult(){
+        Color redColor = new Color("red");
+        Color greenColor = new Color("green");
+
+        System.out.println("What we want: ");
+        System.out.println("Red color is green");
+        System.out.println("Green color is red");
+
+        swapTwoColor(redColor, greenColor);
+
+        System.out.println("And result is: ");
+        System.out.println("Red color is " + redColor.getColor());
+        System.out.println("Green color is " + greenColor.getColor());
     }
 
     public static void swapTwoObjectAndShowResult(){
         Color redColor = new Color("red");
         Color greenColor = new Color("green");
 
-        swapTwoObject(redColor, greenColor);
-
         System.out.println("What we want: ");
         System.out.println("Red color is green");
         System.out.println("Green color is red");
 
+        swapTwoObject(redColor, greenColor);
 
         System.out.println("And result is: ");
         System.out.println("Red color is " + redColor.getColor());
@@ -31,34 +67,42 @@ public class ObjectReference {
         // Green color isgreen
     }
 
+    public static void swapTwoNumberAndShowResult(){
+        int numberA = 10;
+        int numberB = 100;
+
+        System.out.println("What we want: ");
+        System.out.println("Number A is 10");
+        System.out.println("Number B is 100");
+
+        swapTwoNumber(numberA, numberB);
+
+        System.out.println("And result is: ");
+        System.out.println("Number A is " + numberA);
+        System.out.println("Number B is " + numberB);
+    }
+
+    public static void swapTwoNumber (int numberA, int numberB){
+        int temp = numberB;
+        numberB = numberA;
+        numberA = temp;
+    }
+
     public static void swapTwoObject(Color objectA, Color objectB){
         Color objectC = objectB;
         objectB = objectA;
         objectA = objectC;
     }
 
-
-    public static void changeStudentNameWithoutReallocation(Student student) {
-        student.setName("New name");
+    public static void swapTwoColor(Color objectA, Color objectB){
+        String temp = objectB.getColor();
+        objectB.setColor(objectA.getColor());
+        objectA.setColor(temp);
     }
 
-    public static void changeStudentNameWithReallocation(Student student) {
-        student = new Student();
-        student.setName("New name");
-    }
-
-
-    public static void checkUpdateStudentInfo(){
-        Student student1 = new Student();
-        student1.setName("Current name");
-        changeStudentNameWithoutReallocation(student1);
-        System.out.println("Student 1 name : " + student1.getName());
-    }
-
-    public static void checkUpdateStudentInfoByCreateNewStudent(){
-        Student student2 = new Student();
-        student2.setName("Current name");
-        changeStudentNameWithReallocation(student2);
-        System.out.println("Student 2 name : " + student2.getName());
+    public static void swapTwoColorBySubColor(Color objectA, Color objectB){
+        Color subColorTemp = objectA.getSubColor();
+        objectA.setSubColor(objectB.getSubColor());
+        objectB.setSubColor(subColorTemp);
     }
 }
