@@ -51,25 +51,30 @@
                 <br />
                 Các objects là thể hiện của 1 Class.
             </li>
+
             <li>
                 Class in Java là blueprint - tức là cái mẫu từ đó các đối tượng được tạo ra.<br />
                 <br />
+                Java sử dụng từ khóa <strong>new</strong> để tạo ra 1 object từ class đó. Ví dụ Color redColor = new Color("red");
+                <br />
                 Class có thể chứa các kiểu dữ liệu sau.
                 <ul>
-                    <li>Local variables: Variables defined inside methods, constructors or blocks are called local
-                        variables. The variable will be declared and initialized within the method and the variable
-                        will be destroyed when the method has completed.  </li>
-                    <li>Instance variables: Instance variables are variables within a class but outside any method.
-                        These variables are initialized when the class is instantiated. Instance variables can be
-                        accessed from inside any method, constructor or blocks of that particular class.</li>
-                    <li>Class variables: Class variables are variables declared within a class, outside any  method,
-                        with the static keyword.</li>
+                    <li><strong>Local variables</strong>: Variables defined inside methods, constructors or blocks
+                        are called local variables. The variable will be declared and initialized within the method
+                        and the variable  will be destroyed when the method has completed.</li>
+
+                    <li><strong>Instance variables</strong>: Instance variables are variables within a class but
+                        outside any method. These variables are initialized when the class is instantiated. Instance
+                        variables can be accessed from inside any method, constructor or blocks of that particular
+                        class.</li>
+
+                    <li><strong>Class variables</strong>: Class variables are variables declared within a class,
+                        outside any  method, with the static keyword.</li>
                 </ul>
 
                 <p>Chi tiết:</p>
 
                 <ul>
-                    <li>Local variables: Đây là các variable được khai báo bên trong method, nó chỉ tồn tại trong
                         đó và bị xóa đi khi method được thực hiện xong bằng cái Garbage Component của Java. Ví dụ
 
                         <blockquote>

@@ -83,4 +83,10 @@ public class Singleton {
     public static Singleton getLazyHolderInstance() {
         return LazyHolder.lazyHolderInstance;
     }
+
+
+    /* Other methods protected by singleton-ness */
+    protected static void demoMethod( ) {
+        System.out.println("demoMethod for singleton");
+    }
 }

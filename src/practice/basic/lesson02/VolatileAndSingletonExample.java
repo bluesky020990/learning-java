@@ -1,6 +1,5 @@
 package practice.basic.lesson02;
 
-import com.sun.deploy.util.StringUtils;
 
 public class VolatileAndSingletonExample {
     private volatile static int COUNTER = 0;
