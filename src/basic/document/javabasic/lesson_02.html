@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java – Objects & Classes </title>
+</head>
+<body>
+<h1> Java – Objects & Classes </h1>
+<h3>
+    <p>Trong lesson này ta sẽ đi sơ qua về Object/ Class trong Java</p>
+    <p>Các khái niệm từ đây sẽ được giữ nguyên để tránh các hiểu nhầm ko đáng có</p>
+</h3>
+
+<div class="container">
+    <h2>Java is an Object-Oriented Language</h2>
+    <div class="content">
+        <p>Java là một ngôn ngữ hướng đối tượng. Mà đã là hướng đối tượng, thì nó phải hỗ trợ các khái niệm sau:</p>
+        <ul>
+            <li>Polymorphism</li>
+            <li>Inheritance</li>
+            <li>Encapsulation</li>
+            <li>Abstraction</li>
+            <li>Classes</li>
+            <li>Objects</li>
+            <li>Instance</li>
+            <li>Method</li>
+            <li>Message Parsing</li>
+        </ul>
+
+        <h4>Classes and Object</h4>
+
+        <ul>
+            <li> Objects have states and behaviors. Example: A dog has states - color, name, breed as well as
+                behaviors – wagging the tail, barking, eating. An object is an instance of a class. </li>
+
+            <li>Class - A class can be defined as a template/blueprint that describes the behavior/state that the
+                object  of its type support. </li>
+        </ul>
+
+        <p>Chi tiết:</p>
+
+        <ul>
+            <li>
+                Object là những đối tượng. Nó bao gồm trạng thái và phương thức. Ta gọi Dog là một object, nó có
+                status là màu lông, tên, tuổi, với các phương thức là sủa, chạy đi, ăn .....<br />
+                <br />
+                Software Objects cũng tương tự như vậy. Nó cũng có states và behaviors. States thì được lưu trong các
+                fields và behavior thì được hiển thị thông qua các method.<br />
+                <br />
+                Các Objects tương tác với nhau thông qua các method.<br />
+                <br />
+                Các objects là thể hiện của 1 Class.
+            </li>
+            <li>
+                Class in Java là blueprint - tức là cái mẫu từ đó các đối tượng được tạo ra.<br />
+                <br />
+                Class có thể chứa các kiểu dữ liệu sau.
+                <ul>
+                    <li>Local variables: Variables defined inside methods, constructors or blocks are called local
+                        variables. The variable will be declared and initialized within the method and the variable
+                        will be destroyed when the method has completed.  </li>
+                    <li>Instance variables: Instance variables are variables within a class but outside any method.
+                        These variables are initialized when the class is instantiated. Instance variables can be
+                        accessed from inside any method, constructor or blocks of that particular class.</li>
+                    <li>Class variables: Class variables are variables declared within a class, outside any  method,
+                        with the static keyword.</li>
+                </ul>
+
+                <p>Chi tiết:</p>
+
+                <ul>
+                    <li>Local variables: Đây là các variable được khai báo bên trong method, nó chỉ tồn tại trong
+                        đó và bị xóa đi khi method được thực hiện xong bằng cái Garbage Component của Java. Ví dụ
+
+                        <blockquote>
+                            function swapTwoNumber(int numberA, int numberB {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;int temp = numberA;<br />
+                            }<br />
+                            <br />
+                            <i>temp là biến ở trong hàm, chỉ tồn tại ở trong hàm này thôi.</i>
+                        </blockquote>
+
+                    </li>
+
+                    <li>Instance variables: Đây là các biến trong Class khi các Instance được khởi tạo. Nói nôm na
+                        thì nó là các status của Instance. Ví dụ:
+
+                        <blockquote>
+                            class ColorTemplate {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;private String color;<br />
+                            }<br />
+                            <br />
+                            ColorTemplate redColor = new ColorTemplate("red");<br />
+                            <br />
+                            <i>redColor.color là biến tồn tại khi mà 1 Instance/ Object được tạo ra.</i>
+                        </blockquote>
+
+                    </li>
+
+                    <li>Class variables: Đây là các biến của riêng Class, nó thuộc Class chứ ko phải thuộc các
+                        Instance như trên kia. Thường thì những giá trị này được khai báo bằng từ khóa
+                        <strong>static</strong> ở đầu. Ví dụ
+
+                        <blockquote>
+                            class ColorTemplate {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;public static const String VERSION_OF_CLASS = "123456";<br />
+
+                            }<br />
+                            <br />
+                            <i>VERSION_OF_CLASS là biến của class, được gọi bằng cách ColorTemplate.VERSION_OF_CLASS</i>
+                        </blockquote>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Constructors</h4>
+        <p>
+            Tất cả class đều có 1 constructor. Nếu mà chúng ta không khai báo thì Java Compiler (javac) sẽ tạo ra 1
+            constructor mặc định cho nó. Đây là điểm mà trước kia chưa biết. Luôn ghi nhớ, <strong style="text-transform: uppercase">tất cả
+            class đều có
+            Constructor.</strong>
+        </p>
+        <p>Mỗi thời điểm, khi mà 1 new Object được created, thì ít nhất 1 constructor sẽ được gọi (invoker). Quy tắc
+        của constructor đó là nó phải có tên trùng với tên của Class. 1 Class có thể có nhiều hơn 1 constructor.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Singleton Class</h2>
+    <div class="content">
+        <p>Mục đích của Singleton đó là quản lý việc tạo các Object, giới hạn số lượng tạo Object về còn 1. </p>
+        <p>Vì chỉ có 1 instance, nên mặc dù nó là object, nhưng ta có thể xem nó như là 1 filed của class, tương tự
+            như static fields vậy.
+        </p>
+        <p>Singleton thường được sử dung trong việc quản lý truy cập vào các tài nguyên (resource), như là kết nối
+            database, hoặc socket.</p>
+    </div>
+</div>
+<div class="container">
+    <h2>Singleton Design Patten</h2>
+    <div class="content">
+        <h3>Cách tạo</h3>
+        <ul>
+            <li>Dữ liệu thành viên (instance) <b>private</b> và <b>static</b> là đối tượng duy nhất của Class
+                Singleton</li>
+            <li>Constructor của nó được khai báo thành <b>private</b> hoặc <b>static</b> để tránh việc tạo instance
+            từ ngoài class</li>
+            <li>Khai báo 1 phương thức là getInstance() để khởi tạo đối tượng duy nhất, định nghĩa là <b>public</b>
+                và <b>static</b>. Client chỉ dùng getInstance() để tạo đối tượng cho lớp SingleTon.
+            </li>
+            <li>Thực hiện khởi tạo chậm (lazy initialization) trong getInstance() để chỉ tạo object khi thực sự cần
+            thiết.</li>
+
+            <li><h4>Trong chế độ multithreading, mẫu thiết kế Singleton có thể làm việc không tốt: do getInstance()
+                không an toàn thread, hai thread có thể gọi phương thức sinh đối tượng cùng một thời điểm và hai thể
+                hiện sẽ được tạo ra. Nếu đồng bộ (synchronized) phương thức getInstance() để an toàn thread sẽ dẫn
+                đến  giảm hiệu suất  chương trình.</h4></li>
+        </ul>
+        <h3>Xem ví dụ trong JavaLesson02.</h3>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Singleton Trong Java</h2>
+    <div class="content">
+        <ul>
+            <li>Abstract Factory: thường là Singleton để trả về các đối tượng factory duy nhất.</li>
+            <li>Builder: dùng để xây dựng một đối tượng phức tạp, trong đó Singleton được dùng để tạo một đối tượng
+                truy cập tổng quát (Director).</li>
+            <li>Prototype: dùng để sao chép một đối tượng, hoặc tạo ra một đối tượng khác từ Prototype của nó, trong
+                đó  Singleton được dùng để chắc chắn chỉ có một Prototype.</li>
+            <li>Trong Java API, Lớp java.lang.Runtime là lớp Singleton, để lấy được đối tượng duy nhất của nó, ta gọi
+                phương thức  getRuntime(). Tương tự, lớp java.awt.Desktop cũng là lớp Singleton, tạo đối tượng duy
+                nhất bằng phương thức getDesktop(). Singleton không phổ biến như ta nghỉ, nó chỉ áp dụng với lớp cần
+                bảo  đảm chỉ có một thể hiện duy nhất.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>Khi nào thì sử dụng singleton</h2>
+    <div class="content">
+        <ul>
+            <li>Đảm bảo rằng chỉ có một thể hiện của lớp.</li>
+            <li>Quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.</li>
+            <li>Quản lý số lượng thể hiện của một lớp. Trường hợp này không nhất thiết chỉ có một thể hiện, bạn cần kiểm soát số lượng thể hiện trong giớn hạn chỉ định.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Các cách tạo singleton.</h2>
+    <div class="content">
+
+
+        <div class="section">
+            <h4>Eager load</h4>
+
+            <p>Phương thức này khởi tạo instance ngay khi class được load.</p>
+
+            <p>Hạn chế của nó, luôn phải sử dụng bộ nhớ để cấp phát cho cái thằng này mặc dù đôi khi không cần thiết</p>
+
+            <p>Điều này làm việc load class chậm và tốn nhiều Ram (cho những instance phức tạp)</p>
+
+            <p>Giải pháp: sử dụng Lazy-load để tạo object khi cần thiết.</p>
+        </div>
+
+        <div class="section">
+            <h4>Lazy-load synchronized method.</h4>
+
+            <p>Phương thức này khởi tạo instance khi mà có 1 thread nào đó gọi method getInstance. Vì vậy instance
+                đc tạo ra chỉ khi nào cần thiết</p>
+
+            <p>Trong multiple thread, nó gặp vấn đề khi 2 thread cùng gọi tới 1 method này trong cùng 1 thời điểm.
+                Để ngăn chặn điều đó, nó khai báo từ khóa synchronize để block các thread khác, đảm bảo chỉ có duy
+                nhất 1 thread đc truy xuất đến nó trong cùng 1 thời điểm, và các thằng khác phải đợi khi thằng này
+                chạy xong. Xem thêm về synchronized ở cuối bài</p>
+
+            <p>Vì dùng synchronized nên nó có những nhược điểm sau:</p>
+
+            <ul>
+                <li>vì nó làm cho các method khác bị block nên làm giảm hiệu năng</li>
+
+                <li>Chưa thực sự giải quyết được vấn đề của multiple thread, vẫn có khả năng xảy ra trường hợp 2
+                    instance được gọi, khi mà cái điều kiện is null của nó bị vượt qua</li>
+            </ul>
+
+            <p>Giải pháp: sử dụng double check single ton</p>
+        </div>
+
+        <div class="section">
+            <h4>Lazy Load Double check synchronized</h4>
+
+            <p>Mở rộng từ Lazy Load, Double check sử dụng 2 lần để kiểm tra synchronized.</p>
+
+            <p>Nó không sử dụng synchronized ở bên ngoài function getInstance, mà chỉ check khi tạo ra object</p>
+
+            <p style="text-transform: uppercase">Nó sử dụng từ khóa volatile để đồng bộ dữ liệu của instance giữa các thread.
+                Đây là điểm  quan trọng nhất và cần ghi nhớ.</p>
+
+
+            <p>Xem method <b>getDoubleCheckSynchronizedSingleton</b> để hiểu thêm.</p>
+
+        </div>
+
+        <div class="section">
+            <h4>Initialization on Demand Holder (Design pattern) - Cái này là OK nhất.</h4>
+
+            <p>Java đảm bảo tính an toàn khi chạy đa luồng cho static class loader. Do vậy, chúng ta không cần quan
+                tâm tới double check nữa , mà chỉ quan tâm tới cách mà chúng ta khởi tạo instance thôi.</p>
+
+            <p>Cách tiếp cận này như sau:</p>
+
+            <ol>
+                <li>
+                    Khai báo 1 private static class loader
+                    <blockquote>
+                        private static class LazyHolder {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;static final Singleton lazyHolderInstance = new Singleton();<br />
+                        }<br />
+                    </blockquote>
+                </li>
+                <li>
+                    Trong function getInstance, ta sử dụng static class kia để get instance của nó ra
+
+                    <blockquote>
+                        public static Singleton getLazyHolderInstance() {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;return LazyHolder.lazyHolderInstance;<br />
+                        }<br />
+                    </blockquote>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h4>Sử dụng ENUM</h4>
+
+            <p>Java đảm bảo tính an toàn khi chạy đa luồng cho static class loader. Do vậy, chúng ta không cần quan
+                tâm tới double check nữa , mà chỉ quan tâm tới cách mà chúng ta khởi tạo instance thôi.</p>
+
+            <p>Cách tiếp cận này như sau:</p>
+
+            <ol>
+                <li>
+                    Khai báo 1 private static class loader
+                    <blockquote>
+                        private static class LazyHolder {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;static final Singleton lazyHolderInstance = new Singleton();<br />
+                        }<br />
+                    </blockquote>
+                </li>
+                <li>
+                    Trong function getInstance, ta sử dụng static class kia để get instance của nó ra
+
+                    <blockquote>
+                        public static Singleton getLazyHolderInstance() {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;return LazyHolder.lazyHolderInstance;<br />
+                        }<br />
+                    </blockquote>
+                </li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h2>Tài liệu tham khảo</h2>
+    <div class="content">
+        <div class="section">
+            * <a href="https://viblo.asia/p/java-synchronized-blocks-jlA7GK04vKZQ">Synchronized trong Java</a>
+            <p>Synchronized blocks trong Java được thể hiện qua từ khóa synchronized. Một khối đồng bộ trong Java được đồng
+                bộ trên các object. Tất cả các khối đồng bộ được đồng bộ trên cùng một object có thể có một thread được
+                thực  thi trong chúng trên cùng một thời điểm. Toàn bộ các thread khác khi cố gắng tham gia vào khối đồng
+                bộ đều bị chặn lại cho tới khi thread bên trong khối xử lý không còn tồn tại.</p>
+        </div>
+
+        <div class="section">
+            ** <a href="https://huongdanjava.com/vi/noi-ve-bien-volatile-trong-java.html">Volatile trong Java</a>
+            <p>Biến volatile trong Java có tác dụng thông báo sự thay đổi giá trị của biến tới các thread khác nhau
+                nếu  biến này đang được sử dụng trong nhiều thread.</p>
+        </div>
+
+        <div class="section">
+            *** <a href="https://en.wikipedia.org/wiki/Initialization-on-demand_holder_idiom">Demand Holder</a>
+            <p>
+                Ý tưởng này
+            </p>
+        </div>
+
+
+        <div class="section">
+            * <a href="https://tech.fpt.com.vn/design-pattern-singleton/">Singleton design pattern.</a>
+
+        </div>
+
+    </div>
+</div>
+
+<hr />
+<div class="footer">
+     <span class="go-previou-resource" style="float: left">
+        <a href="lesson_01.html"><h2>Java - Basic</h2></a>
+    </span>
+    <!--<span class="go-next-resource" style="float: right">-->
+        <!--<a href="lesson_01.html"><h2>Java basic</h2></a>-->
+    <!--</span>-->
+</div>
+<br class="clear" style="clear: both"/>
+<footer>
+    <p style="text-align: right"><h3>by Khanh Tran</h3></p>
+</footer>
+</body>
+</html>

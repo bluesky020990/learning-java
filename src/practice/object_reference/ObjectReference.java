@@ -5,10 +5,10 @@ package practice.object_reference;
 * */
 public class ObjectReference {
     public static void main(String[] args) {
-//        swapTwoNumberAndShowResult();
+        swapTwoNumberAndShowResult();
 //        swapTwoObjectAndShowResult();
 //        swapTwoColorAndShowResult();
-        swapTwoColorObjectAndShowResult();
+//        swapTwoColorObjectAndShowResult();
     }
 
     public static void swapTwoColorObjectAndShowResult(){
@@ -61,10 +61,6 @@ public class ObjectReference {
         System.out.println("And result is: ");
         System.out.println("Red color is " + redColor.getColor());
         System.out.println("Green color is " + greenColor.getColor());
-
-        // result is :
-        // Red color is red
-        // Green color isgreen
     }
 
     public static void swapTwoNumberAndShowResult(){
@@ -72,8 +68,8 @@ public class ObjectReference {
         int numberB = 100;
 
         System.out.println("What we want: ");
-        System.out.println("Number A is 10");
-        System.out.println("Number B is 100");
+        System.out.println("Number A is 100");
+        System.out.println("Number B is 10");
 
         swapTwoNumber(numberA, numberB);
 
