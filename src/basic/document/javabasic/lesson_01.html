@@ -3,195 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <title>Java Basic Lesson 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" ref="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-<body>
-<h1>Lesson 1</h1>
-<h3>
-    <p>Đây là chuỗi các bài học về Java Basic.</p>
-    <p>Để hiểu những điều phức tạp thì phải bắt đầu từ những thứ cơ bản. Và giờ mình sẽ ôn lại những thức cơ bản đó qua bài học này.</p>
-</h3>
 
-<div class="container">
-    <h2>Những khái niệm căn bản về Java cần nhớ</h2>
-    <div class="content">
-        <p>Khi chúng ta xem xét một chương trình Java, nó có thể được định nghĩa là 1 tập hợp các đối tượng giao tiếp
-            với nhau thông qua việc gọi các phương thức của nhau. Nào, giờ thì cùng xem sơ qua về các khác niệm
-            trong Java nhé.</p>
-        <ul>
-            <li><strong>Object</strong> - Objects have states and behaviors. An object is an instance of a class.</li>
-            <li><strong>Class</strong> - A class can be defined as a template/blueprint that describes the behavior/state
-                that the object of its type supports.</li>
-            <li><strong>Methods</strong> - A method is basically a behavior. A class can contain many methods. It is in
-                methods where the logics are written, data is manipulated and all the actions are executed.</li>
-            <li><strong>Instance Variables</strong> - Each object has its unique set of instance variables. An object's state
-                is created by the values assigned to these instance variables.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
-    <h2>Các điểm cần lưu ý trong Java</h2>
-    <div class="content">
-        <p>Cái này gồm 2 phần, một là các điều cần lưu ý, 2 là phong cách viết code.</p>
-        <p>Nói chung, đây chỉ là những quy tắc mà các lập trình viên đặt ra để thể hiện mọi thứ rõ ràng và minh bạch
-            . Không ai ép bạn phải tuân thủ theo, nhưng khuyến khích viết code theo phong cách như vậy. Dạo xưa nhìn
-        Hậu cute nó viết theo kiểu C# thấy khó chịu vl.</p>
-        <ul>
-            <li>Java phân biệt chữ hoa chữ thường. Vì vậy class studentInfor sẽ khác với class StudentInfor.</li>
-
-            <li><strong>Class Names</strong> - Luôn bắt đầu bằng chữ in hoa. Những từ trong đó thì đều đc viết in
-                hoa hết. Ví dụ. class Color, class ColorExample, class StudentInformation</li>
-
-            <li><strong>Method Names</strong> - Bắt đầu bằng chữ thường. Còn cái sau thì cũng như Class Name vậy.
-                Ví dụ: void swapTwoNumber, changeInformationForStudent ....</li>
-
-            <li><strong>Program File Name </strong> - Tên chương trình nề phù hợp với class name.</li>
-
-            <li><strong>public static void main (String args[])</strong> - Each object has its unique set of instance
-                variables. An object's state is created by the values assigned to these instance variables.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
-    <h2>Các quy tắc trong Java</h2>
-    <div class="content">
-        <h3>Quy tắc đặt tên biến</h3>
-        <ul>
-            <li>Toàn bộ các identifiers/ biến đều phải bắt đầu bằng chữ cái, hoặc là dấu $, hoặc là kí tự _. Không
-                chấp nhận các trường hợp khác. Ví dụ: accepted : aNumber, $aNumber, _aNumber; unaccepted : 1number,
-                1_number, ....
+<body class="bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li>Sau chữ cái đầu tiên thì từ nào cũng đc. Ngoại trừ dấu - thì phải
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
-        <h3>Access Modifiers</h3>
-        <ul>
-            <li><strong>default</strong></li>
-            <li><strong>public </strong></li>
-            <li><strong>protected</strong></li>
-            <li><strong>private </strong></li>
-        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 
-        <h3>Non-access Modifiers</h3>
-        <ul>
-            <li><strong>final</strong></li>
-            <li><strong>abstract </strong></li>
-            <li><strong>strictfp </strong></li>
-        </ul>
-
-        <h3>Java Variables</h3>
-        <ul>
-            <li><strong>Local Variables</strong></li>
-            <li><strong>Class Variables (Static Variables)</strong></li>
-            <li><strong>Instance Variables (Non-static Variables) Java</strong></li>
-        </ul>
-
-        <h3>Other Java Objects</h3>
-        <ul>
-            <li><strong>Java Arrays </strong></li>
-            <li><strong>Java Enums </strong></li>
-        </ul>
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Lesson 1</h1>
+        <div class="lead">
+            <p>Đây là chuỗi các bài học về Java Basic.</p>
+            <p>Để hiểu những điều phức tạp thì phải bắt đầu từ những thứ cơ bản. Và giờ mình sẽ ôn lại những thức cơ bản đó qua bài học này.</p>
+        </div>
     </div>
 
-</div>
-
-<div class="container">
-    <h2>Java keyword</h2>
-    <div class="content">
-        <h3>Bảng các keyword trong Java. Khi đặt tên thì tránh đặt tên trùng với giá trị này.</h3>
-        abstract <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        assert <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        boolean <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        break <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        byte <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        case <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        catch <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        char <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        class <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        const <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        continue <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        default <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        do <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        double <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        else <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        enum <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        extends <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        final <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        finally <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        float <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        for <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        goto  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        if <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        implements <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        import  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        instanceof <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        int <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        interface <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        long  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        native <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        new <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        package <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        private <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        protected <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        public <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        return <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        short  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        static <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        strictfp <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        super <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        switch <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        synchronized <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        this <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        throw <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        throws  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        transient <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        try  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        void <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        volatile  <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
-        while
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Những khái niệm căn bản về Java cần nhớ</h3>
+        <div class="text-muted pt-3">
+            <p>Khi chúng ta xem xét một chương trình Java, nó có thể được định nghĩa là 1 tập hợp các đối tượng giao tiếp
+                với nhau thông qua việc gọi các phương thức của nhau. Nào, giờ thì cùng xem sơ qua về các khác niệm
+                trong Java nhé.</p>
+            <ul>
+                <li><strong>Object</strong> - Objects have states and behaviors. An object is an instance of a class.</li>
+                <li><strong>Class</strong> - A class can be defined as a template/blueprint that describes the behavior/state
+                    that the object of its type supports.</li>
+                <li><strong>Methods</strong> - A method is basically a behavior. A class can contain many methods. It is in
+                    methods where the logics are written, data is manipulated and all the actions are executed.</li>
+                <li><strong>Instance Variables</strong> - Each object has its unique set of instance variables. An object's state
+                    is created by the values assigned to these instance variables.</li>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="container">
-    <h2>Hướng đối tượng trong Java</h2>
-    <div class="content">
-        <p>Java là 1 ngôn ngữ hướng đối tượng. Vì vậy nó mang những tính chất của hướng đối tượng bao gồm.</p>
-        <h4>Inheritance </h4>
-        <p>In Java, classes can be derived from classes. Basically, if you need to create a new class and here is
-            already a class that has some of the code you require, then it is possible to derive your new class from the
-            already existing code.
-        </p>
 
-        <p>This concept allows you to reuse the fields and methods of the existing class without having to rewrite the
-            code in a new class. In this scenario, the existing class is called the superclass and the derived class is
-            called the subclass.
-            Interfaces </p>
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Các điểm cần lưu ý trong Java</h3>
+        <div class="text-muted pt-3">
+            <p>Cái này gồm 2 phần, một là các điều cần lưu ý, 2 là phong cách viết code.</p>
+            <p>Nói chung, đây chỉ là những quy tắc mà các lập trình viên đặt ra để thể hiện mọi thứ rõ ràng và minh bạch
+                . Không ai ép bạn phải tuân thủ theo, nhưng khuyến khích viết code theo phong cách như vậy. Dạo xưa nhìn
+                Hậu cute nó viết theo kiểu C# thấy khó chịu vl.</p>
+            <ul>
+                <li>Java phân biệt chữ hoa chữ thường. Vì vậy class studentInfor sẽ khác với class StudentInfor.</li>
 
-        <h4>Interfaces </h4>
-        <p>In Java language, an interface can be defined as a contract between objects on how to communicate with each
-            other. Interfaces play a vital role when it comes to the concept of inheritance.</p>
+                <li><strong>Class Names</strong> - Luôn bắt đầu bằng chữ in hoa. Những từ trong đó thì đều đc viết in
+                    hoa hết. Ví dụ. class Color, class ColorExample, class StudentInformation</li>
 
-        <p>An interface defines the methods, a deriving class (subclass) should use. But the implementation of the
-            methods is totally up to the subclass. </p>
+                <li><strong>Method Names</strong> - Bắt đầu bằng chữ thường. Còn cái sau thì cũng như Class Name vậy.
+                    Ví dụ: void swapTwoNumber, changeInformationForStudent ....</li>
 
-        <p>Nếu abstract thiên về việc kế thừa (properties) thì intefrace lại nghiêng về việc giao tiếp (method) giữa
-            các object</p>
+                <li><strong>Program File Name </strong> - Tên chương trình nề phù hợp với class name.</li>
 
+                <li><strong>public static void main (String args[])</strong> - Each object has its unique set of instance
+                    variables. An object's state is created by the values assigned to these instance variables.</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<hr />
-<div class="footer">
-     <span class="go-previou-resource" style="float: left">
-        <a href="../03_object_reference.html"><h2>Java - Pass by Value</h2></a>
-    </span>
-    <span class="go-next-resource" style="float: right">
-        <a href="lesson_02.html"><h2>Java – Objects & Classes </h2></a>
-    </span>
-</div>
-<br class="clear" style="clear: both"/>
-<footer>
-    <p style="text-align: right"><h3>by Khanh Tran</h3></p>
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Các quy tắc trong Java</h3>
+        <div class="text-muted pt-3">
+            <h3>Quy tắc đặt tên biến</h3>
+            <ul>
+                <li>Toàn bộ các identifiers/ biến đều phải bắt đầu bằng chữ cái, hoặc là dấu $, hoặc là kí tự _. Không
+                    chấp nhận các trường hợp khác. Ví dụ: accepted : aNumber, $aNumber, _aNumber; unaccepted : 1number,
+                    1_number, ....
+                </li>
+                <li>Sau chữ cái đầu tiên thì từ nào cũng đc. Ngoại trừ dấu - thì phải
+                </li>
+            </ul>
+            <h3>Access Modifiers</h3>
+            <ul>
+                <li><strong>default</strong></li>
+                <li><strong>public </strong></li>
+                <li><strong>protected</strong></li>
+                <li><strong>private </strong></li>
+            </ul>
+
+            <h3>Non-access Modifiers</h3>
+            <ul>
+                <li><strong>final</strong></li>
+                <li><strong>abstract </strong></li>
+                <li><strong>strictfp </strong></li>
+            </ul>
+
+            <h3>Java Variables</h3>
+            <ul>
+                <li><strong>Local Variables</strong></li>
+                <li><strong>Class Variables (Static Variables)</strong></li>
+                <li><strong>Instance Variables (Non-static Variables) Java</strong></li>
+            </ul>
+
+            <h3>Other Java Objects</h3>
+            <ul>
+                <li><strong>Java Arrays </strong></li>
+                <li><strong>Java Enums </strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java keyword</h3>
+        <div class="text-muted pt-3">
+            <h3>Bảng các keyword trong Java. Khi đặt tên thì tránh đặt tên trùng với giá trị này.</h3>
+            <table class="table">
+                <tr>
+                    <td>abstract</td>
+                    <td>assert</td>
+                    <td>boolean</td>
+                    <td>break</td>
+                    <td>byte</td>
+                </tr>
+
+                <tr>
+                    <td>case</td>
+                    <td>catch</td>
+                    <td>char</td>
+                    <td>class</td>
+                    <td>const</td>
+                </tr>
+
+                <tr>
+                    <td>continue</td>
+                    <td>default</td>
+                    <td>do</td>
+                    <td>double</td>
+                    <td>else</td>
+                </tr>
+
+                <tr>
+                    <td>enum</td>
+                    <td>extends</td>
+                    <td>final</td>
+                    <td>finally</td>
+                    <td>float</td>
+                </tr>
+
+                <tr>
+                    <td>for</td>
+                    <td>goto</td>
+                    <td>if</td>
+                    <td>implements</td>
+                    <td>import</td>
+                </tr>
+                <tr>
+                    <td>instanceof</td>
+                    <td>int</td>
+                    <td>interface</td>
+                    <td>long</td>
+                    <td>native</td>
+                </tr>
+                <tr>
+                    <td>new</td>
+                    <td>package</td>
+                    <td>private</td>
+                    <td>protected</td>
+                    <td>public</td>
+                </tr>
+                <tr>
+                    <td>return</td>
+                    <td>short</td>
+                    <td>static</td>
+                    <td>strictfp</td>
+                    <td>super</td>
+                </tr>
+                <tr>
+                    <td>switch</td>
+                    <td>synchronized</td>
+                    <td>this</td>
+                    <td>throw</td>
+                    <td>throws</td>
+                </tr>
+                <tr>
+                    <td>transient</td>
+                    <td>try</td>
+                    <td>void</td>
+                    <td>volatile</td>
+                    <td>while</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Hướng đối tượng trong Java</h3>
+        <div class="text-muted pt-3">
+            <p>Java là 1 ngôn ngữ hướng đối tượng. Vì vậy nó mang những tính chất của hướng đối tượng bao gồm.</p>
+            <h4>Inheritance </h4>
+            <p>In Java, classes can be derived from classes. Basically, if you need to create a new class and here is
+                already a class that has some of the code you require, then it is possible to derive your new class from the
+                already existing code.
+            </p>
+
+            <p>This concept allows you to reuse the fields and methods of the existing class without having to rewrite the
+                code in a new class. In this scenario, the existing class is called the superclass and the derived class is
+                called the subclass.
+                Interfaces </p>
+
+            <h4>Interfaces </h4>
+            <p>In Java language, an interface can be defined as a contract between objects on how to communicate with each
+                other. Interfaces play a vital role when it comes to the concept of inheritance.</p>
+
+            <p>An interface defines the methods, a deriving class (subclass) should use. But the implementation of the
+                methods is totally up to the subclass. </p>
+
+            <p>Nếu abstract thiên về việc kế thừa (properties) thì intefrace lại nghiêng về việc giao tiếp (method) giữa
+                các object</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./03_object_reference.html">
+                    Java - Pass by Value
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./lesson_02.html">
+                    Java – Objects & Classes
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-muted">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
 </footer>
 </body>
 </html>
