@@ -24,7 +24,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
+            p></li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
@@ -48,23 +48,322 @@
         </p>
 
         <ul>
-            <li>Java hoạt động như thế nào</li>
-            <li>Cách mà Java tạo ra một object/ thực thể trong quá trình hoạt động.</li>
+            <li><p>Java hoạt động như thế nào<p></li>
+            <li><p>Cách mà Java tạo ra một object/ thực thể trong quá trình hoạt động.<p></li>
         </ul>
     </div>
 
+    <!--<div class="my-4 p-3 bg-white rounded box-shadow">-->
+        <!--<h3 class="border-bottom border-gray pb-2 mb-0">Java hoạt động như thế nào</h3>-->
+        <!--<div class="text-muted pt-3">-->
+            <!--<p>Xem tạm một mô hình minh họa lấy từ trên mạng</p>-->
+            <!--<img src="assests/java_vitual_machine.png" width="633" height="497" class="img-fluid"/>-->
+            <!--<ol>-->
+                <!--<li><p>Đầu tiên, Javac tiến hành compile các file source code (*.java) thành các file byte code (*.class).<p></li>-->
+                <!--<li><p>Sau đó, hệ thống tiến hành kiểm tra mã bytecode kia xem có phù hợp hay không<p></li>-->
+                <!--<li><p>Tiếp đến nó được đưa vào Class Loader để Class Loader này tiến hành nạp các Class vào máy ảo JVM.<p></li>-->
+                <!--<li><p>Máy ảo JVM tiến hành thông dịch tạo ra mã máy (java) phụ thuộc vào hệ điều hành.<p></li>-->
+            <!--</ol>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java hoạt động như thế nào</h3>
+        <h3 class="border-bottom border-gray pb-2 mb-0">JAVA VIRTUAL MACHINE (Re-read)</h3>
         <div class="text-muted pt-3">
-            <p>Xem tạm một mô hình minh họa lấy từ trên mạng</p>
-            <img src="assests/java_vitual_machine.png" width="633" height="497" class="img-fluid"/>
+            <p class="lead">
+                Hôm trước xem cái tài liệu của thằng quỷ kia gửi, nó sai tè lè. Sẵn có <a
+                    href="http://www.javainterviewpoint.com/java-virtual-machine-architecture-in-java">source của bài viết đó</a>, nên
+                thôi vô xem rồi phân tích lại.
+            </p>
+
+            <h3>JVM Architecture – Understanding JVM Internals</h3>
+            <p>
+                Every Java developer knows that bytecode will be executed by JRE (Java Runtime Environment). But many
+                doesn’t know the fact that JRE is the implementation of Java Virtual Machine (JVM), which analyzes
+                the bytecode, interprets the code and executes it. It is very important as a developer we should know
+                the Architecture of JVM, this enables us to write code more efficiently. In this JVM architecture in
+                Java with diagram article, we will learn more deeply about JVM architecture in Java and different
+                components of a JVM.
+            </p>
+
+            <h3>What is a JVM in Java ?</h3>
+            <p>A Virtual Machine is a Software implementation of a Physical Machine, Java was developed with the
+                concept of WORA ( Write Once Run Anywhere ) which runs on a VM. The compiler will be compiling the
+                java file into a java .class file.  The .class file is input to  JVM which Loads and executes the
+                class  file. Below goes the Architecture of JVM.</p>
+
+            <img class="img-fluid" src="assests/JVM-Architecture.png"/>
+
+            <h3>How JVM works in Java ?</h3>
+
+            <p>Theo như những gì trên cái Architecture Diagram kia, thì JVM được chia thành 3 hệ thống chính. Bao
+                gồm:</p>
             <ol>
-                <li>Đầu tiên, Javac tiến hành compile các file source code (*.java) thành các file byte code (*.class).</li>
-                <li>Sau đó, hệ thống tiến hành kiểm tra mã bytecode kia xem có phù hợp hay không</li>
-                <li>Tiếp đến nó được đưa vào Class Loader để Class Loader này tiến hành nạp các Class vào máy ảo JVM.</li>
-                <li>Máy ảo JVM tiến hành thông dịch tạo ra mã máy (java) phụ thuộc vào hệ điều hành.</li>
+                <li><p>Class Loader Subsystem<p></li>
+
+                <li><p>Runtime Data Area<p></li>
+
+                <li><p>Execution Engine<p></li>
             </ol>
         </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Class Loader Subsystem</h3>
+        <div class="text-muted pt-3">
+
+            <p>
+                Java’s dynamic class loading functionality is handled by the class loader subsystem. It loads, links
+                and initializes the class when it refers to a class  for the first time at <strong
+                    style="text-transform: uppercase">runtime</strong>, not at
+                <b>compile-time</b>. It performs three major functionality such as <b>Loading</b>, <b>Linking</b>, and
+                <b>Initialization.</b>
+            </p>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Loading </h4>
+
+                    <p>Class sẽ được load vào bởi component này. BootStrap ClassLoader, Extension ClassLoader,
+                        Application ClassLoader là 3 class loader giúp thực hiện chức năng này.</p>
+
+                    <ol>
+                        <li><p><b>BootStrap ClassLoader</b> Chịu trách nhiệm nạp các đường dẫn  boostrap classpath,
+                            không có gì ngoài rt.jar. Đây là thằng được ưu tiên cao nhất.<p></li>
+
+                        <li><p><b>Extension ClassLoader</b> Chịu trách nhiệm load các class nằm trong thư mục ext
+                            (jre\lib) cụ thể thì là <strong>JAVA_HOME/jre/lib/ext</strong><p></li>
+
+                        <li><p><b>Application ClassLoader</b> Chịu trách nhiệm load Application Level Classpath. Xem cái
+                            chú giải dưới kia nhé.
+                        <p></li>
+                    </ol>
+
+                    <p>Những Class Loader kia tuân thủ thuật toán <b>Delegation Hierarchy</b> khi tải các lớp. Cái
+                        này đơn giản là từ thằng cha, chứa những thằng con nào thì cứ lôi vào load tiếp load tiếp nt
+                    đến khi load hết thì thôi. Search google trên mạng để hiểu thêm về thuật toán này.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Linking </h4>
+
+                    <p>Quá trình này gồm 3 bước như sau:</p>
+
+                    <ol>
+                        <li><p><b>Verify</b> – Trình kiểm tra bytecode (Bytecode verifier) sẽ xác minh xem mã code có
+                            phù hợp hay không. Nếu việc xác minh (kiểm tra - verify) không thành công thì nó sẽ thông
+                            báo lỗi verification error.<p></li>
+
+                        <li><p><b>Prepare</b> – Toàn bộ các bộ nhớ biến tĩnh (static variables memory) sẽ được cấp phát
+                            và gán các giá trị mặc định.<p></li>
+
+                        <li><p><b>Resolve</b> - Toàn bộ các tham chiếu bộ nhớ tượng trưng (symbolic memory references)
+                            được thay thế với giá trị tham chiếu ban đầu từ <b>Method Area</b><p></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Initialization </h4>
+
+                    <p>Đây là giai đoạn cuối cùng của Class Loading. Ở đây tất cả các biến tĩnh sẽ được gán với các
+                        giá trị ban đầu và static block sẽ được thực hiện.</p>
+                </div>
+            </div>
+
+            <blockquote>
+                <h5>Classpath</h5>
+                <p>
+                    Classpath in Java refers to the path which will be used by the classloaders to load class
+                    in Java. If the classpath is not set correctly you are more likely to get
+                    ClassNotFoundException or NoClassDefFoundError exceptions. Classpath can be specified by
+                    using CLASSPATH variable in the Environment variable and using -cp or -classpath command line option.
+                </p>
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Runtime Data Area</h3>
+        <div class="text-muted pt-3">
+            <p><b>Runtime Data Area</b> được chia thành 5 component chính, bao gồm:</p>
+            <ol>
+                <li><p><b>Method Area</b> – All the Class level data will be stored here including static variables.
+                    <b>Method Area</b> is one per JVM and it is a shared resource.<p></li>
+
+                <blockquote><b>Method Area</b> – Toàn bộ data của Class sẽ được lưu trữ ở đây bao gồm các biến tĩnh.
+                    <b>Method Area</b> chỉ có 1 thằng duy nhất trong JVM và nó là một tài nguyên được chia sẻ. Nói
+                    nôm na  thì nó như 1 cái kho chứa, thằng nào cần thì cứ vào lấy đồ ra xài, XHCN mà, thiếu gì
+                    hàng.</blockquote>
+
+                <li><p><b>Heap Area</b> – All the Objects and its corresponding instance  variables and arrays will be stored
+                    here. Heap Area is also one per JVM since Method area and Heap area shares memory for multiple
+                    threads the data stored is not thread safe.<p></li>
+
+                <blockquote><b>Heap Area</b> – Toàn bộ các đối tượng và những biến thực thể của nó (instance variable) và
+                    array sẽ được lưu trữ ở đây. <b>Heap Area</b> cũng như thằng <b>Method Area</b> trên kia, chỉ có
+                    1 trên đời, và nó cũng chia sẻ bộ nhớ cho nhiều thread khác. Vì vậy, Data được lưu trữ ở đây
+                    không phải là <b>thread safe</b> - tạm hiểu là không an toàn (vì có thể bị ảnh hưởng bởi các
+                    thread khác.</blockquote>
+
+                <li><p><b>Stack Area</b> – For every thread, a separate runtime stack will be created. For every method call,
+                    one entry will be made in the stack memory which is called as Stack Frame. All local variables
+                    will be created in the stack memory. Stack area is thread safe since it is not a shared resource.
+                    <b>Stack Area</b> is divided into three sub-entities such as:
+
+                    <ol>
+                        <li><p><b>Local Variable Array</b> – Related to the method how many local variables are involved and
+                            the  corresponding values will be stored here.<p></li>
+                        <li><p><b>Operand stack</b> – If any intermediate operation is required to perform, operand stack act
+                            as runtime workspace to perform the operation. <p></li>
+                        <li><p><b>Frame data</b> – All symbols corresponding to the method is stored here. In the case of any
+                            exception, the catch block information will be maintained in the frame data. <p></li>
+                    </ol>
+                <p></li>
+
+                <blockquote><b>Stack Area</b> – Đối với toàn bộ các thread, một separate runtime-stack (hiểm tạm là stack của
+                    riêng thread đó khi nó bắt đầu chạy, và chỉ chứa dữ liệu của riêng nó, chia ra riêng biệt với mấy
+                    thằng khác) sẽ được tạo ra. Đối với mỗi phương thức (method) được gọi, một entry sẽ được tạo ra
+                    trong Stack Memory - được gọi là <b>Stack Frame</b>. Tất cả các biến cục bộ sẽ được tạo ra trong
+                    Stack Memory. <b>Stack Area</b> là thread-safe, bởi nó ko chia sẻ tài nguyên với bất cứ thằng
+                    nào, đồng nghĩa với việc chỉ mình nó có thể thay đổi giá trị của nó, vì vậy mới đc gọi là
+                    thread-safe. <br />
+                    <br />
+                    Stack Frame được chia thành 3 entry nhỏ bao gồm :
+
+                    <ol>
+                        <li><p><b>Local Variable Array</b> – Liên quan đến phương thức, có bao nhiêu biến local tham gia
+                            và giá trị tương ứng sẽ được lưu ở đây.
+                        <p></li>
+                        <li><p><b>Operand stack</b> – Nếu có bất cứ hoạt động tính toán trung gian nào được yêu cầu thực
+                            hiện, thì <b>Operand stack</b> hành động như một runtime workspace để thực hiện các thao
+                            tác.
+                        <p></li>
+                        <li><p><b>Frame data</b> Tất cả kí hiệu tương ứng với từng phương thực được lưu trữ tại đây.
+                            Trong trường hợp có bất cứ lỗi nào xảy ra, thông tin của catch block sẽ được duy trì
+                            trong <b>Frame data</b>. Hiểu cách đơn giản thì có lẽ các method sẽ được đánh dấu bằng 1
+                            symbols, và đây là nơi lưu nội dung của các function đó.
+                        <p></li>
+                    </ol>
+                </blockquote>
+
+                <li><p><b>PC Registers</b> – Each thread will have separate PC Registers, to hold address of current executing
+                    instruction once the instruction is executed the PC register will be updated with the next
+                    instruction  <p></li>
+
+                <blockquote><b>PC Registers</b> – Mỗi thread sẽ có một<b>PC Registers</b> riêng biệt địa chỉ của lệnh hiện
+                    tại khi lệnh đã được thực thi. <b>PC Registers</b> sẽ tiếp tục cập nhật với lệnh tiếp theo. HIểu
+                    đơn giản thì khi mỗi thread được start, nó sẽ xếp các lệnh (method) của nó vào 1 stack.
+                    PC-Registers này lưu trữ thông tin của stack đó, cho biết là thread đang được thực hiện ở đâu, và
+                    tiến hành quản lý việc thực hiện. Nó giống như 1 thằng đứng ngoài giám sát. Để thằng CPU hỏi, đến
+                    lượt thằng nào thì nó chìa hồ sơ thằng đó vào.</blockquote>
+
+                <li><p><b>Native Method stacks</b> – Native Method Stack holds native method information. For every thread,
+                    separate native method stack will be created.<p></li>
+
+                <blockquote><b>Native Method stacks</b> – thằng này giữ thông tin của các method bên trong thread của
+                    nó. Vì
+                    vậy, khi mà mỗi thread được tạo, thì </b>Native Method stacks</b> sẽ được khởi tạo.</blockquote>
+            </ol>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Execution Engine</h3>
+        <div class="text-muted pt-3">
+            <p>The bytecode which is assigned to the <strong>Runtime Data Area</strong> will be executed by the
+                <strong>Execution Engine</strong>. The <strong>Execution Engine</strong> reads the byte code and executes one by one.</p>
+
+            <blockquote>Các bytecode được gán cho <strong>Runtime Data Area</strong> sẽ được thực thi bởi
+                <strong>Execution Engine</strong>. <strong>Execution Engine</strong> đọc những bytecode và thực thi
+                từng cái một.</blockquote>
+
+
+            <ol>
+                <li><p><b>Interpreter</b> – Reads the bytecode, interprets it and executes it one by one. The interpreter
+                    interprets the bytecode faster but executes slowly. The disadvantage of the interpreter is that
+                    when one method called multiple times, every time interpretation is required.  <p></li>
+
+                <p><b>Interpreter</b> đọc bytecode, thông dịch và thực thi nó từng cái một. <b>Interpreter</b> thông dịch nhanh hơn nhưng lại thực thiện chậm. Bất lợi của <b>Interpreter</b> đó là khi một method
+                    được gọi nhiều lần, thì mỗi lần như thế nó đều phải phiên dịch lại.
+                </p>
+
+                <li><p><b>JIT Compiler</b> – JIT Compiler neutralizes the disadvantage of the Interpreter ( a single method
+                    called multiple times, each time interpretation is required ), The Execution Engine will be using
+                    the help of Interpreter in converting but when it found repeated code it uses JIT compiler which
+                    compiles the entire bytecode and changes it to native code.  This native code will be used
+                    directly for repeated method calls which improve the performance of the system.
+
+                    <p><b>JIT Compiler</b> – JIT Compiler làm trung hòa (khắc phục) nhược điểm của <b>Interpreter</b>.</p>
+
+                    <p><strong>Execution Engine</strong> sẽ sử dụng sự giúp đõ của trình thông dịch<b>Interpreter</b>
+                       trong quá trình chuyển đổi, nhưng khi mà nó tìm thấy đoạn code bị lặp lại, nó sử dụng <b>JIT
+                       Compiler</b> với đoạn bytecode đã được phiên dịch và đổi nó thành mã nguồn gốc.
+                    </p>
+
+                    <p>Mã nguồn gốc này sẽ được sử dụng trực tiếp cho các method lặp lại nhằm cải thiện hiệu năng
+                        của hệ thống.</p>
+
+                    <ol>
+                        <li><p><b>Intermediate Code generator</b> – produces intermediate code<p></li>
+
+                        <p><b>Intermediate Code generator</b> – Tạo mã trung gian</p>
+
+                        <li><p><b>Code Optimizer</b> – Code Optimizer is responsible for optimizing the intermediate
+                            code generated above<p></li>
+
+                        <p><b>Code Optimizer</b> - Có nhiệm vụ tối ưu đoạn mã trung gian được tạo ở trên</p>
+
+                        <li><p><b>Target Code Generator</b> – Target Code Generator is responsible for Generating
+                            Machine Code/ Native Code<p></li>
+
+                        <p><b>Target Code Generator</b> – Nhiệm vụ của nó là generate ra Machine Code/ Native Code</p>
+
+
+                        <li><p><b>Profiler</b> – Đây là một thành phần đặc biệt, nó có nhiệm vụ tìm kiếm các điểm
+                            nóng (hotspots). Nó được sử dụng để xác định rằng method có được gọi nhiều lần hay không.<p></li>
+                    </ol>
+                <p></li>
+
+                <li><p><strong>Garbage Collector</strong> : Garbage Collector is a part of Execution Engine, it
+                    collects/removes the unreferenced objects. Garbage Collection can be triggered by calling
+                    <em><strong>“System.gc()”</strong></em>, but the execution is not guaranteed.&nbsp;Garbage
+                    collector of JVM collects only those objects that are created by <strong>new</strong> keyword. So
+                    if you have created any object without <strong>new</strong>, you can use <strong>finalize
+                        method</strong> to perform cleanup.<p></li>
+
+                <p><b>Garbage Collector</b> : là một bộ phận của <b>Execution Engine</b>. Nó thu thập
+                    vaà xóa các object mà không được tham chiếu tới. Nó có thể được trigger (khởi động) bằng cách gọi
+                    <b>“System.gc()”</b>, nhưng  việc thực hiện chức năng này ko được đảm bảo. <b>Garbage
+                        Collector</b> trong JVM chỉ collects những object mà được tạo bởi từ khóa <b>new</b>. Vì vậy,
+                    nếu mà bạn tạo bất cứ object nào mà ko sử dụng <b>new</b>, bạn có thể sử dụng phương pháp này để
+                    thực hiện dọn dẹp.</p>
+
+                <p>Nói cách khác, thằng này nó sẽ nhòm ngó các Object mà được tạo bởi từ khóa new, và thu thập cũng
+                    như xóa bỏ nó nếu như cảm thấy rằng nó ko còn đc tham chiếu tới.</p>
+
+                <p>Việc sử dụng function  <em><strong>“System.gc()”</strong></em> này có thể clear nó được hoặc
+                    không, tùy xem nó có thằng nào còn tham chiếu tới nữa hay ko. Đôi khi nó xảy ra lỗi, nên phải
+                    cẩn thận.</p>
+            </ol>
+
+            <p><b>Java Native Interface (JNI)</b>:  JNI will be interacting with the Native Method Libraries and
+                provides the Native Libraries required for the Execution Engine. </p>
+
+            <p>JNI - Java Native Interface - sẽ tương tác với Native Method Libraries và cung cấp Native Libraries cần thiết
+                cho Execution Engine.</p>
+        </div>
+
+        <blockquote>
+            <h5>Biên dịch và thông dịch</h5>
+            <p>Thông dịch (Interpretion): khi chạy chương trình, ngôn ngữ chương trình được dịch sang ngôn ngữ máy
+                rồi sau đó mới  thực thi.</p>
+            <p>Biên dịch (Compilation): lệnh của chương trình được thực thi, không cần dịch sang ngôn ngữ máy.</p>
+        </blockquote>
     </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
@@ -163,167 +462,6 @@
         </div>
     </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java Virtual Machine</h3>
-        <div class="text-muted pt-3">
-            <a href="https://techmaster.vn/posts/34065/kien-truc-may-ao-java">Article Source</a>
-            <p>Mọi lập trình viên Java đều biết rằng, bytecode sẽ dược execute trong JRE (Java Runtime Environment). Tuy
-                nhiên rất ít người biết rằng JRE là một dạng implementation của JVM - Java Virtual Machine. JVM phân tích
-                bytecode sau đó thông dịch và execute nó.</p>
-
-            <p ><img alt="java" src="assests/java-jvm-cycle.png" width="852" height="496"></p>
-
-            <p>Nắm chắc kiến trúc của JVM giúp lập trình viên viết code tối ưu hơn và tự tin hơn trong các buổi phỏng vấn.
-                Bài viết ngày hôm nay sẽ giúp bạn làm được điều đó.</p>
-
-            <h4><strong>#1 JVM</strong></h4>
-
-            <p>Virtual Machine - máy ảo, là một dạng implementation trên phần mềm của một máy tính vật lý nào đó.</p>
-
-            <p>Java được phát triển trên concept WORA - Write Once Run Anywhere - Viết 1 lần chạy mọi nơi. Và code Java được
-                chạy trên máy ảo.</p>
-
-            <p>Bộ compiler biên dịch file *.java thành file *.class và *.class được đặt vào JVM, sau đó JVM load và execute
-                class file đó. Biểu đồ dưới đây mô tả kiến trúc của JVM, nó sẽ theo bạn trong suốt bài viết này:</p>
-
-            <p ><img alt="JVM diagrams" src="assests/JVM-Architecture.png" width="669"
-                     height="588"></p>
-
-            <h2><strong>#2 Cơ chế làm việc của JVM:</strong></h2>
-
-            <p>Các bạn thấy đấy, JVM được chia thành 3 mô-đun chính:</p>
-
-            <ol>
-                <li><strong>Class Loader</strong></li>
-                <li><strong>Runtime Data Area</strong></li>
-                <li><strong>Execution Engine</strong></li>
-            </ol>
-
-            <p>Và chúng ta sẽ tìm hiểu từng mô-đun một.</p>
-
-            <p>&nbsp;</p>
-
-            <h4><strong>#2.1 Class Loader</strong></h4>
-
-            <p>Tính năng <a href="http://www.javainterviewpoint.com/use-of-class-forname-in-java/">dynamic class loading</a>
-                của Java được xử lý bởi Class Loader. Bộ phận này load, link và khởi tạo (initialize) class file khi tồn tại
-                một tham chiếu đầu tiên tới class đó trong quá trình runtime (quá trình chạy, chứ không phải quá trình biên
-                dịch - compile time).</p>
-
-            <p>Tiếp tục theo dõi sơ đồ JVM, bạn sẽ thấy trong Class Loader Subsystem có <strong>3 pha xử lý:</strong>
-                Loading, Linking và Initialization.</p>
-
-            <p><strong>Đầu tiên là pha loading</strong>, có 3 bộ loader tham gia vào việc loading: Boot Strap class Loader,
-                Extension class Loader và Application class Loader.</p>
-
-            <ul>
-                <li><strong>Boot Strap</strong> Class Loader - Chịu trách nhiệm load các class từ bootstrap classpath. Bộ
-                    loader này có&nbsp;mức&nbsp;ưu tiên cao nhất.
-                </li>
-                <li><strong>Extension</strong> Class Loader - Load các class nằm trong folder jre/lib</li>
-                <li><strong>Application</strong> Class Loader - load các class mức ứng dụng</li>
-            </ul>
-
-            <p>Trong quá trình hoạt động, 3 bộ loader trên đều chạy dựa trên thuật toán tìm kiếm tài nguyên mang tên: Thuật
-                toán phân cấp ủy quyền -<strong> Delegation Hierarchy Algorithm</strong>.</p>
-
-            <p><strong>Thứ 2, pha linking</strong>, chia thành 3 bước như sau:</p>
-
-            <ul>
-                <li><strong>Verify</strong>: Bộ bytecode verifier sẽ kiểm tra đoạn bytecode được generate có hợp lệ hay
-                    không. Nếu không hợp lễ, verification error sẽ được bắn ra.
-                </li>
-                <li><strong>Prepare</strong>:&nbsp; ở bước này, tất cả các biến static được cấp phát bộ nhớ và gán cho giá
-                    trị mặc định
-                </li>
-                <li><strong>Resolve</strong>: tất cả tham chiếu bộ nhớ dạng ký hiệu (symbolic memory reference) được thay
-                    thế bằng tham chiếu dạng nguyên thủy (original reference)
-                </li>
-            </ul>
-
-            <p><strong>Thứ 3, pha initialization</strong>, là pha cuối cùng của bộ Class Loader. Tại pha này, tất cả biến
-                static được gán giá trị (giá trị này đã được developer ghi trong file *.java) và các <a
-                        href="http://www.javainterviewpoint.com/java-static-import/">static block</a> được thực thi.</p>
-
-            <p ><img alt="write once run anywhere"
-                     src="assests/sample-java-vitual-machine-working.gif" style="max-width:100%">
-            </p>
-
-            <h4><strong>#2.2 Runtime Data Area</strong></h4>
-
-            <p>Mô-đun này được chia nhỏ thành 5 mô-đun con:</p>
-
-            <ol>
-                <li><strong>Method Area </strong>- nơi lưu trữ dữ liệu mức class - tức toàn bộ các dữ liệu có trong một
-                    class sẽ nằm ở đây. Mỗi JVM chỉ có một Method Area và nó có thể được sử dụng bởi nhiều tiến trình.
-                </li>
-                <li><strong>Heap Area</strong> - lưu trữ object và các thứ liên quan như instance variable, arrays. Giống
-                    như Method Area, mỗi JVM chỉ có một Heap Area. Vì 2 vùng này được các tiến trình chia sẻ với nhau nên dữ
-                    liệu lưu ở đây <strong>không đảm bảo thread-safe</strong>.
-                </li>
-                <li><strong>Stack Area</strong> - Stack Area <strong>đảm bảo thread-safe</strong> bởi mỗi tiến trình sẽ được
-                    cấp phát một <strong>runtime stack</strong>. Tất cả biến cục bộ được tạo trong bộ nhớ stack. Mỗi khi có
-                    method call - lệnh gọi hàm, một "lối vào" stack sẽ được "mở", lối vào này mang tên Stack Frame. Mỗi
-                    Stack Frame chứa 3 thực thể con:
-                    <ol>
-                        <li><em><strong>Local Variable Array</strong> </em>- Mảng các biến cục bộ</li>
-                        <li><em><strong>Operand Stack</strong> </em>- ngăn xếp chứa các toán hạng</li>
-                        <li><em><strong>Frame Data</strong> </em>- các ký hiệu liên quan tới method được chứa ở đây, Trong
-                            trường hợp xảy ra exception, thông tin trong khối catch cũng nằm tại đây luôn.
-                        </li>
-                    </ol>
-                </li>
-                <li><strong>PC Registers</strong> - PC là viết tắt của <strong>Program Counter</strong> - một thanh ghi lưu
-                    địa chỉ của lệnh đang thực thi. Mỗi thread sẽ sở hữu riêng một PC.
-                </li>
-                <li><strong>Native Method stacks</strong> - giữ các thông tin tự nhiên của method. Mỗi thread đều sở hữu một
-                    Native method stack.
-                </li>
-            </ol>
-
-            <p>&nbsp;</p>
-
-            <h4><strong>#2.3&nbsp;Bộ thực thi - Execution Engine</strong></h4>
-
-            <p>Phần bytecode được gán qua <strong>Runtime Data Area </strong>sẽ được thực thi bởi <strong>Execution
-                Engine</strong>. Tiếp đó, mô-đun này đọc và thực thi từng đoạn byte code.</p>
-
-            <p>3 mô-đun con của Execution Engine là:</p>
-
-            <ol>
-                <li><strong>Interpreter</strong> - Trình thông dịch. Trình thông dịch dẽ thông dịch bytecode nhanh nhưng
-                    nhược điểm là thực thi chậm. Bên cạnh đó, một nhược điểm nữa của trình thông dịch là method được gọi bao
-                    nhiêu lần thì cần bấy nhiêu lần thông dịch.
-                </li>
-                <li><strong>JIT Compiler</strong> - <strong>Just In Time Compiler</strong>. JIT Compiler sẽ trung hòa các
-                    nhược điểm của interpreter. Execution Engine dùng Interpreter để thông dịch code, và khi nó phát hiện ra
-                    code bị lặp lại, nó sẽ dùng JIT Compiler. JIT Compiler biên dịch toàn bộ bytecode (thay vì thông dịch
-                    từng dòng như interpreter) sau đó chuyển đổi thành native code. Chỗ native code này sẽ được sử dụng trực
-                    tiếp cho các lời gọi hàm lặp đi lặp lại, nhờ đó, hiệu năng được cải thiện đáng kể. Các bước xử lý của
-                    JIT Compiler gồm:
-                    <ol>
-                        <li><strong>Intermediate Code Generator</strong> - Sinh mã trung gian</li>
-                        <li><strong>Code Optimizer</strong> - Tối ưu mã</li>
-                        <li><strong>Target Code Generator</strong> - Tạo mã máy hoặc native code</li>
-                        <li><strong>Profiler</strong> - Một mô-đun đặc biệt, chịu trách nhiệm tìm các "điểm nóng", một ví dụ
-                            về "điểm nóng" là việc các lời gọi hàm bị lặp đi lặp lại.
-                        </li>
-                    </ol>
-                </li>
-                <li><strong>Garbage Collector</strong> - tìm kiếm và thu dọn các object đã tạo ra nhưng không được tham
-                    chiếu đến. Ta có thể kích hoạt thủ công bộ GC thông qua lệnh "<em><strong>System.gc()</strong></em>".
-                    Tuy nhiên GC có một vài điểm yếu có thể khiến code của bạn bị memory leaks. Hãy tham khảo <a
-                            href="https://techmaster.vn/posts/34054/6-loi-memory-leaks">bài viết này</a> để nắm được các
-                    phương pháp phòng ngừa.
-                </li>
-            </ol>
-
-            <p>2 thành phần cuối cùng của JVM là <strong>JNI </strong>và <strong>Native Method Libraries</strong>:</p>
-
-            <p>JNI - Java Native Interface - sẽ tương tác với Native Method Libraries và cung cấp Native Libraries cần thiết
-                cho Execution Engine.</p>
-        </div>
-    </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Java Xử Lý Việc Khởi Tạo, Lưu Trữ và Thay Đổi Dữ Liệu Của Object Như Thế Nào</h3>
@@ -357,17 +495,17 @@
             <h2>3 Sự Kiện Diễn Ra Khi Khởi Tạo Object</h2>
             <p>Có 3 sự kiện diễn ra khi chúng ta tạo một object từ class:</p>
             <ul>
-                <li>Java (cụ thể là Java Virtual Machine) sẽ lấy ra một địa chỉ bộ nhớ còn trống trong memory để lưu trữ dữ
+                <li><p>Java (cụ thể là Java Virtual Machine) sẽ lấy ra một địa chỉ bộ nhớ còn trống trong memory để lưu trữ dữ
                     liệu của object. Các biến trong đối tượng mới tạo ra này (gọi là <strong>instance variable</strong> hay
                     <strong>field</strong>) được gán cho các giá trị mặc định nếu như chúng được khai báo mà chưa được gán
                     giá trị.
-                </li>
-                <li>Tiếp theo Java sẽ gọi phương thức dựng (gọi là <em>constructor method</em>) với các đối số được sử dụng
+                <p></li>
+                <li><p>Tiếp theo Java sẽ gọi phương thức dựng (gọi là <em>constructor method</em>) với các đối số được sử dụng
                     khi khởi tạo object. Ngoài ra các bước
-                </li>
-                <li>Cuối cùng Java sẽ trả về địa chỉ bộ nhớ trên RAM. Nếu như một biến được gán giá trị từ việc khởi tạo
+                <p></li>
+                <li><p>Cuối cùng Java sẽ trả về địa chỉ bộ nhớ trên RAM. Nếu như một biến được gán giá trị từ việc khởi tạo
                     object thì Java sẽ gán giá trị của bộ nhớ này cho giá trị của biến đó.
-                </li>
+                <p></li>
             </ul>
             <p>OK tuy nhiên sẽ được lợi gì nếu như tôi hiểu về quy trình tạo object trên? Để trả lời câu hỏi trên chúng ta
                 sẽ tham khảo một ví dụ sau:</p>
