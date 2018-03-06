@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="src/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="src/global/global.css" ref="stylesheet">
+    <link href="src/global/global.css" rel="stylesheet">
 
     <script type="text/javascript" src="src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="src/boostrap/js/bootstrap.min.js"></script>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="src/global/global.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">Top navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -137,7 +137,167 @@
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Các thành phần của Java.</h3>
         <div class="text-muted pt-3">
-            <p>Cái này có lẽ cần 1 section riêng để có thể thu thập đủ thông tin. Chỉ là ôn lại kiến thức nên tạm bỏ qua phần này.</p>
+            <p class="lead">Bài viết được copy của tác giả <strong>/* Đỗ Minh Hiền */</strong> tại địa chỉ
+                <a href="https://techmaster.vn/posts/8199/hoc-lap-trinh-java-co-ban-nang-cao">techmaster.vn</a></p>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Java Development Kit (JDK)</h4>
+                <div class="text-muted pt-3">
+                    Là bộ công cụ dành cho người phát triển ứng dụng bằng ngôn ngữ lập trình Java, bao gồm JRE và các
+                    công cụ hỗ trợ phát triển phần mềm (ví dụ như: trình biên dịch, trình thông dịch, trình sửa
+                    lỗi…). Mã nguồn trong file .java sẽ được trình biên dịch biển đổi thành file .class để thực thi trong JRE.
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Java Runtime Environment (JRE)</h4>
+                <div class="text-muted pt-3">
+                    JRE là bộ cài đặt để thực thi chương trình viết bằng ngôn ngữ Java. JRE chứa JVM, các tập tin
+                    .class, và các tập tin hỗ trợ khác. Để chạy một chương trình java, bạn cần phải có JRE cài đặt
+                    trong hệ thống.
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Java SE API</h4>
+                <div class="text-muted pt-3">
+                    Java SE API là tập hợp các gói thư viện viết sẵn nằm trong JRE, hỗ trợ cho người phát triển phần
+                    mềm viết bằng ngôn ngữ Java.
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Java Virtual Machine</h4>
+                <div class="text-muted pt-3">
+                    Java Virtual Machine (JVM) là công cụ thực thi mã (Java bytecode) trong tập tin .class của nền
+                    tảng Java. Nhờ có JVM nên chương trình viết bằng Java có thể triển khai trên nhiều hệ điều hành
+                    khác nhau (Windows, Linux, Mac…) dành cho nhiều loại phần cứng khác nhau. JVM có các tính năng như:
+                    <ul>
+                        <li>Thực thi mã trong tập tin .class</li>
+                        <li>Tự động xử lý ngoại lệ</li>
+                        <li>Cung cấp thông tin (log) để gỡ rối lỗi phần mềm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Bộ nhớ trong Java</h4>
+                <div class="text-muted pt-3">
+                    Khi thực hiện cấp phát bộ nhớ, một đối tượng mới được tạo và đặt vào vùng nhớ Heap. Khi ứng dụng
+                    của bạn không còn tham chiếu tới đối tượng này nữa thì Java garbage collector cho phép xóa đối
+                    tượng này đi để sử dụng lại vùng nhớ đó.
+
+
+                    <ul>
+                        <li>
+                            <h6>Java Heap</h6>
+                            <p>JVM lưu tất cả đối tượng được tạo bởi toán tử “new” trong ứng dụng Java, vào vùng nhớ
+                                Heap tại thời điểm chạy. </p>
+                        </li>
+                        <li>
+                            <h6>Java Stack </h6>
+                            <p>Các phương thức và tham chiếu tới đối tượng địa phương được lưu trữ trong Stack. Mỗi
+                                Thread quản lý một stack. Khi phương thức được gọi, nó được đưa vào đỉnh của Stack.
+                                Stack lưu trữ trạng thái của phương thức bao gồm: dòng code thực thi, tham chiếu tới
+                                đối tượng địa phương. Khi phương thức chạy xong, vùng nhớ (dòng code thực thi, tham
+                                chiếu tới đối tượng địa phương) được đẩy ra khỏi stack và tự động giải phóng.</p>
+                        </li>
+                        <li>
+                            <h6>Java Perm
+                            </h6>
+                            <p>Lưu trữ thông tin của Class được nạp vào và một vài tính năng khác như StringPool
+                                (vùng nhớ của biến String) thường được tạo bởi phương thức String.interm(). Khi ứng
+                                dụng của bạn chạy, Perm space được lấp đầy nhanh chóng.  </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Phân biệt Heap, Stack, Perm</h4>
+                <div class="text-muted pt-3">
+                    Heap: lưu đối tượng<br />
+                    Stack: lưu tham chiếu tới đối tượng địa phương<br />
+                    Perm: lưu thông tin về Class được nạp vào<br />
+                    <br />
+                    Ví dụ: Student std = new Student();<br />
+                    <br />
+                    Heap: lưu đối tượng “new Student();”<br />
+                    Stack: lưu tham chiếu “std”<br />
+                    Perm: lưu thông tin về Class “Student”
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Garbage Collector</h4>
+                <div class="text-muted pt-3">
+                    Garbage Collector của JVM làm nhiệm vụ tự động thực hiện thu hồi vùng nhớ của các đối tượng trong
+                    bộ nhớ Heap khi nó không được tham chiếu đến.
+                    Tham khảo tối ưu bộ nhớ cho JVM:
+                    <a
+                            href="http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html">http://www
+                        .oracle.com/technetwork/java/javase/gc-tuning-6-140523.html</a>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Trình biên dịch Just-in-time (JIT) (thông dịch)</h4>
+                <div class="text-muted pt-3">
+                    Trình biên dịch JIT thực hiện biên dịch mã Java bytecode trong file .class sang mã thực thi tại
+                    thời điểm chạy. Việc này làm cho chương trình chạy chậm hơn. Vì thế nó còn được gọi là “Hot spot”.
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Java Classloader</h4>
+                <div class="text-muted pt-3">
+                    Java Classloader là một phần của JRE làm nhiệm vụ tự động nạp các class Java vào JVM.<br />
+                    Khi khởi động JVM, 3 class loader được sử dụng :<br />
+                    <ul>
+                        <li>Bootstrap class loader : nạp thư viện lõi Java (/jre/lib)</li>
+                        <li>Extensions class loader : nạp thư viện mở rộng (/jre/lib/ext)</li>
+                        <li>System class loader : nạp thư viện trong java.class.path (CLASSPATH)</li>
+                    </ul>
+
+
+                    JAR hell là một thuật ngữ mô tả việc nạp thư viện JAR không theo ý muốn. JAR hell xảy ra trong 3
+                    trường hợp:
+                    <ul>
+                        <li>Nạp 2 phiên bản của một thư viện có sẵn cho hệ thống. Việc này không gây ra lỗi, thay vào
+                            đó hệ thống nạp các lớp từ một hoặc các thư viện khác để thay thế. </li>
+                        <li>2 thư viện (hoặc 1 thư viện và ứng dụng) yêu cầu phiên bản khác nhau của một thư viện thứ
+                            3. Nếu 2 phiên bản của thư viện thứ 3 trùng tên class thì class loader không thể nạp được
+                            class đó.  </li>
+                        <li>Các lớp được nạp bởi các class loader khác nhau có thể tương tác theo những cách phức tạp
+                            mà người phát triển phần mềm không hiểu được, dẫn đến những lỗi không thể giải thích. </li>
+                    </ul>
+
+                    Để tránh Java hell bạn thực hiện cấu hình Compile-time libraries của các IDE. Ví dụ đối với Netbean thực hiện đẩy các gói thư viện .jar bạn muốn ưu tiên lên phía trên.
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Phương thức main trong Java</h4>
+                <div class="text-muted pt-3">
+                    JVM khởi động bằng cách gọi phương thức main của lớp cụ thể nào đó.<br />
+                    Tức là:<br />
+                    Tất cả các chương trình Java đều khởi động từ phương thức main. Một JVM chỉ chạy duy nhất một
+                    chương trình java và luôn bắt đầu bằng việc gọi phương thức main() của chương trình đó. <br />
+                    Phương thức main là điểm đầu vào duy nhất của một chương trình Java vì thế nó phải là phương thức
+                    static.<br />
+                    <br />
+                    Vậy phương thức main của một ứng dụng web Java nằm ở đâu?<br />
+                    <br />
+                    Nằm trong web container ví dụ web container là Tomcat thì phương thức main nằm trong
+                    $CATALINA_HOME/bin/bootstrap.jar<br />
+                    <br />
+                    Khi nào trên Task Manager của hệ điều hành Window hiển thị process Java.exe?<br />
+                    Khi một JVM được gọi, tức là khi phương thức main của chương trình java được gọi. Cần lưu ý đối
+                    với các ứng dụng chạy applet ví dụ ứng dụng xem văn bản PDF , cần tránh tạo ra quá nhiều process
+                    Java .exe trên Window vì mỗi lần khởi tạo JVM, Window phải cấp phát tài nguyên cho nó.
+                </div>
+            </div>
         </div>
     </div>
 

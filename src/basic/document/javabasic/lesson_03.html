@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object and Class in Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Class in Java</h1>
+        <div class="lead">
+            Trong bài học này, ta lại đi sâu thêm về <strong>Object và Class</strong> thêm một phát nữa cho chắc.
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">How to create Object in Java</h3>
+        <div class="text-muted pt-3">
+            <p>Thử nghĩ xem có bao nhiêu cách để tạo Object nào</p>
+            <p>Xem ví dụ trong file <strong>JavaLesson03</strong></p>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Sử dụng toán tử new.</h4>
+                <div class="text-muted pt-3">
+                    JavaLesson03 demoClass = new JavaLesson03();<br />
+                    demoClass.sayHello();
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Sử dụng class name</h4>
+                <div class="text-muted pt-3">
+                    Class clazz = Class.forName("practice.basic.lesson03.JavaLesson03");<br />
+                    JavaLesson03 demo = (JavaLesson03) clazz.newInstance();<br />
+                    demo.sayHello();<br />
+                    <br />
+                    Chú ý cái giá trị này phải truyền đúng nhé <strong>practice.basic.lesson03.JavaLesson03</strong>
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Sử dụng Class Loader và newInstance() Method</h4>
+                <div class="text-muted pt-3">
+                    ClassLoader cl = JavaLesson03.class.getClassLoader();<br />
+                    JavaLesson03 t = (JavaLesson03)cl.loadClass("practice.basic.lesson03.JavaLesson03").newInstance();
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Using Object Deserialization</h4>
+                <div class="text-muted pt-3">
+                    Cái này sẽ đề cập sau
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h4 class="border-bottom border-gray pb-2 mb-0">Using Object Cloning – clone() method</h4>
+                <div class="text-muted pt-3">
+                    <blockquote>
+                        JavaLesson03 demoClass = new JavaLesson03("The object create by new operator");<br />
+                        try {<br />
+                        &nbsp; &nbsp; JavaLesson03 cloneObject = (JavaLesson03) demoClass.clone();<br />
+                        &nbsp; &nbsp; cloneObject.setMessage("The object create by clone method");<br />
+                        &nbsp; &nbsp; cloneObject.sayHello();<br />
+                        } catch (CloneNotSupportedException e) {<br />
+                        &nbsp; &nbsp; e.printStackTrace();<br />
+                        }<br />
+                    </blockquote>
+                    <p>Sử dụng phương thức này thì nhớ overwrite clone method cho class này nhé.</p>
+
+                    <blockquote>
+                        @Override<br />
+                        protected Object clone() throws CloneNotSupportedException {<br />
+                        &nbsp; &nbsp; return new JavaLesson03(this.getMessage());<br />
+                        }<br />
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Object Class trong Java</h3>
+        <div class="text-muted pt-3">
+            <p>Thằng này là cha của tất cả các class trong Java.</p>
+            <p>
+            The Object class is the Parent class of all the classes in Java. In other words java.lang.Object class is
+            the root of the Class Hierarchy. For each and every class which we create this class will be acting as
+            the Super class and that is the reason why we are able to use hashCode(), toString(), wait() etc..
+            methods directly which actually belongs to the Object class
+            </p>
+            <p>
+            All the class which is declared will be extending the class Object, even though if we didn’t specify it
+            directly it will be happening implicitly. This will be taken care by the JVM itself, but it doesn’t apply
+            to Interfaces, as a Java Interface cannot extend a class.
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="lesson_02.html">
+                    Java – Objects & Classes (Lesson 2)
+                </a>
+
+                <!--<a class="btn btn-default float-lg-right" href="01_beginning.html">-->
+                    <!--_NEXT_RESOURCE-->
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-muted">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>

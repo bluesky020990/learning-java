@@ -1,26 +1,25 @@
 package practice.basic.lesson02;
 
-public class Singleton {
+public class SingletonExample {
     public static boolean isSingleTonIsCreated = false;
 
     //1. Khai bao 1 thực thể instance. Thực thể này là duy nhất trong toàn bộ hệ thống.
-    private static Singleton instance;
+    private static SingletonExample instance;
     //Tao instance ngay khi vua load Class
-    private static Singleton lazyLoadInstance;
-    private static Singleton doubleCheckInstance;
-    private static Singleton lazyHolderInstance;
+    private static SingletonExample lazyLoadInstance;
+    private static SingletonExample doubleCheckInstance;
 
 
     //2. Khai báo private constructor, để ngăn chặn các các lớp khác tạo nên Instance này.
-    private Singleton(){
+    private SingletonExample(){
 
     }
 
     //3. Khai báo hàm getInstances. Hàm này sẽ quản lý việc tạo nên instance và đảm bảo chỉ có duy nhất 1 instance
     // trong hệ thống.
-    public static Singleton getInstance(){
+    public static SingletonExample getInstance(){
         if(instance == null){
-            instance = new Singleton();
+            instance = new SingletonExample();
             isSingleTonIsCreated = true;
         }
         return instance;
@@ -30,20 +29,20 @@ public class Singleton {
     //4. Các loại single ton
 
 //    a. Eager - Load. Single ton được tạo ngay khi mà class được load.
-    private static Singleton eagerLoadInstance = new Singleton();
+    private static SingletonExample eagerLoadInstance = new SingletonExample();
 
-    public static Singleton getEagerLoadSingleton (){
+    public static SingletonExample getEagerLoadSingleton (){
         return eagerLoadInstance;
     }
 
 
 //    b. Lazy load với synchronized function
-    public static synchronized Singleton getLazyLoadSingleton(){
+    public static synchronized SingletonExample getLazyLoadSingleton(){
         // chỉ tạo instance khi thực sự cần thiết
         // Hạn chế là trong multiple thread vẫn có thể xuất hiện 2 instance.
 
         if(lazyLoadInstance == null){
-            lazyLoadInstance = new Singleton();
+            lazyLoadInstance = new SingletonExample();
             isSingleTonIsCreated = true;
         }
         return lazyLoadInstance;
@@ -51,13 +50,13 @@ public class Singleton {
 
 //    c. Double Check LazyLoad function
 
-    public static Singleton getDoubleCheckSynchronizedSingleton(){
+    public static SingletonExample getDoubleCheckSynchronizedSingleton(){
         //i. sử dụng local variable để lưu volatile object nhằm tăng hiệu năng và đảm bảo hạn chế trường hợp  Lazy
-        // Singleton
-        Singleton result = doubleCheckInstance;
+        // SingletonExample
+        SingletonExample result = doubleCheckInstance;
         if(result == null){                               // first check
             // synchronized ở đây để tăng hiệu năng.
-            synchronized (Singleton.class){
+            synchronized (SingletonExample.class){
                 //ii.  kiểm tra 1 lần nữa trước khi khởi tạo. Đây cũng là lý do nó được gọi là double check.
                 result = doubleCheckInstance;
 
@@ -65,7 +64,7 @@ public class Singleton {
                     // sau khi khởi tạo thì cập nhật lại giá trị result, thông báo cho các thread khác đang sử dụng
                     // nó biết được rằng, instance đã được tạo, nhằm tránh trường hợp vào điều kiện if thứ 2 (second
                     // check)
-                    doubleCheckInstance = result = new Singleton();
+                    doubleCheckInstance = result = new SingletonExample();
                     isSingleTonIsCreated = true;
                 }
             }
@@ -77,10 +76,10 @@ public class Singleton {
 
 //    d. Lazy Holder
     private static class LazyHolder {
-        static final Singleton lazyHolderInstance = new Singleton();
+        static final SingletonExample lazyHolderInstance = new SingletonExample();
     }
 
-    public static Singleton getLazyHolderInstance() {
+    public static SingletonExample getLazyHolderInstance() {
         return LazyHolder.lazyHolderInstance;
     }
 

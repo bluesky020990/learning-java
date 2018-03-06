@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="src/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="src/global/global.css" ref="stylesheet">
+    <link href="src/global/global.css" rel="stylesheet">
 
     <script type="text/javascript" src="src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="src/boostrap/js/bootstrap.min.js"></script>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="src/global/global.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">Top navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,7 +130,10 @@
 
                     <ol>
                         <li><p><b>BootStrap ClassLoader</b> Chịu trách nhiệm nạp các đường dẫn  boostrap classpath,
-                            không có gì ngoài rt.jar. Đây là thằng được ưu tiên cao nhất.<p></li>
+                            không có gì ngoài rt.jar. Đây là thằng được ưu tiên cao nhất.<p>
+
+                            <img class="img-fluid" src="assests/rt_jar_root_example.PNG"/>
+                        </li>
 
                         <li><p><b>Extension ClassLoader</b> Chịu trách nhiệm load các class nằm trong thư mục ext
                             (jre\lib) cụ thể thì là <strong>JAVA_HOME/jre/lib/ext</strong><p></li>
@@ -286,10 +289,11 @@
             <ol>
                 <li><p><b>Interpreter</b> – Reads the bytecode, interprets it and executes it one by one. The interpreter
                     interprets the bytecode faster but executes slowly. The disadvantage of the interpreter is that
-                    when one method called multiple times, every time interpretation is required.  <p></li>
+                    when one method called multiple times, every time interpretation is required.<p></li>
 
-                <p><b>Interpreter</b> đọc bytecode, thông dịch và thực thi nó từng cái một. <b>Interpreter</b> thông dịch nhanh hơn nhưng lại thực thiện chậm. Bất lợi của <b>Interpreter</b> đó là khi một method
-                    được gọi nhiều lần, thì mỗi lần như thế nó đều phải phiên dịch lại.
+                <p><b>Interpreter</b> đọc bytecode, thông dịch và thực thi nó từng cái một. <b>Interpreter</b> thông
+                    dịch  nhanh hơn nhưng lại thực thiện chậm. Bất lợi của <b>Interpreter</b> đó là khi một method
+                    được gọi nhiều lần, thì mỗi lần như thế nó đều phải thông dịch lại.
                 </p>
 
                 <li><p><b>JIT Compiler</b> – JIT Compiler neutralizes the disadvantage of the Interpreter ( a single method
@@ -334,21 +338,35 @@
                     <em><strong>“System.gc()”</strong></em>, but the execution is not guaranteed.&nbsp;Garbage
                     collector of JVM collects only those objects that are created by <strong>new</strong> keyword. So
                     if you have created any object without <strong>new</strong>, you can use <strong>finalize
-                        method</strong> to perform cleanup.<p></li>
+                        method</strong> to perform cleanup.
+                    <p>
+                </li>
 
                 <p><b>Garbage Collector</b> : là một bộ phận của <b>Execution Engine</b>. Nó thu thập
-                    vaà xóa các object mà không được tham chiếu tới. Nó có thể được trigger (khởi động) bằng cách gọi
-                    <b>“System.gc()”</b>, nhưng  việc thực hiện chức năng này ko được đảm bảo. <b>Garbage
+                    vaà xóa các object mà không được tham chiếu tới. <b>Garbage
                         Collector</b> trong JVM chỉ collects những object mà được tạo bởi từ khóa <b>new</b>. Vì vậy,
                     nếu mà bạn tạo bất cứ object nào mà ko sử dụng <b>new</b>, bạn có thể sử dụng phương pháp này để
-                    thực hiện dọn dẹp.</p>
+                    thực hiện dọn dẹp.
+                </p>
+
 
                 <p>Nói cách khác, thằng này nó sẽ nhòm ngó các Object mà được tạo bởi từ khóa new, và thu thập cũng
                     như xóa bỏ nó nếu như cảm thấy rằng nó ko còn đc tham chiếu tới.</p>
 
-                <p>Việc sử dụng function  <em><strong>“System.gc()”</strong></em> này có thể clear nó được hoặc
+                <p>
+                    Nó có thể được trigger (khởi động) bằng cách gọi
+                    <b>“System.gc()”</b>, nhưng việc thực hiện chức năng này ko được đảm bảo.
+
+                </p>
+
+                <p>Việc sử dụng function <em><strong>“System.gc()”</strong></em> này có thể clear nó được hoặc
                     không, tùy xem nó có thằng nào còn tham chiếu tới nữa hay ko. Đôi khi nó xảy ra lỗi, nên phải
                     cẩn thận.</p>
+
+                <p>Xem thêm về <a
+                        href="https://techmaster.vn/posts/34343/garbage-collector-cua-java"><h6>Garbage
+                    collector của Java ở đây</h6></a>.
+                </p>
             </ol>
 
             <p><b>Java Native Interface (JNI)</b>:  JNI will be interacting with the Native Method Libraries and
@@ -360,9 +378,34 @@
 
         <blockquote>
             <h5>Biên dịch và thông dịch</h5>
-            <p>Thông dịch (Interpretion): khi chạy chương trình, ngôn ngữ chương trình được dịch sang ngôn ngữ máy
-                rồi sau đó mới  thực thi.</p>
-            <p>Biên dịch (Compilation): lệnh của chương trình được thực thi, không cần dịch sang ngôn ngữ máy.</p>
+
+            <p>Trình thông dịch biên dịch một chương trình nguồn theo từng phân đoạn. Sau đó, thực thi các đoạn mã đã
+                được biên dịch. Hoàn toàn khác với trình biên dịch (biên dịch hoàn toàn rồi mới thực thi chương trình). </p>
+
+            <p>Trình biên dịch, còn gọi là phần mềm biên dịch, compiler, là một chương trình máy tính làm công việc
+                dịch một chuỗi các câu lệnh được viết bằng một ngôn ngữ lập trình (gọi là ngôn ngữ nguồn hay mã
+                nguồn), thành một chương trình tương đương nhưng ở dưới dạng một ngôn ngữ máy tính mới (gọi là ngôn
+                ngữ đích) và thường là ngôn ngữ ở cấp thấp hơn, như ngôn ngữ máy. Chương trình mới được dịch này gọi
+                mã đối tượng.</p>
+
+            <p>Như vây, về bản chất, biên dịch nó dịch hết rồi mới thực thi. Còn thông dịch thì nó dịch đến đâu thực
+                thi đến đấy.</p>
+        </blockquote>
+
+        <blockquote>
+            <h5>Vậy, Java là biên dịch hay thông dịch</h5>
+
+            <p>Cái khái niệm này tùy thuộc vào view point của bản thân thôi.</p>
+
+            <p>Interpreter: from the viewpoint of JVM's guest Operating System (Windows or Linux) JVM is an
+                interpreter  because it interprets the byte-codes and run an according subprogram that executes the
+                work (outsider).
+            </p>
+
+            <p>
+                Compiler: from the standpoint of JVM JVM together with ,java is a compiler,  because the generated
+                byte-codes are executed directly by JVM (insider).
+            </p>
         </blockquote>
     </div>
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../src/global/global.css" ref="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
@@ -14,7 +14,7 @@
     <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">Top navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,15 +112,16 @@
                     <p>Chi tiết:</p>
 
                     <ul>
-                        đó và bị xóa đi khi method được thực hiện xong bằng cái Garbage Component của Java. Ví dụ
+                        <strong>Local variables</strong> là các biến được định nghĩa bên trong method, và bị xóa đi
+                        khi method được thực hiện xong bằng cái Garbage Component của Java. Ví dụ:
 
-                        <code>
+                        <blockquote>
                             function swapTwoNumber(int numberA, int numberB {<br />
                             &nbsp;&nbsp;&nbsp;&nbsp;int temp = numberA;<br />
                             }<br />
                             <br />
                             <i>temp là biến ở trong hàm, chỉ tồn tại ở trong hàm này thôi.</i>
-                        </code>
+                        </blockquote>
 
                         </li>
 
@@ -128,7 +129,7 @@
                             <p>Instance variables: Đây là các biến trong Class khi các Instance được khởi tạo. Nói
                                 nôm na thì nó là các status của Instance. Ví dụ:</p>
 
-                            <code>
+                            <blockquote>
                                 class ColorTemplate {<br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;private String color;<br />
                                 }<br />
@@ -136,21 +137,21 @@
                                 ColorTemplate redColor = new ColorTemplate("red");<br />
                                 <br />
                                 <i>redColor.color là biến tồn tại khi mà 1 Instance/ Object được tạo ra.</i>
-                            </code>
+                            </blockquote>
                         </li>
 
                         <li>Class variables: Đây là các biến của riêng Class, nó thuộc Class chứ ko phải thuộc các
                             Instance như trên kia. Thường thì những giá trị này được khai báo bằng từ khóa
                             <strong>static</strong> ở đầu. Ví dụ
 
-                            <code>
+                            <blockquote>
                                 class ColorTemplate {<br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;public static const String VERSION_OF_CLASS = "123456";<br />
 
                                 }<br />
                                 <br />
                                 <i>VERSION_OF_CLASS là biến của class, được gọi bằng cách ColorTemplate.VERSION_OF_CLASS</i>
-                            </code>
+                            </blockquote>
                         </li>
                     </ul>
                 </li>
@@ -165,6 +166,64 @@
             </p>
             <p>Mỗi thời điểm, khi mà 1 new Object được created, thì ít nhất 1 constructor sẽ được gọi (invoker). Quy tắc
                 của constructor đó là nó phải có tên trùng với tên của Class. 1 Class có thể có nhiều hơn 1 constructor.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Các method của class Class.</h3>
+        <div class="text-muted pt-3">
+            <table class="tab-content">
+                <tbody>
+                <tr>
+                    <th>Methods</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><strong>public int hashCode()</strong></td>
+                    <td>This method returns the <strong>hashcode</strong> of the java object.</td>
+                </tr>
+                <tr>
+                    <td><strong>public boolean equals(Object obj)</strong></td>
+                    <td>Compares the given object to this object.</td>
+                </tr>
+                <tr>
+                    <td><strong>protected Object clone() throws CloneNotSupportedException</strong></td>
+                    <td>This method <strong>creates</strong> and <strong>returns</strong> the exact copy (clone) of this object.</td>
+                </tr>
+                <tr>
+                    <td><strong>public String toString()</strong></td>
+                    <td>Returns the <strong>string representation</strong> of this object.</td>
+                </tr>
+                <tr>
+                    <td><strong>public final Class getClass()</strong></td>
+                    <td>Returns the <strong>Class</strong> class object of the object.</td>
+                </tr>
+                <tr>
+                    <td><strong>public final void notify()</strong></td>
+                    <td>This method wakes up a <strong>single thread</strong> that is waiting on this object’s monitor.</td>
+                </tr>
+                <tr>
+                    <td><strong>public final void notifyAll()</strong></td>
+                    <td>This method wakes up <strong>all threads</strong> that are waiting on this object’s monitor.</td>
+                </tr>
+                <tr>
+                    <td><strong>public final void wait(long timeout)throws InterruptedException</strong></td>
+                    <td>This method makes the current thread to <strong>wait</strong> for the specified milliseconds, until another thread notifies (invokes <strong>notify()</strong> or <strong>notifyAll()</strong> method).</td>
+                </tr>
+                <tr>
+                    <td><strong>public final void wait(long timeout,int nanos)throws InterruptedException</strong></td>
+                    <td>This method makes the current thread to wait for the specified miliseconds and nanoseconds, until another thread notifies (invokes <strong>notify()</strong> or <strong>notifyAll()</strong> method).</td>
+                </tr>
+                <tr>
+                    <td><strong>public final void wait()throws InterruptedException</strong></td>
+                    <td>This method makes&nbsp;the current thread to wait, until another thread notifies (invokes <strong>notify()</strong> or <strong>notifyAll()</strong> method).</td>
+                </tr>
+                <tr>
+                    <td><strong>protected void finalize()throws Throwable</strong></td>
+                    <td>This method is invoked by the <strong>garbage collector</strong> before object is being garbage collected.</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -296,20 +355,20 @@
             <ol>
                 <li>
                     Khai báo 1 private static class loader
-                    <code>
+                    <blockquote>
                         private static class LazyHolder {<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;static final Singleton lazyHolderInstance = new Singleton();<br />
                         }<br />
-                    </code>
+                    </blockquote>
                 </li>
                 <li>
                     Trong function getInstance, ta sử dụng static class kia để get instance của nó ra
 
-                    <code>
+                    <blockquote>
                         public static Singleton getLazyHolderInstance() {<br />
                         &nbsp;&nbsp;&nbsp;&nbsp;return LazyHolder.lazyHolderInstance;<br />
                         }<br />
-                    </code>
+                    </blockquote>
                 </li>
             </ol>
         </div>
@@ -361,8 +420,8 @@
                     Java - Basic
                 </a>
 
-                <a class="btn btn-default float-lg-right" href="lesson_01.html">
-                    _NEXT_RESOURCE
+                <a class="btn btn-default float-lg-right" href="lesson_03.html">
+                    Java – Objects & Classes (Lesson 3)
                 </a>
             </div>
         </div>

@@ -11,9 +11,9 @@ public class JavaLesson02 {
     }
 
     public static void testSingletonResult (){
-        System.out.println("--- Singleton Pattern ---");
-        Singleton single1 = Singleton.getInstance();
-        Singleton single2 = Singleton.getInstance();
+        System.out.println("--- SingletonExample Pattern ---");
+        SingletonExample single1 = SingletonExample.getInstance();
+        SingletonExample single2 = SingletonExample.getInstance();
         if (single1.equals(single2)) {
             System.out.println("Is Unique Instance");
         } else {
@@ -22,9 +22,9 @@ public class JavaLesson02 {
     }
 
     public static void testEagerSingletonResult (){
-        System.out.println("--- Eager Singleton  ---");
-        Singleton single1 = Singleton.getEagerLoadSingleton();
-        Singleton single2 = Singleton.getEagerLoadSingleton();
+        System.out.println("--- Eager SingletonExample  ---");
+        SingletonExample single1 = SingletonExample.getEagerLoadSingleton();
+        SingletonExample single2 = SingletonExample.getEagerLoadSingleton();
         if (single1.equals(single2)) {
             System.out.println("Is Unique Instance");
         } else {
@@ -33,9 +33,9 @@ public class JavaLesson02 {
     }
 
     public static void testLazyLoaderSingletonResult (){
-        System.out.println("--- Lazy Loader Singleton ---");
-        Singleton single1 = Singleton.getLazyLoadSingleton();
-        Singleton single2 = Singleton.getLazyLoadSingleton();
+        System.out.println("--- Lazy Loader SingletonExample ---");
+        SingletonExample single1 = SingletonExample.getLazyLoadSingleton();
+        SingletonExample single2 = SingletonExample.getLazyLoadSingleton();
         if (single1.equals(single2)) {
             System.out.println("Is Unique Instance");
         } else {
@@ -44,9 +44,9 @@ public class JavaLesson02 {
     }
 
     public static void testDoubleCheckSingletonResult (){
-        System.out.println("--- Double check Singleton ---");
-        Singleton single1 = Singleton.getDoubleCheckSynchronizedSingleton();
-        Singleton single2 = Singleton.getDoubleCheckSynchronizedSingleton();
+        System.out.println("--- Double check SingletonExample ---");
+        SingletonExample single1 = SingletonExample.getDoubleCheckSynchronizedSingleton();
+        SingletonExample single2 = SingletonExample.getDoubleCheckSynchronizedSingleton();
         if (single1.equals(single2)) {
             System.out.println("Is Unique Instance");
         } else {
@@ -56,8 +56,8 @@ public class JavaLesson02 {
 
     public static void testLazyHolderSingletonResult (){
         System.out.println("--- Lazy Holder Pattern ---");
-        Singleton single1 = Singleton.getLazyHolderInstance();
-        Singleton single2 = Singleton.getLazyHolderInstance();
+        SingletonExample single1 = SingletonExample.getLazyHolderInstance();
+        SingletonExample single2 = SingletonExample.getLazyHolderInstance();
         if (single1.equals(single2)) {
             System.out.println("Is Unique Instance");
         } else {

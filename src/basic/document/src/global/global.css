@@ -1,3 +1,20 @@
-.container{
+body{
+    color: #333333;
+}
 
+blockquote {
+    font-size: 90%;
+    padding: 20px;
+    border: 1px solid;
+}
+
+main .introduction {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+footer .btn.btn-default{
+    background: #6f42c1;
+    color: #fff;
 }
