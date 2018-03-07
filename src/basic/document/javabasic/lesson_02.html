@@ -50,7 +50,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Java is an Object-Oriented Language</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Java là một ngôn ngữ hướng đối tượng. Mà đã là hướng đối tượng, thì nó phải hỗ trợ các khái niệm sau:</p>
             <ul>
                 <li>Polymorphism</li>
@@ -171,7 +171,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Các method của class Class.</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <table class="tab-content">
                 <tbody>
                 <tr>
@@ -229,7 +229,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Singleton Class</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Mục đích của Singleton đó là quản lý việc tạo các Object, giới hạn số lượng tạo Object về còn 1. </p>
             <p>Vì chỉ có 1 instance, nên mặc dù nó là object, nhưng ta có thể xem nó như là 1 filed của class, tương tự
                 như static fields vậy.
@@ -241,7 +241,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Singleton Design Patten</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <h4>Cách tạo</h4>
             <ul>
                 <li>Dữ liệu thành viên (instance) <b>private</b> và <b>static</b> là đối tượng duy nhất của Class
@@ -265,7 +265,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Singleton Trong Java</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <ul>
                 <li>Abstract Factory: thường là Singleton để trả về các đối tượng factory duy nhất.</li>
                 <li>Builder: dùng để xây dựng một đối tượng phức tạp, trong đó Singleton được dùng để tạo một đối tượng
@@ -282,7 +282,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Khi nào thì sử dụng singleton</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <ul>
                 <li>Đảm bảo rằng chỉ có một thể hiện của lớp.</li>
                 <li>Quản lý việc truy cập tốt hơn vì chỉ có một thể hiện duy nhất.</li>
@@ -294,7 +294,7 @@
     <h2>Các cách tạo singleton.</h2>
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Eager load</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Phương thức này khởi tạo instance ngay khi class được load.</p>
 
             <p>Hạn chế của nó, luôn phải sử dụng bộ nhớ để cấp phát cho cái thằng này mặc dù đôi khi không cần thiết</p>
@@ -307,7 +307,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Lazy-load synchronized method.</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Phương thức này khởi tạo instance khi mà có 1 thread nào đó gọi method getInstance. Vì vậy instance
                 đc tạo ra chỉ khi nào cần thiết</p>
 
@@ -331,7 +331,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Lazy Load Double check synchronized</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Mở rộng từ Lazy Load, Double check sử dụng 2 lần để kiểm tra synchronized.</p>
 
             <p>Nó không sử dụng synchronized ở bên ngoài function getInstance, mà chỉ check khi tạo ra object</p>
@@ -346,7 +346,7 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Initialization on Demand Holder (Design pattern) - Cái này là OK nhất.</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <p>Java đảm bảo tính an toàn khi chạy đa luồng cho static class loader. Do vậy, chúng ta không cần quan
                 tâm tới double check nữa , mà chỉ quan tâm tới cách mà chúng ta khởi tạo instance thôi.</p>
 
@@ -376,14 +376,14 @@
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Sử dụng ENUM<</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             BODY_CONTENT MUST BE REVISE LATER.
         </div>
     </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Tài liệu tham khảo</h3>
-        <div class="text-muted pt-3">
+        <div class="text-dark pt-3">
             <ul>
                 <li>
                     * <a href="https://viblo.asia/p/java-synchronized-blocks-jlA7GK04vKZQ">Synchronized trong Java</a>
@@ -416,11 +416,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_01.html">
+                <a class="btn btn-default float-lg-left" href="./lesson_01.html">
                     Java - Basic
                 </a>
 
-                <a class="btn btn-default float-lg-right" href="lesson_03.html">
+                <a class="btn btn-default float-lg-right" href="./lesson_03.html">
                     Java – Objects & Classes (Lesson 3)
                 </a>
             </div>
@@ -430,7 +430,7 @@
     <br class="clearfix"/>
 
     <div class="container">
-        <span class="text-muted">
+        <span class="text-dark">
             <address>
             Created by <strong>Khanh Tran</strong><br>
             Email: quockhanhqb011@gmail.com<br>

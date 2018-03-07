@@ -3,7 +3,7 @@ body{
 }
 
 blockquote {
-    font-size: 90%;
+    font-size: 95%;
     padding: 20px;
     border: 1px solid;
 }
@@ -14,7 +14,20 @@ main .introduction {
     border-radius: 6px;
 }
 
+.img-fluid{
+    margin: 10px auto;
+}
+
 footer .btn.btn-default{
     background: #6f42c1;
     color: #fff;
+}
+
+footer address {
+    background: lightgrey;
+    padding: 15px;
+}
+
+.box-shadow li{
+    margin: 10px 0px;
 }
