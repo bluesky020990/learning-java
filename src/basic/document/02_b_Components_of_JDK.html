@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Components of Java Development Kit (JDK)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Components of Java Development Kit (JDK)</h1>
+        <div class="lead">
+            <p>JDK có rất nhiều tool mà những Java deveper cần dể deployed Java Program và JRE để chạy chương trình.
+                Chúng ta có thể định nghĩa đơn giản rằng JDK = JRE và Development Tools. Development Tools bao gồm:</p>
+
+            <ul>
+                <li>Java Archive (jar)</li>
+                <li>Java Compiler (javac)</li>
+                <li>Java Disassembler (javap)</li>
+                <li>Java Debugger (jdb)</li>
+                <li>Java Header File Generator (javah)</li>
+                <li>Documentation (javadoc)</li>
+                <li>và nhiều thằng nữa.</li>
+            </ul>
+
+            <p>Trong bài này, chúng ta chỉ đi xem xét những thằng phổ biến thôi.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Archive (jar)</h3>
+        <div class="text-dark pt-3">
+            <p>Java Archive (jar) tool combines multiple Java files/ applets into a single archive .jar (Java
+                Archive). </p>
+
+            <p>jav là một công cụ lưu trữ và nén dựa trên các định dạng ZIP hoặc ZLIP</p>
+
+            <p>Mục đích chính của nó là được thiết kế cho packet applets hoặc multiple files vào 1 file lưu trữ</p>
+
+            <p>Những files, image, media .... sẽ được combined vào 1 file, giúp cho mấy thằng khác có thể download
+                về và sử dụng </p>
+
+            <p>Vì nó được nén lại thành 1 nên việc download nó về cũng nhanh hơn vì chỉ mất 1 lần, và cải thiện tốc
+                độ vì file đã được nén lại.</p>
+
+            <h5>Để né file (tạo Jar file), sử dụng câu lệnh</h5>
+
+            <blockquote>
+                jar cf <&lt;jar filename>> <&lt;input file(s)>>
+            </blockquote>
+
+            <p>Giải thích thêm về những option ở trên kia.</p>
+
+            <ul>
+                <li><strong>‘c’ –</strong> This indicates that we want to create a jar file.</li>
+                <li><strong>‘f’ –</strong> This indicates that we need the output to goto a file rather than sdout.</li>
+                <li><strong>jar filename –</strong> The name of the jar which needs to be created,&nbsp;the filenames
+                    are given with the extension of ‘.jar’ as a convention though it is not a mandatory.
+                </li>
+                <li><strong>input files – </strong>List of the files which you want to put inside the jar file, multiple
+                    files can be added each separated by a space
+                </li>
+            </ul>
+
+            <h5>Để xem content bên trong file, sử dụng câu lệnh</h5>
+
+            <blockquote>
+                jar tf <&lt;jar filename>>
+            </blockquote>
+
+            <p>Giải thích thêm về những option ở trên kia.</p>
+
+            <ul>
+                <li><strong>‘t’ –</strong> This indicates that you want to&nbsp;view the contents of the jar file</li>
+                <li><strong>‘f’ –</strong> This indicates that&nbsp;the&nbsp;JAR file whose contents are to be viewed is
+                    specified on the command line.
+                </li>
+                <li><strong>jar filename –</strong> The name of the jar&nbsp;whose contents needs to be viewed</li>
+            </ul>
+
+            <h5>Để giải nén (extracting the content of a JAR file), sử dụng câu lệnh</h5>
+
+            <blockquote>
+                jar xf <&lt;jar filename>>
+            </blockquote>
+
+            <ul>
+                <li><strong>‘x’ –</strong> This indicates that you want to extract&nbsp;the contents of the jar file
+                </li>
+                <li><strong>‘f’ –</strong> This indicates that&nbsp;the&nbsp;JAR file whose contents has to be extracted
+                    is specified on the command line.
+                </li>
+                <li><strong>jar filename –</strong> The name of the jar&nbsp;whose contents needs to be&nbsp;extracted
+                </li>
+            </ul>
+
+            <h5>Để update Jar file</h5>
+
+            <blockquote>
+                jar uf <&lt;jar filename>> <&lt;input file(s)>>
+            </blockquote>
+
+            <ul>
+                <li><strong>‘c’ –</strong> This indicates that we want to update&nbsp;an existing jar file.</li>
+                <li><strong>‘f’ –</strong> This indicates that&nbsp;the&nbsp;JAR file whose contents has to be updated&nbsp;is specified on the command line.</li>
+                <li><strong>jar filename –</strong> The name of the jar&nbsp;whose contents needs to be updated.</li>
+                <li><strong>input files – </strong>List of the files which&nbsp;need to be added in addition</li>
+            </ul>
+
+
+
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Compiler (javac)</h3>
+        <div class="text-dark pt-3">
+            <p>Mục đích của nó là compiler các file *.java thành *.class</p>
+            <p>
+                Javac là compiler sử đụng trong Java. Vị trí của Javac tool là ở trong folder /bin bên trong thư mục
+                cài đặt JDK. Java Compiler đọc toàn bộ thông tin class, interface và những code khác được viết bởi
+                ngôn ngữ lập trình java và compiler (phiên dịch) nó thành byte code (.class files).
+            </p>
+
+            <p>Có 2 cách để convert source code file bằng javac</p>
+
+            <blockquote>
+                javac <&lt;file1.java>> <&lt;file2.java>>
+            </blockquote>
+
+            <p>Nếu có nhiều file quá, thì create bằng command line sau:</p>
+
+            <blockquote>
+                javac @filelist
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Disassembler (javap)</h3>
+        <div class="text-dark pt-3">
+            <p>Mục đích của nó là disassembles các file *.class thành *.java</p>
+            <p>
+                Javap cũng như Javac đều được lưu trong folder /bin trong thư mục cài đặt JDK. Khác với thằng Javac
+                compiler cái file java thành bytecode, thằng này tháo dỡ (disassembles) một hoặc nhiều class mà
+                truyền vào nó. Javap command in ra các packet, protected và public fields cũng như những method của
+                class mà truyền vào trong nó.  Javap command int ra output trong stdout.
+            </p>
+
+            <blockquote>
+                javap <<.class file1>> <<.class file2>>
+            </blockquote>
+
+            <p>Thực ra cái thằng này chả in ra được như thế đâu. Những gì nó xuất ra chỉ đơn giản là :</p>
+
+            <blockquote>
+                Compiled from "Sample.java"<br />
+                public class Sample{<br />
+                &nbsp; &nbsp; java.lang.String name;<br />
+                &nbsp; &nbsp; public Sample(java.lang.String);<br />
+                &nbsp; &nbsp; public void show();<br />
+                &nbsp; &nbsp; public static void main(java.lang.String[]);<br />
+                }
+            </blockquote>
+
+            <p>Đơn giản nó chỉ show lên các thông tin mà bên ngoài được phép truy cập vào thôi.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Debugger (jdb)</h3>
+        <div class="text-dark pt-3">
+            <p>Java Debugger (jdb) is a command-line debugger for Java classes it helps us in debugging our Java
+                code. In order to start debugging we simply need to give the class name after jdb </p>
+
+            <blockquote>
+                jdb <&lt;class name>>
+            </blockquote>
+
+            <p>
+                Đơn giản cái này là cái công cụ debug.
+            </p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Header File Generator (javah)</h3>
+        <div class="text-dark pt-3">
+            <p>Mục đích của cái này là generate ra C header và source file (.head).</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Documentation (javadoc) : </h3>
+        <div class="text-dark pt-3">
+            <p>Dùng để tạo Java code documentation trong định dạng HTML từ java source code.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./02_a_Java_Vitual_Machine.html">
+                    Java Virtual Machine
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./03_object_reference.html">
+                    Java - Pass by value (Object reference)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>
