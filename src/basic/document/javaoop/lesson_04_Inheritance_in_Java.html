@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance in Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Inheritance in Java</h1>
+        <div class="lead">
+            <p>Inheritance - Thừa kế, là một trong những khái niệm (concept) quan trọng trong OOP. Java Inheritance
+                là một quá trình mà trong đó, một class có thể sử dụng lại method và thuộc tính (fields/properties)
+                của một class khác. Derived class - subclass tái sử dụng methods và variables của Base Class -
+                Supper Class</p>
+
+            <p>Inheritance diễn tả mỗi quan hệ IS-A, hay còn được gọi là Parent-Child relationship. Parent class có
+                thể có rất nhiều Child class, tuy nhiên mỗi Child class chỉ thuộc 1 Parent Class.
+            </p>
+
+            <p>Child class kế thừa Parent class bằng các sử dụng từ khóa extends.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Inheritance in Java Example</h3>
+        <div class="text-dark pt-3">
+           <p>
+               Xem file : <strong>InheritanceInJava.java</strong>
+           </p>
+
+            <p>Có một hiểu nhầm nho nhỏ ở hồi xưa, cứ tưởng đối với thằng super class lúc nào cũng phải set abstract
+            cho nó thì mấy thằng con mới kế thừa được. Nhưng rõ ràng trong ví dụ này, chẳng có từ khóa abstract nào
+                cả, mà lũ kia vẫn chạy bt.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Different Types of Inheritance in Java</h3>
+        <div class="text-dark pt-3">
+            <p>Dưới đây là các kiểu kế thừa khác nhau trong Java, một số đuộc hỗ trợ trược tiếp, một số phải sử dụng
+            interface.</p>
+
+            <p>Interface thực hiện kế thừa ntn???</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Different Types of Inheritance in Java</h3>
+        <div class="text-dark pt-3">
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Single Inheritance</h5>
+                <div class="text-dark pt-3">
+                    <p>Single inheritance - Đơn thừa kế cho phép lớp thừa kế (derived class - subclass) kế thừa đặc tính
+                        và
+                        hành
+                        vi từ một lớp cha duy nhất</p>
+
+                    <img src="../assests/inherintance/Single_Inheritance_in_Java.png" class="img-fluid"/>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Multiple Inheritance (Through Interface)</h5>
+                <div class="text-dark pt-3">
+                    <p>Multiple inheritance - đa thừa kế (một lớp con có thể thừa kế từ nhiều lớp cha) không được hỗ
+                    trợ trong Java vì nó khiến mọi thứ trở nên nhập nhằng và khó quản lý</p>
+
+                    <p>Thay vào đó, Java đưa ra một khái niệm khác, đó là Interface.</p>
+
+                    <p>Khái niệm Multiple Inheritance phải giống như dưới đây:</p>
+
+                    <img src="../assests/inherintance/Multiple_Inheritance_in_Java.png" class="img-fluid"/>
+
+                    <p>Trong mô hình này, class C đều kế thừa từ Class A và Class B. Tuy nhiên, vì Java không
+                        support 2 cái này, nên ta đổi nó thành Interface A và Interface B. và cho class C implement
+                        cả 2 Interface đó.</p>
+
+                    <p>Xem ví dụ : Vehicle.java</p>
+
+                    <p>Tại sao Java không hỗ trợ đa thừa kế.</p>
+
+                    <p>Giả sử một class được thừa kế từ 2 lớp cha, và 2 lớp cha này có 2 phương thức cùng tên. Khi
+                        đó, trình biên dịch sẽ không biết chính xác nếu gọi C.commonFunction() thì liệu nó sẽ gọi
+                        thằng A.commonFunction() hay B.commonFunction()</p>
+
+                    <p>
+                        Tuy nhiên, khi sử dụng interface, chính lớp con mới quyết định việc triển khai phương thức mà
+                        nó implement. Vì vậy, khi này gọi C.commonFunction, thì nó sẽ là cái function do chính thằng
+                        C quy định, rất rõ ràng và không có nhập nhằng gì ở đây.
+                    </p>
+
+                    <p>Ta xem thêm một ví dụ về đa kế thừa bằng interface nữa nhé.</p>
+
+
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Multilevel Inheritance</h5>
+                <div class="text-dark pt-3">
+                    <p>Multilevel xảy ra khi mà Class B kế thừa từ Class A và Class C kế thừa Class B. Xem mô hình
+                        dưới đây.</p>
+
+                    <img src="../assests/inherintance/Multilevel_Inheritance_in_Java.png" class="img-fluid"/>
+
+                    <p>
+                        Trong trường hợp này, Class B như một kế thừa trực tiếp, trong khi đó, lớp A như một kế thừa
+                        gián tiếp của lớp C.
+                    </p>
+
+                    <p>Xem file TemporaryStaff.java để hiểu thêm ví dụ</p>
+
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Hierarchical Inheritance</h5>
+                <div class="text-dark pt-3">
+                    <p>Xem hình bên dưới</p>
+
+                    <img src="../assests/inherintance/Hierarchical_Inheritance_in_Java.png" class="img-fluid"/>
+
+                    <p>Trong mô hình dưới đây, khác với Single Inheritance (1), ở đây có nhiều thằng con cùng kế thừa
+                        một  thằng cha. Mô hình này được gọi là Hierarchical Inheritance - (hierarchical - thứ bậc).</p>
+
+                    <p>
+                        Cái này cũng như thằng số 1, chỉ là nó khác là có nhiều thằng B thôi.
+                    </p>
+                </div>
+            </div>
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Hybrid Inheritance (Through Interface)</h5>
+                <div class="text-dark pt-3">
+                    <p>
+                        Hybrid Inheritance là sự kết hợp giữa Single Inheritance và Multiple Inheritance.
+                    </p>
+
+                    <p>Xem mô hình dưới đây:</p>
+
+                    <img src="../assests/inherintance/Hybrid_Inheritance_in_Java.png" class="img-fluid"/>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h5>
+                <div class="text-dark pt-3">
+                    BODY_CONTENT
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
+                    _PREVIOUS_RESOURCE
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
+                    _NEXT_RESOURCE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>
