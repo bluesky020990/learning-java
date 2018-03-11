@@ -175,6 +175,12 @@
 
                     <p>Đây là giai đoạn cuối cùng của Class Loading. Ở đây tất cả các biến tĩnh sẽ được gán với các
                         giá trị ban đầu và static block sẽ được thực hiện.</p>
+
+                    <p>Hiểu nôm na là nó sẽ gọi các function static của Class hoặc là update lại giá trị cho các
+                        static properties của nó.</p>
+
+                    <p>Tạm hiểu là ở lúc đàu load lên, nó init khu vực bộ nhớ trước, sau đó mới update dữ liệu vào
+                        memory sau.</p>
                 </div>
             </div>
 
@@ -198,20 +204,41 @@
                 <li><p><b>Method Area</b> – All the Class level data will be stored here including static variables.
                     <b>Method Area</b> is one per JVM and it is a shared resource.<p></li>
 
-                <blockquote><b>Method Area</b> – Toàn bộ data của Class sẽ được lưu trữ ở đây bao gồm các biến tĩnh.
-                    <b>Method Area</b> chỉ có 1 thằng duy nhất trong JVM và nó là một tài nguyên được chia sẻ. Nói
-                    nôm na  thì nó như 1 cái kho chứa, thằng nào cần thì cứ vào lấy đồ ra xài, XHCN mà, thiếu gì
-                    hàng.</blockquote>
+                <blockquote>
+                    <p>
+                        <b>Method Area</b> – Toàn bộ data của Class sẽ được lưu trữ ở đây bao gồm các biến tĩnh.
+                        <b>Method Area</b> chỉ có 1 thằng duy nhất trong JVM và nó là một tài nguyên được chia sẻ. Nói
+                        nôm na  thì nó như 1 cái kho chứa, thằng nào cần thì cứ vào lấy đồ ra xài, XHCN mà, thiếu gì
+                        hàng.
+                    </p>
+
+                    <p>Hiểu nôm na thì Java nó sẽ load Class lần lượt vào đây. Khi class được load vào, thì nó sẽ
+                        ghi lại thông tin của class như những phương thức của nó. Một khi bạn gọi objectA.methodA()
+                        thì nó sẽ vào móc cái methodA của Class A trong này lôi ra chạy. Vì vậy, có thể xem nó như
+                        là một bảng từ điển của class vậy.</p>
+
+                </blockquote>
 
                 <li><p><b>Heap Area</b> – All the Objects and its corresponding instance  variables and arrays will be stored
                     here. Heap Area is also one per JVM since Method area and Heap area shares memory for multiple
                     threads the data stored is not thread safe.<p></li>
 
-                <blockquote><b>Heap Area</b> – Toàn bộ các đối tượng và những biến thực thể của nó (instance variable) và
-                    array sẽ được lưu trữ ở đây. <b>Heap Area</b> cũng như thằng <b>Method Area</b> trên kia, chỉ có
-                    1 trên đời, và nó cũng chia sẻ bộ nhớ cho nhiều thread khác. Vì vậy, Data được lưu trữ ở đây
-                    không phải là <b>thread safe</b> - tạm hiểu là không an toàn (vì có thể bị ảnh hưởng bởi các
-                    thread khác.</blockquote>
+                <blockquote>
+                    <p>
+                        <b>Heap Area</b> – Toàn bộ các đối tượng và những biến thực thể của nó (instance variable) và
+                        array sẽ được lưu trữ ở đây. <b>Heap Area</b> cũng như thằng <b>Method Area</b> trên kia, chỉ có
+                        1 trên đời, và nó cũng chia sẻ bộ nhớ cho nhiều thread khác. Vì vậy, Data được lưu trữ ở đây
+                        không phải là <b>thread safe</b> - tạm hiểu là không an toàn (vì có thể bị ảnh hưởng bởi các
+                        thread khác.
+                    </p>
+
+                    <p>Một khi một object được khởi tạo, thì nó sẽ được lưu trữ ở đây. Nói nôm na thì đây là cái ổ
+                        chứa mấy cái object và các instance variable của nó.</p>
+
+                    <p>JVM lưu trữ toàn bộ object của hệ thống ở đây. Nên nhớ kĩ điều đó, tất cả các object. Các
+                        thread có thể làm việc với các object này. Vì vậy mà nó có thể bị thay đổi dữ liệu bởi một
+                        hay nhiều thread khác nhau. Do đó nó mới được gọi là not thread save</p>
+                </blockquote>
 
                 <li><p><b>Stack Area</b> – For every thread, a separate runtime stack will be created. For every method call,
                     one entry will be made in the stack memory which is called as Stack Frame. All local variables

@@ -3,6 +3,8 @@ package practice.javaoop.inheritance;
 public class Person {
     private String name;
 
+    protected int age;
+
     public Person(String name) {
         this.name = name;
     }
