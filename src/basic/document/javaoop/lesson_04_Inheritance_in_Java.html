@@ -188,6 +188,32 @@
                 Class C implements interface A và B, nhưng bản thân nó đều phải viết code cho cái function showMessage.
                 Vậy kế thừa ở đây có nghĩa là gì khi chính bản thân nó lại phải viết function đó 1 lần nữa.</p>
 
+            <p>Thực sự thì ý nghĩa kế thừa của interface nó khác với extends của class, Interface chỉ có thể cho
+                biết rằng một class có thể làm gì. Vì vậy mối quan hệ giữa Extends chính là IS-A trong khi đó của
+                Implements lại là CAN-DO. Lưu ý điều này.</p>
+
+            <p>Vì vậy, kế thừa bằng interface ở đây không có nghĩa là nó có thể sử dụng các method, mà nó mang tính
+            chất khai báo rằng nó có thể thực thi các method. Nói sao cho dễ hiểu nhỉ, kế thừa ở đây là kế thừa cái
+                khung, cái sườn các hành vi. Nói class A, class B implements interface C thì có nghĩa là Class A có thể
+                thực  thi các method được khai báo trong Interface C, class B cũng có thể thực thi các method trong
+                Interface C. Kế thừa ở đây là kế thừa các khai báo phương thức chứ ko phải là phương thức.</p>
+
+            <blockquote>
+                <p>Ví dụ cho dễ hiểu, thằng C nó đưa một bảng danh sách các việc cần làm và kêu thằng A, mày lo mà làm
+                    các việc này, sau đó, thay vì việc nó viết 1 cái danh sách khác gửi cho thằng B, thì nó đi copy lại
+                    cái danh sách đó rồi gửi cho thằng B.</p>
+
+                <p>Nếu không sử dụng cách đó, thì lúc này, thằng C sẽ đi yêu cầu thằng A sẽ đi triển khai các phương
+                    thức  đó, và nó cũng nói tương tự với thằng B nhưng chả ai  biết rằng phương thức thằng A, thằng
+                    B nó triển khai có
+                    giống như thằng C yêu cầu hay ko.</p>
+
+                <p>Kế thừa ở đây có nghĩa là 2 thằng A, B cùng sử dụng lại cái tờ giấy mà thằng C đưa ra để
+                    implements các phương thức của bản thân nó, <sub>chứ ko mang ý nghĩa sử dụng lại cái phương thức
+                        của
+                        thằng C như trong định nghĩa extends.</sub></p>
+            </blockquote>
+
             <p>
                 Khác với abstract, interface hướng đến kế thừa phương thức. Khi một class nào đó implement một
                 interface, thì tức là nó đang khai báo rằng "Tôi đạt một chuẩn" nào đó. Và khi đó, ta có thể sử dụng
@@ -203,11 +229,13 @@
                 tính khái quát và mô hình hóa chức năng.</p>
 
             <blockquote>
-                <h4>Q: Có cách nào để tôi implements interface mà ko cần phải viết lại - overriding cái method của
+                <h4>Q: Có cách nào để tôi cho 2 class A, B cùng implements interface mà ko cần phải viết lại -
+                    overriding cái
+                    method của
                     nó ko??</h4>
 
                 <p>Tất nhiên, bạn cho cái class cha nào đó implements cái method đó, rồi khai báo method đó trong
-                    interface và cho thằng con implement cái method đó là được.</p>
+                    interface và cho thằng con (2 thằng A, B) implement cái method đó là được.</p>
 
                 <p>Xem trong ví dụ TestHybridInheritance nhé, ở đây cái interface A có yêu cầu triển khai một
                     method : showDefaultMessage, tuy nhiên thằng ChildClass mặc dù yêu cầu implements Interface đó

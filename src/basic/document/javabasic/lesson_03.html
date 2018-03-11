@@ -63,18 +63,18 @@
             <div class="my-4 p-3 bg-white rounded box-shadow">
                 <h4 class="border-bottom border-gray pb-2 mb-0">Sử dụng class name</h4>
                 <div class="text-dark pt-3">
-                    Class clazz = Class.forName("practice.basic.lesson03.JavaLesson03");<br />
+                    Class clazz = Class.forName("practice.basic.createobject.JavaLesson03");<br />
                     JavaLesson03 demo = (JavaLesson03) clazz.newInstance();<br />
                     demo.sayHello();<br />
                     <br />
-                    Chú ý cái giá trị này phải truyền đúng nhé <strong>practice.basic.lesson03.JavaLesson03</strong>
+                    Chú ý cái giá trị này phải truyền đúng nhé <strong>practice.basic.createobject.JavaLesson03</strong>
                 </div>
             </div>
             <div class="my-4 p-3 bg-white rounded box-shadow">
                 <h4 class="border-bottom border-gray pb-2 mb-0">Sử dụng Class Loader và newInstance() Method</h4>
                 <div class="text-dark pt-3">
                     ClassLoader cl = JavaLesson03.class.getClassLoader();<br />
-                    JavaLesson03 t = (JavaLesson03)cl.loadClass("practice.basic.lesson03.JavaLesson03").newInstance();
+                    JavaLesson03 t = (JavaLesson03)cl.loadClass("practice.basic.createobject.JavaLesson03").newInstance();
                 </div>
             </div>
             <div class="my-4 p-3 bg-white rounded box-shadow">
@@ -259,7 +259,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="./lesson_02.html">
+                <a class="btn btn-default float-lg-left" href="lesson_02.html">
                     Java – Objects & Classes (Lesson 2)
                 </a>
 
