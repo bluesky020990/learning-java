@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interface and Abstract in Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Interface and Abstract in Java</h1>
+        <div class="lead">
+            <p>
+                Trong bài học này, chúng ta sẽ đi sâu vào 2 cái thằng gọi là quan trọng nhất trong java đối với tính
+                trừu tượng - abstract and interface.
+            </p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Abstract Class in Java</h3>
+        <div class="text-dark pt-3">
+            <p>Từ khóa <strong>abstract</strong> chỉ có thể sử dụng cho class và các method trong Java. Một phương
+                thức được khai báo là abstract, thì bản thân nó sẽ không được triển khai, mà trách nhiệm đó được đẩy
+                về cho các Class mà extend nó. Vì vậy, abstract method thì ko cần implement. Luôn nhớ điều này.</p>
+
+
+            <p>Hãy đi sâu vào để xem chi tiết hơn nhé.</p>
+
+            <p>Khi một class được khai báo là trừu tượng, thì những lớp đặc biệt này sẽ ko được khởi tạo. Nó chỉ có
+                thể được extend và những phương thức bên trong nó phải được implement bởi class extend nó.</p>
+
+
+            <p>Những điểm cần lưu ý về Abstract Class:</p>
+
+            <ul>
+                <li>Abstract class có thể có cả phương thức abstract và non-abstract</li>
+                <li>Một phương thức trong class được khai báo là trừu tượng, thì lớp đó cũng bắt buộc phải khai báo
+                trừu tượng</li>
+                <li>Nếu một phương thức được khai báo trừu tượng, thì nó sẽ không phải implement bất cứ cái gì. Nếu
+                có sẽ báo lỗi. Abstract class và abstract method như một bộ xương vayak, nó defined structure, mà
+                    không có bất ứ implementation nào.</li>
+            </ul>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Can Abstract Class have constructor?</h5>
+            <div class="text-dark pt-3">
+                <p>An abstract class can have constructor, abstract method, non abstract method , data member and
+                    even main method as well. </p>
+
+                <p>Có, nhưng new 1 Abstract Object thì đồng nghĩa với việc phải override lại các function của nó.</p>
+
+
+                <blockquote>
+                    public abstract class AbstractClass {<br/>
+                    &nbsp; &nbsp; abstract void run();<br/>
+                    <br/>
+                    &nbsp; &nbsp; abstract void eat();<br/>
+                    <br/>
+                    &nbsp; &nbsp; abstract void sleep();<br/>
+                    <br/>
+                    &nbsp; &nbsp; public AbstractClass() {<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is constructor of abstract class");<br/>
+                    &nbsp; &nbsp; }<br/>
+                    }<br/>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Important points to remember</h5>
+            <div class="text-dark pt-3">
+                <ul>
+                    <li>If we have declared a <strong>method as abstract</strong> then you must declare the <strong>class as abstract</strong>, abstract method cannot be present in a <strong>non-abstract class.</strong></li>
+                    <li>Abstract Class can have <strong>concrete (cụ thể) methods(non-abstract)</strong>&nbsp;as well
+                        .</li>
+                    <li>Abstract method should not have implementation(no body).</li>
+                    <li>Abstract method declaration should end with a <strong>semicolon (;)</strong></li>
+                    <li>The class extending the abstract class should implement all the abstract methods.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h5 class="border-bottom border-gray pb-2 mb-0">Interface in Java and Uses of Interface in Java</h5>
+        <div class="text-dark pt-3">
+            <p class="lead">Abstraction là quá trình mà class che dấu những chi tiết thể hiện, chỉ hiển thị chuwcsn
+                năng cho
+                User. Trước đó thì ta đã tìm hiểu qua về abstract, giờ chúng ta lại đi qua thằng Interface, một
+                trong số những cách để đạt được abstract 100%.</p>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">What is an Interface?
+            </h5>
+            <div class="text-dark pt-3">
+                <p>An interface is a blueprint of a class,&nbsp;it can have methods and variables like a class but
+                    methods declared in a interface will be by <strong>default abstract</strong>(only declaration no
+                    body) and the variables declared will be
+                    <strong>public, static &amp; final by default.</strong></p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Use of Interface in Java</h5>
+            <div class="text-dark pt-3">
+                <ul>
+                    <li>Using interface we can achieve <strong>100% abstraction</strong> in <strong>Java</a></strong>, as the
+                        methods doesn’t have body and the class needs to implement them before they access it.</li>
+                    <li>Java <strong>does not support multiple inheritance&nbsp;</strong>using the interface we can
+                        achieve this as a class can implement more than one interface.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Can Abstract Class have constructor?</h5>
+            <div class="text-dark pt-3">
+                <p>Khác với abstract class - có thể có constructor, Interface không thể có constructor, cũng ko thể
+                    có non-abstract method và main method. Tóm lại nó như một tờ giấy khai báo, chỉ là cái biểu mẫu,
+                chứ ko được sử dụng cho mục đích khác. Cái mẫu hóa đơn thì làm sao mà trở thành cái hóa đơn được,
+                    đúng ko?</p>
+            </div>
+        </div>
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Important points to remember</h5>
+            <div class="text-dark pt-3">
+                <ul>
+                    <li>An Interface cannot be instantiated in Java.</li>
+
+                    <li>Methods declared in a interface should be public and abstract </li>
+
+                    <li>Interface cannot have concrete methods(non-abstract methods or methods with body)</li>
+
+                    <li>variables declared should be public, static & final even though if you miss any one or all
+                        the qualifiers it will be automatically assigned.</li>
+
+                    <li>Interface variables must be initialized at the time of declaration else the compiler will
+                        throw error.</li>
+
+                    <li>An Interface can only extend other interface (only one)</li>
+
+                    <li>A Class can implement any number of interface</li>
+
+                    <li>If two interface have methods with same signature and same return type then the implementing
+                        class can implement any one of those</li>
+
+                    <li>If two interface have methods with same signature and different return type cannot be
+                        implemented at the same time</li>
+
+                    <li>In the implementing class we cannot change the variable value which is declared in the
+                        interface as it is final by default </li>
+                </ul>
+
+                <blockquote>
+                    <li>Một interface thì ko thể khởi tạo trong Java. - Vì nó có hàm constructor quái đâu.</li>
+
+                    <li>Method định nghĩa trong interface đều phải là public và abstract.</li>
+
+                    <li>Interface ko có method cụ thể, tức là những method mà có body và không phải là non-abstrac.
+                    Mọi method của nó đều là abstract</li>
+
+                    <li>Biến được khai báo trong interface (variable instances of Interface, not function) thì đều
+                        được khai báo là public final và static. Nếu không khai báo thì nó sẽ được thêm vào.</li>
+
+                    <li>Interface variable thì phải được khởi tạo ngay tại thời điểm khai báo, nếu ko thì Compiler sẽ
+                        báo lỗi. Nói cách khác, ta không thể khai báo một biến int count mà không có giá trị được.</li>
+
+                    <li>Một interface chỉ có thể extend từ 1 interface khác (Và chỉ 1 - đơn thừa kế trong Java).</li>
+
+                    <li>Class có thể implement một hoặc nhiều interface</li>
+
+                    <li>Nếu 2 interface có 2 method cùng tên, cùng variable và cùng kiểu return type thì Class
+                        implement nó tự quyền quyết định implement phương thức đó ntn. Nói cách khác, nó sẽ tự
+                        quyết định khi gọi phương thức đó thì nó sẽ hành xử như thế nào.</li>
+
+                    <li>Nếu 2 phương thức trong 2 interface có cùng tên, cùng tham số nhưng khác kiểu dữ liệu trả về
+                        thì không thể implement trong cùng 1 thời điểm. (Class implement 2 interface trên kia không
+                    được, sẽ báo lỗi liền. </li>
+
+                    <li>Những biến trong Interface đều khai báo là static và final nên ta không thể thay đổi chúng.
+                    (Biến của Interface)</li>
+                    </ul>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">What is different between abstract and interface</h3>
+        <div class="text-dark pt-3">
+            <table>
+                <tr>
+                    <th>Abstract</th>
+                    <th>Interface</th>
+                </tr>
+                <tr>
+                    <td>có thể có concrete methods (non-abstract, hoặc method có body</td>
+                    <td>100% là abstract hết</td>
+                </tr>
+                <tr>
+                    <td>Có constructor</td>
+                    <td>Không có constructor, nên ko bao h có instance object.</td>
+                </tr>
+                <tr>
+                    <td>Biến của nó là biến của object</td>
+                    <td>Biến của interface, luôn luôn là static final</td>
+                </tr>
+                <tr>
+                    <td>Có thể trì hoãn việc set giá trị của variable instances</td>
+                    <td>Bắt buộc phải khai báo giá trị của biến tại thời điểm khởi tạo. Biến luôn là static final.</td>
+                </tr>
+                <tr>
+                    <td>extends 1 class và implements nhiều interface</td>
+                    <td>chỉ có thể implements 1 và chỉ 1 interface.</td>
+                </tr>
+                <tr>
+                    <td>Không thể implement 2 method từ 2 interface mà có cùng tên cùng tham số nhưng khác giá trị
+                        trả về.</td>
+                    <td>Không thể implement 2 method từ 2 interface mà có cùng tên cùng tham số nhưng khác giá trị
+                        trả về.</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
+                    _PREVIOUS_RESOURCE
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
+                    _NEXT_RESOURCE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>

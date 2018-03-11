@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructor and Main function in Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Constructor and Main Function in Java</h1>
+        <div class="lead">
+            <p>Hôm nay chúng ta sẽ tìm hiểu về 2 cái khá quan trọng trong Java, đó là constructor và main function.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Constructor in Java and Types of Constructors in Java</h3>
+        <div class="text-dark pt-3">
+            <p><strong>Constructor</strong> is a <strong>special method</strong> in <strong>Java</strong> which is
+                used to initialize the object. It looks like a normal method however&nbsp;it is not. A normal java
+                method will have <strong>return</strong> type whereas the constructor <strong>will not have an
+                    explicit&nbsp;return type</strong>. A constructor will be called during the time of
+                <strong>object creation</strong> (i.e) when we use <strong>new keyword follow by class name</strong>.
+                </p>
+
+            <blockquote>
+                Constructor là một method đặc biệt trong Java, được dùng để khởi tạo object. Nó trông có vẻ giống như
+                một phương thức bình thường, tuy nhiên nó ko phải giống như vậy. Những method bình thường sẽ có kiểu
+                trả về rõ ràng còn cái constructor này thì ko. Nó được gọi trong thời gian khởi tạo đối tượng, khi ta
+                sử dụng từ khóa new theo sau bởi tên lớp.
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Rules for creating a Constructors in Java</h3>
+        <div class="text-dark pt-3">
+            <p>Có 2 rulers quan trọng cần nhớ trước khi tạo một constructor</p>
+
+            <ul>
+                <li>Constructor phải có tên trùng với tên của class name</li>
+
+                <li>Constructor không cần phải có kiểu dữ liệu trả về rõ ràng.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Types of Java Constructors</h3>
+        <div class="text-dark pt-3">
+            <ul>
+                <li>Default Constructor (or) no-arg Constructor</li>
+
+                <li>Parameterized Constructor</li>
+            </ul>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Can a Constructor return any value ?</h5>
+                <div class="text-dark pt-3">
+                   <p>Constructor không trả về một kiểu dữ liệu rõ ràng, nhưng mặc định, nó trả về thể hiện của lớp.</p>
+
+                    <blockquote>
+                        Car() {
+                        &nbsp; &nbsp; System.out.println("Default Constructor of Car class called");<br />
+                        }<br />
+                        <br />
+                        public static void main(String args[]) {<br />
+                        &nbsp; &nbsp; Car c1 = new Car();<br />
+                        }<br />
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Java – Constructor in an Interface?</h5>
+                <div class="text-dark pt-3">
+                    <p>Không. Chúng ta không thể có constructor nào được định nghĩa trong một interface. Những method
+                        trong Interface luôn được khai báo public và abstract (mặc định) để cung cấp 100% trừu tượng,
+                        và việc thực hiện - implements(implementation methods) sẽ được cung cấp bởi class implement nó.
+                    </p>
+
+                    <p>Vậy, tại sao ko thể tạo Constructor cho Interface trong Java???</p>
+
+                    <p>Trước hết, để có thể gọi một phương thức, ta cần có 1 object. Tuy nhiên, phương thức trong
+                        interface lại ko có body, vì vậy không cần thiết để gọi những method trong interfaces. Vì
+                        chung ta không thể gọi các phương thức trong interface, nên chúng ta không cần thiết tạo các
+                    object để làm cái gì cả. Và vì không cần tạo object, nên cũng chả cần khai báo constructor cho
+                        nó làm gì.</p>
+
+                    <p>Constructor phải thuộc về những class mà implement nó. Một interface, chỉ đóng vai trò như
+                        một bản hợp đồng - contract cho class mà implemenet nó.</p>
+                </div>
+            </div>
+
+
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Can we have both Default Constructor and
+                    Parameterized Constructor in the same class? </h5>
+                <div class="text-dark pt-3">
+                    <p>Tất nhiên là có, JVM sẽ tự động phân tích để biết nên gọi constructor nào. Và ko những thế,
+                        còn có thể tạo nhiều constructor cho class, miễn là nó khác tham số đầu vào.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Can i have a class with No Constructor ? What will
+                    happen during object creation ? </h5>
+                <div class="text-dark pt-3">
+                    <p>Tất nhiên là có. Khi một class không khai báo bất cứ một Constructor nào, thì tại thời gian
+                        object được khởi tạo, compiler sẽ tự động tạo ra một default constructor cho nó. </p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Does compiler create Default constructor everytime ?</h5>
+                <div class="text-dark pt-3">
+                    <p>Không, nó sẽ không tạo khi mà bạn đã có một constructor rồi. Giả sử ta có một Class Car với
+                        Constructor là Car (String color), khi ấy nếu ta gọi new Car() thì nó sẽ báo lỗi. Default
+                        constructor không được tạo trong trường hợp này, vì đã có khai báo một constructor khác rồi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Constructor Chaining</h3>
+        <div class="text-dark pt-3">
+            <p><strong>Constructor Chaining</strong> is nothing but <strong>calling one Constructor from another</strong>.
+                We will be using <strong><a href="//www.javainterviewpoint.com/java-keyword/">this keyword</a></strong>
+                and <strong><a href="//www.javainterviewpoint.com/java-super-keyword/">super keyword</a></strong> in
+                calling a&nbsp;constructor. <strong>this</strong> can be used to call a constructor within the <strong>
+                    same class</strong> whereas <strong>super</strong> can be used to call the constructor of the
+                <strong>Parent&nbsp;class</strong>.<span id="more-1849"></span></p>
+
+            <p>Cái này đề cập đến việc dùng this và super trong Constructor. Trong constructor ta cần sử dụng this để
+                cho biết rằng việc set giá trị của method này là áp dụng cho các instance variable của object.
+            </p>
+
+            <p>super keyword được sử dụng trong các class con kế thừa từ thằng cha. Khi đó super là chỉ tới thằng
+                cha của nó</p>
+        </div>
+    </div>
+
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">What is the use of a Private Constructors in Java</h3>
+        <div class="text-dark pt-3">
+            <p>Thông thường, Constructor của các class đều được khai báo là public để các lớp khác có thể sử dụng và
+            tạo ra object của class đó. Tuy nhiên, trong một số trường hợp, ta muốn quản lý/ kiểm soát điều này, ta
+                sẽ sử dụng từ khóa private để ngăn chặn việc tạo object từ các class bên ngoài. Việc khởi tạo chỉ
+                được thực hiện bên trong class và ta có thể kiểm soát chúng.</p>
+
+            <p>Khi nào nên sử dụng nó: Khi muốn kiểm soát việc tạo instance cho class</p>
+
+            <p>Ví dụ : Singleton.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Main function in Java</h3>
+        <div class="text-dark pt-3">
+            <p>Hàm main trong hầu hết các ngôn ngữ lập trình là hàm đầu tiên mà chúng ta sẽ làm quen khi học một
+                ngôn ngữ mới. Nó đóng vai trò như một điểm bắt đầu (Entry point), nơi mà quyền điều khiển được
+                chuyển từ hệ thống đến một chương trình máy tính, và tại đó, CPU sẽ truy cập vào một chương trình
+                hay một đoạn code và tiến hành thực thi.</p>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">main có phải là một reserved keyword trong Java không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Không, ta có thể khai báo một hàm main khác, hoặc khai báo một biến với giá trị giống nó. ex
+                         int main = 100;</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Hàm main có cần modifier là static không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Hàm main cần có modifier là static để cho JVM có thể dễ dàng tìm ra nó mà không cần phải chạy
+                    constructor của class. Hàm main mà ko có static modifier sẽ gây ra tính mơ hồ cho JVM bởi vì
+                        những hàm ko phải static cần được gọi thông qua constructor và JVM sẽ không biết phải gọi
+                        constructor của Class nào. </p>
+
+                    <p>Tóm lại luôn phải khai báo static cho nó để đánh dấu nó là entry point cho JVM biết và khởi
+                        động. </p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Tham số String[] args có bao giờ null được không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Không bao giờ. Kể cả khi bạn ko có gì để truyền vào thì đơn giản chỉ cần truyền vào một chuỗi
+                    rỗng là được.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Có thể viết là static public void main thay vì public
+                    static void main được không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Vị trí của modifier như public hay static ko quan trọng nên khai báo  thế nào cũng được.
+                        Nhưng return type thì quan trọng nên luôn phải khai báo void trước main vì lý do đó.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Có thể overload hàm main được không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Có, nhưng vô nghĩa. JVM chỉ gọi hàm main static với tham số truyền vào là String []. Vì vậy
+                        không thể Overload nó với mục đích thay thế entry point mặc định cho ứng dụng</p>
+
+                    <p>JVM luôn xem hàm main với khai báo modifier là static và parameter truyền vào là String
+                        array, nên đâu có cách nào overload được hàm main để biến nó thành một entry point khác đâu.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Có thể dùng tên hàm khác thay vì main không?</h5>
+                <div class="text-dark pt-3">
+                    <p>Không, cũng như cái câu hỏi Overloading ở trên, nó vô nghĩa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="../javaoop/lesson_07_Type_of_Polymorphism_in_Java.html">
+                    Type of polymorphism in Java
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
+                    _NEXT_RESOURCE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>
