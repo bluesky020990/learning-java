@@ -260,8 +260,40 @@
                     <td>Không thể implement 2 method từ 2 interface mà có cùng tên cùng tham số nhưng khác giá trị
                         trả về.</td>
                 </tr>
-
             </table>
+
+            <p>Tóm lại thì ta sẽ nêu ra những khác biệt chính bao gồm</p>
+            <blockquote>
+                <ul>
+                    <li>Interface là một lớp abstract ngầm (implicitly abstract) và nó không thể có bất cứ một thể
+                        hiện (implementation) nào, trong khi abstract class có thể có một class cụ thể.</li>
+
+                    <li>Để implement Interface thì dùng từ khóa implements, trong khi đó, Abstract Class có thể
+                        được extend bằng từ khóa extends.</li>
+
+                    <li>Toàn bộ các biến trong Interface đều là static final, trong khi đó Abstract có thể có các
+                        loại khác (non-static).</li>
+
+                    <li>Method trong interface mặc định đều là public nhưng abstract thì có thể có non-public
+                        method.</li>
+
+                    <li>Interface chỉ có thể extends từ Interface trong khi đó Abstract có thể extends từ class
+                        khác và implement nhiều interface khác. Ở đây khác thêm 1 cái nữa là Interface có thể
+                        extends từ nhiều interface khác, nhưng class thì chỉ extend từ 1 class thôi.</li>
+
+                    <li>Interface là hoàn toàn trừu tượng và ko thể khởi tạo, còn abstract, dù không được khởi tạo
+                        nhưng nó vẫn có thể chạy nếu có một hàm main method. Vì vậy, Abstract có thể có main method
+                    tuy nhiên ta không thê initialize nó.</li>
+
+                </ul>
+            </blockquote>
+
+            <p>Vậy, khi nào nên dùng Abstract, khi nào nên dùng Interface</p>
+
+            <blockquote>
+                ou can use interfaces when you want a full implementation and use abstract classes when you want
+                partial implementation for your design.
+            </blockquote>
         </div>
     </div>
 
@@ -337,7 +369,7 @@
                     Constructor in Java
                 </a>
 
-                <a class="btn btn-default float-lg-right" href="../javabasic/lesson_10_Keywords_in_Class.html">
+                <a class="btn btn-default float-lg-right" href="../javabasic/lesson_09_Keywords_in_Class.html">
                     Some Keywords in Class
                 </a>
             </div>
