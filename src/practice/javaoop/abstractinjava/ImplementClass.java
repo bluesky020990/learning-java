@@ -19,6 +19,16 @@ public class ImplementClass extends AbstractClass {
         System.out.println("This is sleep method implement by class extend");
     }
 
+    @Override
+    String getCounter(String count) {
+        return null;
+    }
+
+    @Override
+    public void showMessage() {
+        super.showMessage();
+    }
+
     public ImplementClass() {
 
     }

@@ -7,7 +7,7 @@ public abstract class AbstractClass {
 
     abstract void sleep();
 
-    abstract int getCounter(int count);
+//    abstract int getCounter(int count);
 
     // cannot implement the function.
 //    abstract String getCounter(int count);

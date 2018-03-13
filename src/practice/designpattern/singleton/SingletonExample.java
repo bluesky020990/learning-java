@@ -74,7 +74,12 @@ public class SingletonExample {
     }
 
 
-//    d. Lazy Holder
+    //    d. Lazy Holder
+    // ban chat cua Lazy Holder la su dung cai Class Loader de dat duoc singleton don gian nhat va hieu qua nhat.
+    // Dieu nay the hien ntn. Khi class LazyHolder duoc nap vao JVM, thi cai bien static final nay cua no se duoc khoi
+    // tao gia tri. Va do do, trong moi truong multithread, cac thread khac van phai cho Class nay duoc load xong, nhung
+    // khi no load xong thi no da co san instance o ben trong no roi.
+
     private static class LazyHolder {
         static final SingletonExample lazyHolderInstance = new SingletonExample();
     }

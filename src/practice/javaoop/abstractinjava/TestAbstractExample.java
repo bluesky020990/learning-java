@@ -18,6 +18,16 @@ public class TestAbstractExample {
             void sleep() {
                 System.out.println("This is override sleep function");
             }
+
+            @Override
+            String getCounter(String count) {
+                return null;
+            }
+
+            @Override
+            public void showMessage() {
+                super.showMessage();
+            }
         };
 
         abstractClass.run();

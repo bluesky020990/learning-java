@@ -202,7 +202,7 @@
                     <li>Interface variable thì phải được khởi tạo ngay tại thời điểm khai báo, nếu ko thì Compiler sẽ
                         báo lỗi. Nói cách khác, ta không thể khai báo một biến int count mà không có giá trị được.</li>
 
-                    <li>Một interface chỉ có thể extend từ 1 interface khác (Và chỉ 1 - đơn thừa kế trong Java).</li>
+                    <li>Một interface có thể extend từ 1 hoặc nhiều interface khác</li>
 
                     <li>Class có thể implement một hoặc nhiều interface</li>
 
@@ -231,6 +231,10 @@
                     <th>Interface</th>
                 </tr>
                 <tr>
+                    <th>IS - A</th>
+                    <th>CAN DO</th>
+                </tr>
+                <tr>
                     <td>có thể có concrete methods (non-abstract, hoặc method có body</td>
                     <td>100% là abstract hết</td>
                 </tr>
@@ -248,7 +252,7 @@
                 </tr>
                 <tr>
                     <td>extends 1 class và implements nhiều interface</td>
-                    <td>chỉ có thể implements 1 và chỉ 1 interface.</td>
+                    <td>Có thể extend 1 hay nhiều interface.</td>
                 </tr>
                 <tr>
                     <td>Không thể implement 2 method từ 2 interface mà có cùng tên cùng tham số nhưng khác giá trị
@@ -260,18 +264,81 @@
             </table>
         </div>
     </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">What is Marker Interface</h3>
+        <div class="text-dark pt-3">
+            <p>A Marker interface is a interface with no variables and methods, in simple words, we can say
+                that&nbsp;<b>empty <a href="//www.javainterviewpoint.com/interface-java/">interface in java</a></b>
+                is called<b> marker interface</b>. <strong><a
+                        href="//www.javainterviewpoint.com/java-serialization-example-tutorial/">Serializable</a></strong>,
+                Cloneable, Remote Interface are some of the examples of Marker Interface. In this article, we will discuss
+                the uses of Marker interface in <strong><a href="https://www.javainterviewpoint.com/category/core-java/">Java</a>
+                </strong>.</p>
+
+            <p>Nói nôm na, Maker Interface là interface mà không có bất cứ variable và method nào. Nhưng nếu nó ko
+                có cái đó thì nó dùng để làm gì???</p>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">What is the use of Marker Interface?</h5>
+                <div class="text-dark pt-3">
+                    <p>When we look closely the marker interface doesn’t have any methods in it, so then comes the
+                        question what is the use of it then? If you look closely&nbsp;Serializable, Cloneable, Remote
+                        Interface it looks like they will&nbsp;<b>indicate something to compiler or JVM.&nbsp;</b>So
+                        if the JVM sees&nbsp;Clonnable it performs some operation to support cloning. Same applies to
+                        the Serializable and other marker interfaces as well.</p>
+
+                    <p>Hiểu một cách đơn giản, tụi này cung cấp một số thông tin thiết yếu đến JVM để thực hiện một số
+                        hoạt động hữu ích</p>
+
+                    <p>Ví dụ như cái Clonnable Interface thì thực hiện một số hoạt động để hỗ trợ Nhân bản - Clone.
+                        Vì vậy, JVM đánh dấu những thằng này và biết rằng tụi class mà implement method này nó dùng
+                        vào mục đích gì.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Why this indication cannot be done using a flag variable?</h5>
+                <div class="text-dark pt-3">
+                    <p>Mục đích của Maker Interface là dùng để đánh dấu, vậy tại sao ta không sử dụng 1 biến flag để
+                    làm thay công việc này?</p>
+
+                    <p>Tất nhiên Flag nó vẫn có thể sử dụng thay thế cho trường hợp này, tuy nhiên việc sử dụng
+                        Maker Interface thì đơn giản hơn và dễ đọc hơn. </p>
+
+                    <p>Tuy nhiên, từ Java 1.5 thì cái thằng này thường ít được dùng cho mục đích này, sau khi Java
+                        giới thiệu một cái feature gọi là Annotation. Annotation là một lựa chọn tốt hơn là dùng
+                        Maker Interface để đánh dấu, vì chú thích thì có nhiều lợi thế hơn một giao diện. Lợi thế ở
+                        đây là code rõ ràng hơn, cách JVM đọc nó cũng dễ dàng hơn.</p>
+                </div>
+            </div>
+
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Some examples of Java Marker Interface</h5>
+                <div class="text-dark pt-3">
+                    <ul>
+                        <li>java.lang.Cloneable</li>
+                        <li>java.util.EventListener</li>
+                        <li>java.io.Serializable</li>
+                        <li>java.rmi.Remote</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
-                    _PREVIOUS_RESOURCE
+                <a class="btn btn-default float-lg-left" href="../javabasic/lesson_08_Constructor_in_Java.html">
+                    Constructor in Java
                 </a>
 
-                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
-                    _NEXT_RESOURCE
+                <a class="btn btn-default float-lg-right" href="../javabasic/lesson_10_Keywords_in_Class.html">
+                    Some Keywords in Class
                 </a>
             </div>
         </div>

@@ -371,6 +371,23 @@
                     </blockquote>
                 </li>
             </ol>
+
+            <blockquote>
+                Sau khi đọc một hồi và hiểu thêm về các chức năng của components trong JVM, thì cái này chính xác nên
+                được hiểu như sau:<br />
+                <br />
+                Khi một class được gọi đến lần đầu, nó sẽ được load vào bởi Class Loader. Bản chất của Class Loader
+                là nó chỉ gọi những class nào cần thiết, nên lúc này ta sẽ khai báo một Class LazyHolder để trì hoãn
+                việc nó load class này lại.<br />
+                <br />
+                Khi phương thức getLazyHolderInstance được gọi, nó mới load cái Class LazyHolder này lên. Lúc này,
+                Class này chưa xuất hiện trong JVM, và khi mà Class Loader đã load nó xong rồi, thì bên trong nó đã
+                init sẵn một static final variable. Và vì vậy lúc này nó ko cần load lại thêm một lần nào nữa.<br />
+                <br />
+                Class loader là xài chung, và các thread chỉ được truy cập đến nó khi mà nó đã init xong. Vì vậy nó
+                giải quyết được vấn đề LazyLoad, vấn đề Double Check của multiple thread bằng 1 cách đơn giản và an
+                toàn nhất. Vì vậy mà nó được xem là giải pháp tốt nhất cho Singleton.
+            </blockquote>
         </div>
     </div>
 

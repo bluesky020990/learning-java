@@ -1,6 +1,6 @@
 package practice.javaoop.abstractinjava;
 
-public interface ChidBInterface {
+public interface ChidBInterface extends ChildAInterface {
 
     void display();
 
