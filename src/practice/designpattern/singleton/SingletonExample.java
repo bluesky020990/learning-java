@@ -3,6 +3,10 @@ package practice.designpattern.singleton;
 public class SingletonExample {
     public static boolean isSingleTonIsCreated = false;
 
+    public void showMessage (){
+        System.out.println("This is singleton !!");
+    }
+
     //1. Khai bao 1 thực thể instance. Thực thể này là duy nhất trong toàn bộ hệ thống.
     private static SingletonExample instance;
     //Tao instance ngay khi vua load Class

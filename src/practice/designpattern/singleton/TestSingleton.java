@@ -8,6 +8,7 @@ public class TestSingleton {
         testLazyLoaderSingletonResult();
         testDoubleCheckSingletonResult();
         testLazyHolderSingletonResult();
+        testEnumSingleTonResult();
     }
 
     public static void testSingletonResult (){
@@ -63,6 +64,11 @@ public class TestSingleton {
         } else {
             System.out.println("Is NOT Unique Instance");
         }
+    }
+
+    public static void testEnumSingleTonResult (){
+        EnumSingleton singleton  = EnumSingleton.INSTANCE;
+        singleton.showMessage();
     }
 
 }

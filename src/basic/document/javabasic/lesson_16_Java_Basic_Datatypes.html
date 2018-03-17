@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Basic Datatypes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Java Basic Datatypes</h1>
+        <div class="lead">
+            <p>Variables are nothing but reserved memory locations to store values. This means that when you create a
+                variable you reserve some space in the memory.<br />
+                <br />
+                Based on the data type of a variable, the operating system allocates memory and decides what can be
+                stored in the reserved memory. Therefore, by assigning different datatypes to variables, you can store
+                integers, decimals, or characters in these variables.<br />
+                <br />
+                There are two data types available in Java:
+            </p>
+
+            <ul>
+                <li>Primitive Datatypes - Kiểu dữ liệu nguyên thủy</li>
+                <li>Reference/Object Datatypes - Kiểu tham chiếu/ kiểu object</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Primitive Datatypes - Kiểu dữ liệu nguyên thủy</h3>
+        <div class="text-dark pt-3">
+            <p>Có 8 kiểu dữ liệu nguyên thủy (Primitive Data type) đó là: boolean, byte, char, short, int, long, float, double.</p>
+
+            <table border="1" cellpadding="5" cellspacing="1" style="border-collapse:collapse">
+                <tbody>
+                <tr>
+                    <th style="text-align:left; width:30%">Kiểu dữ liệu</th>
+                    <th style="text-align:left; width:30%">Giá trị mặc định</th>
+                    <th style="text-align:left">Kích thước</th>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>1 bit</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>'\u0000'</td>
+                    <td>2 byte</td>
+                </tr>
+                <tr>
+                    <td>byte</td>
+                    <td>0</td>
+                    <td>1 byte</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>0</td>
+                    <td>2 byte</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>0</td>
+                    <td>4 byte</td>
+                </tr>
+                <tr>
+                    <td>long</td>
+                    <td>0L</td>
+                    <td>8 byte</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>0.0f</td>
+                    <td>4 byte</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>0.0d</td>
+                    <td>8 byte</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>Hình dưới đây minh họa các kiểu dữ liệu trên</p>
+
+            <img src="../assests/java-primitive-type.gif" class="img-fluid"/>
+
+            <p>Dựa theo kiểu dữ liệu thì nó được chia làm 3 loại: </p>
+
+            <ul>
+                <li>Kiểu login : boolean</li>
+
+                <li>Kiểu số nguyên (integer) : byte, short, char, int, long</li>
+
+                <li>KIểu số thực (real number - kiểu dấu chấm động - floating point) : float, double.</li>
+            </ul>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">byte - 8 bit</h5>
+            <div class="text-dark pt-3">
+                <p>1 byte là 8 bit nằm liền kề nhau trên vùng bộ nhớ máy tính. Java dùng byte để đặt tên cho kiểu số
+                    nguyên có phạm vi nhỏ (từ -128 : 127)</p>
+
+                <p>Ở đây ta sẽ ngạc nhiên vì sau lại là -128  đến 127. Đơn giản vì ntn </p>
+
+                <p>Java sử dụng 7 bit ở sau để biễu diễn các số từ 0 - 127</p>
+
+                <p>Riêng bit đầu tiên, nó quy ước 0 --> là dấu +, 1 là dấu -. Vì vậy trong trường hợp này, số 0 có 2 cách
+                    để biểu diễn như sau</p>
+
+                <blockquote>
+                    1 _ 0 _ 0 _ 0 _ 0 _ 0 _ 0 _ 0 <br/>
+                    = - 0 0 0 0 0 0 0 0
+                    <br/>
+                    <br/>
+                    <br/>
+                    0 _ 0 _ 0 _ 0 _ 0 _ 0 _ 0 _ 0<br/>
+                    = + 0 0 0 0 0 0 0 0
+                </blockquote>
+
+                <p>Do đó, nó xem 1 0 0 0 0 0 0 0 là giá trị nhỏ nhất của kiểu dữ liệu byte tương ứng với -128</p>
+
+                <p>Giá trị mặc định của nó là 0</p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">boolean - 1 bit</h5>
+            <div class="text-dark pt-3">
+                <p>Boolean là kiểu dữ liệu đơn giản nhất, chỉ chiếm 1 bit và có 2 giá trị là true / false.</p>
+
+                <p>Giá trị mặc định của nó là false</p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">char - 2 byte</h5>
+            <div class="text-dark pt-3">
+                <p>Mặc dù char là 4 kí tự đầu tiên của "Character" nhưng kiểu char trong Java sử dụng để lưu trữ các số
+                    nguyên không âm (Non-negative integers). Nó có kích thước 2 byte. Nó cũng được dùng để đại diện cho một kí tự
+                    Unicode, vì bản chất của mỗi kí tự đều là 1 con số cụ thể - đc xem là mã kí tự.
+                </p>
+
+                <p>Vì nó là kiểu số ko âm, kích thước 2 byte nên nó biểu diễn giá trị từ 0 đến 2 ^ 16 - 1 = [0, 65535]</p>
+
+                <p>Giá trị nhỏ nhất là '\u0000' tương đương với 0</p>
+
+                <p>Giá trị lớn nhất là '\uffff' tương đương với 65535</p>
+
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">short - 2 byte</h5>
+            <div class="text-dark pt-3">
+                <p>Short là kiểu dữ liệu để biểu diễn một số nguyên 2 byte (16 bit) bao gồm cả số nguyên âm.</p>
+
+                <p>Giá trị nhỏ nhất của nó là - 2 ^ 15 và giá trị lớn nhất là 2 ^ 15 - 1 [-32760, 32767]</p>
+
+                <p>Giá trị mặc định là 0.</p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">int - 4 byte</h5>
+            <div class="text-dark pt-3">
+                <p>kiểu dữ liệu int được dùng để biểu diễn một số nguyên có kích thước 4 byte (32 bit).</p>
+
+                <p>Giá trị nhỏ nhất -2 ^ 31, giá trị lớn nhất 2 ^ 31 - 1</p>
+
+                <p>Giá trị mặc định là 0.</p>
+
+                <p>Trong java, kiểu dữ liệu int được coi là kiểu dữ liệu mặc định cho các số nguyên. Nếu khai báo 100,
+                    thì Java sẽ dùng một vùng bộ nhớ 4 byte để lưu trữ. Còn nếu muốn dùng bộ nhớ 8 byte để lưu trữ,
+                thì phải ghi là 100l (kiểu long - 8 byte)</p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">long - 8 byte - 64 bite</h5>
+            <div class="text-dark pt-3">
+                <p>Kiểu dữ liệu long dùng để biểu diễn các số nguyên có kích thước 8 byte (64 bit)</p>
+
+                <p>Giá trị nhỏ nhất -2 ^ 63</p>
+
+                <p>Giá trị lớn nhất 2 ^ 63 -1 </p>
+
+                <p>Giá trị mặc định là 0.</p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">float - 4 byte - 32 bit</h5>
+            <div class="text-dark pt-3">
+                <p>Kiểu dữ liệu float được sử dụng để biểu diễn một số thực (real number) có kích thước 4 byte (32 bit). </p>
+
+                <p>Giá trị nhỏ nhất : -3.4028235 x 10^38</p>
+
+                <p>Giá trị nhỏ nhất : 3.4028235 x 10^38</p>
+
+                <p>Giá trị mặc định : 0.0f </p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">double - 8 byte - 64 bit</h5>
+            <div class="text-dark pt-3">
+                <p>Kiểu dữ liệu double được sử dụng để biểu diễn một số thực (real number) có kích thước 8 byte (64 bit). Nó là kiểu mặc định cho các kiểu số thực.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Kiểu dữ liệu tham chiếu.</h3>
+        <div class="text-dark pt-3">
+            <p>Gọi nó là kiểu tham chiếu/ kiểu object, bỏi vì nó là các đối tượng được tạo ra bởi constructor của lớp</p>
+
+            <p>Nó được sử dụng để truy cập đến đối tượng.</p>
+
+            <p>Đối với kiểu dữ liệu nguyên thủy, thì khi dùng toán tử so sành =, nó so sánh 2 giá trị </p>
+
+            <p>Đối với kiểu dữ liệu tham chiếu, khi dùng toán tử so sánh =, nó so sánh 2 object. Vì vậy, có thể có 2
+                object cùng giá trị nhưng khi so sánh lại cho ra kết quả false là vì vậy.</p>
+
+            <p>Kiểu tham chiếu thường dùng nhất là String.</p>
+
+            <p>Giá trị mặc định của nó là null.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
+                    _PREVIOUS_RESOURCE
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
+                    _NEXT_RESOURCE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>
