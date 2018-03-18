@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Access Modifier in Java</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,206 +10,146 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-
-<main role="main" class="container">
-    <div class="introduction">
-        <h1>Access Modifier in Java</h1>
-        <div class="lead">
-            <p>Ở lesson này ta sẽ đi sâu vào tìm hiểu phần Access Modifier.</p>
-
-            <p>Trong Java, có 4 cấp độ access bao gồm</p>
-
-            <ul>
-                <li><strong>private</strong> - Chỉ thuộc class đó, các class con ko được truy xuất</li>
-                <li><strong>protected</strong> - Chỉ class đó và các class trong cùng packet mới có thể thấy</li>
-                <li><strong>public</strong> - Khai báo này thì tất cả đều thấy các properties và method.</li>
-                <li><strong>default</strong> - Nằm giữa protected và public :</li>
-            </ul>
-
-            <table class="table table-bordered">
-                <tbody><tr>
-                    <th style="width:20%;">Access Modifier</th>
-                    <th style="width:20%;">Bên trong lớp</th>
-                    <th style="width:20%;">Bên trong package</th>
-                    <th style="width:20%;">Bên ngoài package chỉ bởi lớp con</th>
-                    <th>Bên ngoài package</th>
-                </tr>
-                <tr>
-                    <td>private</td>
-                    <td>C</td>
-                    <td>K</td>
-                    <td>K</td>
-                    <td>K</td>
-                </tr>
-                <tr>
-                    <td>default</td>
-                    <td>C</td>
-                    <td>C</td>
-                    <td>K</td>
-                    <td>K</td>
-                </tr>
-                <tr>
-                    <td>protected</td>
-                    <td>C</td>
-                    <td>C</td>
-                    <td>C</td>
-                    <td>K</td>
-                </tr>
-                <tr>
-                    <td>public</td>
-                    <td>C</td>
-                    <td>C</td>
-                    <td>C</td>
-                    <td>C</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Private Access Modifier in Java Inheritance</h3>
-        <div class="text-dark pt-3">
-            <p>A sub class can take <strong>all the attributes</strong> of a <strong>super</strong> class which is
-                having <strong>public</strong> and <strong>protected</strong> access, it cannot access a <strong>
-                    private</strong> members&nbsp;of the <strong>parent</strong> class, as the private variable
-                belongs to that class itself. In those cases the we can access those <strong>private members</strong>
-                of the parent class using a <strong>public access&nbsp;methods</strong> <strong>(getters &amp;
-                    setters)</strong>. Lets change the <strong>Cycle</strong> class to have <strong>private
-                    members</strong>.</p>
+    <div class="jumbotron p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Access Modifier in Java</h1>
+            <div class="lead">
+                <p>Ở lesson này ta sẽ đi sâu vào tìm hiểu phần Access Modifier.</p>
 
-            <p>Subclass có thể kế thừa toàn bộ thuộc tính của super class mà được khai báo là public và protected.
-                Tuy nhiên những private properties thì nó không kế thừa được.</p>
+                <p>Trong Java, có 4 cấp độ access bao gồm</p>
 
-            <p>Nhưng thường thì chúng ta có thể sử dụng các getter setter để có thể truy cập vào các thuộc tính bên
-                trong nó.</p>
-        </div>
-    </div>
+                <ul>
+                    <li><strong>private</strong> - Chỉ thuộc class đó, các class con ko được truy xuất</li>
+                    <li><strong>protected</strong> - Chỉ class đó và các class trong cùng packet mới có thể thấy</li>
+                    <li><strong>public</strong> - Khai báo này thì tất cả đều thấy các properties và method.</li>
+                    <li><strong>default</strong> - Nằm giữa protected và public :</li>
+                </ul>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Use of Java Inheritance – Protected Access Modifier</h3>
-        <div class="text-dark pt-3">
-            <p>A <strong>protected member</strong> of the class in <strong>different package</strong> can be accessed
-                by the class in <strong>other package</strong> only through <strong>inheritance</strong>.</p>
-
-            <p>Khai báo protected cho phép các class trong các packet khác có thể truy cập bởi các package khác. Xem
-                ví dụ bên dưới:</p>
-
-
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_11_Inheritance_in_Java.html">
-                    Inheritance in Java
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="lesson_12_Polymorphism_in_Java.html">
-                    Polymorphism in Java - Overloading and Overriding.
-                </a>
+                <table class="table table-bordered">
+                    <tbody><tr>
+                        <th style="width:20%;">Access Modifier</th>
+                        <th style="width:20%;">Bên trong lớp</th>
+                        <th style="width:20%;">Bên trong package</th>
+                        <th style="width:20%;">Bên ngoài package chỉ bởi lớp con</th>
+                        <th>Bên ngoài package</th>
+                    </tr>
+                    <tr>
+                        <td>private</td>
+                        <td>C</td>
+                        <td>K</td>
+                        <td>K</td>
+                        <td>K</td>
+                    </tr>
+                    <tr>
+                        <td>default</td>
+                        <td>C</td>
+                        <td>C</td>
+                        <td>K</td>
+                        <td>K</td>
+                    </tr>
+                    <tr>
+                        <td>protected</td>
+                        <td>C</td>
+                        <td>C</td>
+                        <td>C</td>
+                        <td>K</td>
+                    </tr>
+                    <tr>
+                        <td>public</td>
+                        <td>C</td>
+                        <td>C</td>
+                        <td>C</td>
+                        <td>C</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 
-    <br class="clearfix"/>
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Private Access Modifier in Java Inheritance</h3>
+                    <div class="text-dark pt-3">
+                        <p>A sub class can take <strong>all the attributes</strong> of a <strong>super</strong> class which is
+                            having <strong>public</strong> and <strong>protected</strong> access, it cannot access a <strong>
+                                private</strong> members&nbsp;of the <strong>parent</strong> class, as the private variable
+                            belongs to that class itself. In those cases the we can access those <strong>private members</strong>
+                            of the parent class using a <strong>public access&nbsp;methods</strong> <strong>(getters &amp;
+                                setters)</strong>. Lets change the <strong>Cycle</strong> class to have <strong>private
+                                members</strong>.</p>
 
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
+                        <p>Subclass có thể kế thừa toàn bộ thuộc tính của super class mà được khai báo là public và protected.
+                            Tuy nhiên những private properties thì nó không kế thừa được.</p>
+
+                        <p>Nhưng thường thì chúng ta có thể sử dụng các getter setter để có thể truy cập vào các thuộc tính bên
+                            trong nó.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Use of Java Inheritance – Protected Access Modifier</h3>
+                    <div class="text-dark pt-3">
+                        <p>A <strong>protected member</strong> of the class in <strong>different package</strong> can be accessed
+                            by the class in <strong>other package</strong> only through <strong>inheritance</strong>.</p>
+
+                        <p>Khai báo protected cho phép các class trong các packet khác có thể truy cập bởi các package khác. Xem
+                            ví dụ bên dưới:</p>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 mb-3 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
     </div>
-</footer>
+</main>
+
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Keyword in Class</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,660 +10,656 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
-</nav>
+
+    <div class="jumbotron p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Keywords in Class </h1>
+            <div class="lead">
+                <p>Ở bài này chúng ta sẽ tìm hiểu một vài keyword được dùng phổ biến trong Class bao gồm</p>
+
+                <ul>
+                    <li>this </li>
+                    <li>super</li>
+                    <li>final</li>
+                    <li>static</li>
+                    <li>transient </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <main role="main" class="container">
-    <div class="introduction">
-        <h1>Keywords in Class </h1>
-        <div class="lead">
-            <p>Ở bài này chúng ta sẽ tìm hiểu một vài keyword được dùng phổ biến trong Class bao gồm</p>
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Java this keyword</h3>
+                    <div class="text-dark pt-3">
+                        <p>this keyword thường được dùng để tham chiếu đến thực thể hiện tại hoặc method mà nó đang sử dụng. Tóm
+                            lại khi ta xài this. thì tức là ta đang làm việc với method/ properties của chính đối tượng đó.</p>
 
-            <ul>
-                <li>this </li>
-                <li>super</li>
-                <li>final</li>
-                <li>static</li>
-                <li>transient </li>
-            </ul>
-        </div>
-    </div>
+                        <p>Những cách sử dụng của this</p>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java this keyword</h3>
-        <div class="text-dark pt-3">
-            <p>this keyword thường được dùng để tham chiếu đến thực thể hiện tại hoặc method mà nó đang sử dụng. Tóm
-            lại khi ta xài this. thì tức là ta đang làm việc với method/ properties của chính đối tượng đó.</p>
+                        <ul>
+                            <li>Used to refer the current class instance variable</li>
+                            <li>Used to invoke current class default constructor</li>
+                            <li>Used to call Current class methods</li>
+                            <li>Can be used to pass current Java instance as parameter</li>
+                            <li>Used to return current Java instance</li>
+                        </ul>
+                    </div>
 
-            <p>Những cách sử dụng của this</p>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Used to refer the current class instance variable</h5>
+                        <div class="text-dark pt-3">
+                            <p>Cái này xài nhiều rồi.</p>
+                        </div>
+                    </div>
 
-            <ul>
-                <li>Used to refer the current class instance variable</li>
-                <li>Used to invoke current class default constructor</li>
-                <li>Used to call Current class methods</li>
-                <li>Can be used to pass current Java instance as parameter</li>
-                <li>Used to return current Java instance</li>
-            </ul>
-        </div>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Used to invoke current class default constructor</h5>
+                        <div class="text-dark pt-3">
+                            <p>Xem ví dụ</p>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Used to refer the current class instance variable</h5>
-            <div class="text-dark pt-3">
-                <p>Cái này xài nhiều rồi.</p>
-            </div>
-        </div>
+                            <blockquote>
+                                class Student {<br />
+                                &nbsp; &nbsp; int age;<br />
+                                &nbsp; &nbsp; String name;<br />
+                                <br />
+                                &nbsp; &nbsp; //Default Constructor<br />
+                                &nbsp; &nbsp; Student() {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Calling default Constructor");<br />
+                                &nbsp; &nbsp; }<br />
+                                <br />
+                                &nbsp; &nbsp; //Parameterized Constructor<br />
+                                &nbsp; &nbsp; Student(int age,String name) {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; this();<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; this.age =age;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; this.name=name;<br />
+                                &nbsp; &nbsp; }<br />
+                                <br />
+                                &nbsp; &nbsp; public void disp() {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Name : "+name+" Age : "+age);<br />
+                                &nbsp; &nbsp; }<br />
+                                }<br />
+                            </blockquote>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Used to invoke current class default constructor</h5>
-            <div class="text-dark pt-3">
-                <p>Xem ví dụ</p>
+                            <p>Lưu ý là cái this(); kia phải được gọi ở đầu constructor, chứ ko phải là gọi cuối đâu nhé.</p>
+                        </div>
+                    </div>
 
-                <blockquote>
-                    class Student {<br />
-                    &nbsp; &nbsp; int age;<br />
-                    &nbsp; &nbsp; String name;<br />
-                    <br />
-                    &nbsp; &nbsp; //Default Constructor<br />
-                    &nbsp; &nbsp; Student() {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Calling default Constructor");<br />
-                    &nbsp; &nbsp; }<br />
-                    <br />
-                    &nbsp; &nbsp; //Parameterized Constructor<br />
-                    &nbsp; &nbsp; Student(int age,String name) {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; this();<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; this.age =age;<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; this.name=name;<br />
-                    &nbsp; &nbsp; }<br />
-                    <br />
-                    &nbsp; &nbsp; public void disp() {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Name : "+name+" Age : "+age);<br />
-                    &nbsp; &nbsp; }<br />
-                    }<br />
-                </blockquote>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Used to call Current class methods</h5>
+                        <div class="text-dark pt-3">
+                            <p>Xem ví dụ</p>
 
-                <p>Lưu ý là cái this(); kia phải được gọi ở đầu constructor, chứ ko phải là gọi cuối đâu nhé.</p>
-            </div>
-        </div>
+                            <blockquote>
+                                class Student {<br />
+                                &nbsp; &nbsp; public void disp() {<br />
+                                &nbsp; &nbsp; this.disp1(this);<br />
+                                &nbsp; &nbsp; System.out.println("inside disp()");<br />
+                                &nbsp; &nbsp; }<br />
+                                <br />
+                                &nbsp; &nbsp; public void disp1(Student s) {<br />
+                                &nbsp; &nbsp;  &nbsp; &nbsp; System.out.println("inside disp1()");<br />
+                                &nbsp; &nbsp;  &nbsp; &nbsp; s.disp2();<br />
+                                &nbsp; &nbsp; }<br />
+                                &nbsp; &nbsp; public void disp2() {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("inside disp2()");<br />
+                                &nbsp; &nbsp; }<br />
+                                }<br />
+                            </blockquote>
+                        </div>
+                    </div>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Used to call Current class methods</h5>
-            <div class="text-dark pt-3">
-                <p>Xem ví dụ</p>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Used to return current Java instance</h5>
+                        <div class="text-dark pt-3">
+                            <p>Xem ví dụ</p>
 
-                <blockquote>
-                    class Student {<br />
-                    &nbsp; &nbsp; public void disp() {<br />
-                    &nbsp; &nbsp; this.disp1(this);<br />
-                    &nbsp; &nbsp; System.out.println("inside disp()");<br />
-                    &nbsp; &nbsp; }<br />
-                    <br />
-                    &nbsp; &nbsp; public void disp1(Student s) {<br />
-                    &nbsp; &nbsp;  &nbsp; &nbsp; System.out.println("inside disp1()");<br />
-                    &nbsp; &nbsp;  &nbsp; &nbsp; s.disp2();<br />
-                    &nbsp; &nbsp; }<br />
-                    &nbsp; &nbsp; public void disp2() {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("inside disp2()");<br />
-                    &nbsp; &nbsp; }<br />
-                    }<br />
-                </blockquote>
-            </div>
-        </div>
+                            <blockquote>
+                                class Student {<br />
+                                &nbsp; &nbsp; Student getStudent() {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; return this;<br />
+                                &nbsp; &nbsp; }<br />
+                                <br />
+                                &nbsp; &nbsp; public void disp() {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Calling disp() method");<br />
+                                &nbsp; &nbsp; }<br />
+                                }<br />
+                            </blockquote>
+                        </div>
+                    </div>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Used to return current Java instance</h5>
-            <div class="text-dark pt-3">
-                <p>Xem ví dụ</p>
+                </div>
 
-                <blockquote>
-                    class Student {<br />
-                    &nbsp; &nbsp; Student getStudent() {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; return this;<br />
-                    &nbsp; &nbsp; }<br />
-                    <br />
-                    &nbsp; &nbsp; public void disp() {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Calling disp() method");<br />
-                    &nbsp; &nbsp; }<br />
-                    }<br />
-                </blockquote>
-            </div>
-        </div>
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Java super keyword</h3>
+                    <div class="text-dark pt-3">
+                        <p>Nếu this là chỉ đối tượng hiện tại, thì super lại chỉ tới thằng cha mà nó đang extends.</p>
 
-    </div>
+                        <ul>
+                            <li>super() invokes the constructor of the parent class.</li>
+                            <li>super.variable_name refers to the variable in the parent class.</li>
+                            <li>super.method_name refers to the method of the parent class.</li>
+                        </ul>
+                    </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java super keyword</h3>
-        <div class="text-dark pt-3">
-            <p>Nếu this là chỉ đối tượng hiện tại, thì super lại chỉ tới thằng cha mà nó đang extends.</p>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">super() invokes the constructor of the parent class</h5>
+                        <div class="text-dark pt-3">
+                            <p>
+                                super() will invoke the constructor of the parent class. Before getting into that we will go
+                                through the default behavior of the compiler. Even when you don’t add super() keyword the
+                                compiler will add one and will invoke the Parent Class constructor.
+                            </p>
 
-            <ul>
-                <li>super() invokes the constructor of the parent class.</li>
-                <li>super.variable_name refers to the variable in the parent class.</li>
-                <li>super.method_name refers to the method of the parent class.</li>
-            </ul>
-        </div>
+                            <p>Một điểm khá thú vị ở đây, nếu như mà ko khai báo 1 constructor nào cả, thì nó sẽ lấy constructor
+                                của thằng cha làm constructor của thằng con.</p>
+                        </div>
+                    </div>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">super() invokes the constructor of the parent class</h5>
-            <div class="text-dark pt-3">
-                <p>
-                    super() will invoke the constructor of the parent class. Before getting into that we will go
-                    through the default behavior of the compiler. Even when you don’t add super() keyword the
-                    compiler will add one and will invoke the Parent Class constructor.
-                </p>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">super.variable_name refers to the variable in the parent class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Nếu this. chỉ đến properties của thằng con thì cái này ngược lại.</p>
+                        </div>
+                    </div>
 
-                <p>Một điểm khá thú vị ở đây, nếu như mà ko khai báo 1 constructor nào cả, thì nó sẽ lấy constructor
-                của thằng cha làm constructor của thằng con.</p>
-            </div>
-        </div>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">super.method_nae refers to the method of the parent class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Tương tự như cái kia, thằng con có thể gọi phương thức của thằng cha bằng từ khóa này. </p>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">super.variable_name refers to the variable in the parent class</h5>
-            <div class="text-dark pt-3">
-                <p>Nếu this. chỉ đến properties của thằng con thì cái này ngược lại.</p>
-            </div>
-        </div>
+                            <p>Trường hợp thằng con override lại cái phương thức này, thì lần sau gọi, nó sẽ là phương thức của
+                                thằng con</p>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">super.method_nae refers to the method of the parent class</h5>
-            <div class="text-dark pt-3">
-                <p>Tương tự như cái kia, thằng con có thể gọi phương thức của thằng cha bằng từ khóa này. </p>
-
-                <p>Trường hợp thằng con override lại cái phương thức này, thì lần sau gọi, nó sẽ là phương thức của
-                    thằng con</p>
-
-                <p>Tuy nhiên, thằng con có thể gọi phương thức của thằng cha, và bổ sung thêm phương thức của chính
-                    nó bằng cách sử dụng super.commonFunction() trong override function của thằng cha.</p>
-            </div>
-        </div>
-    </div>
+                            <p>Tuy nhiên, thằng con có thể gọi phương thức của thằng cha, và bổ sung thêm phương thức của chính
+                                nó bằng cách sử dụng super.commonFunction() trong override function của thằng cha.</p>
+                        </div>
+                    </div>
+                </div>
 
 
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Final Keyword in Java</h3>
-        <div class="text-dark pt-3">
-            <p>Final là một từ khóa khá thú vị trong Java. Nó đúng như cái tên của nó, final - cuối cùng. Khi một
-                class được khai báo final, - class cuối cùng = nó ko thể có class nào extends nó nữa. Cuối rồi mà </p>
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Final Keyword in Java</h3>
+                    <div class="text-dark pt-3">
+                        <p>Final là một từ khóa khá thú vị trong Java. Nó đúng như cái tên của nó, final - cuối cùng. Khi một
+                            class được khai báo final, - class cuối cùng = nó ko thể có class nào extends nó nữa. Cuối rồi mà </p>
 
-            <p>Khi một biến được khai báo final, thì nó sẽ ko thể bị thay đổi giá trị, biến cuối cùng, sao đổi được.</p>
+                        <p>Khi một biến được khai báo final, thì nó sẽ ko thể bị thay đổi giá trị, biến cuối cùng, sao đổi được.</p>
 
-            <p>Khi một method được khai báo final, thì nó ko thể bị override được</p>
+                        <p>Khi một method được khai báo final, thì nó ko thể bị override được</p>
 
-            <p>Sau đây ta đi vào chi tiết nhé.</p>
-        </div>
-    </div>
+                        <p>Sau đây ta đi vào chi tiết nhé.</p>
+                    </div>
+                </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java final variable</h3>
-        <div class="text-dark pt-3">
-            <p>A <strong>final variable</strong> is a variable&nbsp;whose value <strong>cannot</strong> be changed at
-                anytime once assigned, it remains as a constant forever. Lets look into the below code</p>
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Java final variable</h3>
+                    <div class="text-dark pt-3">
+                        <p>A <strong>final variable</strong> is a variable&nbsp;whose value <strong>cannot</strong> be changed at
+                            anytime once assigned, it remains as a constant forever. Lets look into the below code</p>
 
-            <p>Một biến được khai báo là final, thì cũng như hằng số, nó sẽ vĩnh viễn ko thể thay đổi giá trị bằng
-                phép gán được. Ở đây chúng ta ghi nhớ là KHÔNG THỂ THAY ĐỔI GIÁ TRỊ BẰNG PHÉP GÁN nhé. Vì sao nói
-                như vậy, khi nó được assign lần đầu, nó sẽ được init giá trị là 1 vùng nhớ. Và giá trị của biến này
-                là địa chỉ vùng nhớ đó. Nếu nó được init, thì nó sẽ gắn bó với cái địa chỉ đó vĩnh viễn, và ta không
-            thể thay đổi địa chỉ mà nó tham chiếu đến đó được</p>
+                        <p>Một biến được khai báo là final, thì cũng như hằng số, nó sẽ vĩnh viễn ko thể thay đổi giá trị bằng
+                            phép gán được. Ở đây chúng ta ghi nhớ là KHÔNG THỂ THAY ĐỔI GIÁ TRỊ BẰNG PHÉP GÁN nhé. Vì sao nói
+                            như vậy, khi nó được assign lần đầu, nó sẽ được init giá trị là 1 vùng nhớ. Và giá trị của biến này
+                            là địa chỉ vùng nhớ đó. Nếu nó được init, thì nó sẽ gắn bó với cái địa chỉ đó vĩnh viễn, và ta không
+                            thể thay đổi địa chỉ mà nó tham chiếu đến đó được</p>
 
-            <p>Tuy nhiên, giá trị của các thuộc tính bên trong có thể thay đổi ko?</p>
+                        <p>Tuy nhiên, giá trị của các thuộc tính bên trong có thể thay đổi ko?</p>
 
-            <blockquote>Tất nhiên là có, bằng với việc sử dụng hàm set, get, ta có thể thay đổi giá trị của các biến
-                nằm trong vùng nhớ mà nó đang tham chiếu tới.
-                .</blockquote>
+                        <blockquote>Tất nhiên là có, bằng với việc sử dụng hàm set, get, ta có thể thay đổi giá trị của các biến
+                            nằm trong vùng nhớ mà nó đang tham chiếu tới.
+                            .</blockquote>
 
 
-            <p>Can we have a uninitialized  final variable ?</p>
+                        <p>Can we have a uninitialized  final variable ?</p>
 
-            <blockquote>Không, chắc chắn chúng ta phải init giá trị cho nó ngay khi khởi tạo. Nếu ko nó sẽ
-                báo lỗi.</blockquote>
+                        <blockquote>Không, chắc chắn chúng ta phải init giá trị cho nó ngay khi khởi tạo. Nếu ko nó sẽ
+                            báo lỗi.</blockquote>
 
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">What is a blank final variable ?</h5>
-                <div class="text-dark pt-3">
-                    <p>A final variable which is not initialized at the time of declaration is known as blank final variable.
-                        We must initialize a <strong>blank final variable in the constructor</strong> else it will throw
-                        compilation error. Lets now change the above to initialize the <strong>“SPEED”</strong> variable through
-                        a constructor.</p>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">What is a blank final variable ?</h5>
+                            <div class="text-dark pt-3">
+                                <p>A final variable which is not initialized at the time of declaration is known as blank final variable.
+                                    We must initialize a <strong>blank final variable in the constructor</strong> else it will throw
+                                    compilation error. Lets now change the above to initialize the <strong>“SPEED”</strong> variable through
+                                    a constructor.</p>
 
-                    <p>Một blank final variable là một biến mà không được init giá trị tại thời điểm khai báo. Chúng ta chỉ
-                        có thể init một blank final trong một constructor của class.</p>
+                                <p>Một blank final variable là một biến mà không được init giá trị tại thời điểm khai báo. Chúng ta chỉ
+                                    có thể init một blank final trong một constructor của class.</p>
 
-                    <p>Xem ví dụ</p>
+                                <p>Xem ví dụ</p>
 
-                    <blockquote>
-                        public class Travel {<br />
-                        &nbsp; &nbsp; final int SPEED;<br />
-                        &nbsp; &nbsp; Travel() {<br />
-                        &nbsp; &nbsp; &nbsp; &nbsp; SPEED = 60; <br />
-                        &nbsp; &nbsp; }<br />
-                        &nbsp; &nbsp; public static void main(String args[]) {<br />
-                        &nbsp; &nbsp; &nbsp; &nbsp; Travel t=new  Travel();<br />
-                        &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Travelling Speed is :"+t.SPEED);<br />
-                        &nbsp; &nbsp; }<br />
-                        }<br />
-                    </blockquote>
+                                <blockquote>
+                                    public class Travel {<br />
+                                    &nbsp; &nbsp; final int SPEED;<br />
+                                    &nbsp; &nbsp; Travel() {<br />
+                                    &nbsp; &nbsp; &nbsp; &nbsp; SPEED = 60; <br />
+                                    &nbsp; &nbsp; }<br />
+                                    &nbsp; &nbsp; public static void main(String args[]) {<br />
+                                    &nbsp; &nbsp; &nbsp; &nbsp; Travel t=new  Travel();<br />
+                                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Travelling Speed is :"+t.SPEED);<br />
+                                    &nbsp; &nbsp; }<br />
+                                    }<br />
+                                </blockquote>
 
-                    <p>Trong ví dụ này, ta trì hoãn việc init giá trị của SPEED bằng việc đưa nó vào trong constructor.</p>
+                                <p>Trong ví dụ này, ta trì hoãn việc init giá trị của SPEED bằng việc đưa nó vào trong constructor.</p>
 
-                    <p>Vậy, khi nào chúng ta nên sử dụng blank final variable</p>
+                                <p>Vậy, khi nào chúng ta nên sử dụng blank final variable</p>
 
-                    <blockquote>Khi ta muốn khai báo một giá trị kiểu như hằng số của object, nhưng ko biết chính
-                        xác là nó sẽ là bao nhiêu. Ví dụ ta có 1 danh sách các nhân viên, ta sẽ đưa việc init public
-                        final long employeeId vào trong constructor để tạo ra một object mới. Và giá trị này sẽ đại
-                        diện cho object đó vĩnh viễn mà ko bị thay đổi bởi các đối tượng / phương thức khác. Tóm lại,
-                        anh có 1 giá trị của object mà ko muốn thay đổi, và anh chưa biết chính xác nó là bao
-                        nhiêu, thì sử dụng cái này.</blockquote>
+                                <blockquote>Khi ta muốn khai báo một giá trị kiểu như hằng số của object, nhưng ko biết chính
+                                    xác là nó sẽ là bao nhiêu. Ví dụ ta có 1 danh sách các nhân viên, ta sẽ đưa việc init public
+                                    final long employeeId vào trong constructor để tạo ra một object mới. Và giá trị này sẽ đại
+                                    diện cho object đó vĩnh viễn mà ko bị thay đổi bởi các đối tượng / phương thức khác. Tóm lại,
+                                    anh có 1 giá trị của object mà ko muốn thay đổi, và anh chưa biết chính xác nó là bao
+                                    nhiêu, thì sử dụng cái này.</blockquote>
 
-                    <p>Còn về STATIC blank final variable</p>
+                                <p>Còn về STATIC blank final variable</p>
 
-                    <blockquote>
-                        <p>A static final variable is a variable which is also not initialized at the time of declaration. It
-                            can be initialized only in static block.</p>
+                                <blockquote>
+                                    <p>A static final variable is a variable which is also not initialized at the time of declaration. It
+                                        can be initialized only in static block.</p>
 
-                        <p>Static final variable là một biến mà nó không được initialized tại thời điểm khai báo, thay vào
-                            đó nó có thể được khởi tạo trong một static block. Xem ví dụ TestFinalKeyword để biết thêm nhé.
-                        </p>
+                                    <p>Static final variable là một biến mà nó không được initialized tại thời điểm khai báo, thay vào
+                                        đó nó có thể được khởi tạo trong một static block. Xem ví dụ TestFinalKeyword để biết thêm nhé.
+                                    </p>
 
-                        <p>Lưu ý cái này khác với khái niệm Lazy holder của Singleton nhé.</p>
-                    </blockquote>
+                                    <p>Lưu ý cái này khác với khái niệm Lazy holder của Singleton nhé.</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java final method</h5>
+                        <div class="text-dark pt-3">
+                            <p>
+                                When you declare a method as final, then it is called as final method. A final method cannot be
+                                overridden.
+                            </p>
+
+                            <p>Một final method thì ko thể bị override đc. Tuy nhiên nó vẫn overload bt nhé.</p>
+
+                            <p>Can a final method be inherited </p>
+
+                            <blockquote>
+                                Tất nhiên, nó vẫn được thừa kế từ các thằng con. Trong thừa kế, nó chả quan trọng cái final hay gì
+                                đâu, mà nó chỉ nói lên rằng, thằng con nó cũng có các method và properties giống / của thằng cha mà
+                                thôi.<br />
+                                <br />
+                                Tất nhiên là thằng con ko thể override lại method kia được đâu nhé.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java final class</h5>
+                        <div class="text-dark pt-3">
+                            <p>A final class cannot be extended(cannot be subclassed), lets take a look into the below example</p>
+
+                            <blockquote>Final class thì ko thể nào extends được rồi. Đã cuối mà còn có thằng cuối hơn
+                                thì sao gọi là final được.</blockquote>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Use of static Keyword in Java</h3>
+                    <div class="text-dark pt-3">
+                        <p>The <strong>static</strong> keyword belongs to the class rather than <strong>instance</strong> of the
+                            class. We can simply say that the members belongs to the class itself. As a result, you can access
+                            the static member without creating the instance for the class. <span id="more-1675"></span>The
+                            <strong>static</strong> keyword can be applied to&nbsp;<strong>variables, methods, blocks and nested class</strong>. Lets see them one by one.</p>
+
+                        <blockquote>
+                            Khi ta nhắc đến static, ta nghĩ ngay đến class thay vì object (instance of class). Hay còn gọi cách
+                            khác, đó là những thành viên của riêng class. Và vì lý do đó, chúng ta có thể truy cập đến các static
+                            member mà ko cần phải create instance of class.<br />
+                            <br />
+                            Static keyword thì có thể áp dụng cho variable, methods, blocks và nested class.
+                        </blockquote>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java static variable</h5>
+                        <div class="text-dark pt-3">
+                            <p>If we declare a variable with “<strong>static</strong>” keyword, then it is called as
+                                <strong>static variable</strong>. For example</p>
+
+                            <p>All the instance of the class share the same copy of the variable, a static variable can be
+                                accessed directly by
+                                calling&nbsp;<strong>“&lt;&lt;ClassName&gt;&gt;.&lt;&lt;VariableName&gt;&gt;
+                                    ”&nbsp;</strong>without need&nbsp;to create instance for the class.</p>
+
+                            <p>Static variable có cần initialized tại thời điểm khai báo - declare ko?</p>
+
+                            <blockquote>
+                                Không, và hơn những thế, còn có thể thay đổi giá trị cúa nó nữa (Tất nhiên chỉ là
+                                trong trường hợp nó ko đc khai báo final mà thôi).
+                            </blockquote>
+
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java static method</h5>
+                        <div class="text-dark pt-3">
+                            <p>If we declare a method with “static” keyword, then the method is called as static method.</p>
+                            <ul>
+                                <li>The static method belongs to <strong>class</strong> rather than object.</li>
+                                <li>A static method can access <strong>static varaibles&nbsp;</strong>directly and it cannot access
+                                    <strong>non-static</strong> variables.</li>
+                                <li>A static method can only call a <strong>static method&nbsp;</strong>directly&nbsp;and&nbsp;it
+                                    cannot call a <strong>non-static</strong> method from it.</li>
+                                <li><strong><a href="//www.javainterviewpoint.com/java-super-keyword/">super</a></strong> and
+                                    <strong><a href="//www.javainterviewpoint.com/java-keyword/">this keyword</a></strong>
+                                    cannot be used in a&nbsp;<strong>static method</strong>.</li>
+                                <li>A static method can be directly called by using the class name <strong>&lt;&lt;ClassName&gt;&gt;.
+                                    &lt;&lt;MethodName&gt;&gt;</strong>&nbsp;rather than object<strong>.&nbsp;</strong>This is the
+                                    main reason we have declared our <strong>main()</strong> method as static. If not the JVM has
+                                    to create object first and call the <strong>main()</strong> method which causes the problem
+                                    of having extra memory allocation.</li>
+                            </ul>
+
+                            <blockquote>
+                                <ul>
+                                    <li>Một static method thì thuộc về class hơn là object. Tất nhiên thằng Object vẫn gọi bt.</li>
+
+                                    <li>Một static method thì chỉ có thể truy cập trực tiếp vào các biến static và nó ko thể
+                                        truy cập vào các biến non-static.</li>
+
+                                    <li>Một static method thì chỉ có thể gọi các static method khác, ko được gọi các non-static
+                                        method như cái variable trên kia.</li>
+
+                                    <li>Super and this keyword thì ko được sử dụng trong này. Vì nó là của Class chứ có phải
+                                        của object đâu.</li>
+
+                                    <li>Nó có thể gọi trực tiếp bằng cách ghi &lt;className>&lt;/className>.&lt;method></li>
+
+                                    <li>Đó cũng là lí do chính tại sao chúng ta declare main() method là static, nếu không thì
+                                        JVM phải tạo ra một object trước đó để có thể call method main này gây ra vấn đề có thêm
+                                        phân bổ bộ nhớ. Trong trường hợp xấu nhất, nếu Class có khai báo constructor, vậy thì nó
+                                        sẽ truyền tham số gì vào để tạo ra object đó bây h?
+                                    </li>
+                                </ul>
+                            </blockquote>
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java static block</h5>
+                        <div class="text-dark pt-3">
+                            <p>The static block, is a block of code inside a Java class that will be executed when a class is
+                                first loaded in to the JVM. Mostly the static block will be used for initializing the variables.</p>
+
+                            <blockquote>
+                                Static block này nãy được dùng trong static final blank variable đó. Static block là block code
+                                inside Java class mà nó sẽ được thực thi ngay lần đầu được load vào JVM. Thông thường thì nó
+                                thường được dùng để khởi tạo giá trị của các biến (như cái static final blank đó.)
+                            </blockquote>
+
+                            <p>Can a static block exist without a main() method ?</p>
+
+                            <blockquote>
+                                Bạn vẫn có thể vừa có static block và vừa có main method. Trong một vài trường hợp, ta có thể
+                                dynamic loading ò a class - using Class.forName (Xem trong lesson 01 hay 02 gì đó nhé).
+                            </blockquote>
+
+                            <p>Xem cái ví dụ dưới đây để hiểu thêm nhé.</p>
+
+                            <blockquote>
+                                public class Driver extends NonRegisteringDriver implements java.sql.Driver {<br />
+                                &nbsp; &nbsp; static {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; try {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; java.sql.DriverManager.registerDriver(new Driver());<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; } catch (SQLException E) {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new RuntimeException("Can't register driver!");<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+                                &nbsp; &nbsp; }<br />
+                                <br />
+                                &nbsp; &nbsp; public Driver() throws SQLException {<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp;  // Required for Class.forName().newInstance()<br />
+                                &nbsp; &nbsp; }<br />
+                                }<br />
+                            </blockquote>
+
+                            <p>As we all know that static block gets executed while loading of the class, so when the Driver class
+                                is loaded it actually passes its object to the registerDriver() method of DriverManager class.</p>
+
+                            https://viblo.asia/p/the-nested-classes-in-java-pVYRPJXEG4ng
+
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Java static class</h5>
+                        <div class="text-dark pt-3">
+                            <p>In Java only <strong>nested classes</strong> are allowed to be declared as <strong>static
+                            </strong>, if we declare a <strong>top level</strong> class as static then it will throw error. Even
+                                though static classes are nested inside a class, they <strong>doesn’t need the reference</strong>
+                                of the outer class they act like outer class only whereas on the other hand <strong>non-static
+                                    nested class</strong> need <strong>reference of the outer class</strong>.</p>
+
+                            <p>
+                                Trước hết, ta cần phải hiểu nested class là gì? Nested class là một class được khai báo bên trong
+                                một class khác. Thường thì sẽ có 2 kiểu, static nested class và non-static nested class.
+                            </p>
+
+                            <p>Static class là một class được khai báo static bên trong một class khác.</p>
+
+                            <p>Non-static thì tương tự như trên, chỉ khác là class này ko được khai báo static. Có 3 loại
+                                non-static class bao gồm :
+                            </p>
+
+                            <ul>
+                                <li>Inner classes, </li>
+                                <li>Local classes</li>
+                                <li>Anonymous Classes.</li>
+                            </ul>
+
+                            <blockquote>
+                                <p>
+                                    public class NestedClass {<br/>
+                                    <br/>
+                                    &nbsp; &nbsp; public void showMessage(){<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Outer Class!!");<br/>
+                                    &nbsp; &nbsp; }<br/>
+                                    <br/>
+                                    &nbsp; &nbsp; // this is static nested class<br/>
+                                    &nbsp; &nbsp; static class StaticNestedCLass {<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage(){<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Inner
+                                    Class!!");<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                                    &nbsp; &nbsp; }<br/>
+                                    <br/>
+                                    <br/>
+                                    &nbsp; &nbsp; // this is non-static nested class (Inner class)<br/>
+                                    &nbsp; &nbsp; class NonStaticNestedClass {<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage(){<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Non-static
+                                    Inner Class!!");<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                                    &nbsp; &nbsp; }<br/>
+                                    <br/>
+                                    &nbsp; &nbsp; public void localClassExample(){<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this is non-static (local class). Class nay chi ton tai ben trong method nay ma thoi.
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class NonStaticLocalClass {<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage (){<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is show message function of Non-static Local Class: " + message);<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                                    <br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; NonStaticNestedClass nonStaticNestedClass = new NonStaticNestedClass();<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; nonStaticNestedClass.showMessage();<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
+                                    &nbsp; &nbsp; }<br/>
+                                    }<br/>
+                                </p>
+                            </blockquote>
+
+                            <p>Cách sử dụng static class thì ta cứ khai báo như bt :</p>
+
+                            <blockquote>
+                                NestedClass.StaticNestedCLass staticNestedCLass = new NestedClass.StaticNestedCLass();<br/>
+                                staticNestedCLass.showMessage();
+                            </blockquote>
+
+                            <p>Cách sử dụng non-static nested class thì hơi đặc biệt</p>
+
+                            <blockquote>
+                                NestedClass.NonStaticNestedClass nonStaticInnerClass = new NestedClass().new NonStaticNestedClass();<br/>
+                                nonStaticInnerClass.showMessage();
+                            </blockquote>
+
+                            <p>Rõ ràng điểm khác biệt ở đây, đó là đối với Non-static thì ta phải tạo instance của thằng cha
+                                trước, rồi mới được tạo thằng con. Trong khi đó đối với static nested class thì ko cần.</p>
+
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Inner classes</h5>
+                            <div class="text-dark pt-3">
+                                <p>Ví dụ trên kia là một ví dụ điển hình của Inner Class</p>
+                            </div>
+                        </div>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Local classes</h5>
+                            <div class="text-dark pt-3">
+                                <p>Local class là một class được khai báo bên trong một function.</p>
+                                <blockquote>
+                                    *) Một số chú ý với Local classes:<br />
+                                    <br />
+                                    - Local classes chỉ có thể được sử dụng trong pham vi method định nghĩa ra nó.<br />
+
+                                    - Bên trong một Local classes chỉ có thể truy cập được các biến của OuterClass nếu nó là
+                                    static.<br />
+
+                                    - Từ Java 8 trở đi, bên trong Local classes có thể truy cập được đến giá trị của tham số
+                                    trong method (hàm showName có thể sử dụng giá trị của tham số name)<br />
+
+                                    - Các biến khai báo bên trong method khi sử dụng bên trong Local classes có tính chất final,
+                                    nghĩa là ta chỉ có thể sử dụng mà không thể thay đổi được gia trị của nó.<br />
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Anonymous Classes</h5>
+                            <div class="text-dark pt-3">
+                                <p>
+                                    Anonymous Classes là class giống như Inner classes và Local classes, nó được khai bao bên
+                                    trong class hoặc method mà không có tên cụ thể. Đây là cách implment 1 interface hoặc
+                                    abstract class mà không cần phải khai báo một class nào cụ thể.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Khi nào thì nên sử dụng Nested Class</h5>
+                            <div class="text-dark pt-3">
+                                <p>
+                                    Muốn nhóm các class nhỏ có liên quan với nhau vào chung 1 class lớn, như vậy dễ quản lý và
+                                    sửa đổi code hơn.<br />
+                                    Một class chỉ được sử dụng trong phạm vi nhỏ<br />
+                                    Tăng tính đóng gói của đối tượng. Ta có thể sử dụng các keyword private, protected, public với nested classes.<br />
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h5 class="border-bottom border-gray pb-2 mb-0">What is the use of Java Transient Keyword – Serialization
+                        Example</h5>
+                    <div class="text-dark pt-3">
+                        <p>In this article we will learn about the usage of <strong>Transient</strong> Keyword in <strong>Serialization</strong>.
+                            Before getting into, some basic knowledge on <strong>
+                                <a href="//www.javainterviewpoint.com/java-serialization-example-tutorial/">How Serialization works
+                                    in Java</a></strong> is required. Lets take an example we have a class <strong>Employee</strong>
+                            which is having three data members<strong> empId, empName, empSalary</strong>. Suppose if you dont want
+                            <strong>empSalary</strong> alone not to be <strong>serialized</strong>(non-persistant) then you can mark
+                            <strong>empSalary</strong> as <strong>transient</strong>.&nbsp;<span id="more-1655"></span></p>
+
+                        <blockquote>
+                            Trước hết thì ta phải hiểu cái khái niệm Serialization là gì? Đó là việc mà JVM có thể chuyển đổi/
+                            biểu diễn đối tượng như là một dãy byte liên tục bao gồm dữ liệu của đối tượng và thông tin về kiểu
+                            đối tượng, kiểu dữ liệu được lưu trữ trong đối tượng đó.<br/>
+                            <br/>
+                            Sau khi một đối tượng đã được ghi vào trong một file, nó có thể được đọc từ file này và deserialize
+                            từ đó. Và đối tượng có thể được tái tạo từ thông tin bytecode ban đầu(sau khi được serialize) của nó.
+                        </blockquote>
+
+                        <blockquote>transient là keyword sẽ thông báo cho JVM biết đối tượng được transient sẽ không được
+                            serialization khi truyền qua IO (cũng có nghĩa là đối tượng đó sẽ không được chuyển qua mạng).
+                            Hiểu nôm na là vậy</blockquote>
+
+                        <p>Xem ví dụ : TestSerialization.java</p>
+
+                        <p>Trong ví dụ này, ta set cái giá trị transient cho thuộc tính password. Và sau khi serialization, kết
+                            quả của việc deserialization, các giá trị khác có thể đọc được, nhưng riêng cái giá trị của password
+                            thì ko.</p>
+                    </div>
                 </div>
             </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
         </div>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java final method</h5>
-            <div class="text-dark pt-3">
-                <p>
-                    When you declare a method as final, then it is called as final method. A final method cannot be
-                    overridden.
-                </p>
-
-                <p>Một final method thì ko thể bị override đc. Tuy nhiên nó vẫn overload bt nhé.</p>
-
-                <p>Can a final method be inherited </p>
-
-                <blockquote>
-                    Tất nhiên, nó vẫn được thừa kế từ các thằng con. Trong thừa kế, nó chả quan trọng cái final hay gì
-                    đâu, mà nó chỉ nói lên rằng, thằng con nó cũng có các method và properties giống / của thằng cha mà
-                    thôi.<br />
-                    <br />
-                    Tất nhiên là thằng con ko thể override lại method kia được đâu nhé.
-                </blockquote>
-            </div>
-        </div>
-
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java final class</h5>
-            <div class="text-dark pt-3">
-                <p>A final class cannot be extended(cannot be subclassed), lets take a look into the below example</p>
-
-                <blockquote>Final class thì ko thể nào extends được rồi. Đã cuối mà còn có thằng cuối hơn
-                    thì sao gọi là final được.</blockquote>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Use of static Keyword in Java</h3>
-        <div class="text-dark pt-3">
-            <p>The <strong>static</strong> keyword belongs to the class rather than <strong>instance</strong> of the
-                class. We can simply say that the members belongs to the class itself. As a result, you can access
-                the static member without creating the instance for the class. <span id="more-1675"></span>The
-                <strong>static</strong> keyword can be applied to&nbsp;<strong>variables, methods, blocks and nested class</strong>. Lets see them one by one.</p>
-
-            <blockquote>
-                Khi ta nhắc đến static, ta nghĩ ngay đến class thay vì object (instance of class). Hay còn gọi cách
-                khác, đó là những thành viên của riêng class. Và vì lý do đó, chúng ta có thể truy cập đến các static
-                member mà ko cần phải create instance of class.<br />
-                <br />
-                Static keyword thì có thể áp dụng cho variable, methods, blocks và nested class.
-            </blockquote>
-        </div>
-
-
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java static variable</h5>
-            <div class="text-dark pt-3">
-                <p>If we declare a variable with “<strong>static</strong>” keyword, then it is called as
-                    <strong>static variable</strong>. For example</p>
-
-                <p>All the instance of the class share the same copy of the variable, a static variable can be
-                    accessed directly by
-                    calling&nbsp;<strong>“&lt;&lt;ClassName&gt;&gt;.&lt;&lt;VariableName&gt;&gt;
-                        ”&nbsp;</strong>without need&nbsp;to create instance for the class.</p>
-
-                <p>Static variable có cần initialized tại thời điểm khai báo - declare ko?</p>
-
-                <blockquote>
-                    Không, và hơn những thế, còn có thể thay đổi giá trị cúa nó nữa (Tất nhiên chỉ là
-                    trong trường hợp nó ko đc khai báo final mà thôi).
-                </blockquote>
-
-            </div>
-        </div>
-
-
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java static method</h5>
-            <div class="text-dark pt-3">
-                <p>If we declare a method with “static” keyword, then the method is called as static method.</p>
-                <ul>
-                    <li>The static method belongs to <strong>class</strong> rather than object.</li>
-                    <li>A static method can access <strong>static varaibles&nbsp;</strong>directly and it cannot access
-                        <strong>non-static</strong> variables.</li>
-                    <li>A static method can only call a <strong>static method&nbsp;</strong>directly&nbsp;and&nbsp;it
-                        cannot call a <strong>non-static</strong> method from it.</li>
-                    <li><strong><a href="//www.javainterviewpoint.com/java-super-keyword/">super</a></strong> and
-                        <strong><a href="//www.javainterviewpoint.com/java-keyword/">this keyword</a></strong>
-                        cannot be used in a&nbsp;<strong>static method</strong>.</li>
-                    <li>A static method can be directly called by using the class name <strong>&lt;&lt;ClassName&gt;&gt;.
-                        &lt;&lt;MethodName&gt;&gt;</strong>&nbsp;rather than object<strong>.&nbsp;</strong>This is the
-                        main reason we have declared our <strong>main()</strong> method as static. If not the JVM has
-                        to create object first and call the <strong>main()</strong> method which causes the problem
-                        of having extra memory allocation.</li>
-                </ul>
-
-                <blockquote>
-                    <ul>
-                        <li>Một static method thì thuộc về class hơn là object. Tất nhiên thằng Object vẫn gọi bt.</li>
-
-                        <li>Một static method thì chỉ có thể truy cập trực tiếp vào các biến static và nó ko thể
-                            truy cập vào các biến non-static.</li>
-
-                        <li>Một static method thì chỉ có thể gọi các static method khác, ko được gọi các non-static
-                        method như cái variable trên kia.</li>
-
-                        <li>Super and this keyword thì ko được sử dụng trong này. Vì nó là của Class chứ có phải
-                            của object đâu.</li>
-
-                        <li>Nó có thể gọi trực tiếp bằng cách ghi &lt;className>&lt;/className>.&lt;method></li>
-
-                        <li>Đó cũng là lí do chính tại sao chúng ta declare main() method là static, nếu không thì
-                            JVM phải tạo ra một object trước đó để có thể call method main này gây ra vấn đề có thêm
-                            phân bổ bộ nhớ. Trong trường hợp xấu nhất, nếu Class có khai báo constructor, vậy thì nó
-                            sẽ truyền tham số gì vào để tạo ra object đó bây h?
-                        </li>
-                    </ul>
-                </blockquote>
-            </div>
-        </div>
-
-
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java static block</h5>
-            <div class="text-dark pt-3">
-                <p>The static block, is a block of code inside a Java class that will be executed when a class is
-                    first loaded in to the JVM. Mostly the static block will be used for initializing the variables.</p>
-
-                <blockquote>
-                    Static block này nãy được dùng trong static final blank variable đó. Static block là block code
-                    inside Java class mà nó sẽ được thực thi ngay lần đầu được load vào JVM. Thông thường thì nó
-                    thường được dùng để khởi tạo giá trị của các biến (như cái static final blank đó.)
-                </blockquote>
-
-                <p>Can a static block exist without a main() method ?</p>
-
-                <blockquote>
-                    Bạn vẫn có thể vừa có static block và vừa có main method. Trong một vài trường hợp, ta có thể
-                    dynamic loading ò a class - using Class.forName (Xem trong lesson 01 hay 02 gì đó nhé).
-                </blockquote>
-
-                <p>Xem cái ví dụ dưới đây để hiểu thêm nhé.</p>
-
-                <blockquote>
-                    public class Driver extends NonRegisteringDriver implements java.sql.Driver {<br />
-                    &nbsp; &nbsp; static {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; try {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; java.sql.DriverManager.registerDriver(new Driver());<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; } catch (SQLException E) {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new RuntimeException("Can't register driver!");<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp; }<br />
-                    &nbsp; &nbsp; }<br />
-                    <br />
-                    &nbsp; &nbsp; public Driver() throws SQLException {<br />
-                    &nbsp; &nbsp; &nbsp; &nbsp;  // Required for Class.forName().newInstance()<br />
-                    &nbsp; &nbsp; }<br />
-                    }<br />
-                </blockquote>
-
-                <p>As we all know that static block gets executed while loading of the class, so when the Driver class
-                    is loaded it actually passes its object to the registerDriver() method of DriverManager class.</p>
-
-                https://viblo.asia/p/the-nested-classes-in-java-pVYRPJXEG4ng
-
-            </div>
-        </div>
-
-
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h5 class="border-bottom border-gray pb-2 mb-0">Java static class</h5>
-            <div class="text-dark pt-3">
-                <p>In Java only <strong>nested classes</strong> are allowed to be declared as <strong>static
-                </strong>, if we declare a <strong>top level</strong> class as static then it will throw error. Even
-                    though static classes are nested inside a class, they <strong>doesn’t need the reference</strong>
-                    of the outer class they act like outer class only whereas on the other hand <strong>non-static
-                        nested class</strong> need <strong>reference of the outer class</strong>.</p>
-
-                <p>
-                    Trước hết, ta cần phải hiểu nested class là gì? Nested class là một class được khai báo bên trong
-                    một class khác. Thường thì sẽ có 2 kiểu, static nested class và non-static nested class.
-                </p>
-
-                <p>Static class là một class được khai báo static bên trong một class khác.</p>
-
-                <p>Non-static thì tương tự như trên, chỉ khác là class này ko được khai báo static. Có 3 loại
-                    non-static class bao gồm :
-                </p>
-
-                <ul>
-                    <li>Inner classes, </li>
-                    <li>Local classes</li>
-                    <li>Anonymous Classes.</li>
-                </ul>
-
-                <blockquote>
-                    <p>
-                        public class NestedClass {<br/>
-                        <br/>
-                        &nbsp; &nbsp; public void showMessage(){<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Outer Class!!");<br/>
-                        &nbsp; &nbsp; }<br/>
-                        <br/>
-                        &nbsp; &nbsp; // this is static nested class<br/>
-                        &nbsp; &nbsp; static class StaticNestedCLass {<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage(){<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Inner
-                        Class!!");<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
-                        &nbsp; &nbsp; }<br/>
-                        <br/>
-                        <br/>
-                        &nbsp; &nbsp; // this is non-static nested class (Inner class)<br/>
-                        &nbsp; &nbsp; class NonStaticNestedClass {<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage(){<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is function of Non-static
-                        Inner Class!!");<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
-                        &nbsp; &nbsp; }<br/>
-                        <br/>
-                        &nbsp; &nbsp; public void localClassExample(){<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this is non-static (local class). Class nay chi ton tai ben trong method nay ma thoi.
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class NonStaticLocalClass {<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; public void showMessage (){<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is show message function of Non-static Local Class: " + message);<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
-                        <br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; NonStaticNestedClass nonStaticNestedClass = new NonStaticNestedClass();<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp; nonStaticNestedClass.showMessage();<br/>
-                        &nbsp; &nbsp; &nbsp; &nbsp;}<br/>
-                        &nbsp; &nbsp; }<br/>
-                        }<br/>
-                    </p>
-                </blockquote>
-
-                <p>Cách sử dụng static class thì ta cứ khai báo như bt :</p>
-
-                <blockquote>
-                    NestedClass.StaticNestedCLass staticNestedCLass = new NestedClass.StaticNestedCLass();<br/>
-                    staticNestedCLass.showMessage();
-                </blockquote>
-
-                <p>Cách sử dụng non-static nested class thì hơi đặc biệt</p>
-
-                <blockquote>
-                    NestedClass.NonStaticNestedClass nonStaticInnerClass = new NestedClass().new NonStaticNestedClass();<br/>
-                    nonStaticInnerClass.showMessage();
-                </blockquote>
-
-                <p>Rõ ràng điểm khác biệt ở đây, đó là đối với Non-static thì ta phải tạo instance của thằng cha
-                    trước, rồi mới được tạo thằng con. Trong khi đó đối với static nested class thì ko cần.</p>
-
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
             </div>
 
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Inner classes</h5>
-                <div class="text-dark pt-3">
-                    <p>Ví dụ trên kia là một ví dụ điển hình của Inner Class</p>
-                </div>
+            <div class="p-3 mb-3 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
             </div>
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Local classes</h5>
-                <div class="text-dark pt-3">
-                    <p>Local class là một class được khai báo bên trong một function.</p>
-                    <blockquote>
-                        *) Một số chú ý với Local classes:<br />
-                        <br />
-                        - Local classes chỉ có thể được sử dụng trong pham vi method định nghĩa ra nó.<br />
-
-                        - Bên trong một Local classes chỉ có thể truy cập được các biến của OuterClass nếu nó là
-                        static.<br />
-
-                        - Từ Java 8 trở đi, bên trong Local classes có thể truy cập được đến giá trị của tham số
-                        trong method (hàm showName có thể sử dụng giá trị của tham số name)<br />
-
-                        - Các biến khai báo bên trong method khi sử dụng bên trong Local classes có tính chất final,
-                        nghĩa là ta chỉ có thể sử dụng mà không thể thay đổi được gia trị của nó.<br />
-                    </blockquote>
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Anonymous Classes</h5>
-                <div class="text-dark pt-3">
-                    <p>
-                        Anonymous Classes là class giống như Inner classes và Local classes, nó được khai bao bên
-                        trong class hoặc method mà không có tên cụ thể. Đây là cách implment 1 interface hoặc
-                        abstract class mà không cần phải khai báo một class nào cụ thể.
-                    </p>
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Khi nào thì nên sử dụng Nested Class</h5>
-                <div class="text-dark pt-3">
-                    <p>
-                        Muốn nhóm các class nhỏ có liên quan với nhau vào chung 1 class lớn, như vậy dễ quản lý và
-                        sửa đổi code hơn.<br />
-                        Một class chỉ được sử dụng trong phạm vi nhỏ<br />
-                        Tăng tính đóng gói của đối tượng. Ta có thể sử dụng các keyword private, protected, public với nested classes.<br />
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h5 class="border-bottom border-gray pb-2 mb-0">What is the use of Java Transient Keyword – Serialization
-            Example</h5>
-        <div class="text-dark pt-3">
-            <p>In this article we will learn about the usage of <strong>Transient</strong> Keyword in <strong>Serialization</strong>.
-                Before getting into, some basic knowledge on <strong>
-                    <a href="//www.javainterviewpoint.com/java-serialization-example-tutorial/">How Serialization works
-                        in Java</a></strong> is required. Lets take an example we have a class <strong>Employee</strong>
-                which is having three data members<strong> empId, empName, empSalary</strong>. Suppose if you dont want
-                <strong>empSalary</strong> alone not to be <strong>serialized</strong>(non-persistant) then you can mark
-                <strong>empSalary</strong> as <strong>transient</strong>.&nbsp;<span id="more-1655"></span></p>
-
-            <blockquote>
-                Trước hết thì ta phải hiểu cái khái niệm Serialization là gì? Đó là việc mà JVM có thể chuyển đổi/
-                biểu diễn đối tượng như là một dãy byte liên tục bao gồm dữ liệu của đối tượng và thông tin về kiểu
-                đối tượng, kiểu dữ liệu được lưu trữ trong đối tượng đó.<br/>
-                <br/>
-                Sau khi một đối tượng đã được ghi vào trong một file, nó có thể được đọc từ file này và deserialize
-                từ đó. Và đối tượng có thể được tái tạo từ thông tin bytecode ban đầu(sau khi được serialize) của nó.
-            </blockquote>
-
-            <blockquote>transient là keyword sẽ thông báo cho JVM biết đối tượng được transient sẽ không được
-                serialization khi truyền qua IO (cũng có nghĩa là đối tượng đó sẽ không được chuyển qua mạng).
-                Hiểu nôm na là vậy</blockquote>
-
-            <p>Xem ví dụ : TestSerialization.java</p>
-
-            <p>Trong ví dụ này, ta set cái giá trị transient cho thuộc tính password. Và sau khi serialization, kết
-                quả của việc deserialization, các giá trị khác có thể đọc được, nhưng riêng cái giá trị của password
-            thì ko.</p>
-        </div>
+        </aside>
     </div>
 </main>
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
-                    _PREVIOUS_RESOURCE
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
-                    _NEXT_RESOURCE
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <br class="clearfix"/>
-
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
-    </div>
-</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>
