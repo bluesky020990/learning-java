@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java - Modifier Types</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../src/global/global.js"></script>
+</head>
+
+<body class="bg-secondary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Top navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main" class="container">
+    <div class="introduction">
+        <h1>Java - Modifier Types</h1>
+        <div class="lead">
+            <p>Trong bài học này ta sẽ đi tìm hiểu lại các Modifier trong Java</p>
+            <p>Trong Java thì ngta chia làm 2 loại, Access Modifier và Non-access Modifier.</p>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Access Modifiers </h3>
+        <div class="text-dark pt-3">
+            <p>Có 4 level cần ghi nhớ</p>
+            <ul>
+                <li>default - visible to the package, the default. No modifier are needed</li>
+                <li>private - visible to the class oly</li>
+                <li>public - visible to the world</li>
+                <li>protected - visible to the package and all subclasses.</li>
+            </ul>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Default Access Modifier - No Keyword Default </h5>
+            <div class="text-dark pt-3">
+                <p>
+                    Default access modifier means we do not explicitly(rõ ràng -  /ɪkˈsplɪs.ɪt/) declare an access modifier for a class, field,
+                    method, etc. <br />
+                    <br />
+                    A variable or method declared without any access control modifier is available to any other class in
+                    the same package. The fields in an interface are implicitly public static final and the methods in
+                    an interface are by default public.
+                </p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Private Access Modifier - Private </h5>
+            <div class="text-dark pt-3">
+                <p>
+                    Methods, variables, and constructors that are declared private can only be accessed within the
+                    declared class itself.<br />
+                    <br />
+                    Private access modifier is the most restrictive access level. Class and interfaces cannot be
+                    private.<br />
+                    <br />
+                    Variables that are declared private can be accessed outside the class, if public getter methods are
+                    present in the class.<br />
+                    <br />
+                    Using the private modifier is the main way that an object encapsulates itself and hides data from the outside world.
+                </p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Public Access Modifier - Public</h5>
+            <div class="text-dark pt-3">
+                <p>
+                    A class, method, constructor, interface, etc. declared public can be accessed from any other class. Therefore, fields, methods, blocks declared
+                    inside a public class can be accessed from any class belonging to the Java Universe.<br />
+                    <br />
+                    However, if the public class we are trying to access is in a different package, then the public
+                    class still needs to be imported. Because of class inheritance, all public methods and variables of
+                    a class are inherited by its subclasses.
+                </p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Protected Access Modifier - Protected </h5>
+            <div class="text-dark pt-3">
+                <p>
+                    Variables, methods, and constructors, which are declared protected in a superclass can be accessed
+                    only by the subclasses in other package or any class within the package of the protected members'
+                    class.<br />
+                    <br />
+                    The protected access modifier cannot be applied to class and interfaces. Methods, fields can be
+                    declared protected, however methods and fields in a interface cannot be declared protected.<br />
+                    <br />
+                    Protected access gives the subclass a chance to use the helper method or variable, while preventing
+                    a nonrelated class from trying to use it.
+                </p>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Access Control and Inheritance </h5>
+            <div class="text-dark pt-3">
+                <p>Có những lưu ý sau đối với cái access modifier</p>
+                <ul>
+                    <li>Method được khai báo public ở class cha thì cũng phải được khai báo public ở các class con</li>
+                    <li>Method được khai báo protected ở class cha thì phải khai báo protected hoặc public ở class con.
+                        Không thể khai báo private </li>
+                    <li>Method được khai báo private thì tất cả các class khác đều ko nhìn thấy, nên chả cần phải bận
+                        tâm về thằng này.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">Java Non-Access Modifiers </h3>
+        <div class="text-dark pt-3">
+            <p>Đối với Non-access modifier thì gồm có các từ khóa sau :</p>
+
+            <ul>
+                <li>static - for creating class methods and variable</li>
+                <li>final - for finalizing the implementations of classes, methods and variables</li>
+                <li>abstract - for creating abstract classes and method</li>
+                <li>synchronized (/ˈsɪŋ.krə.naɪz/ ) and volatile (/ˈvɒl.ə.taɪl/) - used for thread.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">The Static Modifier </h3>
+        <div class="text-dark pt-3">
+            <p>Sử dụng với Variable và Method của class</p>
+
+            <p>Có những điểm sau cần ghi nhớ</p>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Static Variables </h5>
+                <div class="text-dark pt-3">
+                    <p>Sử dụng để tạo những variable cho tất cả các instances được khởi tạo từ class đó. Đúng ra thì nó
+                        tạo ra instance variable của Class, nên toàn bộ các class con có thể sử dụng thoải mái, và luôn
+                    luôn chỉ có 1 static variable trong toàn bộ hệ thống. - Hiểu nôm na là mỗi static variable thì chỉ tồn
+                    tại tại 1 vùng nhớ trên hệ thống.</p>
+
+                    <p>Nó còn được biết đến với tên gọi khác là Class - variables.</p>
+                </div>
+            </div>
+
+            <div class="my-4 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0">Static Methods </h5>
+                <div class="text-dark pt-3">
+                    <p>Static còn được dùng để tạo nên method của class. Cứ nhắc tới static, ta phải nhớ ngay tới
+                    những cái này là của class chứ ko phải của object.</p>
+
+                    <p>Static method thì nó ko dùng bất cứ dữ liệu nào của object, mà nó sẽ sử dụng các tham số truyền từ
+                    bên ngoài vào. Nói cách khác thì ko thể sử dụng this.properties trong này, bởi đơn giản nó là của class
+                    không phải của object.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">The Final Modifier </h3>
+        <div class="text-dark pt-3">
+            <p>Sử dụng với Variable, Method và Class</p>
+
+            <p>Khi nhắc tới final, ta nghĩ tới những cái "cuối cùng". Trong class, khi 1 biến là "cuối cùng" thì nó sẽ
+                không thể thay đổi được, một method là "cuối cùng" thì nó ko thể bị override được (Lưu ý override nhé,
+                ko phải là overload nhé) và một class được khai báo là "cuối cùng" thì nó coi như tuyệt tử tuyệt tôn -
+                tức là ko có bất cứ thằng con nào kế thừa nó nữa.</p>
+
+            <p>Mục đích của final modifier là ngăn chặn việc thay đổi nó từ các object khác.</p>
+        </div>
+
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Final Variables </h5>
+            <div class="text-dark pt-3">
+                <p>Một final variable thì chỉ có thể được khởi tạo một cách rõ ràng (explicitly initialized) chỉ 1 lần.
+                Một biến tham chiếu được khai báo là final thì nó không thể gán lại giá trị tới một object khác.
+                </p>
+
+                <p>** Tuy nhiên, data của nó thì có thể thay đổi, tuy nhiên giá trị tham chiếu của nó không thay đổi</p>
+
+                <p>Nó thường được dùng với từ khóa static để khai báo constant cho class</p>
+
+                <p>Một biến được khai báo là final thì luôn phải khởi tạo giá trị. Nếu biến đó thuộc Object, nếu nó
+                    không được khai báo giá trị từ ban đầu, thì bắt buộc phải khai báo trong constructor, nếu biến đó thuộc
+                class thì nếu nó không được khai báo giá trị ban đầu, thì bắt buộc phải set giá trị cho nó strong static block.</p>
+
+                <p>Cái ** có thể được giải thích rõ hơn như sau :</p>
+
+                <p>Object A  --------------> Address A  -----> properties of Object A</p>
+                <p>Properties of Object A có thể bị thay đổi bởi các method của object, tuy nhiên cái Address của A là ko bao giờ
+                thay đổi, tức là ta không thể gán Object A -------> Address B được.</p>
+            </div>
+        </div>
+
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Final Methods</h5>
+            <div class="text-dark pt-3">
+                <p>Một final method thì không thể bị overrider bởi những Subclass.</p>
+
+                <p>Mục đích chính của final method đó là ngăn chặn nó bị thay đổi từ bên ngoài.</p>
+            </div>
+        </div>
+
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Final Classes </h5>
+            <div class="text-dark pt-3">
+                <p>Mục đích chính của final class đó là ngăn chặn việc kế thừa nó từ các subclass. </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">The Abstract Modifier </h3>
+        <div class="text-dark pt-3">
+            <p>Chỉ sử dụng với class, method</p>
+
+            <p>Không có quá nhiều điều để nói về thằng này. Chỉ biết là khi khai báo một method là abstract, thì nó sẽ chuyển
+            trách nhiệm implementation về cho mấy thằng SubClass kế thừa nó. Chỉ có abstract class mới có method class và
+            abstract method phải thuộc abstract class. Do đó, khi khai báo abstract method thì phải khai báo luôn abstract cho class</p>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Abstract Class</h5>
+            <div class="text-dark pt-3">
+                <p>Một abstract class thì ko bao giờ được khởi tạo (***). Nếu một class được khai báo là abstract, thì mục
+                đích chính của nó là dùng để mở rộng.</p>
+
+                <p>Một class không thể vừa là abstract, vừa là final. Bởi mục đích của thằng abstract là để cho các thằng con
+                extends nó, mà h khai báo là final rồi thì làm sao mà extend được.</p>
+
+                <p>Một method có thể có cả abstract method và normal method</p>
+
+                <blockquote>
+                    Giải thích thêm cho cái ***, ta vẫn có thể new AbstractClass, tuy nhiên sau khi new thì ta bắt buộc
+                    phải override các abstract method của nó. Nên cái trên kia cũng ko hoàn toàn là đúng.
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">Abstract Methods </h5>
+            <div class="text-dark pt-3">
+                <p>
+                    Abstract method là method được khai báo mà không có bất cứ implementation nào. Method body (implementation)
+                    phải được cung cấp bởi subclass. Abstract class không bao giờ được khai báo là final hoặc strict.
+
+                </p>
+
+                <p>Bất cứ class nào extend từ abstract class thì đều phải implement toàn bộ abstract method của super class, trừ
+                khi subclass cũng khai báo method đó là abstract.</p>
+
+                <p>Nếu một class chứa một hay nhiều abstract method thì nó cũng phải được khai báo là abstract.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">The Synchronized Modifier</h3>
+        <div class="text-dark pt-3">
+            <p>Từ khóa synchronized (/ˈsɪŋ.krə.naɪz/) cho biết (indicate) rằng, method chỉ có thể được truy cập bởi duy
+                nhất 1 thread tại cùng 1 thời điểm. Synchronized modifier có thể apply cho 4 kiểu access modifier
+                (public, protected, private, default ở trên đó).</p>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">The Transient Modifier </h5>
+            <div class="text-dark pt-3">
+                <p>
+                    An instance variable is marked transient to indicate the JVM to skip the particular variable when
+                    serializing the object containing it.<br />
+                    <br />
+                    This modifier is included in the statement that creates the variable, preceding the class or data
+                    type of the variable.
+                </p>
+
+                <p>Chính xác hơn thì cái thằng này khai báo như vậy để JVM bỏ qua giá trị đó khi serializing cái Object đó</p>
+
+
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">The Volatile Modifier </h5>
+            <div class="text-dark pt-3">
+                <p>Dùng với method, class, variable.</p>
+
+                <p>volatile has semantics for memory visibility. Basically, the value of a volatile field becomes
+                    visible to all readers (other threads in particular) after a write operation completes on it.
+                    Without volatile, readers could see some non-updated value.
+                </p>
+
+                <blockquote>Volatile có ý nghĩa đối với các bộ nhớ hiển thị. Về cơ bản, giá trị của một volatile filed trở nên rõ
+                ràng đối với tất cả các reader - (toàn bộ thread) sau khi một thao tác write được hoàn thành. Nếu ko có volatile
+                thì các reader có thể thấy cái giá trị này ko được cập nhật. Xem ví dụ cuối bài, nếu ko có khai báo volatile thì
+                cái vòng lặp kia sẽ chạy vĩnh viễn, khi mà giá trị active của nó ko được cập nhật lại.</blockquote>
+
+                <p>Volatile modifier sẽ thông báo cho JVM biết rằng, việc cập nhật giá trị của field này phải luôn được
+                    đồng bộ với memory, và việc đọc giá trị của field này cũng phải đọc giá trị từ memory. Điều này đảm bảo rằng
+                các field được khai báo là volatile có thể được truy cập và cập nhật trong một ứng dụng đa luồng mà không cần sử dụng cái
+                synchronize.</p>
+
+                <p>Nói cách khác, khi một giá trị được khai báo là volatile, thì khi có một sự thay đổi nào ảnh hưởng lên nó,
+                    thì nó cũng sẽ cập nhật lại giá trị của các object tham khảo đến nó.</p>
+
+                <blockquote>
+                    public class MyRunnable implements Runnable{<br/>
+                    &nbsp; &nbsp; private volatile boolean active;<br/>
+                    &nbsp; &nbsp; public void run(){<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; active = true;<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; while (active){ // line 1<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // some code here<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                    &nbsp; &nbsp; }<br/>
+                    &nbsp; &nbsp; public void stop(){<br/>
+                    &nbsp; &nbsp; &nbsp; &nbsp; active = false; // line 2<br/>
+                    &nbsp; &nbsp; } <br/>
+                    }
+                </blockquote>
+
+               <p>Thông thường, run sẽ được call bởi một thread, và stop sẽ được call bởi 1 thread khác.</p>
+
+                <p>Ở line số 1, nó set cái giá trị active của cái số 1 là true, nên vòng lặp sẽ vĩnh viễn không bao giờ dừng lại</p>
+
+                <p>Tuy nhiên, ta lại muốn nó kết thúc, khi có 1 thread nào đó cập nhật lại giá trị của nó bằng cái method stop ở dưới</p>
+
+                <p>Lúc này từ khóa volatile sẽ được dùng để khi thread 2 chạy, gọi method stop, thì thread 1 cũng cập nhật giá trị active của nó,
+                để cái vòng lặp while kia dừng lại.</p>
+
+                <h5>Q: Thế ko phải cái Java nó bảo là pass by value - value là address của bộ nhớ à, việc thay đổi giá trị trên vùng nhớ cũng ảnh hưởng
+                global mà. Tại sao lại thêm cái này nữa chi cho phiền hà.</h5>
+
+                <blockquote>
+                    A: Java đều là pass by value, tuy nhiên, việc pass by value của nó có sự khác biệt. Đối vói primitive type,
+                    Java sẽ pass cái value của nó - ở đây là giá trị true (- vì set true cho cái active ở dưới), nhưng
+                    đối với Object, thì nó pass value - tức là địa chỉ vùng nhớ của object. 1 bên push copy value, 1 bên
+                    push cái copy address value nên nó sẽ gặp trường hợp như trên.<br/>
+                    <br/>
+
+                    Từ khóa volatile cho JVM biết rằng, cái giá trị mà active đang được sử dụng, ko phải là 1 bản copy
+                    của biến active, mà là giá trị thật của nó trên bộ nhớ. Nên khi cái thread 2 cập nhật giá trị của active trên bộ nhớ,
+                    thì cái thread 1 cũng được cập nhật theo. Xem minh họa đơn giản như hình dưới đây:<br/>
+                    <br/>
+
+                    <img src="../assests/basic/volatile_and_pass_value_in_java.PNG" class="img-fluid"/>
+
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="my-4 p-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h5>
+            <div class="text-dark pt-3">
+                BODY_CONTENT
+            </div>
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+
+    <div class="my-4 p-3 bg-white rounded box-shadow">
+        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <div class="text-dark pt-3">
+            BODY_CONTENT
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-default float-lg-left" href="./01_beginning.html">
+                    _PREVIOUS_RESOURCE
+                </a>
+
+                <a class="btn btn-default float-lg-right" href="./01_beginning.html">
+                    _NEXT_RESOURCE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br class="clearfix"/>
+
+    <div class="container">
+        <span class="text-dark">
+            <address>
+            Created by <strong>Khanh Tran</strong><br>
+            Email: quockhanhqb011@gmail.com<br>
+            Phone: (+84) 989 890 960
+        </address>
+        </span>
+    </div>
+</footer>
+</body>
+</html>
