@@ -25,7 +25,9 @@ const LIST_LESSON_DATA = [
 initPageData();
 
 function initPageData(){
+    var previousPageData = null;
     var currentPageData = null;
+    var nextPageData = null;
     var currentPageURL = getCurrentPageURL();
 
     var menuHTML = new Array();
@@ -35,13 +37,37 @@ function initPageData(){
         if(lessonData.url.indexOf(currentPageURL) == 0){
             menuHTML.push('<li><a class="active">' + lessonData.titleDisplay + '</a></li>');
             currentPageData = lessonData;
+
+            if(i > 0){
+                previousPageData = LIST_LESSON_DATA[i - 1];
+            }
+
+            if(i < LIST_LESSON_DATA.length - 1){
+                nextPageData = LIST_LESSON_DATA[i + 1];
+            }
         } else {
-            menuHTML.push('<li><a href="../lesson/' + lessonData.url + '">' + lessonData.titleDisplay + '</a></li>');
+            menuHTML.push('<li><a href="' + generatePageUrl(lessonData.url) + '">' + lessonData.titleDisplay + '</a></li>');
         }
     }
 
     if(currentPageData != null){
         $('head').find('title').html(currentPageData.titleDisplay);
+    }
+
+    if(previousPageData != null){
+        $('.blog-pagination').find('.btn-outline-primary').removeClass("disabled");
+        $('.blog-pagination').find('.btn-outline-primary').attr("href", generatePageUrl(previousPageData.url));
+        $('.blog-pagination').find('.btn-outline-primary').html(previousPageData.titleDisplay);
+    } else {
+        $('.blog-pagination').find('.btn-outline-primary').addClass("disabled");
+    }
+
+    if(nextPageData != null){
+        $('.blog-pagination').find('.btn-outline-secondary').removeClass("disabled");
+        $('.blog-pagination').find('.btn-outline-secondary').attr("href", generatePageUrl(nextPageData.url));
+        $('.blog-pagination').find('.btn-outline-secondary').html(nextPageData.titleDisplay);
+    } else {
+        $('.blog-pagination').find('.btn-outline-secondary').addClass("disabled");
     }
 
     var $mainLessonMenu = $('#main-lesson-menu');
@@ -52,6 +78,10 @@ function initPageData(){
         var location = window.location.href;
         var currentURL = location.substring(0, location.lastIndexOf(".html"));
         return currentURL.substring(currentURL.lastIndexOf("/") + 1);
+    }
+
+    function generatePageUrl(pageUrl){
+        return '../lesson/' + pageUrl;
     }
 
 }

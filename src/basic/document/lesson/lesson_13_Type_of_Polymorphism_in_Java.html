@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Types of polymorphism in java – Runtime Polymorphism, Compile time Polymorphism</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,256 +10,253 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
-</nav>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Types of polymorphism in java – Runtime Polymorphism, Compile time Polymorphism</h1>
+            <div class="lead">
+                <p>Có hai loại polymorphism trong Java</p>
+
+                <ol>
+                    <li>Runtime Polymorphism (Dynamic Binding)</li>
+                    <li>Compile time Polymorphism (Static Binding).</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
 <main role="main" class="container">
-    <div class="introduction">
-        <h1>Types of polymorphism in java – Runtime Polymorphism, Compile time Polymorphism</h1>
-        <div class="lead">
-            <p>Có hai loại polymorphism trong Java</p>
-
-            <ol>
-                <li>Runtime Polymorphism (Dynamic Binding)</li>
-                <li>Compile time Polymorphism (Static Binding).</li>
-            </ol>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Runtime Polymorphism(Dynamic Binding)</h3>
-        <div class="text-dark pt-3">
-            <p><strong>Method Overriding in Java</strong> is the best example for <strong>Runtime
-                Polymorphism</strong>. In this type of Polymorphism the<strong> Parent class reference</strong> can
-                hold <strong>object of Parent class or any sub class(Child class) of Parent.&nbsp;</strong>This
-                technique is called as&nbsp;<span style="text-decoration: underline;"><strong>Dynamic Method
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Runtime Polymorphism(Dynamic Binding)</h3>
+                    <div class="text-dark pt-3">
+                        <p><strong>Method Overriding in Java</strong> is the best example for <strong>Runtime
+                            Polymorphism</strong>. In this type of Polymorphism the<strong> Parent class reference</strong> can
+                            hold <strong>object of Parent class or any sub class(Child class) of Parent.&nbsp;</strong>This
+                            technique is called as&nbsp;<span style="text-decoration: underline;"><strong>Dynamic Method
                     Dispatch</strong></span>
-            </p>
+                        </p>
 
-            <blockquote>Method Overriding là một ví dụ cho Runtime Polymorphism trong Java. Trong kiểu đa hình này,
-                Parent class tham chiếu tới có thể là chính Parent Class đó hoặc là các lớp con của nó. Kĩ thuật này
-                được gọi là Dynamic Method Dispatch - Phương pháp phân bổ động.
-            </blockquote>
+                        <blockquote>Method Overriding là một ví dụ cho Runtime Polymorphism trong Java. Trong kiểu đa hình này,
+                            Parent class tham chiếu tới có thể là chính Parent Class đó hoặc là các lớp con của nó. Kĩ thuật này
+                            được gọi là Dynamic Method Dispatch - Phương pháp phân bổ động.
+                        </blockquote>
 
-            <p>Vì sao gọi là Runtime. Bởi vì trong quá trình run-time, khi mà Class Loader nạp các class vào và một
-                method được gọi, thì JVM sẽ kiểm tra xem chính xác thì method nào sẽ được gọi. Nó sẽ kiểm tra của
-                thằng con và của thằng cha tương ứng. Việc xác định method nào được gọi dựa vào kết quả mà nó trả về
-                . Kết quả này phụ thuộc vào quá trình run-time nên nó gọi là run-time polymorphism.</p>
+                        <p>Vì sao gọi là Runtime. Bởi vì trong quá trình run-time, khi mà Class Loader nạp các class vào và một
+                            method được gọi, thì JVM sẽ kiểm tra xem chính xác thì method nào sẽ được gọi. Nó sẽ kiểm tra của
+                            thằng con và của thằng cha tương ứng. Việc xác định method nào được gọi dựa vào kết quả mà nó trả về
+                            . Kết quả này phụ thuộc vào quá trình run-time nên nó gọi là run-time polymorphism.</p>
 
-            <p>Xem cái định nghĩa chi tiết của nó ở dưới đây.</p>
+                        <p>Xem cái định nghĩa chi tiết của nó ở dưới đây.</p>
 
-            <p><strong>Dynamic Method Dispatch</strong> is a technique in which&nbsp;the overriden method to call is
-                resolved at the <strong>run-time</strong> rather than at <strong>compile time</strong>. In this
-                technique we will assigning the <strong>Child object</strong> to the <strong>Parent class
-                    reference</strong>. </p>
+                        <p><strong>Dynamic Method Dispatch</strong> is a technique in which&nbsp;the overriden method to call is
+                            resolved at the <strong>run-time</strong> rather than at <strong>compile time</strong>. In this
+                            technique we will assigning the <strong>Child object</strong> to the <strong>Parent class
+                                reference</strong>. </p>
 
-            <blockquote>
-                Phương pháp phân bổ động, là một kĩ thuật trong đó phương thức override được gọi để giải quyết tại
-                thời điểm run-time chứ không phải tại thời điểm compiler time.
-            </blockquote>
+                        <blockquote>
+                            Phương pháp phân bổ động, là một kĩ thuật trong đó phương thức override được gọi để giải quyết tại
+                            thời điểm run-time chứ không phải tại thời điểm compiler time.
+                        </blockquote>
 
-            <p>Xem ví dụ về cái này ở trong file RuntimePolymorphism nhé.</p>
+                        <p>Xem ví dụ về cái này ở trong file RuntimePolymorphism nhé.</p>
 
-            <p>Trong ví dụ này, ta khai báo một Parent class có phương thức là showMessage. Và cho một Child Class
-                kế thừa class trên đó nhưng Override lại phương thức đó. Ở dưới, ta new một Parent Class bằng cái
-                thằng Child, và ParentClass đó sẽ gọi lại phương thức này. Tuy nhiên, mặc dù là thằng Cha gọi, nhưng
-                kiểu dữ liệu là thằng con nên nó vẫn sử dụng thằng con. Nói thì khó hiểu lắm, thôi mời bạn xem ví dụ
-                vây.</p>
+                        <p>Trong ví dụ này, ta khai báo một Parent class có phương thức là showMessage. Và cho một Child Class
+                            kế thừa class trên đó nhưng Override lại phương thức đó. Ở dưới, ta new một Parent Class bằng cái
+                            thằng Child, và ParentClass đó sẽ gọi lại phương thức này. Tuy nhiên, mặc dù là thằng Cha gọi, nhưng
+                            kiểu dữ liệu là thằng con nên nó vẫn sử dụng thằng con. Nói thì khó hiểu lắm, thôi mời bạn xem ví dụ
+                            vây.</p>
 
-            <blockquote>
-                public class ParentClass {<br />
-                &nbsp; &nbsp; public void showMessage(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Show message for parent!!!");<br />
-                &nbsp; &nbsp; }<br />
-                }<br />
-                <br />
-                <br />
-                public class ChildClass extends ParentClass {<br />
-                &nbsp; &nbsp; @Override<br />
-                &nbsp; &nbsp; public void showMessage() {<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Show message for child class");<br />
-                &nbsp; &nbsp; }<br />
-                }<br />
-                <br />
-                <br />
-                public static void main(String args[]){<br />
-                &nbsp; &nbsp; ParentClass parentClass = new ChildClass();<br />
-                &nbsp; &nbsp; parentClass.showMessage();<br />
-                }<br />
-            </blockquote>
+                        <blockquote>
+                            public class ParentClass {<br />
+                            &nbsp; &nbsp; public void showMessage(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Show message for parent!!!");<br />
+                            &nbsp; &nbsp; }<br />
+                            }<br />
+                            <br />
+                            <br />
+                            public class ChildClass extends ParentClass {<br />
+                            &nbsp; &nbsp; @Override<br />
+                            &nbsp; &nbsp; public void showMessage() {<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Show message for child class");<br />
+                            &nbsp; &nbsp; }<br />
+                            }<br />
+                            <br />
+                            <br />
+                            public static void main(String args[]){<br />
+                            &nbsp; &nbsp; ParentClass parentClass = new ChildClass();<br />
+                            &nbsp; &nbsp; parentClass.showMessage();<br />
+                            }<br />
+                        </blockquote>
 
-            <p>Trong ví dụ trên, mặc dù ta khai báo ParentClass parentClass, nhưng khi gọi function thì nó lại dùng
-                function của thằng ChildClass để gọi. Việc nó sử dụng funtion nào để gọi phù thuộc vào run-time chứ
-                ngay từ đầu ko xác định được - nói ntn cũng ko đúng lắm, mà có thể hiểu là việc lựa chọn sẽ thực hiện
-                method nào là phụ thuộc vào object đang được truy cập đến.
-            </p>
-        </div>
+                        <p>Trong ví dụ trên, mặc dù ta khai báo ParentClass parentClass, nhưng khi gọi function thì nó lại dùng
+                            function của thằng ChildClass để gọi. Việc nó sử dụng funtion nào để gọi phù thuộc vào run-time chứ
+                            ngay từ đầu ko xác định được - nói ntn cũng ko đúng lắm, mà có thể hiểu là việc lựa chọn sẽ thực hiện
+                            method nào là phụ thuộc vào object đang được truy cập đến.
+                        </p>
+                    </div>
 
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h3 class="border-bottom border-gray pb-2 mb-0">What if the child class didn’t override the parent class method?</h3>
-            <div class="text-dark pt-3">
-                <p>Nếu mà nó không override phương thức thì nó sẽ gọi phương thức của thằng cha thôi.</p>
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">What if the child class didn’t override the parent class method?</h3>
+                        <div class="text-dark pt-3">
+                            <p>Nếu mà nó không override phương thức thì nó sẽ gọi phương thức của thằng cha thôi.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Can the Child class method be called in the Dynamic Method Dispatch?</h3>
+                        <div class="text-dark pt-3">
+                            <p>Tất nhiên là không, của ai thì nấy xài chứ. Của cha thì con có thể kế thừa, nhưng nếu nó là của
+                                riêng con thì cha ko được động chạm đến. Ích kỉ vl.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Compile time Polymorphism (Static Binding)</h3>
+                    <div class="text-dark pt-3">
+                        <p><strong>Method overloading in Java</a></strong> is the best example for <strong>Compile time
+                            Polymorphism</strong>. In  <strong>Compile time Polymorphism</strong> the <strong>control
+                            flow</strong> is decided during the  <strong>compile time</strong> itself. &nbsp;Simply we can say
+                            that a class can have more than one  method with a <strong>same name</strong> but <strong>difference
+                                in the parameters</strong>. Lets look into the below code for the better understanding.</p>
+
+                        <blockquote>
+                            Method Overloading là một vì dụ cho Compiler time Polymorphism. Tại thời điểm Compiler time, dựa vào
+                            tham số truyền vào của function Compiler sẽ biết chính xác method nào được gọi. Vì việc ấy được xác
+                            định từ đầu và bất di bất dịch nên ta gọi nó là static.
+                        </blockquote>
+                    </div>
+
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Difference between Runtime Polymorphism and Compiler
+                        Polymorphism.</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khác biệt duy nhất ở đây đó chính là việc xác định method nào để gọi. Đối với Runtime, thì JVM không
+                            biết chính xác sẽ gọi thằng nào mà phải kiểm tra đối tượng đang làm việc. Tuy nhiên đối với Compiler
+                            thì điều này đã đc xác định ngay từ ban đầu.</p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Can we Overload static methods in Java</h3>
+                    <div class="text-dark pt-3">
+                        <p>Tất nhiên là ok rồi, vì đơn giản là Overload method phụ thuộc vào số lượng tham số truyền vào, kiểu
+                            dữ liệu trả về, kiểu tham số truyền vào <strong style="text-transform: uppercase">vì vậy nó
+                                có thể có nhiều hơn 1 method</strong> . Việc xác định  method  nào sẽ được gọi căn cứ trên tham số
+                            của method.</p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Overloading of methods which differs in static keyword</h3>
+                    <div class="text-dark pt-3">
+                        <p>Không thể khai báo một method là static (method của class) và một method không phải static (method
+                            của object) mà có cùng tên, cùng tham số và cùng kiểu trả về. Ví dụ</p>
+
+                        <blockquote>
+                            public static void showMessage(){<br />
+                            &nbsp; &nbsp; System.out.println("This is static method of child!");<br />
+                            }<br />
+                            <br />
+                            public void showMessage(){<br />
+                            &nbsp; &nbsp; System.out.println("This is overload method of child!");<br />
+                            }<br />
+                        </blockquote>
+
+                        <p>Tuy nhiên nếu nó khác tham số thì cứ việc.</p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Can we Override static methods in Java</h3>
+                    <div class="text-dark pt-3">
+                        <p>Không, khi đã khai báo static rồi thì nó là phương thức của class rồi nên khi gọi nó, thì chỉ tức là
+                            gọi chính cái method của class hiện tại.</p>
+
+                        <p>Xem ví dụ ở bên dưới, ParentClass và ChildClass đều có phương thức showMessage với kiểu khai báo là
+                            static. Tuy nhiên, khác với overrider thì lúc này khi gọi parentClass.showMessage, nó luôn dùng
+                            method showMessage của ParentClass để gọi. Nói chung là override không áp dụng cho static method.</p>
+
+                        <blockquote>
+                            ParentClass fakeClass = new ChildClass();<br />
+                            // it always call the showMessage method of ParentClass, not depend on objects.<br />
+                            fakeClass.showMessage();<br />
+                        </blockquote>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Overloading Constructor Method</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cái này thì gặp nhiều rồi. Tuy nhiên, có điều này thú vị cần ghi nhớ:</p>
+
+                        <p class="lead"><strong><span style="text-decoration: underline;">Note:</span> </strong>One more important
+                            point to be
+                            noted is that when we don’t define any constructor, then the compiler <strong>will create a default
+                                constructor for you</strong>. But when you have defined a parameterised constructor the compiler
+                            <strong>will not create a default constructor.&nbsp;</strong>Let’s now redefine the above code.</p>
+                    </div>
+                </div>
             </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
         </div>
 
-        <div class="my-4 p-3 bg-white rounded box-shadow">
-            <h3 class="border-bottom border-gray pb-2 mb-0">Can the Child class method be called in the Dynamic Method Dispatch?</h3>
-            <div class="text-dark pt-3">
-                <p>Tất nhiên là không, của ai thì nấy xài chứ. Của cha thì con có thể kế thừa, nhưng nếu nó là của
-                    riêng con thì cha ko được động chạm đến. Ích kỉ vl.</p>
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
             </div>
-        </div>
-    </div>
 
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Compile time Polymorphism (Static Binding)</h3>
-        <div class="text-dark pt-3">
-            <p><strong>Method overloading in Java</a></strong> is the best example for <strong>Compile time
-                Polymorphism</strong>. In  <strong>Compile time Polymorphism</strong> the <strong>control
-                flow</strong> is decided during the  <strong>compile time</strong> itself. &nbsp;Simply we can say
-                that a class can have more than one  method with a <strong>same name</strong> but <strong>difference
-                    in the parameters</strong>. Lets look into the below code for the better understanding.</p>
-
-            <blockquote>
-                Method Overloading là một vì dụ cho Compiler time Polymorphism. Tại thời điểm Compiler time, dựa vào
-                tham số truyền vào của function Compiler sẽ biết chính xác method nào được gọi. Vì việc ấy được xác
-                định từ đầu và bất di bất dịch nên ta gọi nó là static.
-            </blockquote>
-        </div>
-
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Difference between Runtime Polymorphism and Compiler
-            Polymorphism.</h3>
-        <div class="text-dark pt-3">
-            <p>Khác biệt duy nhất ở đây đó chính là việc xác định method nào để gọi. Đối với Runtime, thì JVM không
-                biết chính xác sẽ gọi thằng nào mà phải kiểm tra đối tượng đang làm việc. Tuy nhiên đối với Compiler
-            thì điều này đã đc xác định ngay từ ban đầu.</p>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Can we Overload static methods in Java</h3>
-        <div class="text-dark pt-3">
-            <p>Tất nhiên là ok rồi, vì đơn giản là Overload method phụ thuộc vào số lượng tham số truyền vào, kiểu
-                dữ liệu trả về, kiểu tham số truyền vào <strong style="text-transform: uppercase">vì vậy nó
-                có thể có nhiều hơn 1 method</strong> . Việc xác định  method  nào sẽ được gọi căn cứ trên tham số
-                của method.</p>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Overloading of methods which differs in static keyword</h3>
-        <div class="text-dark pt-3">
-            <p>Không thể khai báo một method là static (method của class) và một method không phải static (method
-                của object) mà có cùng tên, cùng tham số và cùng kiểu trả về. Ví dụ</p>
-
-            <blockquote>
-                public static void showMessage(){<br />
-                &nbsp; &nbsp; System.out.println("This is static method of child!");<br />
-                }<br />
-                <br />
-                public void showMessage(){<br />
-                &nbsp; &nbsp; System.out.println("This is overload method of child!");<br />
-                }<br />
-            </blockquote>
-
-            <p>Tuy nhiên nếu nó khác tham số thì cứ việc.</p>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Can we Override static methods in Java</h3>
-        <div class="text-dark pt-3">
-            <p>Không, khi đã khai báo static rồi thì nó là phương thức của class rồi nên khi gọi nó, thì chỉ tức là
-                gọi chính cái method của class hiện tại.</p>
-
-            <p>Xem ví dụ ở bên dưới, ParentClass và ChildClass đều có phương thức showMessage với kiểu khai báo là
-                static. Tuy nhiên, khác với overrider thì lúc này khi gọi parentClass.showMessage, nó luôn dùng
-                method showMessage của ParentClass để gọi. Nói chung là override không áp dụng cho static method.</p>
-
-            <blockquote>
-                ParentClass fakeClass = new ChildClass();<br />
-                // it always call the showMessage method of ParentClass, not depend on objects.<br />
-                fakeClass.showMessage();<br />
-            </blockquote>
-        </div>
-    </div>
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Overloading Constructor Method</h3>
-        <div class="text-dark pt-3">
-            <p>Cái này thì gặp nhiều rồi. Tuy nhiên, có điều này thú vị cần ghi nhớ:</p>
-
-            <p class="lead"><strong><span style="text-decoration: underline;">Note:</span> </strong>One more important
-                point to be
-                noted is that when we don’t define any constructor, then the compiler <strong>will create a default
-                    constructor for you</strong>. But when you have defined a parameterised constructor the compiler
-                <strong>will not create a default constructor.&nbsp;</strong>Let’s now redefine the above code.</p>
-        </div>
+                </ol>
+            </div>
+        </aside>
     </div>
 </main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_07_Access_Modifier_in_Java.html">
-                    Access Modifier in Java
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="lesson_08_Constructor_in_Java.html">
-                    Constructor and Main function in Java
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <br class="clearfix"/>
-
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
-    </div>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
 </footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>

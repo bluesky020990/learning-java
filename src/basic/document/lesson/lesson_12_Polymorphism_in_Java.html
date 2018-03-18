@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Polymorphism in Java</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,334 +10,331 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-
-<main role="main" class="container">
-    <div class="introduction">
-        <h1>Polymorphism in Java</h1>
-        <div class="lead">
-            <p>Như những ngôn ngữ hướng đối tượng khác, Java cũng hỗ trợ đa hình. Điều đó thể hiện qua 2 phương thức</p>
-
-            <ol>
-                <li>Overloading - Quá tải</li>
-                <li>Overriding - Nạp chồng / ghi đè</li>
-            </ol>
-        </div>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Overloading - Quá tải</h3>
-        <div class="text-dark pt-3">
-            <p>
-                Method Overloading in Java allows you to have two or more methods with same method name but with the
-                difference in the parameters. <br />
-                There are three possible cases in which we achieve it
-            </p>
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Polymorphism in Java</h1>
+            <div class="lead">
+                <p>Như những ngôn ngữ hướng đối tượng khác, Java cũng hỗ trợ đa hình. Điều đó thể hiện qua 2 phương thức</p>
 
-            <ol>
-                <li>Difference in the number of parameters</li>
-                <li>Difference in the datatypes</li>
-                <li>Difference in the sequence of parameters.</li>
-            </ol>
-
-            <p>Overloading trong Java cho phép bạn có nhiều method cùng tên.</p>
-
-            <p>Những method này bắt buộc phải khác nhau về số lượng tham số, kiểu dữ liệu trả về hoặc là tùy vào kiểu
-                của Tham số.</p>
-
-            <p>Trong quá trình hoạt động, tùy vào những thuộc tính trên mà JVM sẽ lựa chọn function phù hợp để thực
-                thi.</p>
-
-
-
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Overriding</h3>
-        <div class="text-dark pt-3">
-            <p>Method overriding is almost the same as Method Overloading with a slight change, overriding has the
-                same method name, with the same number of arguments but the methods present in the different classes.
-                Method Overriding is possible only through inheritance .</p>
-
-            <p>
-                When a Sub class has the implementation of the same method which is defined in the Parent class then
-                it is called as Method Overriding. Unlike Method Overloading in Java the parameters passed will not
-                differ in Overriding.
-            </p>
-
-            <p>Khác với overloading, những method có cùng tên nhưng khác tham số, OVERRIDING xảy ra khi mà lớp con
-                ghi đè phương thức của lớp cha.
-            </p>
-
-            <p>Overriding chỉ áp dụng với các phương thức được khai báo là public, protected, defaul, vì thằng
-                private là phương thức riêng của object bên trong lớp đó, chỉ có nó thấy, nên thằng con đâu thấy của
-                thằng cha đâu mà override.</p>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Difference between Overriding and Overloading</h3>
-        <div class="text-dark pt-3">
-            <table class="tab-content table-bordered">
-                <thead>
-                <tr>
-                    <th>Overriding</th>
-                    <th>Overloading</th>
-                </tr>
-                </thead>
-                <tr>
-                    <td>Số lượng tham số/ kiểu dữ liệu trả về/ kiểu tham số truyền vào phải khác nhau.</td>
-                    <td>Số lượng tham số phải giống nhau, các kiểu dữ liệu phải giống nhau, kiểu trả về cũng phải
-                        giống nhau.</td>
-                </tr>
-
-                <tr>
-                    <td>Khi gọi function commonFunction() thì JVM sẽ lựa chọn function nào của object mà thích hợp
-                        nhất tùy thuộc vào kiểu dữ liệu truyền vào để gọi. Vì vậy có thể có nhiều hơn 1 method được
-                        xem xét</td>
-                    <td>Luôn và luôn luôn gọi cái function commonFunction của thằng con, thằng mà Override cái
-                        function đó. Vì vậy chỉ có tối đa 1 function được xem xét.</td>
-                </tr>
-
-                <tr>
-                    <td>Đa hình bằng tham số truyền vào</td>
-                    <td>Đa hình bằng cách sử dụng lớp con để ghi đè lên function của lớp cha.</td>
-                </tr>
-            </table>
-
-            <p>Tóm lại</p>
-
-            <ul>
-                <li>Overloading – Same Class, Same Method Name, Different Parameters</li>
-                <li>Overriding  – Different Class, Same Method Name, Same Parameters.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Role of Access Modifiers in Overriding</h3>
-        <div class="text-dark pt-3">
-            <p>The <strong>access modifier</strong> of the overriding method(<strong>method in the Child
-                class</strong>) cannot be <strong>more restrictive</strong> than the <strong>Parent</strong> class.
-                Lets take below example where we have the <strong>display()</strong> method with access modifier
-                as&nbsp;<strong>“public”</strong> in <strong>Parent</strong> class and the <strong>Child</strong>
-                class cannot have<strong> “private” or “protected” or “default”</strong> modifiers as all of them are
-                more restrictive than <strong>“public”</strong></p>
-
-
-            <p>Cái khái niệm trên nên được hiểu chính xác là ntn. Xem ví dụ về PolymorphismInJava nhé.</p>
-
-            <p>Giả sử ta có class Supper Class với các method dưới đây:</p>
-            <blockquote>
-                public class SupperClass {<br />
-                &nbsp; &nbsp; protected String message;<br />
-                <br />
-                &nbsp; &nbsp; public SupperClass(String message) {<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; this.message = message;<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                // this function only belongs parent class. child class cannot see it.
-                &nbsp; &nbsp; <strong>private</strong> void privateMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is private method of parent class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                &nbsp; &nbsp; <strong>protected</strong> void protectedMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is protected method of parent class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                &nbsp; &nbsp; <strong>public</strong> void publicMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is public method of parent class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                }<br />
-            </blockquote>
-
-            <p>Ta khai báo tiếp class ChildClass extend từ class trên kia và Override lại các phương thức của nó như
-                sau :</p>
-
-            <blockquote>
-                public class ChildClass extends SupperClass {<br />
-                &nbsp; &nbsp; public ChildClass(String message) {<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; super(message);<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                // this function only belongs child class
-                &nbsp; &nbsp; <strong>private</strong> void privateMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is private method of child class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                &nbsp; &nbsp; <strong>private</strong> void protectedMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is protected method of child class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                <br />
-                &nbsp; &nbsp; <strong>private</strong> void publicMethod(){<br />
-                &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is public method of child class " + message);<br />
-                &nbsp; &nbsp; }<br />
-                }
-            </blockquote>
-
-            <p>Khi ta khai báo access modifier cho protectedMethod của Subclass là <strong>private</strong> thì
-                trình biên dịch báo lỗi. Lý do đó là cái thằng con thì restricted của nó phải không được nhỏ hơn
-                thằng cha. Vì vậy trong trường hợp này, ta cần khai báo là protected / public</p>
-
-            <p>Tương tự như thế đối với phương thức publicMethod của thằng con.</p>
-
-            <p>Qua đó ta hiểu rằng, cái khái niệm : <strong>method in the Child
-                class</strong> cannot be <strong>more restrictive</strong> than the <strong>Parent</strong> class
-                tức là nói tới access modifier của thằng con khi nó override cái method đó, ko được nhỏ hơn thằng
-                cha.</p>
-
-            <p>Xem nguyên lý Solid trong hướng đối tượng - Likop gì gì đó, đó là thằng con có thể thay thế cho thằng
-                cha mà ko làm thay đổi ngữ cảnh.</p>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Exception Handling in Overriding</h3>
-        <div class="text-dark pt-3">
-            <h5>1. When Parent class method doesn’t throw any Exception then Child class overriden method also cannot
-                declare any <strong>Checked Exception</strong></h5>
-
-            <blockquote>Nếu phương thức cha không throw Exception thì thằng con cũng thế. Xem trong ví dụ của Child Class,
-                nó throw ra Exception thì compiler sẽ báo lỗi ngay. (Override method does not throw .... exception).</blockquote>
-
-            <h5>2. When Parent class method doesn’t throw any exception then Child class overriden method can declare
-                <strong>** UnChecked Exception</strong> - xem định nghĩa bên dưới.</h5>
-
-            <blockquote>Nếu phương thức cha không throw ra Exception, thì override method của thằng con có thể throw
-                ra UnChecked Exception. Lưu ý là Unchecked exception nhé.</blockquote>
-
-
-            <h5>3. When Parent class declares an Exception then the Child class overriden method can declare the same
-                or sub class exception or no exception </h5>
-
-            <blockquote>Xem trong ví dụ của public method của thằng cha. Rõ ràng là nó throw ra Nullpoint Exception, nhưng
-                thằng con không cần throw ra Exception đó vẫn hợp lệ.</blockquote>
-
-            <h5>4. When Parent class declares an Exception then the Child class overriden method  cannot declare
-                super class exception</h5>
-
-            <blockquote>
-                Ví dụ Exception là supper của IOException. Nếu thằng cha throw ra IOException mà thằng con lại throw
-                ra Exception thì ko cho phép.
-            </blockquote>
-
-            <h5>Tóm lại</h5>
-
-            <ol>
-                <li>Nếu thằng cha ko throw Exception nào thì override của thằng con cũng ko đc throw ra Exception</li>
-
-                <li>Nếu thằng cha ko throw Exception nào thì override của thằng con đc phép throw Unchecked
-                    Exception</li>
-
-                <li>Nếu thằng cha throw ra Exception thì override của thằng con có thể có hoặc không throw ra
-                    Exception.</li>
-
-                <li>Nếu thằng cha throw ra Exception thì override của thằng con không thể  throw ra
-                    super Exception  của thằng cha. - Con thì ko thể hơn cha.</li>
-            </ol>
-        </div>
-    </div>
-
-
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Checked and Unchecked Exception.</h3>
-        <div class="text-dark pt-3">
-            <p>Trong Java có 2 loại exception: checked và unchecked. Tất cả các checked exception được kế thừa từ lớp
-                Exception ngoại trừ lớp RuntimeException. RuntimeException là lớp cơ sở của tất cả các lớp unchecked
-                exception. Đó cũng là dấu hiệu để nhận biết đâu là checked exception và đâu là unchecked exception.
-                Cùng xem qua hierarchy của tất cả các lớp exception:</p>
-
-            <img src="../assests/inherintance/exceptionhierarchy.png" class="img-fluid"/>
-
-            <h5>What is difference between Checked Exception and Unchecked Exception</h5>
-
-            <p>Điểm khác biệt giữa các lớp checked và unchecked expcetion chính là thời điểm xác định được expcetion
-                có thể xảy ra. Đối với checked exception, việc kiểm tra được thực hiện ngay thời điểm compile time,
-                một số IDE sẽ giúp chúng ta bằng cách hiển thị lỗi cú pháp nếu ta gọi một method throw ra bất kỳ
-                checked exception nào mà không được catch. <br />
-                <br />
-                Một số checked exception tiêu biểu như: IOException, InterruptedException, XMLParseException..
-                <br />
-                <br />
-                <br />Còn đối với unchecked exception, việc xác định có exception xảy ra hay không chỉ có thể thực
-                hiện ở thời điểm runtime, và các IDE sẽ không giúp chúng ta xác định được chuyện đó. <br />
-                <br />
-                Một số unchecked exception tiêu biểu là: NullPointerException, IndexOutOfBoundsException,
-                ClassCastException…  </p>
-
-            <h5>Checked và Unchecked Exception use cases</h5>
-
-            <p>
-                Vậy một câu hỏi đặt ra khi design API là khi nào một method sẽ throw checked exception, và khi nào sẽ
-                throw unchecked exception.<br />
-                <br />
-                Throw unchecked exception trong trường hợp chương trình bị sai về logic, không thể làm gì tiếp theo
-                nếu gặp những lỗi đó, ví dụ như có 1 biến null hoặc không hợp lệ khiến toàn bộ đoạn chương trình phía
-                sau không thể làm tiếp, ta sẽ throw NullPointerException hoặc IllegalArgumentException. Còn trong
-                trường hợp những lỗi vẫn còn có thể handle được thì throw checked exception. Ví dụ như method open
-                file có thể throw FileNotFoundException nhằm mục đích cảnh báo khi client gọi đến method này, cần
-                phải handle trường hợp không tìm thấy file lúc đọc file. Đó không phải là lỗi logic chương trình mà
-                là 1 ngoại lệ khác với kết quả mong muốn từ việc đọc file. </p>
-            <p></p>
-        </div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_07_Access_Modifier_in_Java.html">
-                    Access Modifier in Java
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="lesson_13_Type_of_Polymorphism_in_Java.html">
-                    Type of Polymorphism in Java
-                </a>
+                <ol>
+                    <li>Overloading - Quá tải</li>
+                    <li>Overriding - Nạp chồng / ghi đè</li>
+                </ol>
             </div>
         </div>
     </div>
+</div>
 
-    <br class="clearfix"/>
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Overloading - Quá tải</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            Method Overloading in Java allows you to have two or more methods with same method name but with the
+                            difference in the parameters. <br />
+                            There are three possible cases in which we achieve it
+                        </p>
 
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
+                        <ol>
+                            <li>Difference in the number of parameters</li>
+                            <li>Difference in the datatypes</li>
+                            <li>Difference in the sequence of parameters.</li>
+                        </ol>
+
+                        <p>Overloading trong Java cho phép bạn có nhiều method cùng tên.</p>
+
+                        <p>Những method này bắt buộc phải khác nhau về số lượng tham số, kiểu dữ liệu trả về hoặc là tùy vào kiểu
+                            của Tham số.</p>
+
+                        <p>Trong quá trình hoạt động, tùy vào những thuộc tính trên mà JVM sẽ lựa chọn function phù hợp để thực
+                            thi.</p>
+
+
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Overriding</h3>
+                    <div class="text-dark pt-3">
+                        <p>Method overriding is almost the same as Method Overloading with a slight change, overriding has the
+                            same method name, with the same number of arguments but the methods present in the different classes.
+                            Method Overriding is possible only through inheritance .</p>
+
+                        <p>
+                            When a Sub class has the implementation of the same method which is defined in the Parent class then
+                            it is called as Method Overriding. Unlike Method Overloading in Java the parameters passed will not
+                            differ in Overriding.
+                        </p>
+
+                        <p>Khác với overloading, những method có cùng tên nhưng khác tham số, OVERRIDING xảy ra khi mà lớp con
+                            ghi đè phương thức của lớp cha.
+                        </p>
+
+                        <p>Overriding chỉ áp dụng với các phương thức được khai báo là public, protected, defaul, vì thằng
+                            private là phương thức riêng của object bên trong lớp đó, chỉ có nó thấy, nên thằng con đâu thấy của
+                            thằng cha đâu mà override.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Difference between Overriding and Overloading</h3>
+                    <div class="text-dark pt-3">
+                        <table class="tab-content table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Overriding</th>
+                                <th>Overloading</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>Số lượng tham số/ kiểu dữ liệu trả về/ kiểu tham số truyền vào phải khác nhau.</td>
+                                <td>Số lượng tham số phải giống nhau, các kiểu dữ liệu phải giống nhau, kiểu trả về cũng phải
+                                    giống nhau.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Khi gọi function commonFunction() thì JVM sẽ lựa chọn function nào của object mà thích hợp
+                                    nhất tùy thuộc vào kiểu dữ liệu truyền vào để gọi. Vì vậy có thể có nhiều hơn 1 method được
+                                    xem xét</td>
+                                <td>Luôn và luôn luôn gọi cái function commonFunction của thằng con, thằng mà Override cái
+                                    function đó. Vì vậy chỉ có tối đa 1 function được xem xét.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Đa hình bằng tham số truyền vào</td>
+                                <td>Đa hình bằng cách sử dụng lớp con để ghi đè lên function của lớp cha.</td>
+                            </tr>
+                        </table>
+
+                        <p>Tóm lại</p>
+
+                        <ul>
+                            <li>Overloading – Same Class, Same Method Name, Different Parameters</li>
+                            <li>Overriding  – Different Class, Same Method Name, Same Parameters.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Role of Access Modifiers in Overriding</h3>
+                    <div class="text-dark pt-3">
+                        <p>The <strong>access modifier</strong> of the overriding method(<strong>method in the Child
+                            class</strong>) cannot be <strong>more restrictive</strong> than the <strong>Parent</strong> class.
+                            Lets take below example where we have the <strong>display()</strong> method with access modifier
+                            as&nbsp;<strong>“public”</strong> in <strong>Parent</strong> class and the <strong>Child</strong>
+                            class cannot have<strong> “private” or “protected” or “default”</strong> modifiers as all of them are
+                            more restrictive than <strong>“public”</strong></p>
+
+
+                        <p>Cái khái niệm trên nên được hiểu chính xác là ntn. Xem ví dụ về PolymorphismInJava nhé.</p>
+
+                        <p>Giả sử ta có class Supper Class với các method dưới đây:</p>
+                        <blockquote>
+                            public class SupperClass {<br />
+                            &nbsp; &nbsp; protected String message;<br />
+                            <br />
+                            &nbsp; &nbsp; public SupperClass(String message) {<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; this.message = message;<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            // this function only belongs parent class. child class cannot see it.
+                            &nbsp; &nbsp; <strong>private</strong> void privateMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is private method of parent class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            &nbsp; &nbsp; <strong>protected</strong> void protectedMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is protected method of parent class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            &nbsp; &nbsp; <strong>public</strong> void publicMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is public method of parent class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            }<br />
+                        </blockquote>
+
+                        <p>Ta khai báo tiếp class ChildClass extend từ class trên kia và Override lại các phương thức của nó như
+                            sau :</p>
+
+                        <blockquote>
+                            public class ChildClass extends SupperClass {<br />
+                            &nbsp; &nbsp; public ChildClass(String message) {<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; super(message);<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            // this function only belongs child class
+                            &nbsp; &nbsp; <strong>private</strong> void privateMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is private method of child class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            &nbsp; &nbsp; <strong>private</strong> void protectedMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is protected method of child class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            <br />
+                            &nbsp; &nbsp; <strong>private</strong> void publicMethod(){<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("This is public method of child class " + message);<br />
+                            &nbsp; &nbsp; }<br />
+                            }
+                        </blockquote>
+
+                        <p>Khi ta khai báo access modifier cho protectedMethod của Subclass là <strong>private</strong> thì
+                            trình biên dịch báo lỗi. Lý do đó là cái thằng con thì restricted của nó phải không được nhỏ hơn
+                            thằng cha. Vì vậy trong trường hợp này, ta cần khai báo là protected / public</p>
+
+                        <p>Tương tự như thế đối với phương thức publicMethod của thằng con.</p>
+
+                        <p>Qua đó ta hiểu rằng, cái khái niệm : <strong>method in the Child
+                            class</strong> cannot be <strong>more restrictive</strong> than the <strong>Parent</strong> class
+                            tức là nói tới access modifier của thằng con khi nó override cái method đó, ko được nhỏ hơn thằng
+                            cha.</p>
+
+                        <p>Xem nguyên lý Solid trong hướng đối tượng - Likop gì gì đó, đó là thằng con có thể thay thế cho thằng
+                            cha mà ko làm thay đổi ngữ cảnh.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Exception Handling in Overriding</h3>
+                    <div class="text-dark pt-3">
+                        <h5>1. When Parent class method doesn’t throw any Exception then Child class overriden method also cannot
+                            declare any <strong>Checked Exception</strong></h5>
+
+                        <blockquote>Nếu phương thức cha không throw Exception thì thằng con cũng thế. Xem trong ví dụ của Child Class,
+                            nó throw ra Exception thì compiler sẽ báo lỗi ngay. (Override method does not throw .... exception).</blockquote>
+
+                        <h5>2. When Parent class method doesn’t throw any exception then Child class overriden method can declare
+                            <strong>** UnChecked Exception</strong> - xem định nghĩa bên dưới.</h5>
+
+                        <blockquote>Nếu phương thức cha không throw ra Exception, thì override method của thằng con có thể throw
+                            ra UnChecked Exception. Lưu ý là Unchecked exception nhé.</blockquote>
+
+
+                        <h5>3. When Parent class declares an Exception then the Child class overriden method can declare the same
+                            or sub class exception or no exception </h5>
+
+                        <blockquote>Xem trong ví dụ của public method của thằng cha. Rõ ràng là nó throw ra Nullpoint Exception, nhưng
+                            thằng con không cần throw ra Exception đó vẫn hợp lệ.</blockquote>
+
+                        <h5>4. When Parent class declares an Exception then the Child class overriden method  cannot declare
+                            super class exception</h5>
+
+                        <blockquote>
+                            Ví dụ Exception là supper của IOException. Nếu thằng cha throw ra IOException mà thằng con lại throw
+                            ra Exception thì ko cho phép.
+                        </blockquote>
+
+                        <h5>Tóm lại</h5>
+
+                        <ol>
+                            <li>Nếu thằng cha ko throw Exception nào thì override của thằng con cũng ko đc throw ra Exception</li>
+
+                            <li>Nếu thằng cha ko throw Exception nào thì override của thằng con đc phép throw Unchecked
+                                Exception</li>
+
+                            <li>Nếu thằng cha throw ra Exception thì override của thằng con có thể có hoặc không throw ra
+                                Exception.</li>
+
+                            <li>Nếu thằng cha throw ra Exception thì override của thằng con không thể  throw ra
+                                super Exception  của thằng cha. - Con thì ko thể hơn cha.</li>
+                        </ol>
+                    </div>
+                </div>
+
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Checked and Unchecked Exception.</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong Java có 2 loại exception: checked và unchecked. Tất cả các checked exception được kế thừa từ lớp
+                            Exception ngoại trừ lớp RuntimeException. RuntimeException là lớp cơ sở của tất cả các lớp unchecked
+                            exception. Đó cũng là dấu hiệu để nhận biết đâu là checked exception và đâu là unchecked exception.
+                            Cùng xem qua hierarchy của tất cả các lớp exception:</p>
+
+                        <img src="../assests/inherintance/exceptionhierarchy.png" class="img-fluid"/>
+
+                        <h5>What is difference between Checked Exception and Unchecked Exception</h5>
+
+                        <p>Điểm khác biệt giữa các lớp checked và unchecked expcetion chính là thời điểm xác định được expcetion
+                            có thể xảy ra. Đối với checked exception, việc kiểm tra được thực hiện ngay thời điểm compile time,
+                            một số IDE sẽ giúp chúng ta bằng cách hiển thị lỗi cú pháp nếu ta gọi một method throw ra bất kỳ
+                            checked exception nào mà không được catch. <br />
+                            <br />
+                            Một số checked exception tiêu biểu như: IOException, InterruptedException, XMLParseException..
+                            <br />
+                            <br />
+                            <br />Còn đối với unchecked exception, việc xác định có exception xảy ra hay không chỉ có thể thực
+                            hiện ở thời điểm runtime, và các IDE sẽ không giúp chúng ta xác định được chuyện đó. <br />
+                            <br />
+                            Một số unchecked exception tiêu biểu là: NullPointerException, IndexOutOfBoundsException,
+                            ClassCastException…  </p>
+
+                        <h5>Checked và Unchecked Exception use cases</h5>
+
+                        <p>
+                            Vậy một câu hỏi đặt ra khi design API là khi nào một method sẽ throw checked exception, và khi nào sẽ
+                            throw unchecked exception.<br />
+                            <br />
+                            Throw unchecked exception trong trường hợp chương trình bị sai về logic, không thể làm gì tiếp theo
+                            nếu gặp những lỗi đó, ví dụ như có 1 biến null hoặc không hợp lệ khiến toàn bộ đoạn chương trình phía
+                            sau không thể làm tiếp, ta sẽ throw NullPointerException hoặc IllegalArgumentException. Còn trong
+                            trường hợp những lỗi vẫn còn có thể handle được thì throw checked exception. Ví dụ như method open
+                            file có thể throw FileNotFoundException nhằm mục đích cảnh báo khi client gọi đến method này, cần
+                            phải handle trường hợp không tìm thấy file lúc đọc file. Đó không phải là lỗi logic chương trình mà
+                            là 1 ngoại lệ khác với kết quả mong muốn từ việc đọc file. </p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+                </ol>
+            </div>
+        </aside>
     </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
 </footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>

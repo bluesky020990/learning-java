@@ -28,24 +28,29 @@ blockquote {
     border: 1px solid;
 }
 
-main .introduction {
+nav.blog-pagination .btn.btn-outline-primary{
+    float: left;
     background: white;
-    padding: 20px;
-    border-radius: 6px;
+    border: 2px solid #005cbf;
+    color: #005cbf;
+    font-weight: bold;
+}
+
+nav.blog-pagination .btn.btn-outline-secondary{
+    float: right;
+    background: white;
+    border: 2px solid #005cbf;
+    color: #005cbf;
+    font-weight: bold;
 }
 
 .img-fluid{
     margin: 10px auto;
 }
 
-footer .btn.btn-default{
-    background: #6f42c1;
-    color: #fff;
-}
-
-footer address {
-    background: lightgrey;
-    padding: 15px;
+footer.blog-footer{
+    text-align: center;
+    padding: 20px;
 }
 
 .box-shadow li{

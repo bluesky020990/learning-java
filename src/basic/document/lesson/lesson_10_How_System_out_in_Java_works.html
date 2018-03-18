@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Java – How System.out.println() really work?</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,173 +10,122 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-
-<main role="main" class="container">
-    <div class="introduction">
-        <h1>Java – How System.out.println() really work?</h1>
-        <div class="lead">
-            <p>Học với Java ai cũng biết cái method System.out.println(). Tuy nhiên, nó hoạt động ntn.</p>
-        </div>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Role of Dot operator</h3>
-        <div class="text-dark pt-3">
-            <p>We all know that in Java we use the Dot operator to call the methods or variable of a class. Here ‘out’
-                is the mysterious part as we doesn’t whether it is a variable or method ?. ‘out’ cannot possibly be a
-                method as we don’t have a parenthesis() at the end and we are not calling like “System.out(“JIP”).println”,
-                so from this we can be sure that out is a variable and not a method.</p>
-            <blockquote>
-                Chúng ta đều biết rằng Java sử dụng DOT OPERATION để gọi method hoặc variable của class. Tuy nhiên
-                out ở đây ko phải là method, vì nó ko có dấu () ở cuối, và chúng ta cũng ko thể gọi bằng cách viết
-                System.out("abcdef").println nên OUT trong này phải là một biến.
-            </blockquote>
-
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">What type of variable is ‘out’ ?</h3>
-        <div class="text-dark pt-3">
-            <p>Nếu nó ko phải là biến, thế nó là cái quái gì???</p>
-
-            <p>Now we have come to a conclusion that ‘out’ is a variable, now comes the question what type of variable
-                is ‘out’ is it static variable or instance variable ? We all know that only static variables can be
-                called with the class name directly, same is happening here also System is a class in java.lang
-                package we are using it to call ‘out’ variable.  Moreover ‘out’ cannot be a instance variable as we
-                not creating any instance for calling it.</p>
-
-            <p>Từ trên kia, chúng ta đã kết luận rằng out là một biến. Vậy, ta có một câu hỏi khác, kiểu của out là
-                static variable hay là instance variable.</p>
-
-            <p>Trong System class, out được khai báo như sau:</p>
-
-            <blockquote>
-                public final static PrintStream out = null;
-            </blockquote>
-
-            <p>Như vậy, nó vừa là static, vừa là final reference đến PrintStream Class.</p>
-
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">How ‘out’ is initialized ?</h3>
-        <div class="text-dark pt-3">
-            <p>Cái này mò hoài mà ko thấy nó đâu.</p>
-
-            <p>Search trên mạng thì nó ra cái này:</p>
-
-            <blockquote>
-
-            </blockquote>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-        <div class="text-dark pt-3">
-            BODY_CONTENT
-        </div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_00_Beginning_Learning_java.html">
-                    _PREVIOUS_RESOURCE
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="lesson_00_Beginning_Learning_java.html">
-                    _NEXT_RESOURCE
-                </a>
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Java – How System.out.println() really work?</h1>
+            <div class="lead">
+                <p>Học với Java ai cũng biết cái method System.out.println(). Tuy nhiên, nó hoạt động ntn.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <br class="clearfix"/>
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Role of Dot operator</h3>
+                    <div class="text-dark pt-3">
+                        <p>We all know that in Java we use the Dot operator to call the methods or variable of a class. Here ‘out’
+                            is the mysterious part as we doesn’t whether it is a variable or method ?. ‘out’ cannot possibly be a
+                            method as we don’t have a parenthesis() at the end and we are not calling like “System.out(“JIP”).println”,
+                            so from this we can be sure that out is a variable and not a method.</p>
+                        <blockquote>
+                            Chúng ta đều biết rằng Java sử dụng DOT OPERATION để gọi method hoặc variable của class. Tuy nhiên
+                            out ở đây ko phải là method, vì nó ko có dấu () ở cuối, và chúng ta cũng ko thể gọi bằng cách viết
+                            System.out("abcdef").println nên OUT trong này phải là một biến.
+                        </blockquote>
 
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">What type of variable is ‘out’ ?</h3>
+                    <div class="text-dark pt-3">
+                        <p>Nếu nó ko phải là biến, thế nó là cái quái gì???</p>
+
+                        <p>Now we have come to a conclusion that ‘out’ is a variable, now comes the question what type of variable
+                            is ‘out’ is it static variable or instance variable ? We all know that only static variables can be
+                            called with the class name directly, same is happening here also System is a class in java.lang
+                            package we are using it to call ‘out’ variable.  Moreover ‘out’ cannot be a instance variable as we
+                            not creating any instance for calling it.</p>
+
+                        <p>Từ trên kia, chúng ta đã kết luận rằng out là một biến. Vậy, ta có một câu hỏi khác, kiểu của out là
+                            static variable hay là instance variable.</p>
+
+                        <p>Trong System class, out được khai báo như sau:</p>
+
+                        <blockquote>
+                            public final static PrintStream out = null;
+                        </blockquote>
+
+                        <p>Như vậy, nó vừa là static, vừa là final reference đến PrintStream Class.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">How ‘out’ is initialized ?</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cái này mò hoài mà ko thấy nó đâu.</p>
+
+                        <p>Search trên mạng thì nó ra cái này:</p>
+
+                        <blockquote>
+
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
     </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
 </footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>

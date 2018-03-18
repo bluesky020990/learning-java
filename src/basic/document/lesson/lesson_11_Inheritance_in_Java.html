@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inheritance in Java</title>
+    <title>Title of page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,303 +10,301 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../src/global/global.js"></script>
 </head>
-
 <body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
     </div>
-</nav>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Inheritance in Java</h1>
+            <div class="lead">
+                <p>Inheritance - Thừa kế, là một trong những khái niệm (concept) quan trọng trong OOP. Java Inheritance
+                    là một quá trình mà trong đó, một class có thể sử dụng lại method và thuộc tính (fields/properties)
+                    của một class khác. Derived class - subclass tái sử dụng methods và variables của Base Class -
+                    Supper Class</p>
+
+                <p>Inheritance diễn tả mỗi quan hệ IS-A, hay còn được gọi là Parent-Child relationship. Parent class có
+                    thể có rất nhiều Child class, tuy nhiên mỗi Child class chỉ thuộc 1 Parent Class.
+                </p>
+
+                <p>Child class kế thừa Parent class bằng các sử dụng từ khóa extends.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <main role="main" class="container">
-    <div class="introduction">
-        <h1>Inheritance in Java</h1>
-        <div class="lead">
-            <p>Inheritance - Thừa kế, là một trong những khái niệm (concept) quan trọng trong OOP. Java Inheritance
-                là một quá trình mà trong đó, một class có thể sử dụng lại method và thuộc tính (fields/properties)
-                của một class khác. Derived class - subclass tái sử dụng methods và variables của Base Class -
-                Supper Class</p>
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Inheritance in Java Example</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            Xem file : <strong>InheritanceInJava.java</strong>
+                        </p>
 
-            <p>Inheritance diễn tả mỗi quan hệ IS-A, hay còn được gọi là Parent-Child relationship. Parent class có
-                thể có rất nhiều Child class, tuy nhiên mỗi Child class chỉ thuộc 1 Parent Class.
-            </p>
+                        <p class="lead">Có một hiểu nhầm nho nhỏ ở hồi xưa, cứ tưởng đối với thằng super class lúc nào cũng phải
+                            set abstract
+                            cho nó thì mấy thằng con mới kế thừa được. Nhưng rõ ràng trong ví dụ này, chẳng có từ khóa abstract nào
+                            cả, mà lũ kia vẫn chạy bt.</p>
+                    </div>
+                </div>
 
-            <p>Child class kế thừa Parent class bằng các sử dụng từ khóa extends.</p>
-        </div>
-    </div>
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Different Types of Inheritance in Java</h3>
+                    <div class="lead text-dark pt-3">
+                        <p>Dưới đây là các kiểu kế thừa khác nhau trong Java, một số đuộc hỗ trợ trược tiếp, một số phải sử dụng
+                            interface.</p>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Inheritance in Java Example</h3>
-        <div class="text-dark pt-3">
-           <p>
-               Xem file : <strong>InheritanceInJava.java</strong>
-           </p>
+                        <p>Interface thực hiện kế thừa ntn???</p>
+                    </div>
 
-            <p class="lead">Có một hiểu nhầm nho nhỏ ở hồi xưa, cứ tưởng đối với thằng super class lúc nào cũng phải
-                set abstract
-            cho nó thì mấy thằng con mới kế thừa được. Nhưng rõ ràng trong ví dụ này, chẳng có từ khóa abstract nào
-                cả, mà lũ kia vẫn chạy bt.</p>
-        </div>
-    </div>
+                    <div class="text-dark pt-3">
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Single Inheritance</h5>
+                            <div class="text-dark pt-3">
+                                <p>Single inheritance - Đơn thừa kế cho phép lớp thừa kế (derived class - subclass) kế thừa đặc tính
+                                    và
+                                    hành
+                                    vi từ một lớp cha duy nhất</p>
 
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Different Types of Inheritance in Java</h3>
-        <div class="lead text-dark pt-3">
-            <p>Dưới đây là các kiểu kế thừa khác nhau trong Java, một số đuộc hỗ trợ trược tiếp, một số phải sử dụng
-                interface.</p>
+                                <img src="../assests/inherintance/Single_Inheritance_in_Java.png" class="img-fluid"/>
+                            </div>
+                        </div>
 
-            <p>Interface thực hiện kế thừa ntn???</p>
-        </div>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Multiple Inheritance (Through Interface)</h5>
+                            <div class="text-dark pt-3">
+                                <p>Multiple inheritance - đa thừa kế (một lớp con có thể thừa kế từ nhiều lớp cha) không được hỗ
+                                    trợ trong Java vì nó khiến mọi thứ trở nên nhập nhằng và khó quản lý</p>
 
-        <div class="text-dark pt-3">
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Single Inheritance</h5>
-                <div class="text-dark pt-3">
-                    <p>Single inheritance - Đơn thừa kế cho phép lớp thừa kế (derived class - subclass) kế thừa đặc tính
-                        và
-                        hành
-                        vi từ một lớp cha duy nhất</p>
+                                <p>Thay vào đó, Java đưa ra một khái niệm khác, đó là Interface.</p>
 
-                    <img src="../assests/inherintance/Single_Inheritance_in_Java.png" class="img-fluid"/>
+                                <p>Khái niệm Multiple Inheritance phải giống như dưới đây:</p>
+
+                                <img src="../assests/inherintance/Multiple_Inheritance_in_Java.png" class="img-fluid"/>
+
+                                <p>Trong mô hình này, class C đều kế thừa từ Class A và Class B. Tuy nhiên, vì Java không
+                                    support 2 cái này, nên ta đổi nó thành Interface A và Interface B. và cho class C implement
+                                    cả 2 Interface đó.</p>
+
+                                <p>Xem ví dụ : Vehicle.java</p>
+
+                                <p>Tại sao Java không hỗ trợ đa thừa kế.</p>
+
+                                <p>Giả sử một class được thừa kế từ 2 lớp cha, và 2 lớp cha này có 2 phương thức cùng tên. Khi
+                                    đó, trình biên dịch sẽ không biết chính xác nếu gọi C.commonFunction() thì liệu nó sẽ gọi
+                                    thằng A.commonFunction() hay B.commonFunction()</p>
+
+                                <p>
+                                    Tuy nhiên, khi sử dụng interface, chính lớp con mới quyết định việc triển khai phương thức mà
+                                    nó implement. Vì vậy, khi này gọi C.commonFunction, thì nó sẽ là cái function do chính thằng
+                                    C quy định, rất rõ ràng và không có nhập nhằng gì ở đây.
+                                </p>
+
+                                <p>Ta xem thêm một ví dụ về đa kế thừa bằng interface nữa nhé.</p>
+
+
+                            </div>
+                        </div>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Multilevel Inheritance</h5>
+                            <div class="text-dark pt-3">
+                                <p>Multilevel xảy ra khi mà Class B kế thừa từ Class A và Class C kế thừa Class B. Xem mô hình
+                                    dưới đây.</p>
+
+                                <img src="../assests/inherintance/Multilevel_Inheritance_in_Java.png" class="img-fluid"/>
+
+                                <p>
+                                    Trong trường hợp này, Class B như một kế thừa trực tiếp, trong khi đó, lớp A như một kế thừa
+                                    gián tiếp của lớp C.
+                                </p>
+
+                                <p>Xem file TemporaryStaff.java để hiểu thêm ví dụ</p>
+
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Hierarchical Inheritance - Kế thừa có cấu trúc</h5>
+                            <div class="text-dark pt-3">
+                                <p>Xem hình bên dưới</p>
+
+                                <img src="../assests/inherintance/Hierarchical_Inheritance_in_Java.png" class="img-fluid"/>
+
+                                <p>Trong mô hình dưới đây, khác với Single Inheritance (1), ở đây có nhiều thằng con cùng kế thừa
+                                    một  thằng cha. Mô hình này được gọi là Hierarchical Inheritance - (hierarchical - thứ bậc /
+                                    cấu trúc).</p>
+
+                                <p>
+                                    Cái này cũng như thằng số 1, chỉ là nó khác là có nhiều thằng B thôi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Hybrid Inheritance (Through Interface)</h5>
+                            <div class="text-dark pt-3">
+                                <p>
+                                    Hybrid Inheritance là sự kết hợp giữa Single Inheritance và Multiple Inheritance.
+                                </p>
+
+                                <p>Xem mô hình dưới đây:</p>
+
+                                <img src="../assests/inherintance/Hybrid_Inheritance_in_Java.png" class="img-fluid"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Ví dụ về 3 mô hình này có thể xem tại file TestInhertitance.java (in package practice.javaoop
+                        .inheritanceexample)</h4>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Kế thừa bằng Interface như thế nào??</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong danh sách các loại kế thừa, ta thấy một vài trường hợp có sử dụng Interface trong đó.</p>
+
+                        <p>Tuy nhiên kế thừa bằng interface ở đây có nghĩa là gì? Xem xét ví dụ về cái Multiple Inheritance, cái
+                            Class C implements interface A và B, nhưng bản thân nó đều phải viết code cho cái function showMessage.
+                            Vậy kế thừa ở đây có nghĩa là gì khi chính bản thân nó lại phải viết function đó 1 lần nữa.</p>
+
+                        <p>Thực sự thì ý nghĩa kế thừa của interface nó khác với extends của class, Interface chỉ có thể cho
+                            biết rằng một class có thể làm gì. Vì vậy mối quan hệ giữa Extends chính là IS-A trong khi đó của
+                            Implements lại là CAN-DO. Lưu ý điều này.</p>
+
+                        <p>Vì vậy, kế thừa bằng interface ở đây không có nghĩa là nó có thể sử dụng các method, mà nó mang tính
+                            chất khai báo rằng nó có thể thực thi các method. Nói sao cho dễ hiểu nhỉ, kế thừa ở đây là kế thừa cái
+                            khung, cái sườn các hành vi. Nói class A, class B implements interface C thì có nghĩa là Class A có thể
+                            thực  thi các method được khai báo trong Interface C, class B cũng có thể thực thi các method trong
+                            Interface C. Kế thừa ở đây là kế thừa các khai báo phương thức chứ ko phải là phương thức.</p>
+
+                        <blockquote>
+                            <p>Ví dụ cho dễ hiểu, thằng C nó đưa một bảng danh sách các việc cần làm và kêu thằng A, mày lo mà làm
+                                các việc này, sau đó, thay vì việc nó viết 1 cái danh sách khác gửi cho thằng B, thì nó đi copy lại
+                                cái danh sách đó rồi gửi cho thằng B.</p>
+
+                            <p>Nếu không sử dụng cách đó, thì lúc này, thằng C sẽ đi yêu cầu thằng A sẽ đi triển khai các phương
+                                thức  đó, và nó cũng nói tương tự với thằng B nhưng chả ai  biết rằng phương thức thằng A, thằng
+                                B nó triển khai có
+                                giống như thằng C yêu cầu hay ko.</p>
+
+                            <p>Kế thừa ở đây có nghĩa là 2 thằng A, B cùng sử dụng lại cái tờ giấy mà thằng C đưa ra để
+                                implements các phương thức của bản thân nó, <sub>chứ ko mang ý nghĩa sử dụng lại cái phương thức
+                                    của
+                                    thằng C như trong định nghĩa extends.</sub></p>
+                        </blockquote>
+
+                        <p>
+                            Khác với abstract, interface hướng đến kế thừa phương thức. Khi một class nào đó implement một
+                            interface, thì tức là nó đang khai báo rằng "Tôi đạt một chuẩn" nào đó. Và khi đó, ta có thể sử dụng
+                            các object mà cùng khai báo một interface  như là cùng được extends từ 1 class cha (ở đây chỉ nói đến
+                            phương thức thôi nhé).
+                        </p>
+
+                        <p>Như vậy, cái tính kế thừa ở đây, tức là những class cùng implements một interface thì cũng coi như là
+                            có cùng 1 lớp cha - (Cha ở đây là interface về mặt method thôi nhé, nhắc lại chỉ là method thôi nhé) vì
+                            vậy nó có thể thao tác hoàn toàn giống nhau.</p>
+
+                        <p>Ứng dụng của interface là khai báo các sườn method - những phương thức chung của các class. Nó mang
+                            tính khái quát và mô hình hóa chức năng.</p>
+
+                        <blockquote>
+                            <h4>Q: Có cách nào để tôi cho 2 class A, B cùng implements interface mà ko cần phải viết lại -
+                                overriding cái
+                                method của
+                                nó ko??</h4>
+
+                            <p>Tất nhiên, bạn cho cái class cha nào đó implements cái method đó, rồi khai báo method đó trong
+                                interface và cho thằng con (2 thằng A, B) implement cái method đó là được.</p>
+
+                            <p>Xem trong ví dụ TestHybridInheritance nhé, ở đây cái interface A có yêu cầu triển khai một
+                                method : showDefaultMessage, tuy nhiên thằng ChildClass mặc dù yêu cầu implements Interface đó
+                                nhưng cái medthod đó được extend từ thằng ParentClass đã khai báo sẵn rồi nên nó ko cần
+                                phải implements cái đó nữa.</p>
+                        </blockquote>
+
+                        <p>Tóm lại, tính kế thừa trong Interface nó chỉ mang tính chất là khai báo các class có những behavior
+                            giống nhau mà thôi. Về interface thì ta sẽ đi sâu qua các bài tiếp theo.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Access Modifier in Java</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cái này sẽ đi chi tiết trong bài tiếp theo</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Method Overriding in Java Inheritance</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong Java, tính đa hình thể hiện qua 2 chức năng</p>
+                        <ol>
+                            <li><strong>Overload</strong></li>
+                            <li><strong>Overriding</strong></li>
+                        </ol>
+                        <p>Chúng ta sẽ đi sâu về bài này trong bài học tiếp theo nữa nhé.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Super Keyword in Inheritance</h3>
+                    <div class="text-dark pt-3">
+                        <p>When Sub class has inherited the Parent class then we can use the Super keyword to call the Parent class methods and constructors.</p>
+
+                        <ul>
+                            <li>While calling the <strong>Constructors</strong> of the <strong>Parent</strong> class the <strong>super()</strong> has to be the <strong>first line</strong> in the <strong>Child&nbsp;</strong>class constructor.</li>
+                            <li>While calling the <strong>methods</strong> of the <strong>Parent</strong> class the <strong>super.MethodName()</strong> can be <strong>any where</strong> within the <strong>Child&nbsp;</strong>class method.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Multiple Inheritance (Through Interface)</h5>
-                <div class="text-dark pt-3">
-                    <p>Multiple inheritance - đa thừa kế (một lớp con có thể thừa kế từ nhiều lớp cha) không được hỗ
-                    trợ trong Java vì nó khiến mọi thứ trở nên nhập nhằng và khó quản lý</p>
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
 
-                    <p>Thay vào đó, Java đưa ra một khái niệm khác, đó là Interface.</p>
-
-                    <p>Khái niệm Multiple Inheritance phải giống như dưới đây:</p>
-
-                    <img src="../assests/inherintance/Multiple_Inheritance_in_Java.png" class="img-fluid"/>
-
-                    <p>Trong mô hình này, class C đều kế thừa từ Class A và Class B. Tuy nhiên, vì Java không
-                        support 2 cái này, nên ta đổi nó thành Interface A và Interface B. và cho class C implement
-                        cả 2 Interface đó.</p>
-
-                    <p>Xem ví dụ : Vehicle.java</p>
-
-                    <p>Tại sao Java không hỗ trợ đa thừa kế.</p>
-
-                    <p>Giả sử một class được thừa kế từ 2 lớp cha, và 2 lớp cha này có 2 phương thức cùng tên. Khi
-                        đó, trình biên dịch sẽ không biết chính xác nếu gọi C.commonFunction() thì liệu nó sẽ gọi
-                        thằng A.commonFunction() hay B.commonFunction()</p>
-
-                    <p>
-                        Tuy nhiên, khi sử dụng interface, chính lớp con mới quyết định việc triển khai phương thức mà
-                        nó implement. Vì vậy, khi này gọi C.commonFunction, thì nó sẽ là cái function do chính thằng
-                        C quy định, rất rõ ràng và không có nhập nhằng gì ở đây.
-                    </p>
-
-                    <p>Ta xem thêm một ví dụ về đa kế thừa bằng interface nữa nhé.</p>
-
-
-                </div>
-            </div>
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Multilevel Inheritance</h5>
-                <div class="text-dark pt-3">
-                    <p>Multilevel xảy ra khi mà Class B kế thừa từ Class A và Class C kế thừa Class B. Xem mô hình
-                        dưới đây.</p>
-
-                    <img src="../assests/inherintance/Multilevel_Inheritance_in_Java.png" class="img-fluid"/>
-
-                    <p>
-                        Trong trường hợp này, Class B như một kế thừa trực tiếp, trong khi đó, lớp A như một kế thừa
-                        gián tiếp của lớp C.
-                    </p>
-
-                    <p>Xem file TemporaryStaff.java để hiểu thêm ví dụ</p>
-
-                </div>
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
             </div>
 
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Hierarchical Inheritance - Kế thừa có cấu trúc</h5>
-                <div class="text-dark pt-3">
-                    <p>Xem hình bên dưới</p>
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
 
-                    <img src="../assests/inherintance/Hierarchical_Inheritance_in_Java.png" class="img-fluid"/>
-
-                    <p>Trong mô hình dưới đây, khác với Single Inheritance (1), ở đây có nhiều thằng con cùng kế thừa
-                        một  thằng cha. Mô hình này được gọi là Hierarchical Inheritance - (hierarchical - thứ bậc /
-                        cấu trúc).</p>
-
-                    <p>
-                        Cái này cũng như thằng số 1, chỉ là nó khác là có nhiều thằng B thôi.
-                    </p>
-                </div>
+                </ol>
             </div>
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h5 class="border-bottom border-gray pb-2 mb-0">Hybrid Inheritance (Through Interface)</h5>
-                <div class="text-dark pt-3">
-                    <p>
-                        Hybrid Inheritance là sự kết hợp giữa Single Inheritance và Multiple Inheritance.
-                    </p>
-
-                    <p>Xem mô hình dưới đây:</p>
-
-                    <img src="../assests/inherintance/Hybrid_Inheritance_in_Java.png" class="img-fluid"/>
-                </div>
-            </div>
-        </div>
-
-        <h4>Ví dụ về 3 mô hình này có thể xem tại file TestInhertitance.java (in package practice.javaoop
-            .inheritanceexample)</h4>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Kế thừa bằng Interface như thế nào??</h3>
-        <div class="text-dark pt-3">
-            <p>Trong danh sách các loại kế thừa, ta thấy một vài trường hợp có sử dụng Interface trong đó.</p>
-
-            <p>Tuy nhiên kế thừa bằng interface ở đây có nghĩa là gì? Xem xét ví dụ về cái Multiple Inheritance, cái
-                Class C implements interface A và B, nhưng bản thân nó đều phải viết code cho cái function showMessage.
-                Vậy kế thừa ở đây có nghĩa là gì khi chính bản thân nó lại phải viết function đó 1 lần nữa.</p>
-
-            <p>Thực sự thì ý nghĩa kế thừa của interface nó khác với extends của class, Interface chỉ có thể cho
-                biết rằng một class có thể làm gì. Vì vậy mối quan hệ giữa Extends chính là IS-A trong khi đó của
-                Implements lại là CAN-DO. Lưu ý điều này.</p>
-
-            <p>Vì vậy, kế thừa bằng interface ở đây không có nghĩa là nó có thể sử dụng các method, mà nó mang tính
-            chất khai báo rằng nó có thể thực thi các method. Nói sao cho dễ hiểu nhỉ, kế thừa ở đây là kế thừa cái
-                khung, cái sườn các hành vi. Nói class A, class B implements interface C thì có nghĩa là Class A có thể
-                thực  thi các method được khai báo trong Interface C, class B cũng có thể thực thi các method trong
-                Interface C. Kế thừa ở đây là kế thừa các khai báo phương thức chứ ko phải là phương thức.</p>
-
-            <blockquote>
-                <p>Ví dụ cho dễ hiểu, thằng C nó đưa một bảng danh sách các việc cần làm và kêu thằng A, mày lo mà làm
-                    các việc này, sau đó, thay vì việc nó viết 1 cái danh sách khác gửi cho thằng B, thì nó đi copy lại
-                    cái danh sách đó rồi gửi cho thằng B.</p>
-
-                <p>Nếu không sử dụng cách đó, thì lúc này, thằng C sẽ đi yêu cầu thằng A sẽ đi triển khai các phương
-                    thức  đó, và nó cũng nói tương tự với thằng B nhưng chả ai  biết rằng phương thức thằng A, thằng
-                    B nó triển khai có
-                    giống như thằng C yêu cầu hay ko.</p>
-
-                <p>Kế thừa ở đây có nghĩa là 2 thằng A, B cùng sử dụng lại cái tờ giấy mà thằng C đưa ra để
-                    implements các phương thức của bản thân nó, <sub>chứ ko mang ý nghĩa sử dụng lại cái phương thức
-                        của
-                        thằng C như trong định nghĩa extends.</sub></p>
-            </blockquote>
-
-            <p>
-                Khác với abstract, interface hướng đến kế thừa phương thức. Khi một class nào đó implement một
-                interface, thì tức là nó đang khai báo rằng "Tôi đạt một chuẩn" nào đó. Và khi đó, ta có thể sử dụng
-                các object mà cùng khai báo một interface  như là cùng được extends từ 1 class cha (ở đây chỉ nói đến
-                phương thức thôi nhé).
-            </p>
-
-            <p>Như vậy, cái tính kế thừa ở đây, tức là những class cùng implements một interface thì cũng coi như là
-            có cùng 1 lớp cha - (Cha ở đây là interface về mặt method thôi nhé, nhắc lại chỉ là method thôi nhé) vì
-                vậy nó có thể thao tác hoàn toàn giống nhau.</p>
-
-            <p>Ứng dụng của interface là khai báo các sườn method - những phương thức chung của các class. Nó mang
-                tính khái quát và mô hình hóa chức năng.</p>
-
-            <blockquote>
-                <h4>Q: Có cách nào để tôi cho 2 class A, B cùng implements interface mà ko cần phải viết lại -
-                    overriding cái
-                    method của
-                    nó ko??</h4>
-
-                <p>Tất nhiên, bạn cho cái class cha nào đó implements cái method đó, rồi khai báo method đó trong
-                    interface và cho thằng con (2 thằng A, B) implement cái method đó là được.</p>
-
-                <p>Xem trong ví dụ TestHybridInheritance nhé, ở đây cái interface A có yêu cầu triển khai một
-                    method : showDefaultMessage, tuy nhiên thằng ChildClass mặc dù yêu cầu implements Interface đó
-                    nhưng cái medthod đó được extend từ thằng ParentClass đã khai báo sẵn rồi nên nó ko cần
-                    phải implements cái đó nữa.</p>
-            </blockquote>
-
-            <p>Tóm lại, tính kế thừa trong Interface nó chỉ mang tính chất là khai báo các class có những behavior
-                giống nhau mà thôi. Về interface thì ta sẽ đi sâu qua các bài tiếp theo.</p>
-
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Access Modifier in Java</h3>
-        <div class="text-dark pt-3">
-            <p>Cái này sẽ đi chi tiết trong bài tiếp theo</p>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Method Overriding in Java Inheritance</h3>
-        <div class="text-dark pt-3">
-            <p>Trong Java, tính đa hình thể hiện qua 2 chức năng</p>
-            <ol>
-                <li><strong>Overload</strong></li>
-                <li><strong>Overriding</strong></li>
-            </ol>
-            <p>Chúng ta sẽ đi sâu về bài này trong bài học tiếp theo nữa nhé.</p>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Super Keyword in Inheritance</h3>
-        <div class="text-dark pt-3">
-            <p>When Sub class has inherited the Parent class then we can use the Super keyword to call the Parent class methods and constructors.</p>
-
-            <ul>
-                <li>While calling the <strong>Constructors</strong> of the <strong>Parent</strong> class the <strong>super()</strong> has to be the <strong>first line</strong> in the <strong>Child&nbsp;</strong>class constructor.</li>
-                <li>While calling the <strong>methods</strong> of the <strong>Parent</strong> class the <strong>super.MethodName()</strong> can be <strong>any where</strong> within the <strong>Child&nbsp;</strong>class method.</li>
-            </ul>
-        </div>
+        </aside>
     </div>
 </main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-default float-lg-left" href="lesson_06_Object_n_Class_end.html">
-                    Object and Class in Java
-                </a>
-
-                <a class="btn btn-default float-lg-right" href="lesson_07_Access_Modifier_in_Java.html">
-                    Access Modifier in Java
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <br class="clearfix"/>
-
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
-    </div>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
 </footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
 </body>
 </html>
