@@ -1,3 +1,22 @@
+@media (min-width: 1600px){
+    .container {
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1800px){
+    .container {
+        max-width: 1700px;
+    }
+}
+
+@media (min-width: 1900px){
+    .container {
+        max-width: 1700px;
+    }
+}
+
+
 body{
     color: #333333;
     font-size: 18px;

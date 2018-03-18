@@ -22,14 +22,36 @@ const LIST_LESSON_DATA = [
     {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "___________"}
 ];
 
+initPageData();
 
-function buildMenu(){
+function initPageData(){
+    var currentPageData = null;
+    var currentPageURL = getCurrentPageURL();
+
     var menuHTML = new Array();
     for(var i = 0; i < LIST_LESSON_DATA.length; i++){
-        menuHTML.push('')
-    }
-}
+        var lessonData = LIST_LESSON_DATA[i];
 
-$(document).ready(function(){
-    console.log("add more pluggin!!!");
-});
+        if(lessonData.url.indexOf(currentPageURL) == 0){
+            menuHTML.push('<li><a class="active">' + lessonData.titleDisplay + '</a></li>');
+            currentPageData = lessonData;
+        } else {
+            menuHTML.push('<li><a href="../lesson/' + lessonData.url + '">' + lessonData.titleDisplay + '</a></li>');
+        }
+    }
+
+    if(currentPageData != null){
+        $('head').find('title').html(currentPageData.titleDisplay);
+    }
+
+    var $mainLessonMenu = $('#main-lesson-menu');
+    $mainLessonMenu.find('.list-unstyled').empty().append(menuHTML.join(""));
+
+
+    function getCurrentPageURL (){
+        var location = window.location.href;
+        var currentURL = location.substring(0, location.lastIndexOf(".html"));
+        return currentURL.substring(currentURL.lastIndexOf("/") + 1);
+    }
+
+}

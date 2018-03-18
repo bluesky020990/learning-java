@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Beginning learning Java</title>
+    <title>__________________</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -10,361 +10,357 @@
 
     <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+    <div class="container">
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-between">
+                <a class="p-2 text-muted" href="#">World</a>
+                <a class="p-2 text-muted" href="#">U.S.</a>
+                <a class="p-2 text-muted" href="#">Technology</a>
+                <a class="p-2 text-muted" href="#">Design</a>
+                <a class="p-2 text-muted" href="#">Culture</a>
+                <a class="p-2 text-muted" href="#">Business</a>
+                <a class="p-2 text-muted" href="#">Politics</a>
+                <a class="p-2 text-muted" href="#">Opinion</a>
+                <a class="p-2 text-muted" href="#">Science</a>
+                <a class="p-2 text-muted" href="#">Health</a>
+                <a class="p-2 text-muted" href="#">Style</a>
+                <a class="p-2 text-muted" href="#">Travel</a>
+            </nav>
+        </div>
+
+        <div class="jumbotron p-3 p-md-12 text-white rounded bg-dark">
+            <div class="col-md-12 px-0">
+                <h1>Beginning learning Java</h1>
+                <p class="lead">Sau một thời gian làm việc với Java mà chả thấy lên level chút vẹo gì vì thiếu những kiến thức cơ bản, nên tôi quyết
+                    định là làm cái này, mục đích để là cải thiện hiểu biết và tăng thêm năng lực trong lĩnh vực lập trình. Tóm lại là
+                    bắt đầu ôn lại nào.</p>
+            </div>
+        </div>
+    </div>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8 blog-main">
+                <div class="blog-post">
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Giới thiệu về Java</h3>
+                        <div class="text-dark pt-3">
+                            <p>Trước tiên, để tìm hiểu xem Java nó hoạt động như thế nào, ta cần đi vào những chi tiết.</p>
+                            <ol>
+                                <li>Lịch sử</li>
+                                <li>Những ưu điểm và nhược điểm</li>
+                                <li>Java hoạt động như thế nào</li>
+                                <li>Các thành phần và nhiệm vụ của nó trong hệ thống</li>
+                                <li>Các khái niệm liên quan</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Lịch sử ra đời Java</h3>
+                        <div class="text-dark pt-3">
+                            <p>Cái này chả quan tâm là mấy, chỉ nhớ là từ 1990</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Những ưu điểm và nhược điểm</h3>
+                        <div class="text-dark pt-3">
+                            <h6>Nó là một ngôn ngữ khá đơn giản, gần gũi với C.</h6>
+                            <ul>
+                                <li>Bỏ đi con trỏ, một trong số những thứ khó chịu nhất của C mà ngày xưa bị gặp</li>
+                                <li>Không cho phép (đúng hơn thì hạn chế) đa kế thừa, thay vào đó là sử dụng các giao diện (interface)</li>
+                            </ul>
+                            <h6>Nếu như C/ C++ là một ngôn ngữ nửa mùa, thì Java lại hoàn toàn thuần hướng đối tượng.</h6>
+                            <ul>
+                                <li>Mọi thực thể trong hệ thống đều được coi là một đối tượng, tức là một thể hiện cụ thể của 1 lớp (Class)
+                                    xác định.
+                                </li>
+                                <li>Tất cả các chương trình đều phải nằm trong 1 class nhất định</li>
+                                <li>Không thể dùng Java để viết một chức năng/ function/ method mà không thuộc bất cứ một lớp nào. Tức là
+                                    Java không cho phép định nghĩa dữ liệu và hàm tự do trong chương trinh.
+                                </li>
+                            </ul>
+                            <h6>Độc lập với phần cứng và hệ điều hành</h6>
+                            <ul>
+                                <li>Xem cách hoạt động của Java bên dưới</li>
+                            </ul>
+
+                            <h6>Java là một ngôn ngữ mạnh mẽ, nhờ vào việc yêu cầu chặt chẽ về kiểu dữ liệu.</h6>
+                            <ul>
+                                <li>Kiểu dữ liệu phải khai báo tường minh. Tức là mọi dữ liệu đều phải được khai báo trước khi sử dụng.</li>
+                                <li>Không sử dụng con trỏ và phép toán con trỏ. (mừng gần chết)</li>
+                                <li>Kiểm tra việc truy cập đến mảng, chuỗi khi thực thi để đảm bảo các truy cập đó không vượt quá giới hạn
+                                    kích thước của mảng
+                                </li>
+                                <li>Quá trình cấp phát, giải phóng bộ nhớ cho biến được thực hiện tự động, nhờ dịch vụ thu nhặt những đối
+                                    tượng ko được sử dụng nữa <b>Garbage collection</b></li>
+                                <li>Try catch giúp đơn giản hóa quá trình xử lỗi và quản lý phục hồi</li>
+                            </ul>
+                            <h6>Tính an toàn và bảo mật của Java</h6>
+                            <ul>
+                                <li>Dữ liệu và phương thức được đóng gói bên trong lớp, vì vậy nó chỉ có thể được truy xuất thông qua các giao
+                                    diện (tức là mấy cái public method đó) mà lớp cung cấp.</li>
+                                <li>Trình biên dịch (javac) kiểm soát để đảm bảo mã là an toàn, và tuân theo các nguyên tắc của Java. Thử ghi lung
+                                    tung thiếu dấu ; xem nó có cho compiler ko.</li>
+                                <li>Trình thông dịch kiểm tra xem bytecode có đảm bảo an toàn trước khi thực thi không.</li>
+                                <li>Kiểm soát việc nạp các lớp vào bộ nhớ để giám sát việc vi phạm giới hạn truy xuất trước khi nạp vào hệ thống.</li>
+                            </ul>
+                            <h6>Phân tán và đa luồng.</h6>
+                            <ul>
+                                <li>Java có hỗ trợ phân tán (java.net), nhưng chưa xài bao giờ nên chưa biết.</li>
+                                <li>Cung cấp multithreading để thực thi công việc đồng thời cũng như đồng bộ giữa các luồng.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Java hoạt động như thế nào</h3>
+                        <div class="text-dark pt-3">
+                            <p>Đối với C, phương pháp biên dịch phụ thuộc vào nền phần cứng. Vì vậy, nếu thay đổi phần cứng, thì đồng nghĩa
+                                với việc phải biên dịch lại mã nguồn (Source code).</p>
+                            <p>Đối với Java, cơ chế hoạt động như sau</p>
+                            <ol>
+                                <li>Trình biên dịch <b>Javac</b> tiến hành biên dịch Source code thành dạng bytecode.</li>
+                                <li>Máy ảo Java sử dụng trình thông dịch Java để chuyển mã bytecode thành dạng chạy được tương ứng.</li>
+                            </ol>
+                            <p>Xem hình minh họa</p>
+                            <img src="../assests/java-cach-hoat-dong.png" width="613" height="244" class="img-fluid"/>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Các thành phần của Java.</h3>
+                        <div class="text-dark pt-3">
+                            <p class="lead">Bài viết được copy của tác giả <strong>/* Đỗ Minh Hiền */</strong> tại địa chỉ
+                                <a href="https://techmaster.vn/posts/8199/hoc-lap-trinh-java-co-ban-nang-cao">techmaster.vn</a></p>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Java Development Kit (JDK)</h4>
+                                <div class="text-dark pt-3">
+                                    Là bộ công cụ dành cho người phát triển ứng dụng bằng ngôn ngữ lập trình Java, bao gồm JRE và các
+                                    công cụ hỗ trợ phát triển phần mềm (ví dụ như: trình biên dịch, trình thông dịch, trình sửa
+                                    lỗi…). Mã nguồn trong file .java sẽ được trình biên dịch biển đổi thành file .class để thực thi trong JRE.
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Java Runtime Environment (JRE)</h4>
+                                <div class="text-dark pt-3">
+                                    JRE là bộ cài đặt để thực thi chương trình viết bằng ngôn ngữ Java. JRE chứa JVM, các tập tin
+                                    .class, và các tập tin hỗ trợ khác. Để chạy một chương trình java, bạn cần phải có JRE cài đặt
+                                    trong hệ thống.
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Java SE API</h4>
+                                <div class="text-dark pt-3">
+                                    Java SE API là tập hợp các gói thư viện viết sẵn nằm trong JRE, hỗ trợ cho người phát triển phần
+                                    mềm viết bằng ngôn ngữ Java.
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Java Virtual Machine</h4>
+                                <div class="text-dark pt-3">
+                                    Java Virtual Machine (JVM) là công cụ thực thi mã (Java bytecode) trong tập tin .class của nền
+                                    tảng Java. Nhờ có JVM nên chương trình viết bằng Java có thể triển khai trên nhiều hệ điều hành
+                                    khác nhau (Windows, Linux, Mac…) dành cho nhiều loại phần cứng khác nhau. JVM có các tính năng như:
+                                    <ul>
+                                        <li>Thực thi mã trong tập tin .class</li>
+                                        <li>Tự động xử lý ngoại lệ</li>
+                                        <li>Cung cấp thông tin (log) để gỡ rối lỗi phần mềm</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Bộ nhớ trong Java</h4>
+                                <div class="text-dark pt-3">
+                                    Khi thực hiện cấp phát bộ nhớ, một đối tượng mới được tạo và đặt vào vùng nhớ Heap. Khi ứng dụng
+                                    của bạn không còn tham chiếu tới đối tượng này nữa thì Java garbage collector cho phép xóa đối
+                                    tượng này đi để sử dụng lại vùng nhớ đó.
+
+
+                                    <ul>
+                                        <li>
+                                            <h6>Java Heap</h6>
+                                            <p>JVM lưu tất cả đối tượng được tạo bởi toán tử “new” trong ứng dụng Java, vào vùng nhớ
+                                                Heap tại thời điểm chạy. </p>
+                                        </li>
+                                        <li>
+                                            <h6>Java Stack </h6>
+                                            <p>Các phương thức và tham chiếu tới đối tượng địa phương được lưu trữ trong Stack. Mỗi
+                                                Thread quản lý một stack. Khi phương thức được gọi, nó được đưa vào đỉnh của Stack.
+                                                Stack lưu trữ trạng thái của phương thức bao gồm: dòng code thực thi, tham chiếu tới
+                                                đối tượng địa phương. Khi phương thức chạy xong, vùng nhớ (dòng code thực thi, tham
+                                                chiếu tới đối tượng địa phương) được đẩy ra khỏi stack và tự động giải phóng.</p>
+                                        </li>
+                                        <li>
+                                            <h6>Java Perm
+                                            </h6>
+                                            <p>Lưu trữ thông tin của Class được nạp vào và một vài tính năng khác như StringPool
+                                                (vùng nhớ của biến String) thường được tạo bởi phương thức String.interm(). Khi ứng
+                                                dụng của bạn chạy, Perm space được lấp đầy nhanh chóng.  </p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Phân biệt Heap, Stack, Perm</h4>
+                                <div class="text-dark pt-3">
+                                    Heap: lưu đối tượng<br />
+                                    Stack: lưu tham chiếu tới đối tượng địa phương<br />
+                                    Perm: lưu thông tin về Class được nạp vào<br />
+                                    <br />
+                                    Ví dụ: Student std = new Student();<br />
+                                    <br />
+                                    Heap: lưu đối tượng “new Student();”<br />
+                                    Stack: lưu tham chiếu “std”<br />
+                                    Perm: lưu thông tin về Class “Student”
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Garbage Collector</h4>
+                                <div class="text-dark pt-3">
+                                    Garbage Collector của JVM làm nhiệm vụ tự động thực hiện thu hồi vùng nhớ của các đối tượng trong
+                                    bộ nhớ Heap khi nó không được tham chiếu đến.
+                                    Tham khảo tối ưu bộ nhớ cho JVM:
+                                    <a
+                                            href="http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html">http://www
+                                        .oracle.com/technetwork/java/javase/gc-tuning-6-140523.html</a>
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Trình biên dịch Just-in-time (JIT) (thông dịch)</h4>
+                                <div class="text-dark pt-3">
+                                    Trình biên dịch JIT thực hiện biên dịch mã Java bytecode trong file .class sang mã thực thi tại
+                                    thời điểm chạy. Việc này làm cho chương trình chạy chậm hơn. Vì thế nó còn được gọi là “Hot spot”.
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Java Classloader</h4>
+                                <div class="text-dark pt-3">
+                                    Java Classloader là một phần của JRE làm nhiệm vụ tự động nạp các class Java vào JVM.<br />
+                                    Khi khởi động JVM, 3 class loader được sử dụng :<br />
+                                    <ul>
+                                        <li>Bootstrap class loader : nạp thư viện lõi Java (/jre/lib)</li>
+                                        <li>Extensions class loader : nạp thư viện mở rộng (/jre/lib/ext)</li>
+                                        <li>System class loader : nạp thư viện trong java.class.path (CLASSPATH)</li>
+                                    </ul>
+
+
+                                    JAR hell là một thuật ngữ mô tả việc nạp thư viện JAR không theo ý muốn. JAR hell xảy ra trong 3
+                                    trường hợp:
+                                    <ul>
+                                        <li>Nạp 2 phiên bản của một thư viện có sẵn cho hệ thống. Việc này không gây ra lỗi, thay vào
+                                            đó hệ thống nạp các lớp từ một hoặc các thư viện khác để thay thế. </li>
+                                        <li>2 thư viện (hoặc 1 thư viện và ứng dụng) yêu cầu phiên bản khác nhau của một thư viện thứ
+                                            3. Nếu 2 phiên bản của thư viện thứ 3 trùng tên class thì class loader không thể nạp được
+                                            class đó.  </li>
+                                        <li>Các lớp được nạp bởi các class loader khác nhau có thể tương tác theo những cách phức tạp
+                                            mà người phát triển phần mềm không hiểu được, dẫn đến những lỗi không thể giải thích. </li>
+                                    </ul>
+
+                                    Để tránh Java hell bạn thực hiện cấu hình Compile-time libraries của các IDE. Ví dụ đối với Netbean thực hiện đẩy các gói thư viện .jar bạn muốn ưu tiên lên phía trên.
+                                </div>
+                            </div>
+
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h4 class="border-bottom border-gray pb-2 mb-0">Phương thức main trong Java</h4>
+                                <div class="text-dark pt-3">
+                                    JVM khởi động bằng cách gọi phương thức main của lớp cụ thể nào đó.<br />
+                                    Tức là:<br />
+                                    Tất cả các chương trình Java đều khởi động từ phương thức main. Một JVM chỉ chạy duy nhất một
+                                    chương trình java và luôn bắt đầu bằng việc gọi phương thức main() của chương trình đó. <br />
+                                    Phương thức main là điểm đầu vào duy nhất của một chương trình Java vì thế nó phải là phương thức
+                                    static.<br />
+                                    <br />
+                                    Vậy phương thức main của một ứng dụng web Java nằm ở đâu?<br />
+                                    <br />
+                                    Nằm trong web container ví dụ web container là Tomcat thì phương thức main nằm trong
+                                    $CATALINA_HOME/bin/bootstrap.jar<br />
+                                    <br />
+                                    Khi nào trên Task Manager của hệ điều hành Window hiển thị process Java.exe?<br />
+                                    Khi một JVM được gọi, tức là khi phương thức main của chương trình java được gọi. Cần lưu ý đối
+                                    với các ứng dụng chạy applet ví dụ ứng dụng xem văn bản PDF , cần tránh tạo ra quá nhiều process
+                                    Java .exe trên Window vì mỗi lần khởi tạo JVM, Window phải cấp phát tài nguyên cho nó.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">Các khái niệm liên quan</h3>
+                        <div class="text-dark pt-3">
+                            <dl>
+                                <dt>Object reference (Java - pass by value)</dt>
+                                <dt>Mutable Objects  & Immutable Objects </dt>
+                                <dt>Mutable Objects  & Immutable Objects </dt>
+                                <dd style="display: none">
+
+                                    <ul>
+                                        <li>Mutable Objects (trạng thái thay đổi được) và Imnutable Objects (trạng thái không thay đổi
+                                            được) là một khái niệm cần đặc biệt quan tâm.
+                                        </li>
+                                        <li>Hiện tại, lập trình hướng function đang được chú trọng, và bản chất của nó là các pure
+                                            function, tức là những function phụ thuộc hoàn toàn vào tham số, tham số đầu vào là gì thì
+                                            nó sẽ trả ra 1 kết quả y chang.
+                                        </li>
+                                        <li>Vì vậy Imutable Objects có vai trò rất quan trọng trong trường hợp này, vì nếu như có 1 sự
+                                            thay đổi dữ liệu nào đó trong object đó, thì kết quả lần thứ 2 sẽ khác. Và xu hướng bây giờ
+                                            là luôn giữ trạng thái của hệ thống đồng nhất (trong mấy cái react sẽ thấy nhiều nhất).
+                                        </li>
+                                        <li>Lan man thế đủ rồi, giờ quay lại ý nghĩa chính của nó:</li>
+                                        <li>Imutable Objects, là các object mà giá trị của nó được thiết lập tại thời điểm constructor.
+                                            Nếu muốn thay đổi dữ liệu của nó, thì ta phải new 1 object khác.
+                                        </li>
+                                        <li>Ứng dụng của nó ntn, xem ví dụ nhé.
+                                            <blockquote>
+                                                <a href="https://techmaster.vn/posts/34290/java-immutable-la-gi">Example- Luoi qua.</a>
+                                            </blockquote>
+                                        </li>
+                                    </ul>
+                                </dd>
+                                <dt>Micro service</dt>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+                </nav>
+            </div>
+
+            <aside class="col-md-4 blog-sidebar">
+                <div class="p-3 mb-3 bg-light rounded">
+                    <h4 class="font-italic">About</h4>
+                    <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                    <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                    <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+                </div>
+
+                <div class="p-3 mb-3 bg-light rounded" id="main-lesson-menu">
+                    <h4 class="font-italic">Lesson</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">March 2014</a></li>
+
+                    </ol>
+                </div>
+            </aside>
+        </div>
+    </main>
 
     <script type="text/javascript" src="../src/global/global.js"></script>
-</head>
-
-<body class="bg-secondary">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Top navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-
-<main role="main" class="container">
-    <div class="introduction">
-        <h1>Beginning learning Java</h1>
-        <p class="lead">Sau một thời gian làm việc với Java mà chả thấy lên level chút vẹo gì vì thiếu những kiến thức cơ bản, nên tôi quyết
-            định là làm cái này, mục đích để là cải thiện hiểu biết và tăng thêm năng lực trong lĩnh vực lập trình. Tóm lại là
-            bắt đầu ôn lại nào.</p>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Giới thiệu về Java</h3>
-        <div class="text-dark pt-3">
-            <p>Trước tiên, để tìm hiểu xem Java nó hoạt động như thế nào, ta cần đi vào những chi tiết.</p>
-            <ol>
-                <li>Lịch sử</li>
-                <li>Những ưu điểm và nhược điểm</li>
-                <li>Java hoạt động như thế nào</li>
-                <li>Các thành phần và nhiệm vụ của nó trong hệ thống</li>
-                <li>Các khái niệm liên quan</li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Lịch sử ra đời Java</h3>
-        <div class="text-dark pt-3">
-            <p>Cái này chả quan tâm là mấy, chỉ nhớ là từ 1990</p>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Những ưu điểm và nhược điểm</h3>
-        <div class="text-dark pt-3">
-            <h6>Nó là một ngôn ngữ khá đơn giản, gần gũi với C.</h6>
-            <ul>
-                <li>Bỏ đi con trỏ, một trong số những thứ khó chịu nhất của C mà ngày xưa bị gặp</li>
-                <li>Không cho phép (đúng hơn thì hạn chế) đa kế thừa, thay vào đó là sử dụng các giao diện (interface)</li>
-            </ul>
-            <h6>Nếu như C/ C++ là một ngôn ngữ nửa mùa, thì Java lại hoàn toàn thuần hướng đối tượng.</h6>
-            <ul>
-                <li>Mọi thực thể trong hệ thống đều được coi là một đối tượng, tức là một thể hiện cụ thể của 1 lớp (Class)
-                    xác định.
-                </li>
-                <li>Tất cả các chương trình đều phải nằm trong 1 class nhất định</li>
-                <li>Không thể dùng Java để viết một chức năng/ function/ method mà không thuộc bất cứ một lớp nào. Tức là
-                    Java không cho phép định nghĩa dữ liệu và hàm tự do trong chương trinh.
-                </li>
-            </ul>
-            <h6>Độc lập với phần cứng và hệ điều hành</h6>
-            <ul>
-                <li>Xem cách hoạt động của Java bên dưới</li>
-            </ul>
-
-            <h6>Java là một ngôn ngữ mạnh mẽ, nhờ vào việc yêu cầu chặt chẽ về kiểu dữ liệu.</h6>
-            <ul>
-                <li>Kiểu dữ liệu phải khai báo tường minh. Tức là mọi dữ liệu đều phải được khai báo trước khi sử dụng.</li>
-                <li>Không sử dụng con trỏ và phép toán con trỏ. (mừng gần chết)</li>
-                <li>Kiểm tra việc truy cập đến mảng, chuỗi khi thực thi để đảm bảo các truy cập đó không vượt quá giới hạn
-                    kích thước của mảng
-                </li>
-                <li>Quá trình cấp phát, giải phóng bộ nhớ cho biến được thực hiện tự động, nhờ dịch vụ thu nhặt những đối
-                    tượng ko được sử dụng nữa <b>Garbage collection</b></li>
-                <li>Try catch giúp đơn giản hóa quá trình xử lỗi và quản lý phục hồi</li>
-            </ul>
-            <h6>Tính an toàn và bảo mật của Java</h6>
-            <ul>
-                <li>Dữ liệu và phương thức được đóng gói bên trong lớp, vì vậy nó chỉ có thể được truy xuất thông qua các giao
-                    diện (tức là mấy cái public method đó) mà lớp cung cấp.</li>
-                <li>Trình biên dịch (javac) kiểm soát để đảm bảo mã là an toàn, và tuân theo các nguyên tắc của Java. Thử ghi lung
-                    tung thiếu dấu ; xem nó có cho compiler ko.</li>
-                <li>Trình thông dịch kiểm tra xem bytecode có đảm bảo an toàn trước khi thực thi không.</li>
-                <li>Kiểm soát việc nạp các lớp vào bộ nhớ để giám sát việc vi phạm giới hạn truy xuất trước khi nạp vào hệ thống.</li>
-            </ul>
-            <h6>Phân tán và đa luồng.</h6>
-            <ul>
-                <li>Java có hỗ trợ phân tán (java.net), nhưng chưa xài bao giờ nên chưa biết.</li>
-                <li>Cung cấp multithreading để thực thi công việc đồng thời cũng như đồng bộ giữa các luồng.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Java hoạt động như thế nào</h3>
-        <div class="text-dark pt-3">
-            <p>Đối với C, phương pháp biên dịch phụ thuộc vào nền phần cứng. Vì vậy, nếu thay đổi phần cứng, thì đồng nghĩa
-                với việc phải biên dịch lại mã nguồn (Source code).</p>
-            <p>Đối với Java, cơ chế hoạt động như sau</p>
-            <ol>
-                <li>Trình biên dịch <b>Javac</b> tiến hành biên dịch Source code thành dạng bytecode.</li>
-                <li>Máy ảo Java sử dụng trình thông dịch Java để chuyển mã bytecode thành dạng chạy được tương ứng.</li>
-            </ol>
-            <p>Xem hình minh họa</p>
-            <img src="../assests/java-cach-hoat-dong.png" width="613" height="244" class="img-fluid"/>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Các thành phần của Java.</h3>
-        <div class="text-dark pt-3">
-            <p class="lead">Bài viết được copy của tác giả <strong>/* Đỗ Minh Hiền */</strong> tại địa chỉ
-                <a href="https://techmaster.vn/posts/8199/hoc-lap-trinh-java-co-ban-nang-cao">techmaster.vn</a></p>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Java Development Kit (JDK)</h4>
-                <div class="text-dark pt-3">
-                    Là bộ công cụ dành cho người phát triển ứng dụng bằng ngôn ngữ lập trình Java, bao gồm JRE và các
-                    công cụ hỗ trợ phát triển phần mềm (ví dụ như: trình biên dịch, trình thông dịch, trình sửa
-                    lỗi…). Mã nguồn trong file .java sẽ được trình biên dịch biển đổi thành file .class để thực thi trong JRE.
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Java Runtime Environment (JRE)</h4>
-                <div class="text-dark pt-3">
-                    JRE là bộ cài đặt để thực thi chương trình viết bằng ngôn ngữ Java. JRE chứa JVM, các tập tin
-                    .class, và các tập tin hỗ trợ khác. Để chạy một chương trình java, bạn cần phải có JRE cài đặt
-                    trong hệ thống.
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Java SE API</h4>
-                <div class="text-dark pt-3">
-                    Java SE API là tập hợp các gói thư viện viết sẵn nằm trong JRE, hỗ trợ cho người phát triển phần
-                    mềm viết bằng ngôn ngữ Java.
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Java Virtual Machine</h4>
-                <div class="text-dark pt-3">
-                    Java Virtual Machine (JVM) là công cụ thực thi mã (Java bytecode) trong tập tin .class của nền
-                    tảng Java. Nhờ có JVM nên chương trình viết bằng Java có thể triển khai trên nhiều hệ điều hành
-                    khác nhau (Windows, Linux, Mac…) dành cho nhiều loại phần cứng khác nhau. JVM có các tính năng như:
-                    <ul>
-                        <li>Thực thi mã trong tập tin .class</li>
-                        <li>Tự động xử lý ngoại lệ</li>
-                        <li>Cung cấp thông tin (log) để gỡ rối lỗi phần mềm</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Bộ nhớ trong Java</h4>
-                <div class="text-dark pt-3">
-                    Khi thực hiện cấp phát bộ nhớ, một đối tượng mới được tạo và đặt vào vùng nhớ Heap. Khi ứng dụng
-                    của bạn không còn tham chiếu tới đối tượng này nữa thì Java garbage collector cho phép xóa đối
-                    tượng này đi để sử dụng lại vùng nhớ đó.
-
-
-                    <ul>
-                        <li>
-                            <h6>Java Heap</h6>
-                            <p>JVM lưu tất cả đối tượng được tạo bởi toán tử “new” trong ứng dụng Java, vào vùng nhớ
-                                Heap tại thời điểm chạy. </p>
-                        </li>
-                        <li>
-                            <h6>Java Stack </h6>
-                            <p>Các phương thức và tham chiếu tới đối tượng địa phương được lưu trữ trong Stack. Mỗi
-                                Thread quản lý một stack. Khi phương thức được gọi, nó được đưa vào đỉnh của Stack.
-                                Stack lưu trữ trạng thái của phương thức bao gồm: dòng code thực thi, tham chiếu tới
-                                đối tượng địa phương. Khi phương thức chạy xong, vùng nhớ (dòng code thực thi, tham
-                                chiếu tới đối tượng địa phương) được đẩy ra khỏi stack và tự động giải phóng.</p>
-                        </li>
-                        <li>
-                            <h6>Java Perm
-                            </h6>
-                            <p>Lưu trữ thông tin của Class được nạp vào và một vài tính năng khác như StringPool
-                                (vùng nhớ của biến String) thường được tạo bởi phương thức String.interm(). Khi ứng
-                                dụng của bạn chạy, Perm space được lấp đầy nhanh chóng.  </p>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Phân biệt Heap, Stack, Perm</h4>
-                <div class="text-dark pt-3">
-                    Heap: lưu đối tượng<br />
-                    Stack: lưu tham chiếu tới đối tượng địa phương<br />
-                    Perm: lưu thông tin về Class được nạp vào<br />
-                    <br />
-                    Ví dụ: Student std = new Student();<br />
-                    <br />
-                    Heap: lưu đối tượng “new Student();”<br />
-                    Stack: lưu tham chiếu “std”<br />
-                    Perm: lưu thông tin về Class “Student”
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Garbage Collector</h4>
-                <div class="text-dark pt-3">
-                    Garbage Collector của JVM làm nhiệm vụ tự động thực hiện thu hồi vùng nhớ của các đối tượng trong
-                    bộ nhớ Heap khi nó không được tham chiếu đến.
-                    Tham khảo tối ưu bộ nhớ cho JVM:
-                    <a
-                            href="http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html">http://www
-                        .oracle.com/technetwork/java/javase/gc-tuning-6-140523.html</a>
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Trình biên dịch Just-in-time (JIT) (thông dịch)</h4>
-                <div class="text-dark pt-3">
-                    Trình biên dịch JIT thực hiện biên dịch mã Java bytecode trong file .class sang mã thực thi tại
-                    thời điểm chạy. Việc này làm cho chương trình chạy chậm hơn. Vì thế nó còn được gọi là “Hot spot”.
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Java Classloader</h4>
-                <div class="text-dark pt-3">
-                    Java Classloader là một phần của JRE làm nhiệm vụ tự động nạp các class Java vào JVM.<br />
-                    Khi khởi động JVM, 3 class loader được sử dụng :<br />
-                    <ul>
-                        <li>Bootstrap class loader : nạp thư viện lõi Java (/jre/lib)</li>
-                        <li>Extensions class loader : nạp thư viện mở rộng (/jre/lib/ext)</li>
-                        <li>System class loader : nạp thư viện trong java.class.path (CLASSPATH)</li>
-                    </ul>
-
-
-                    JAR hell là một thuật ngữ mô tả việc nạp thư viện JAR không theo ý muốn. JAR hell xảy ra trong 3
-                    trường hợp:
-                    <ul>
-                        <li>Nạp 2 phiên bản của một thư viện có sẵn cho hệ thống. Việc này không gây ra lỗi, thay vào
-                            đó hệ thống nạp các lớp từ một hoặc các thư viện khác để thay thế. </li>
-                        <li>2 thư viện (hoặc 1 thư viện và ứng dụng) yêu cầu phiên bản khác nhau của một thư viện thứ
-                            3. Nếu 2 phiên bản của thư viện thứ 3 trùng tên class thì class loader không thể nạp được
-                            class đó.  </li>
-                        <li>Các lớp được nạp bởi các class loader khác nhau có thể tương tác theo những cách phức tạp
-                            mà người phát triển phần mềm không hiểu được, dẫn đến những lỗi không thể giải thích. </li>
-                    </ul>
-
-                    Để tránh Java hell bạn thực hiện cấu hình Compile-time libraries của các IDE. Ví dụ đối với Netbean thực hiện đẩy các gói thư viện .jar bạn muốn ưu tiên lên phía trên.
-                </div>
-            </div>
-
-            <div class="my-4 p-3 bg-white rounded box-shadow">
-                <h4 class="border-bottom border-gray pb-2 mb-0">Phương thức main trong Java</h4>
-                <div class="text-dark pt-3">
-                    JVM khởi động bằng cách gọi phương thức main của lớp cụ thể nào đó.<br />
-                    Tức là:<br />
-                    Tất cả các chương trình Java đều khởi động từ phương thức main. Một JVM chỉ chạy duy nhất một
-                    chương trình java và luôn bắt đầu bằng việc gọi phương thức main() của chương trình đó. <br />
-                    Phương thức main là điểm đầu vào duy nhất của một chương trình Java vì thế nó phải là phương thức
-                    static.<br />
-                    <br />
-                    Vậy phương thức main của một ứng dụng web Java nằm ở đâu?<br />
-                    <br />
-                    Nằm trong web container ví dụ web container là Tomcat thì phương thức main nằm trong
-                    $CATALINA_HOME/bin/bootstrap.jar<br />
-                    <br />
-                    Khi nào trên Task Manager của hệ điều hành Window hiển thị process Java.exe?<br />
-                    Khi một JVM được gọi, tức là khi phương thức main của chương trình java được gọi. Cần lưu ý đối
-                    với các ứng dụng chạy applet ví dụ ứng dụng xem văn bản PDF , cần tránh tạo ra quá nhiều process
-                    Java .exe trên Window vì mỗi lần khởi tạo JVM, Window phải cấp phát tài nguyên cho nó.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Các khái niệm liên quan</h3>
-        <div class="text-dark pt-3">
-            <dl>
-                <dt>Object reference (Java - pass by value)</dt>
-                <dt>Mutable Objects  & Immutable Objects </dt>
-                <dt>Mutable Objects  & Immutable Objects </dt>
-                <dd style="display: none">
-
-                    <ul>
-                        <li>Mutable Objects (trạng thái thay đổi được) và Imnutable Objects (trạng thái không thay đổi
-                            được) là một khái niệm cần đặc biệt quan tâm.
-                        </li>
-                        <li>Hiện tại, lập trình hướng function đang được chú trọng, và bản chất của nó là các pure
-                            function, tức là những function phụ thuộc hoàn toàn vào tham số, tham số đầu vào là gì thì
-                            nó sẽ trả ra 1 kết quả y chang.
-                        </li>
-                        <li>Vì vậy Imutable Objects có vai trò rất quan trọng trong trường hợp này, vì nếu như có 1 sự
-                            thay đổi dữ liệu nào đó trong object đó, thì kết quả lần thứ 2 sẽ khác. Và xu hướng bây giờ
-                            là luôn giữ trạng thái của hệ thống đồng nhất (trong mấy cái react sẽ thấy nhiều nhất).
-                        </li>
-                        <li>Lan man thế đủ rồi, giờ quay lại ý nghĩa chính của nó:</li>
-                        <li>Imutable Objects, là các object mà giá trị của nó được thiết lập tại thời điểm constructor.
-                            Nếu muốn thay đổi dữ liệu của nó, thì ta phải new 1 object khác.
-                        </li>
-                        <li>Ứng dụng của nó ntn, xem ví dụ nhé.
-                            <blockquote>
-                                <a href="https://techmaster.vn/posts/34290/java-immutable-la-gi">Example- Luoi qua.</a>
-                            </blockquote>
-                        </li>
-                    </ul>
-                </dd>
-                <dt>Micro service</dt>
-            </dl>
-        </div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!--<a class="btn btn-default float-lg-left" href="02_Java_Vitual_Machine.html">-->
-                <!--_PREVIOUS_RESOURCE-->
-                <!--</a>-->
-
-                <a class="btn btn-default float-lg-right" href="lesson_01_b_Java_Vitual_Machine.html">
-                    Java Virtual Machine
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <br class="clearfix"/>
-
-    <div class="container">
-        <span class="text-dark">
-            <address>
-            Created by <strong>Khanh Tran</strong><br>
-            Email: quockhanhqb011@gmail.com<br>
-            Phone: (+84) 989 890 960
-        </address>
-        </span>
-    </div>
-</footer>
 </body>
 </html>
