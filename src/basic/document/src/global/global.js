@@ -1,24 +1,34 @@
 const LIST_LESSON_DATA = [
-    "../javaartecture/lesson_00_Beginning_Learning_java.html",
-    "../javaartecture/lesson_01_b_Java_Vitual_Machine.html",
-    "../javaartecture/lesson_02_c_Components_of_JDK.html",
-    "../javaartecture/lesson_03_d_Obbject_Reference.html",
-
-    "../javabasic/lesson_05_Object_n_Class_continous.html",
-    "../javabasic/lesson_06_Object_n_Class_end.html",
-    "../javabasic/lesson_07_Access_Modifier_in_Java.html",
-    "../javabasic/lesson_08_Constructor_in_Java.html",
-    "../javabasic/lesson_09_Keywords_in_Class.html",
-    "../javabasic/lesson_10_How_System_out_in_Java_works.html",
-
-
-    "../javaoop/lesson_11_Inheritance_in_Java.html",
-    "../javaoop/lesson_12_Polymorphism_in_Java.html",
-    "../javaoop/lesson_13_Type_of_Polymorphism_in_Java.html",
-    "../javaoop/lesson_14_Abstract_in_Java.html",
-
+    {url: "lesson_00_Beginning_Learning_java.html", titleDisplay: "Introduce Java"},
+    {url: "lesson_01_Java_Virtual_Machine.html", titleDisplay: "Java Virtual Machine"},
+    {url: "lesson_02_Components_of_JDK.html", titleDisplay: "Components of JDK"},
+    {url: "lesson_03_Object_Reference.html", titleDisplay: "Object Reference - Java pass by value"},
+    {url: "lesson_04_Object_n_Class_in_Java_01.html", titleDisplay: "Object and Class in Java(1)"},
+    {url: "lesson_05_Object_n_Class_in_Java_02.html", titleDisplay: "Object and Class in Java(2)"},
+    {url: "lesson_06_Object_n_Class_in_Java_03.html", titleDisplay: "Object and Class in Java(3)"},
+    {url: "lesson_07_Access_Modifier_in_Java.html", titleDisplay: "Access Modifier in Java"},
+    {url: "lesson_08_Constructor_in_Java.html", titleDisplay: "Constructor in Java"},
+    {url: "lesson_09_Keywords_in_Class.html", titleDisplay: "Keyword in Class"},
+    {url: "lesson_10_How_System_out_in_Java_works.html", titleDisplay: "How System.out.println in Java works"},
+    {url: "lesson_11_Inheritance_in_Java.html", titleDisplay: "Inheritance in Java"},
+    {url: "lesson_12_Polymorphism_in_Java.html", titleDisplay: "Polymorphism in Java"},
+    {url: "lesson_13_Type_of_Polymorphism_in_Java.html", titleDisplay: "Types of Polymorphism in Java"},
+    {url: "lesson_14_Abstract_in_Java.html", titleDisplay: "Abstract in Java"},
+    {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "Encapsulation in Java"},
+    {url: "lesson_16_Java_Basic_Datatype.html", titleDisplay: "Basic data type"},
+    {url: "lesson_17_Java_Modifier_Types.html", titleDisplay: "Modifier Type"},
+    {url: "zz_template_files.html", titleDisplay: "___________"},
+    {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "___________"},
+    {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "___________"}
 ];
 
+
+function buildMenu(){
+    var menuHTML = new Array();
+    for(var i = 0; i < LIST_LESSON_DATA.length; i++){
+        menuHTML.push('')
+    }
+}
 
 $(document).ready(function(){
     console.log("add more pluggin!!!");

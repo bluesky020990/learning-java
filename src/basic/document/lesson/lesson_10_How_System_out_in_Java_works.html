@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>__________________</title>
+    <title>Java – How System.out.println() really work?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,30 +41,63 @@
 
 <main role="main" class="container">
     <div class="introduction">
-        <h1>HEADER_DISPLAY</h1>
+        <h1>Java – How System.out.println() really work?</h1>
         <div class="lead">
-            INSTRUCTION_CONTENT
+            <p>Học với Java ai cũng biết cái method System.out.println(). Tuy nhiên, nó hoạt động ntn.</p>
         </div>
     </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <h3 class="border-bottom border-gray pb-2 mb-0">Role of Dot operator</h3>
         <div class="text-dark pt-3">
-           BODY_CONTENT
+            <p>We all know that in Java we use the Dot operator to call the methods or variable of a class. Here ‘out’
+                is the mysterious part as we doesn’t whether it is a variable or method ?. ‘out’ cannot possibly be a
+                method as we don’t have a parenthesis() at the end and we are not calling like “System.out(“JIP”).println”,
+                so from this we can be sure that out is a variable and not a method.</p>
+            <blockquote>
+                Chúng ta đều biết rằng Java sử dụng DOT OPERATION để gọi method hoặc variable của class. Tuy nhiên
+                out ở đây ko phải là method, vì nó ko có dấu () ở cuối, và chúng ta cũng ko thể gọi bằng cách viết
+                System.out("abcdef").println nên OUT trong này phải là một biến.
+            </blockquote>
+
         </div>
     </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <h3 class="border-bottom border-gray pb-2 mb-0">What type of variable is ‘out’ ?</h3>
         <div class="text-dark pt-3">
-            BODY_CONTENT
+            <p>Nếu nó ko phải là biến, thế nó là cái quái gì???</p>
+
+            <p>Now we have come to a conclusion that ‘out’ is a variable, now comes the question what type of variable
+                is ‘out’ is it static variable or instance variable ? We all know that only static variables can be
+                called with the class name directly, same is happening here also System is a class in java.lang
+                package we are using it to call ‘out’ variable.  Moreover ‘out’ cannot be a instance variable as we
+                not creating any instance for calling it.</p>
+
+            <p>Từ trên kia, chúng ta đã kết luận rằng out là một biến. Vậy, ta có một câu hỏi khác, kiểu của out là
+                static variable hay là instance variable.</p>
+
+            <p>Trong System class, out được khai báo như sau:</p>
+
+            <blockquote>
+                public final static PrintStream out = null;
+            </blockquote>
+
+            <p>Như vậy, nó vừa là static, vừa là final reference đến PrintStream Class.</p>
+
         </div>
     </div>
 
     <div class="my-4 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+        <h3 class="border-bottom border-gray pb-2 mb-0">How ‘out’ is initialized ?</h3>
         <div class="text-dark pt-3">
-            BODY_CONTENT
+            <p>Cái này mò hoài mà ko thấy nó đâu.</p>
+
+            <p>Search trên mạng thì nó ra cái này:</p>
+
+            <blockquote>
+
+            </blockquote>
         </div>
     </div>
 
