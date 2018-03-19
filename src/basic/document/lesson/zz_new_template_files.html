@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Loop Control</h1>
+            <div class="lead">
+                <p>Trong Java, lệnh được thực hiện tuần từ, tức là đi từ trên xuống dưới, line by line. Trong một vài trường
+                hợp, ta muốn điều khiển điều đó, bằng cách kiểm tra điều kiện để rẽ nhánh, hoặc lặp đi lặp lại 1 block.
+                    Ta gọi nó một cách chung chung là Loop Control</p>
+
+                <p>Còn thực tế hơn thì ta đi vào các câu lệnh if else, switch case, for, while, do while của nó.</p>
+
+                <p>Cái thằng if và switch case đáng lẽ ko được đưa vào đây đâu. Nhưng thôi kệ cứ làm như vậy luôn cho gọn</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">While</h3>
+                    <div class="text-dark pt-3">
+                        <p>Đầu tiên ta đi vào cái đơn giản nhất này</p>
+
+                        <blockquote>
+                            while(boolean_expression){<br />
+                                //statement<br />
+                            }<br />
+                        </blockquote>
+
+                        <p>Câu lệnh này rất đơn giản, cứ kiểm tra điều kiện, nếu đúng thì tiếp tục lặp lại đoạn statements
+                            bên trong block, ko thì out ra và qua câu lệnh tiếp theo</p>
+
+                        <h5>Nó được sử dụng khi nào</h5>
+
+                        <p>Khi mà ta không biết được chính xác nó cần chạy bao nhiêu lần với điều kiện đó.</p>
+
+                        <p>Thường được sử dụng trong đệ quy, hoặc thích đâu thì xài đó.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Do while </h3>
+                    <div class="text-dark pt-3">
+                        <p>Đối với do while, thì nó sẽ chạy cái block kia trước, rồi mới kiểm tra cái điều kiện</p>
+
+                        <blockquote>
+                            do{<br />
+                               //statement<br />
+                            } while(boolean_expression);<br />
+                        </blockquote>
+
+                        <p>Sự khác biệt của 2 thằng này, đó là do while luôn chạy ít nhất 1 lần, vì nó kiểm tra đk sau, còn
+                        cái thằng while kia thì có thể ko chạy cái statement kia, nếu đk ban đầu đã là false.</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

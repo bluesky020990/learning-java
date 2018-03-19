@@ -17,9 +17,9 @@ const LIST_LESSON_DATA = [
     {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "Encapsulation in Java"},
     {url: "lesson_16_Java_Basic_Datatype.html", titleDisplay: "Basic data type"},
     {url: "lesson_17_Java_Modifier_Types.html", titleDisplay: "Modifier Type"},
+    {url: "lesson_18_Java_Basic_Operations.html", titleDisplay: "Basic Operation"},
+    {url: "lesson_19_Java_Loop_Control.html", titleDisplay: "Java Loop Control"},
     {url: "zz_template_files.html", titleDisplay: "___________"},
-    {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "___________"},
-    {url: "lesson_15_Encapsulation_in_Java.html", titleDisplay: "___________"}
 ];
 
 initPageData();
