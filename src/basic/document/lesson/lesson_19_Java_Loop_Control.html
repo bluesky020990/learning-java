@@ -32,9 +32,15 @@
 
     <div class="p-3 p-md-12 text-white rounded bg-dark">
         <div class="col-md-12 px-0">
-            <h1>_______________________</h1>
+            <h1>Loop Control</h1>
             <div class="lead">
-                _______________________
+                <p>Trong Java, lệnh được thực hiện tuần từ, tức là đi từ trên xuống dưới, line by line. Trong một vài trường
+                    hợp, ta muốn điều khiển điều đó, bằng cách kiểm tra điều kiện để rẽ nhánh, hoặc lặp đi lặp lại 1 block.
+                    Ta gọi nó một cách chung chung là Loop Control</p>
+
+                <p>Còn thực tế hơn thì ta đi vào các câu lệnh if else, switch case, for, while, do while của nó.</p>
+
+                <p>Cái thằng if và switch case đáng lẽ ko được đưa vào đây đâu. Nhưng thôi kệ cứ làm như vậy luôn cho gọn</p>
             </div>
         </div>
     </div>
@@ -45,37 +51,166 @@
         <div class="col-md-8 blog-main">
             <div class="blog-post">
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">While</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Đầu tiên ta đi vào cái đơn giản nhất này</p>
+
+                        <blockquote>
+                            while(boolean_expression){<br />
+                            //statement<br />
+                            }<br />
+                        </blockquote>
+
+                        <p>Câu lệnh này rất đơn giản, cứ kiểm tra điều kiện, nếu đúng thì tiếp tục lặp lại đoạn statements
+                            bên trong block, ko thì out ra và qua câu lệnh tiếp theo</p>
+
+                        <h5>Nó được sử dụng khi nào</h5>
+
+                        <p>Khi mà ta không biết được chính xác nó cần chạy bao nhiêu lần với điều kiện đó.</p>
+
+                        <p>Thường được sử dụng trong đệ quy, hoặc thích đâu thì xài đó.</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Do while </h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Đối với do while, thì nó sẽ chạy cái block kia trước, rồi mới kiểm tra cái điều kiện</p>
+
+                        <blockquote>
+                            do{<br />
+                            //statement<br />
+                            } while(boolean_expression);<br />
+                        </blockquote>
+
+                        <p>Sự khác biệt của 2 thằng này, đó là do while luôn chạy ít nhất 1 lần, vì nó kiểm tra đk sau, còn
+                            cái thằng while kia thì có thể ko chạy cái statement kia, nếu đk ban đầu đã là false.</p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">For loop</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khác với 2 thằng kia, đối với thằng này thì ta luôn có 1 điều kiện bắt đầu và đk kết thúc.
+                            Nói cách khác, nó sẽ start với begin value và end with end value</p>
+
+
+                        <blockquote>
+                            for(int = begin; i < end; i ++){
+
+                            }
+                        </blockquote>
+
+                        <p>Khác với những thằng trước, số lượng vòng for mà thằng này chạy là một số xác định. Nói là
+                            xác định tức là bạn có thể biết được số lần mà nó sẽ chạy (chỉ là tương đối thôi nhé, chứ cái statements
+                        bên trong mà update luôn giá trị của step thì bố ai mà biết đc. </p>
+
+                        <p>Nó hay được dùng để duyệt phần tử của mảng, hoặc làm nhiều việc khác.</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">break and continuous keyword</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Trong một vài trường hợp, ta muốn kết thúc vòng lặp khi đã tìm thấy kết quả mong đợi - đạt được mục
+                        đích, vì những bước sau ko còn quan trọng nữa, khi đó ta sử dụng break để kết thúc vòng lặp.</p>
+
+                        <blockquote>
+                            break là từ khóa được dùng trong đk vòng lặp. Khi nó được gọi, nó sẽ thoát ra khỏi vòng lặp và chạy tới
+                            câu lệnh tiếp theo sau đó (thoát ra khỏi vòng lặp)
+                        </blockquote>
+
+                        <p>Ngược lại với nó, từ khóa continuous thông báo rằng, nếu nó gặp cái này, thì nó sẽ bỏ qua cái block statemenet sau đó
+                            để tiếp tục chạy.</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Enhanced for loop in Java</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Java sử dụng từ khóa : trong một vài trường hợp duyệt array, list... Nó thay thế cho việc ntn thôi</p>
+
+                        <blockquote>
+                            for(int i = 0; i < listObject.length; i++){
+                                int obj = listObject[i]
+                            }
+                        </blockquote>
+
+                        <blockquote>
+                            for(int obj : listObject){
+                                //
+                            }
+                        </blockquote>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Java – Decision Making </h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Nói đơn giản thì ta đi tìm hiểu cái lệnh if thôi à.</p>
+
+                        <p>Cái này thì biết rồi nên cũng ko quan tâm cho lắm.</p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">switch case </h3>
+                    <div class="text-dark pt-3">
+                        <p>Cái này là một trong số các function mà hay quên nhất. Cú pháp của nó cũng đơn giản thôi</p>
+
+                        <blockquote>
+                            switch (expression){
+                                case  value_1 : // statements; break;
+                                case  value_2 : // statements; break;
+                                case  value_3 : // statements; break;
+                                case  value_4 : // statements; break;
+                                default :       // statements;
+                            }
+                        </blockquote>
+
+                        <p>Ngày xưa, ta hay hiểu nhầm rằng cái switch case dùng để lấy ra một giá trị nào đó, nếu thỏa mãn đk kia
+                        nhưng ko phải đâu nhé, nó sẽ chạy các block statements phụ thuộc vào từng đk. Do đó, nó mới cần cái lệnh
+                            break ở sau để mà nó có thể kết thúc vòng lặp khi tìm thấy giá trị phù hợp.</p>
+
+                        <p>Dưới đây là các lưu ý của thằng này.</p>
+
+                        <ul>
+                            <li>The variable used in a switch statement can only be integers, convertable integers
+                                (byte, short, char), strings and enums.</li>
+
+                            <li>You can have any number of case statements within a switch. Each case is followed
+                                by the value to be compared to and a colon.
+                            </li>
+
+                            <li>The value for a case must be the same data type as the variable in the switch and
+                                it must be a constant or a literal.
+                            </li>
+
+                            <li>When the variable being switched on is equal to a case, the statements following
+                                that case will execute until a break statement is reached.
+                            </li>
+
+                            <li>When a break statement is reached, the switch terminates, and the flow of control
+                                jumps to the next line following the switch statement.</li>
+
+                            <li>Not every case needs to contain a break. If no break appears, the flow of control
+                                will fall through to subsequent cases until a break is reached.</li>
+
+                            <p>A switch statement can have an optional default case, which must appear at the
+                                end of the switch. The default case can be used for performing a task when none
+                                of the cases is true. No break is needed in the default case.
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">? Operator</h3>
+                    <div class="text-dark pt-3">
+                        <p>Toán tử điều kiện này thì đã tìm hiểu ở lúc trước rồi, ko cần xem nữa.</p>
                     </div>
                 </div>
             </div>
