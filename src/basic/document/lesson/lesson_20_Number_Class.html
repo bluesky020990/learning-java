@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Number Class</h1>
+            <div class="lead">
+                <p>Trong những bài học trước ta đã tìm hiểu về cấc kiểu primitive type. Hôm nay ta sẽ đi sâu vào từng thằng một </p>
+
+                <p>Mục đích đó là cần xem và làm để biết Java nó support những cái gì, sau này có google thì cũng dễ.</p>
+
+                <p>Thông thường, ta chỉ làm việc với các kiểu dữ liệu nguyên thủy, primitive, tuy nhiên có một vài trường
+                hợp ta cần làm việc với các kiểu number dưới dạng object.</p>
+
+                <p>Java cung cấp một đống wrapper classes để mà hỗ trợ cái này. Tương ứng với: Integer, Long, Byte, Double
+                Float, Short. Tất cả tụi này đều là con của abstract class Number</p>
+
+                <img src="../assests/basic/number_class.png" class="img-fluid" />
+
+                <blockquote>
+                    <p>Các object của các wrapper class chứa hoặc bao bọc các dữ liệu primitive của chính nó.</p>
+
+                    <p>Việc chuyển đổi các kiểu dữ liệu nguyên thủy primitive thành đối tượng được gọi là boxing, và được thực
+                        hiện bởi trình biên dịch. Vì vậy nên ta chỉ cần truyền giá trị primitive cho constructor của Wrapper Class</p>
+
+                    <p>Và object Wrapper sẽ được convert ngược lại thành primitive type. Quá trình này được gọi là unboxing.
+                        Class Number là một phần của java.lang.package.</p>
+                </blockquote>
+
+                <blockquote>
+                    public class Test{<br />
+                    &nbsp; &nbsp; public static void main(String args[]){<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; Integer x = 5; // boxes int to an Integer object<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; x =  x + 10;   // unboxes the Integer to a int<br />
+                    &nbsp; &nbsp; &nbsp; &nbsp; System.out.println(x);<br />
+                    &nbsp; &nbsp; }<br />
+                    }
+                </blockquote>
+
+                <p>When x is assigned an integer value, the compiler boxes the integer because x is integer object.
+                    Later, x is unboxed so that they can be added as an integer. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Number Methods </h3>
+                    <div class="text-dark pt-3">
+                        <table class="table table-bordered tab-content" style="width: 100%" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <td style="width: 28%">xxxValue()</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Method này convert cái đối tượng number hiện tại thành các kiểu
+                                dữ liệu khác nhau. xxx là một trong các giá trị : [byte, int, long, double, ....]</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">compareTo(_number)</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Method này nhằm so sánh cái thằng number hiện tại với _number kia.
+                                Giá trị trả về là 0 nếu 2 thằng đó bằng nhau, 1 nếu object hiện tại lớn hơn và -1 nếu nó bé hơn.
+                                Dùng cái này trong sort number cũng được</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">equals()</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Dùng để so sánh 2 object có phải là 1 không, giá trị là true / false.
+                                So sánh này là về mặt giá trị, có lẽ do nó override lại cái method </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">valueOf()</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Trả lại một object gì đó bằng cách convert dữ liệu. KIểu như truyền vào String
+                                mà nó đổi thành Integer vậy</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">toString()</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Chuyển đổi kiểu number thành String.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">parseInt()</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Chuyển kiểu dữ liệu hiện tại thành kiểu Integer.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">Math - abs</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Trả lại giá trị absolute của object, = -a </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">Math - ceil</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Làm tròn lên. Tức là có 100.55 thì sau khi chạy Math.ceil(b) nó trả về 101.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">Math - fllor</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Làm tròn xuống. Cái trên nếu gọi Math.floor(100.55) thì nó trả về 100.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 28%">Math - rint (Round to Integer)</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Nó sẽ làm tròn cái giá trị đó, tới cái giá trị integer gần nhất.
+                                    Nó như round vậy nhưng mà chỉ lấy int. Và kết quả trả về là số long. 100.0</td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 28%">Math - round</td>
+                                <td style="width: 2%"></td>
+                                <td style="">Cái này như cái trên kia, chỉ là kết quả của nó trả về là integer / long.
+
+                                Một điểm cần ghi nhớ ở đây. Math.rint(100.500) thì trả về 100, trong khi đó, Math.round(100.500) thì
+                                trả về 101.</td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - min, max</td>
+                                <td style=""></td>
+                                <td style="">Lấy giá trị nhỏ nhất / lớn nhất giữa 2 số.</td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - exp </td>
+                                <td style=""></td>
+                                <td style="">Lấy logarithms, cái này là gì quên rồi :(((</td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - pow</td>
+                                <td style=""></td>
+                                <td style="">Lấy số mũ. Math.pow(10, 2) = 10 ^ 2 </td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - sqrt</td>
+                                <td style=""></td>
+                                <td style="">Cái này thì quen rồi, lấy căn bậc 2</td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - sin, cos, atan, acos</td>
+                                <td style=""></td>
+                                <td style="">Lưu ý, cái này tham số truyền vào của nó là radians nhé. Vì vậy cần gọi method
+                                Math.toRadians(degree) để chuyển cái angle về đơn vị radians trước khi tính toán. Tương tự, ta cũng
+                                có thể gọi toRadians để convert ngược lại.</td>
+                            </tr>
+
+                            <tr>
+                                <td style="">Math - random</td>
+                                <td style=""></td>
+                                <td style="">Method nà khác hữu ích. Nó random 1 giá trị trong khoảng 0.0 --> 1.0. Vậy, muốn random
+                                trong một khoảng thì sao. Giả sử ta có giá trị min = 100, max = 200. Khi đó, Math.random trả về 1 giá trị
+                                từ 0.0 --> 1.0. với giá trị 0 --> = min_value, với giá trị 1 = max value.<br />
+                                    <br />
+                                    Sử dụng công thức này để đạt được điều đó.<br />
+                                    <br />
+                                    <blockquote>
+                                        Math.floor(Math.random() * (max_value - min_value)) + min_value;<br />
+                                    </blockquote>
+
+                                    <br />
+                                    Khi random == 0 --> exp = min. Khi random == 1, exp = max - min + min = max.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Character</h3>
+                    <div class="text-dark pt-3">
+                        Bổ sung sau
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">String Class</h3>
+                    <div class="text-dark pt-3">
+                        Bổ sung sau
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Array</h3>
+                    <div class="text-dark pt-3">
+                        <p>Đây là một bài học khá hay, cần theo dõi kĩ. Trong bài học này ta đi qua 2 kiểu, array và Array.</p>
+
+
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">array nhỏ</h5>
+                        <div class="text-dark pt-3">
+                            <p>Về mặt bản chất, array là một cấu trúc dữ liệu, là 1 mảng, lưu giữ một bộ nhớ tuần tự cố định</p>
+
+                            <p>Vì vậy cái thằng này có 2 điểm cần nhớ. 1. Size của nó sẽ fix ngay khi khởi tạo. 2. Nó là một vùng nhớ
+                                liên tục. </p>
+
+                            <p>Khi khai báo array, chỉ có thể khai báo dưới 2 dạng</p>
+
+                            <blockquote>
+                                dataType[] arrayRefVar = new dataType[arraySize];
+                            </blockquote>
+
+                            <p>Hoặc</p>
+
+                            <blockquote>
+                                dataType[] arrayRefVar = {value0, value1, ..., valuek};
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Array Class </h5>
+                        <div class="text-dark pt-3">
+                            <p>
+                                The java.util.Arrays class contains various static methods for sorting and searching
+                                arrays, comparing arrays, and filling array elements. These methods are overloaded for
+                                all primitive types.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Java – Date & Time </h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            Java provides the Date class available in java.util package, this class encapsulates the current date and time.
+                            The Date class supports two constructors as shown in the following table.
+
+                            new Date () return current date
+                            Date (long milisec)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

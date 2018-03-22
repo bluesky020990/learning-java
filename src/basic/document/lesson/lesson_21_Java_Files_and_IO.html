@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Files and I/O</h1>
+            <div class="lead">
+                <p>Mấy hôm trước học lướt qua mấy cái kia, riêng cái này thì phải cẩn thận tìm hiểu.</p>
+
+                <p>Hôm nay chúng ta sẽ đi vào tìm hiểu java.io package, một trong số những package khá là phổ biến.</p>
+
+                <p>The java.io package contains nearly every class you might ever need to perform input and output
+                    (I/O) in Java. All these streams represent an input source and an output destination. The stream
+                    in the java.io package supports many data such as primitives, object, localized characters, etc</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Stream </h3>
+                    <div class="text-dark pt-3">
+                        <p>A stream can be defined as a sequence of data. There are two kinds of Streams:</p>
+                        <ul>
+                            <li><strong>InPutStream</strong>: The InputStream is used to read data from a source. </li>
+                            <li><strong>OutPutStream</strong>: The OutputStream is used for writing data to a destination. </li>
+                        </ul>
+
+                        <img src="../assests/basic/steam_flow_in_java.png" class="img-fluid" />
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Byte Streams.</h5>
+                        <div class="text-dark pt-3">
+                            <p>ava byte streams are used to perform input and output of 8-bit bytes. Though there are many
+                                classes related to byte streams but the most frequently used classes are, FileInputStream
+                                and FileOutputStream.</p>
+
+                            <p>Xem ví dụ trong JavaStreamExample nhé.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Character Streams </h5>
+                        <div class="text-dark pt-3">
+                            <p>Java Byte streams are used to perform input and output of 8-bit bytes, whereas Java Character
+                                streams are used to perform input and output for 16-bit unicode. Though there are many
+                                classes related to character streams but the most frequently used classes are, FileReader
+                                and FileWriter. Though internally FileReader uses FileInputStream and FileWriter uses
+                                FileOutputStream but here the major difference is that FileReader reads two bytes at a
+                                time and FileWriter writes two bytes at a time. </p>
+
+                            <p>Cái này chỉ khác biệt với cái trên kia ở chỗ. </p>
+
+                            <table class="table tab-content table-bordered" cellpadding="5" cellspacing="0">
+                                <tr>
+                                    <td>Byte streams</td>
+                                    <td>&nbsp; &nbsp; &nbsp;</td>
+                                    <td>Character Streams</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Một lần đọc có 8 byte</td>
+                                    <td>&nbsp; &nbsp; &nbsp;</td>
+                                    <td>Một lần đọc 16 byte</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sử dụng FileInputStream và FileOutputSteam</td>
+                                    <td>&nbsp; &nbsp; &nbsp;</td>
+                                    <td>Sử dụng FileReader và FileWrite</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Standard Streams</h5>
+                            <div class="text-dark pt-3">
+                                <p>Tất cả các chương trình programming language đều hỗ trợ standard I/O cho phép user có thể nhập
+                                input từ bàn phím và xuất ra màn hình. Trong C hoặc C++ đó là STDIN, STDOUT và STDERR</p>
+
+                                <p>Tương tự nó, Java cũng hỗ trợ điều đó. Cụ thể nó support 3 standard sau :</p>
+
+                                <ul>
+                                    <li>Standard Input: This is used to feed the data to user's program and usually a
+                                        keyboard is used as standard input stream and represented as System.in</li>
+
+                                    <li>Standard Output: This is used to output the data produced by the user's program
+                                        and usually a computer screen is used for standard output stream and represented
+                                        as System.out</li>
+
+                                    <li>Standard Error: This is used to output the error data produced by the user's
+                                        program and usually a computer screen is used for standard error stream and
+                                        represented as System.err</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Luời quá, ứ học nữa.</h5>
+                        <div class="text-dark pt-3">
+                            BODY_CONTENT
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h5>
+                        <div class="text-dark pt-3">
+                            BODY_CONTENT
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

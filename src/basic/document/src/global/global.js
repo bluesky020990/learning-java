@@ -19,6 +19,11 @@ const LIST_LESSON_DATA = [
     {url: "lesson_17_Java_Modifier_Types.html", titleDisplay: "Modifier Type"},
     {url: "lesson_18_Java_Basic_Operations.html", titleDisplay: "Basic Operation"},
     {url: "lesson_19_Java_Loop_Control.html", titleDisplay: "Java Loop Control"},
+    {url: "lesson_20_Number_Class.html", titleDisplay: "Java Number, String, Date Class"},
+    {url: "lesson_21_Java_Files_and_IO.html", titleDisplay: "Java Files and I/O"},
+    {url: "lesson_22_Java_Exceptions.html", titleDisplay: "Java Exception"},
+
+
     {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
 

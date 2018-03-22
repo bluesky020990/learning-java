@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Java Exceptions</h1>
+            <div class="lead">
+                <p>Một exception (hoặc exceptional event - sự kiện đặc biệt) là một vấn đề phát sinh trong quá trình thực
+                hiện chương trình. Khi một exception xảy ra, cái flow của chương trình sẽ ko còn đúng  nữa, và có thể khiến cho
+                program bị disrupted. Vì vậy cần phải xử lý exception - hạn chế cái này.</p>
+
+                <p>Về mặt bản chất thì có thể chia nó thành 3 loại:</p>
+
+                <ul>
+                    <li>User nhập vào một giá trị không phù hợp</li>
+
+                    <li>File not founds</li>
+
+                    <li>Network bị gián đoạn hoặc lỗi out of memory của JVM.</li>
+                </ul>
+
+                <p>Dựa vào 3 cái trên, Java quy định 3 category ứng với các trường hợp exception như sau:</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Checked exceptions</h3>
+                    <div class="text-dark pt-3">
+                        <p>Checked exception là một exception xảy ra trong quá trình compiler. Nó còn được gọi là
+                            <b>Compiler Time Exception</b>. Tất nhiên, khi nó bị lỗi thì javac sẽ throw ra lỗi để người developer biết
+                        mà sửa.</p>
+
+                        <table class="table table-bordered">
+                            <tbody><tr>
+                                <th>Sr.No.</th>
+                                <th style="text-align:center;">Exception &amp; Description</th>
+                            </tr>
+                            <tr>
+                                <td class="ts">1</td>
+                                <td><p><b>ClassNotFoundException</b></p>
+                                    <p>Class not found.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">2</td>
+                                <td><p><b>CloneNotSupportedException</b></p>
+                                    <p>Attempt to clone an object that does not implement the Cloneable interface.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">3</td>
+                                <td><p><b>IllegalAccessException</b></p>
+                                    <p>Access to a class is denied.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">4</td>
+                                <td><p><b>InstantiationException</b></p>
+                                    <p>Attempt to create an object of an abstract class or interface.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">5</td>
+                                <td><p><b>InterruptedException</b></p>
+                                    <p>One thread has been interrupted by another thread.</p></td></tr>
+                            <tr>
+                                <td class="ts">6</td>
+                                <td><p><b>NoSuchFieldException</b></p>
+                                    <p>A requested field does not exist.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">7</td>
+                                <td><p><b>NoSuchMethodException</b></p>
+                                    <p>A requested method does not exist.</p></td>
+                            </tr>
+                            </tbody></table>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Unchecked exceptions</h3>
+                    <div class="text-dark pt-3">
+                        <p>Unchecked exception là những exception mà xảy ra trong quá trình thực thi. Nó còn được biết
+                            đến dưới cái tên là <b>Runtime Exception</b>. Runtime exception thì ko thể phát hiện được
+                        trong quá trình compiler (vì đã chạy đâu mà biết) nên nó thường dẫn đến những lỗi rất phiền toái.</p>
+
+                        <table class="table table-bordered">
+                            <tbody><tr>
+                                <th>Sr.No.</th>
+                                <th style="text-align:center;">Exception &amp; Description</th>
+                            </tr>
+                            <tr>
+                                <td class="ts">1</td>
+                                <td><p><b>ArithmeticException</b></p>
+                                    <p>Arithmetic error, such as divide-by-zero.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">2</td>
+                                <td><p><b>ArrayIndexOutOfBoundsException</b></p>
+                                    <p>Array index is out-of-bounds.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">3</td>
+                                <td><p><b>ArrayStoreException</b></p>
+                                    <p>Assignment to an array element of an incompatible type.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">4</td>
+                                <td><p><b>ClassCastException</b></p>
+                                    <p>Invalid cast.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">5</td>
+                                <td><p><b>IllegalArgumentException</b></p>
+                                    <p>Illegal argument used to invoke a method.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">6</td>
+                                <td><p><b>IllegalMonitorStateException</b></p>
+                                    <p>Illegal monitor operation, such as waiting on an unlocked thread.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">7</td>
+                                <td><p><b>IllegalStateException</b></p>
+                                    <p>Environment or application is in incorrect state.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">8</td>
+                                <td><p><b>IllegalThreadStateException</b></p>
+                                    <p>Requested operation not compatible with the current thread state.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">9</td>
+                                <td><p><b>IndexOutOfBoundsException</b></p>
+                                    <p>Some type of index is out-of-bounds.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">10</td>
+                                <td><p><b>NegativeArraySizeException</b></p>
+                                    <p>Array created with a negative size.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">11</td>
+                                <td><p><b>NullPointerException</b></p>
+                                    <p>Invalid use of a null reference.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">12</td>
+                                <td><p><b>NumberFormatException</b></p>
+                                    <p>Invalid conversion of a string to a numeric format.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">13</td>
+                                <td><p><b>SecurityException</b></p>
+                                    <p>Attempt to violate security.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">14</td>
+                                <td><p><b>StringIndexOutOfBounds</b></p>
+                                    <p>Attempt to index outside the bounds of a string.</p></td>
+                            </tr>
+                            <tr>
+                                <td class="ts">15</td>
+                                <td><p><b>UnsupportedOperationException</b></p>
+                                    <p>An unsupported operation was encountered.</p></td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Exception Hierarchy</h3>
+                    <div class="text-dark pt-3">
+                        <p>Tất cả exception class đều là subtype của java.lang.Exception Class. Exception Class lại là subclass
+                        của Throwable Class. Một thằng khác không phải là exception, nhưng là subclass của Throwable đó là Errors.
+                        Xem cái hierarchy dưới dây:</p>
+
+                        <img src="../assests/basic/exception_hiararchy_in_Java.png" class="img-fluid"/>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Catching Exceptions </h3>
+                    <div class="text-dark pt-3">
+                        <p>Đôi lúc, ta cảm giác có 1 đoạn code nào đó có thể xảy ra lỗi, khi đó, ta sẽ đưa nó vào trong try
+                        catch để có thể handle được trường hợp khi mà nó xảy ra.</p>
+
+                        <p>Trong trường hợp đoạn code có thể xảy ra nhiều lỗi, ta có thể bỏ thêm cái catch để xử lý cho từng
+                        trường hợp, hoặc ném ra Exception đại diện cho tất cả.</p>
+
+                        <p>Ngoài ra ta còn có thể add thêm cái final để nó chạy sau khi mọi thứ đã xảy ra. Nó thường được đưa
+                        vào lúc đóng file, ghi objects này nọ ...</p>
+                        
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
