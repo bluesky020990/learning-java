@@ -22,8 +22,7 @@ const LIST_LESSON_DATA = [
     {url: "lesson_20_Number_Class.html", titleDisplay: "Java Number, String, Date Class"},
     {url: "lesson_21_Java_Files_and_IO.html", titleDisplay: "Java Files and I/O"},
     {url: "lesson_22_Java_Exceptions.html", titleDisplay: "Java Exception"},
-
-
+    {url: "lesson_23_Java_Data_Structure2.html", titleDisplay: "Java Data Structures"},
     {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
 

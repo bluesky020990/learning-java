@@ -227,9 +227,68 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Kinh nghiệm về catching exception</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Trong lập trình, ta thường có throw để ném ra một exception, và try catch để bắt ra 1 exception.</p>
+
+                        <p>Throw thì khỏi phải bàn nữa, ta sử dụng throw để thông báo ra một exception nào đó mà hệ thống đang gặp phải, nhằm
+                        thông báo cho developer phải xử lý nó. Nhưng, throw exception ntn cho hợp lí, và xử lý nó ra sao? đấy là điều đáng quan tâm.</p>
+
+                        <p class="lead">
+                            Nếu biết đủ thông tin và cách giải quyết khi gặp ngoại lệ thì catch nó lại và thực hiện các
+                            thao tác giải quyết, nếu chưa đủ thông tin để giải quyết, thả nó ra.
+                        </p>
+
+                        <p>Việc throw exception, thường được thực hiện ở những tầng thấp hơn. Chúng ta thường throw ra những thứ
+                        mà ta không biết hoặc không đủ thông tin để giải quyết. Và điều đó sẽ đẩy trách nhiệm về việc xử lý những
+                        exception này ở level cao hơn, khi mà lớp high-level này có đủ thông tin để xử lý</p>
+
+                        <p>Đừng ngại throw lỗi, khi mà bạn ko có đủ thông tin để xử lý nó.</p>
+
+                        <p>Đừng có che dấu nó. Hoặc bạn catch nó để xử lý, hoặc bạn throw ra để người khác xử lý.</p>
+
+
+                        <p>Trong Java, có 2 cách để bạn throw ra exception. Bạn có thể sử dụng từ khóa throw để chủ động throw ra một exception
+                        hoặc sử dụng từ khóa throws cho phương thức để cho nó tự động gọi. 2 cái, một cái là bạn chủ động throw ra, một cái là hệ thống tự làm.</p>
+
+                        <p>Ví dụ</p>
+
+                        <blockquote>
+                            public UserDTO getUserByID (id) throws ObjectNotFoundException, DBExceptions{<br/>
+                            &nbsp; &nbsp; try{<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; db.connectDatabase();<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; UserDTO result = db.findUserByID(id)<br/>
+                            <br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; if(result == null){<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; throw new ObjectNotFoundException("Cannot found the user with id " + id);<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; }<br/>
+                            &nbsp; &nbsp; } catch(e){<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; throw new DBExceptions("Cannot connect db. Please check your data.");<br/>
+                            &nbsp; &nbsp; }<br/>
+                            }<br/>
+                            <br/>
+                            public void connectDatabase () throws ConnectDatabaseException{<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; connectDB with user, password, dbname<br/>
+                            }<br/>
+                        </blockquote>
+
+                        <p>
+                            Giả sử trong method connectDatabase, hệ thống tự động throws ra một Exception như vậy.
+                        </p>
+
+                        <p>Ở method trên kia, việc wrap code trong block try catch sẽ giúp develop phát hiện ra exception và xử lý (trong trường
+                        hợp này là throw rat tiếp). Tuy nhiên, nó chủ động throw ra một Exception, khi mà ko thể find được cái
+                            user đó bằng ID. Và vì vậy mà cái method getUserByID nó sẽ throws Exception như thế.</p>
+
+                        <p>Quá đó ta cũng hiểu về việc try catch và cách sử dụng của nó. Ở đây cái method findByUserById/findByUserName
+                        nó có thể throw ra một Exception object not null, nhưng vì ta ko biết được các service mà nó sẽ
+                            sử dụng là ntn, nên ta quyết định chỉ throw nó ra và đưa trách nhiệm giải quyết vấn đề về những thằng ở level cao hơn.
+
+                        </p>
+
+                        <p>Ví dụ, với method addUser (check unique username) thì cái exception kia nếu throw ra có ý nghĩa là chưa có ai đăng kí
+                        cái tên này nên mày có thể sử dụng nó, trong khi đó với một method updateUser, thì rõ ràng đó là cái
+                        Errors vì thông tin User này ko tồn tại trong hệ thống.</p>
                     </div>
                 </div>
             </div>

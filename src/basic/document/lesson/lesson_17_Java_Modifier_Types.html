@@ -293,6 +293,11 @@
                         <p>Từ khóa synchronized (/ˈsɪŋ.krə.naɪz/) cho biết (indicate) rằng, method chỉ có thể được truy cập bởi duy
                             nhất 1 thread tại cùng 1 thời điểm. Synchronized modifier có thể apply cho 4 kiểu access modifier
                             (public, protected, private, default ở trên đó).</p>
+
+                        <p>Có 2 cái khái niệm liên quan đến cái này cần nhớ, Synchronized method, và Synchronize statements,
+                        nó khác nhau ở chỗ, synchronize method là synchronize cho riêng cái method đó, ngăn chặn các thread
+                        khác truy cập vào nó khi đang được gọi, còn synchronized statements là chỉ đánh dấu 1 block nào đó cần
+                        synchronize thôi. Khái niệm statement ở đây chỉ phạm vi nhỏ hơn.</p>
                     </div>
 
                     <div class="my-4 p-3 bg-white rounded box-shadow">
@@ -307,7 +312,6 @@
                             </p>
 
                             <p>Chính xác hơn thì cái thằng này khai báo như vậy để JVM bỏ qua giá trị đó khi serializing cái Object đó</p>
-
 
                         </div>
                     </div>

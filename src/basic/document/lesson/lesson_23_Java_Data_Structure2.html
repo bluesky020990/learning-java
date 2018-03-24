@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Data Structures</h1>
+            <div class="lead">
+                <p>Hôm nay ta sẽ đi vào cái phần hấp dẫn nhất bữa giờ, đó là Data Structures. Ta sẽ đi qua các khái niệm như
+                enum, bitset, Vector, Stack, Dictionary, Hashtable và Properties.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Enumeration </h3>
+                    <div class="text-dark pt-3">
+                        <p>Enumeration interface - Giao diện liệt kê KHÔNG ĐƯỢC XEM là một kiểu cấu trúc dữ liêuj, nhưng nó
+                            vô cùng quan trọng trong bối cảnh các kiểu dữ liệu quan trọng khác. Enumeration interface định
+                            nghĩa một phương tiện để lấy các yếu tố liên tiếp nhau từ một cấu trúc dữ liệu.
+                        </p>
+
+                        <p>Ví dụ, Enumeration định nghĩa một phương pháp nextElement được sử dụng để có thể get next elements
+                        trong trường hợp cấu trúc dữ liệu có nhiều thằng.</p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Enumeration Interface</h5>
+                        <div class="text-dark pt-3">
+                            <p>Enumeration Interface định nghĩa những phương thức để ta có thể liệt kê (có được tại một thời điểm)
+                                các elements trong 1 collections of object.</p>
+
+                            <p>Thằng này ra đời từ những version đời đầu, sau này dần được thay thế bằng Iterator, tuy nhiên,
+                            nó vẫn còn tồn tại trong một vài collection vì những điểm khác biệt sau đây:</p>
+
+                            <table class="table table-bordered tab-content">
+                                <caption>Difference between Enumeration Interface and Iterator Interface</caption>\
+                                <tr>
+                                    <th>Enumeration</th>
+                                    <th>&nbsp; &nbsp; &nbsp;</th>
+                                    <th>Iterator</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Không được support cho tất cả các Collection. Hiện tại chỉ support cho Vector.</td>
+                                    <td></td>
+                                    <td>Support cho nhiều Collection như ArrayList, Vector. Thằng này ra đời để thay thế
+                                    cho thằng kia nên thằng kia có gì thì nó có đó.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Nó là Read-only interface, tức là interface chỉ dùng để đọc</td>
+                                    <td></td>
+                                    <td>Iterator còn có thể add Object, remove Object, nên linh hoạt hơn thằng kia.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Kém an toàn </td>
+                                    <td></td>
+                                    <td>Bảo mật và an toàn hơn. Đây là điểm ăn tiền của thằng này: NÓ LÀ SYNCHRONIZED, tức
+                                    là chỉ có 1 thread được phép truy cập và duyệt qua nó, vì vậy khi có 1 sự thay đổi dữ liệu, thi nó sẽ
+                                    throw ra ConcurrentModificationException. </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The BitSet </h5>
+                        <div class="text-dark pt-3">
+                            <p>Nó là một group của các bits of flag mà có thể set hoặc clear riêng biệt.</p>
+
+                            <p>Cái này có thể tăng kích thước của size thoải mái, cũng ít xài. Thường dùng trong toán tập hợp</p>
+
+                            <p>Xem ví dụ về Bitset để hiểu thêm về nó và cách sử dụng nhé.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Vector</h3>
+                    <div class="text-dark pt-3">
+                        <p>Vector class cũng tương tự như array truyền thống của Java, chỉ khác 1 điều là nó có thể mở rộng
+                        khi cần. Thằng array kia là 1 dãy các vùng nhớ liên tục và bị fix cứng size. Xem ở bài trước.</p>
+
+                        <p>Đó cũng là ưu điểm của thằng này, có thể tự động bổ sung khi cần thiết.</p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Vector Class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Vector implements như một dynamic array. Nó tương tự ArrayList, chỉ khác ở 2 điểm:</p>
+
+                            <ol>
+                                <li>Vector là synchronized</li>
+
+                                <li>Vector có rất nhiều phương thức thừa kế, không thuộc collections framework.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Stack</h3>
+                    <div class="text-dark pt-3">
+                        <p>Stack class implements as last-in-first-out (LIFO). Lưu ý, cái này là LIFO nhé, tức là thằng nào
+                        vào sau thì ra trước. Tưởng tượng như có 1 cái ống, ta đổ đầy bi vào, thì những viên bi vào đầu tiên
+                        sẽ là những cái đc mang ra cuối cùng.</p>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Stack Class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Stack class là subclass của thằng Vector ở trên, nhưng mà lại implements theo tiêu chuẩn ngược
+                            lại, last-in-first-out.</p>
+
+                            <p>Nó chỉ có 1 constructor là Stack()</p>
+
+                            <p>Vì là con của vector nên nó có đầy đủ các method của Vector, và còn thêm những method của riêng
+                            nó nữa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Dictionary</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dictionary là một lớp trừu tượng, đại diện cho key/value storage repository và hoạt động tương
+                        tự như Map.</p>
+
+                        <p>Với cặp key/value, ta có thể lưu trữ và lấy nó một cách dễ dàng. Và nó sẽ được lưu trữ từng cặp.</p>
+
+                        <p>Thằng này cổ quá rồi, giờ nó đã được thay thế bằng Map Interface, một thằng ra đời vì mục đích như trên.</p>
+
+                        <p>Vì được khai báo là abstract, nên nó có ý nghĩa là cung cấp khuôn khổ cho một kiểu dữ liệu - ánh xạ, hơn là thực hiện cụ thể.</p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Map Interface</h5>
+                        <div class="text-dark pt-3">
+                            <p>Map Interface map các cặp unique keys to values. Nó có 1 vài điểm đáng ghi nhớ như sau:</p>
+
+                            <ul>
+                                <li>Store dưới dạng key/ value, và có thể thoải mái lấy ra.</li>
+
+                                <li>Throw NoSuchElementException khi không có items nào tồn tại trong map</li>
+
+                                <li>Throw ClassCastException khi có một Object không tương thích với elements trong Map</li>
+
+                                <li>NullPointerException khi cố gắng thực hiện một đối tượng null. Null ko được cho phép đối với cái này.</li>
+
+                                <li>UnsupportedOperationException khi cố gắng thay đổi 1 map mà unmodifiable </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">HashMap</h3>
+                        <div class="text-dark pt-3">
+                            <p>Map được implementation trong nhiều class khác nhau như HashMap.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Hashtable</h3>
+                    <div class="text-dark pt-3">
+                        <p>Hashtable class cung cấp một phương tiện tổ chức dữ liệu dựa trên key structure do người dùng định nghĩa.</p>
+
+                        <p>Ý nghĩa cụ thể của key liên quan đến hash table hoàn toàn phục thuộc vào cách sử dụng của Hash Table và dữ liệu
+                        chứa bên trong nó.</p>
+
+
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Hashtable Class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Hash table từng là một phần ban đầu của java.util và là một implements cụ thể của Dictionary.</p>
+
+                            <p>Tuy nhiên, sau đó nó đã được thiết kết lại để implements Map interface. Vì vậy bây giờ, nó được tích
+                            hợp vào collections framework. Nó cũng tương tự như HashMap chỉ khác một điểm, nó là SYNCHRONIZED.</p>
+
+                            <p>Giống như HashMap, nó cũng lưu trữ cấu trúc dữ liệu dưới dạng key - value. Khi ta sử dụng,
+                                ta chỉ định một đối tượng đượng sử dụng như là key, và một giá trị mà ta muốn liên kết đến nó.</p>
+
+                            <p>Key sau đó sẽ được hashed, và kết quả hash code đó sẽ được sử dụng làm index, mà tại đó, ggias trị được lưu trữ trong bảng.</p>
+
+                            <p>Xem bảng so sánh dưới đây để xem rõ nét hơn:</p>
+
+                            <table class="table table-bordered tab-content">
+                                <caption>Difference between HASH MAP and HASH TABLE</caption>
+                                <tr>
+                                    <th>Hash Map</th>
+                                    <th>&nbsp; &nbsp; &nbsp;</th>
+                                    <th>Hash Table</th>
+                                </tr>
+                                <tr>
+                                    <td>Không Synchronized nên thích hợp với các non-thread application.  Tuy nhiên
+                                    ta vẫn có thể làm cho nó thành synchronized bằng cách khai báo Map m = Collections.synchronizedMap(hashMap);</td>
+                                    <td></td>
+                                    <td>SYNCHRONIZED. Nó luôn là Synchronized và không có thể đổi qua đổi lại linh hoạt như thằng kia.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Về tốc độ, tất nhiên thằng này sẽ nhanh hơn. Nó sử dụng Iterator để duyệt cách phần tử.</td>
+                                    <td></td>
+                                    <td>Cái này thì chậm hơn. Nó có thể sử dụng Iterator hoặc Enumerator để duyệt.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Allow 1 null key và bao nhiêu null object cũng được</td>
+                                    <td></td>
+                                    <td>Không cho phép key cũng như object là null, KO BAO GIỜ nhé.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Hash Map có 1 lớp con là LinkedHashMap. Vì vậy khi mà ta muốn dự đoán được thứ tự vòng lặp
+                                    (tức là insert by default - tạm hiểu là dịch theo thứ tự) thì ta có thể swap nó từ Hash Map sang Linked Hash Map. </td>
+                                    <td></td>
+                                    <td>Cái này ko dễ áp dụng với Hash Table</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Iterator trong HashMap là fail-fast. *** Xem thêm thông tin về nó ở dưới.</td>
+                                    <td></td>
+                                    <td>Enumerator trong Hash Table không phải là fail-fast.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>HashMap inherits AbstractMap class.</td>
+                                    <td></td>
+                                    <td>Hashtable inherits Dictionary class.</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Properties</h3>
+                    <div class="text-dark pt-3">
+                        <p>Properties là một subclass của Hashtable. Nó thường được sử dụng để duy trì danh sách các giá trị
+                        trong đó key và value đều là String.</p>
+
+                        <p>Thằng này được sử dụng khá nhiều, ví dụ như System.getProperties()</p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Properties Class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Như trên, ko có gì đáng nói về thằng này.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Fail-safe và fail-fast</h3>
+                    <div class="text-dark pt-3">
+                        <div class="entry-content">
+                            <p class="p1">Bài gốc:&nbsp;<a href="http://javapapers.com/core-java/fail-fast-vs-fail-safe/" target="_blank">http://javapapers.com/core-java/fail-fast-vs-fail-safe/</a></p>
+                            <p class="p1">Hệ thống sẽ phản ứng thế nào khi có một thất bại (failure) đặc trưng xảy ra như một hệ thống fail-fast (thất bại nhanh) hay fail-fast (thất bại an toàn). Bài viết này để thảo luận liệu fail-fast hay fail-safe tốt hơn. Nó sẽ phải làm gì với Java.</p>
+                            <p class="p1"><strong><span class="s1">Fail fast và fail safe – cái nào tốt hơn?</span></strong></p>
+                            <p class="p1"><span class="s1">Tuy từ “fail safe” có vẻ tốt hơn, nhưng tôi có cảm giác fail-fast là tốt nhất. Fail-safe không an toàn. Fail safe không có nghĩa là vững mạnh. Chúng ta đang giữ, che giấu những khuyết điểm(defect) trong hệ thống. Sự bền vững&nbsp;của hệ thống fail-safe có thể không được lâu dài. Hệ thống fail-safe cần cho các trường hợp có tính sẵn sàng sử dụng cao. Khi một thất bại (failure) được phát hiện, cách thức làm việc khác sẽ được thay thế và tính sẵn sàng sử dụng của hệ thống vẫn được đảm bảo.</span></p>
+                            <p><span class="s1">Fail-fast đưa ra các khuyết điểm của hệ thông khi nó bị phát hiện. Lỗi được công khai&nbsp;rộng rãi và hệ thống sẽ tắt. Công việc sẽ bị tắt nghẽn, nhưng chúng ta được cơ hội khắc phục lỗi. Chúng ta sửa lỗi và mang hệ thống trở lại và chạy ngon lành :D. Điều đó làm cho hệ thống thật sự mạnh mẽ, không che giấu tình trạng lỗi của hệ thống. Mặc dù kết quả làm cho tính sẵn sàng của hệ thống bị gián đoạn, qua được khoảng thời gian đó, kết quả là ta sẽ được một hệ thống mạnh mẽ. Fail-fast đảm bảo rằng chúng ta không lái một chiếc xe tào lao và tạo ra những vấn đề không thể phục hồi được. Đừng chờ đợi những thất bại (failures) trong hệ thống một cách tự nhiên, nhưng nó (failure) nên được thiết kế bằng cách mà khi trong trường hợp thật bại không mong muốn thì chương trình nên fail-fast.</span></p>
+                            <p class="p3"><span class="s2">Thử tưởng tượng một câu hỏi điên rồ (</span><span class="s1">provoking – kích động), có phải fail-fast tốt hơn cho lò phản ứng hạt nhân?&nbsp;</span></p>
+                            <p class="p3"><span id="more-264"></span><span id="more-26"></span></p>
+                            <p class="p3"><strong><span class="s1">Xử lý ngoại lệ và fail-fast hay fail-safe</span></strong></p>
+                            <p class="p3"><span class="s1">Xử lý ngoại lệ (exception handling) trong Java ép chúng ta thiết kế chương trình fail-safe.&nbsp;</span><span class="s1">Thay vì vậy chúng ta nên sử dụng xử lý ngoại lệ để thất bại (fail) hợp lý và nhanh chóng. Ngoại lệ không nên được mang theo trong luồng chạy của chương trình quá lâu. Nguyên tắc vàng với xử lý ngoại lệ là throw (ném) sớm và catch(bắt) trễ. Khi chúng ta đụng ngoại lệ, nó (ngoại lệ) nên được thrown(ném) ra ngay lập tức. Chúng ta không nên catch(bắt) ngoại lệ trừ khi chúng ta chắc chắn biết sẽ làm gì với nó và hành động mà chúng ta bắt ngoại lệ, nó nên phủ định thất bại (failure).</span></p>
+                            <p class="p3"><strong><span class="s1">Fail-safe and fail-fast java iterators</span></strong></p>
+                            <p class="p3"><span class="s1">Java iterator cung cấp cho chúng ta interface để phân tách những phần tử trong tập hợp (collection) cơ sở. Khi chúng đang sử dụng iterator, tập hợp không nên bị thay đổi. Nếu nguyên tắc này không được tuân thủ và xảy ra trong môi trường đa luồng, chúng ta sẽ nhận được ngoại lệ ConcurrentModificationException.</span></p>
+                            <p class="p3"><strong><span class="s1">Fail-fast iterators</span></strong></p>
+                            <p class="p3"><span class="s1">Chúng ta cần nhớ 2 điểm chính về vấn đề này. Điểm thứ nhất là, hành vi này(fail-fast) không được đảm bảo. Phát hiện sự thay đổi trong tập hợp và phân tích tập hợp không kết thúc một cách đồng bộ. Sự thay đổi trên tập hợp có thể không gây chú ý trong các tình huống nhất đinh. Vì vậy trong lập trình, đây là hành vi không nên được tin cậy. Ví dụ về fail-fast iterators là ArrayList, Vector, HashSet.</span></p>
+                            <p class="p1"><strong><span class="s1">Fail-safe iterators.</span></strong></p>
+                            <p class="p1"><span class="s1">Điểm thứ hai là không phải tất cả tập hợp đều fail-fast. Nên cho dù tập hợp bị thay đổi, thì nó không ném ra ngoại lệ . Khi một iterator được tạo ra, hoặc là nó được tạo trực tiếp trên tập hợp, hoặc nó được tạo trên bản sao của tập hợp. Một ví dụ của fail-safe iterators là ConcurrentHashMap.</span></p>
+                            <blockquote>
+                                <p class="p1"><span class="s1">Tóm tắt: Đọc xong mà hông hiểu gì thì thông cảm giúp mình, dịch qua khó diễn tả ý tác giả quá :D. Mình giải thích để các bạn nắm hơn.&nbsp;</span></p>
+                                <p class="p1"><span class="s1">Khi chương trình có lỗi hoặc chạy sai ý đồ (business) thì chúng ta thường có hai cách giải quyết, một là cho chương trình tiếp tục chạy (có thể ghi vết lại lỗi hoặc im luôn) được gọi là fail-safe (thật bại an toàn hay thất bại mà chương trình không tiêu), hai là sẽ cho chương trình tiêu ngay lúc phát hiện lỗi được gọi là fail-fast (thất bại nhanh). Theo ý tác giả thì fail-fast sẽ tốt hơn vì khi có lỗi chương trình sẽ dừng, chúng ta sẽ phát hiện được lỗi (tiềm ẩn) ở đâu, khắc phục triệt để và cho chương trình khởi động trở lại, chương trình về lâu dài sẽ có chất lượng hơn. Nhưng với những chương trình mà phải đảm bảo mở liên tục không được ngắt (availability) thì fail-safe là nên hơn, chúng ta sẽ bắt lỗi, ghi vết và cho chương trình tiếp tục chạy để bảo đảm không bị tắt nghẽn. Fail-safe và fail-safe ở trên mang tầm vĩ mô :))</span></p>
+                                <p class="p1"><span class="s1">Tầm nhỏ mô thì trong Java các bạn sẽ gặp fail-safe và fail-fast trong Java Iterator. Java có 2 loại iterator là fail-safe iterator và fail-fast iterator. Khi bạn đang sử dụng iterator nào mà nếu thay đổi tập hợp nó sẽ văng ra ngoại lệ ConcurrentModificationException&nbsp;thì đó là fail-fast iterator (có lỗi là chết liền), fail-fast iterator thì có ArrayList, Vector, HashSet v.v. Còn iterator mà khi thay đổi tập hợp thì chương trình vẫn hoạt động bình thường được gọi là fail-safe iterator,ConcurrentHashMap là fail-safe iterator.</span></p>
+                                <p class="p1"><span class="s1">Các bạn có thể tham khảo thêm 2 bài viết này để rõ hơn về fail-safe và fail-fast iterators.</span></p>
+                                <p><a href="http://javarevisited.blogspot.com/2012/02/fail-safe-vs-fail-fast-iterator-in-java.html" target="_blank">http://javarevisited.blogspot.com/2012/02/fail-safe-vs-fail-fast-iterator-in-java.html</a></p>
+                                <p><a href="http://javahungry.blogspot.com/2014/04/fail-fast-iterator-vs-fail-safe-iterator-difference-with-example-in-java.html" target="_blank">http://javahungry.blogspot.com/2014/04/fail-fast-iterator-vs-fail-safe-iterator-difference-with-example-in-java.html</a></p></blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
