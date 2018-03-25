@@ -455,16 +455,146 @@
 
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">How Hash Map works in Java</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Trên đây, ta đã tìm hiểu qua về hash map rồi. Giờ cùng nhau đi sâu xem nó hoạt động như thế nào nào.</p>
+
+                        <p>Ta đều đã biết, hash map hoạt động dựa trên nguyên tắc băm (hashing principle). Hashing là cơ chế chỉ định mã
+                        duy nhất cho một biến hoặc thuộc tính sử dụng một số thuật toán truy xuất dễ dàng. Một cơ chế hashing phải luôn return
+                        cùng 1 hashCode() khi mà nó được áp dụng cho cùng 1 đối tượng.</p>
+
+                        <p>Vậy, hashing có liên quan gì đến việc lưu trữ và lấy ra value ở trong HashMap? Thường câu trả lời sẽ là
+                        value sẽ được lưu trữ trong các bucket, và việc lấy ra dựa trên key. Tuy nhiên đấy là điều hoàn toàn sai nhé.</p>
+
+                        <p>Chúng ta đều biết rằng, để lấy ra các Value - Object được lưu trữ bên trong Hash Map, ta làm việc với Class Entry.
+                        Đấy chính là vấn đề. Nào, hãy cùng nhìn sâu vào bên trong Hash Map xem nhé.</p>
+
+                        <blockquote>
+                            /**<br />
+                            * The table, resized as necessary. Length MUST always be a power of two.<br />
+                            */<br />
+                            transient Entry[] table;<br />
+                        </blockquote>
+
+                        <p>Rõ rồi chứ, Hash Map nó lưu trữ đối tượng giống như cá Entry instances, chứ không phải dưới dạng key - value.</p>
                     </div>
-                </div>
 
-                <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HashMap và HashTable</h3>
-                    <div class="text-dark pt-3">
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Entry Class</h5>
+                        <div class="text-dark pt-3">
+                            <p>Hash map có 1 lớp bên trong gọi là Entry Class, để giữ key và value</p>
 
+                            <blockquote>
+                                static class Entry&lt;K,V> implements Map.Entry&lt;K,V> {<br />
+                                &nbsp; &nbsp; final K key;<br />
+                                &nbsp; &nbsp; V value;<br />
+                                &nbsp; &nbsp; Entry&lt;K,V> next;<br />
+                                &nbsp; &nbsp; final int hash;<br />
+                                &nbsp; &nbsp; ........<br />
+                                }<br />
+                            </blockquote>
+
+                            <p>Và giờ, ta nhận ra rằng, Hash Map lưu trữ các Entry instance dưới dạng là một array (<b>Entry[] table</b>
+                                không phải là từng cặp key - value. Để lưu trữ một giá trị, ta cần phải sử dụng put method của hash map. Giờ
+                                thì cùng xem xem cái method đó hoạt động ntn?
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">How put() method works internally </h5>
+                        <div class="text-dark pt-3">
+                            <blockquote>
+                                public V put(K key, V value) {<br />
+                                &nbsp; &nbsp; if (key == null) return putForNullKey(value);  // 1<br />
+                                    <br />
+                                &nbsp; &nbsp; int hash = hash(key.hashCode()); // 2<br />
+                                &nbsp; &nbsp; int i = indexFor(hash, table.length); // 3<br />
+                                &nbsp; &nbsp; for (Entry&lt;K,V> e = table[i]; e != null; e = e.next) { // 4<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; Object k;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; if (e.hash == hash && ((k = e.key) == key || key.equals(k))) { // 5<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; V oldValue = e.value;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.value = value;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.recordAccess(this);<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return oldValue;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+                                &nbsp; &nbsp; }<br />
+                                &nbsp; &nbsp; modCount++;<br />
+                                &nbsp; &nbsp; addEntry(hash, key, value, i);<br />
+                                &nbsp; &nbsp; return null;<br />
+                                }
+                            </blockquote>
+
+                            <ol>
+                                <li>Đầu tiên, nó kiểm tra xem nếu key có null hay ko. Nếu null thì nó sẽ store tại vị trí 0,
+                                    vì hash code của null là 0.
+                                </li>
+
+                                <li>Sau đó nó applies hashCode với key.hashCode() bằng việc call hash code method. </li>
+
+                                <li>indexFor method được sử dụng để lấy chính xác location để store Entry Object</li>
+
+                                <li>Ở bước này, nếu như 2 object khác nhau có cùn một hash code, thì nó sẽ được lưu trữ trong cùng 1 bucket.
+                                    Để xử lý điều này, chúng ta hãy nhớ lại cái LinkedList structure. Nó sẽ có 1 thuộc tính để chỉ tới 1 đối tượng tiếp theo.
+                                    Tương tự như vậy, next attribute của entry sẽ chỉ tới Object tiếp theo. Sử dụng các object khác nhau có cùng một hash code
+                                    sẽ được đặt cạnh nhau.
+                                </li>
+
+                                <li>Trong trường hợp này, Hash Map sẽ kiểm tra giá trị của next attribute kia. Nếu nó là null, thì Value này sẽ được lưu tại đó,
+                                    còn nếu ko, nó sẽ tiếp tục duyệt tiếp để tìm vị trí thích hợp bỏ vào.<br />
+                                    <br />
+                                ** Lưu ý cái dòng số 4 nhé, nó duyệt qua các Entry của Map để tìm vị trí còn trống.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">How duplicate key is prevented in hashmap ?</h5>
+                        <div class="text-dark pt-3">
+                            <p>Chúng ta đều đã biết, Hash map không cho phép duplicate key. Khi chúng ta insert các key giống nhau
+                            nhưng value khác nhau, thì chỉ có giá trị cuối cùng mới được trả về.</p>
+
+                            <p>Ta xem ở dòng số 5 trên kia, nếu như nó kiểm tra cái hash code truyền vào mà equal với cái hash code trong
+                            bucket hiện tại, thì nó sẽ thay thế giá trị cũ bằng giá trị mới. Vì vậy, nó ngăn chặn việc xuất hiện 2 object mà
+                            cùng 1 key xuất hiện ở đây.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">How get() method works internally ?</h5>
+                        <div class="text-dark pt-3">
+                            <blockquote>
+                                public V get(Object key) {<br />
+                                &nbsp; &nbsp; if (key == null) return getForNullKey(); // 1<br />
+                                &nbsp; &nbsp; int hash = hash(key.hashCode()); //2.<br />
+                                &nbsp; &nbsp; for (Entry&lt;K,V> e = table[indexFor(hash, table.length)];e != null;e = e.next) { // 3<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; Object k;<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; if (e.hash == hash && ((k = e.key) == key || key.equals(k))) // 4<br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; return e.value;<br />
+                                &nbsp; &nbsp; }<br />
+                                &nbsp; &nbsp; return null;<br />
+                                }<br />
+                            </blockquote>
+
+                            <p>Phương thức này có nhiều nét tương đồng với cái get trên kia. Cùng duyệt qua các bước của nó nhé.</p>
+
+                            <ol>
+                                <li>Đầu tiên, nó cũng kiểm tra xem key có null hay không, nếu null thì nó trả về cái vị trị 0 mà lúc trước nó set vào</li>
+                                <li>Tiếp đến nó sẽ lấy hash code của key đang kiểm tra.</li>
+                                <li>Sau đó, nó tìm tới cái bucket location của cái key đó.</li>
+                                <li>Tại đây, nó duyệt các phần tử trong cái table (từ vị trí của hash code đến cuối), để tìm xem có cái entry nào có cùng hash code
+                                với key và equal với key ko, nếu có thì nó sẽ trả lại cái value - Object của entry đó đang giữ, nếu ko thì trả lại null.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">What happens if two keys have the same hashcode?</h5>
+                        <div class="text-dark pt-3">
+                            <p>Thế lỡ điều gì xảy ra nếu như 2 key có cùng hash code? Xem ở dòng số 4 trên kia, ta thấy nó ngoài
+                            việc kiểm tra xem hash của Entry bằng hash của key đang kiểm tra, nó còn check xem key đang kiểm tra và
+                            key của entry có bằng nhau hay ko. Vì vậy nó luôn trả lại đúng giá trị mà nó đã push vào.</p>
+                        </div>
                     </div>
                 </div>
             </div>
