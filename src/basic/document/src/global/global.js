@@ -23,7 +23,9 @@ const LIST_LESSON_DATA = [
     {url: "lesson_21_Java_Files_and_IO.html", titleDisplay: "Java Files and I/O"},
     {url: "lesson_22_Java_Exceptions.html", titleDisplay: "Java Exception"},
     {url: "lesson_23_Java_Data_Structure2.html", titleDisplay: "Java Data Structures"},
-    {url: "zz_template_files.html", titleDisplay: "___________"},
+    {url: "lesson_24_Java_Collections_Framework.html", titleDisplay: "Java Collections Framework"},
+    {url: "lesson_25_Collections_Sumary.html", titleDisplay: "Java Collection Summary"},
+    // {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
 
 initPageData();

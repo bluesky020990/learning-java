@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Java Collection Summary</h1>
+            <div class="lead">
+                <p>Hôm trước chúng ta đã đi qua các Interface, các Classes của Collections Framework rồi.</p>
+
+                <p>Hôm nay ta sẽ đi chi tiết hơn về chúng nó để xem cách sử dụng, các điểm cần ghi nhớ nhằm tổng hợp lại cho dễ nhớ mà thôi</p>
+
+                <p>Dựa vào các Interface, các Abstract Class, ta chia nó thành 2 nhóm chính.</p>
+
+                <ul>
+                    <li>List Interface : Array List, Linked List, Vector</li>
+                    <li>Set Interface : Hash Set, Linked HashSet, Tree Set.</li>
+                    <li>Map Interface : Hash Map, Linked Hash Map, Tree Map, Hash Table</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">List Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi nói tới cái này, ta sẽ phải nhớ đến các Class nổi tiếng của nó bao gồm: </p>
+
+                        <ul>
+                            <li>Array List</li>
+
+                            <li>Vector</li>
+
+                            <li>LinkedList</li>
+                        </ul>
+
+                        <img src="../assests/basic/treeset-trong-java.png" class="img-fluid"/>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Cách sử dụng</h5>
+                        <div class="text-dark pt-3">
+                            <p>Giả sử ta có 1 danh sách các objects, ta cần lưu trữ và xử lý chúng, ta cần sử dụng cái này.</p>
+
+                            <blockquote>
+                                List&lt;UserDTO&gt; listUserDTO = new ArrayList<>();
+                            </blockquote>
+
+                            <p>Đặc điểm của cái này, là ta có thể push các object vào thoải mái, nó ko quan tâm tới vấn đề là Object
+                            đó đã tồn tại trong Collection hay chưa.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Điểm giống</h5>
+                        <div class="text-dark pt-3">
+                            <p>Như ta nói ở trên kia, nó được dùng để lưu trữ một list các Objects.</p>
+                            <p>Cho phép sự trùng lặp, tức là 1 Objects có thể xuất hiện trong Collection nhiều hơn 1 lần.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Điểm khác</h5>
+                        <div class="text-dark pt-3">
+                            <table class="table tab-content table-bordered">
+                                <tr>
+                                    <th style="width: 20%"></th>
+                                    <th style="width: 20%">Array</th>
+                                    <th style="width: 20%">Array List</th>
+                                    <th style="width: 20%">Vector List</th>
+                                    <th style="width: 20%">Linked List</th>
+                                </tr>
+                                <tr>
+                                    <td>Bản chất.</td>
+                                    <td>Kích thước cố định, khởi tạo bao nhiêu thì là bấy nhiêu, ko co giãn được</td>
+                                    <td>Kích thước có thể thay đổi, khi full thì tự động mở rộng bằng 150% lần kích thước hiện tại</td>
+                                    <td>Kích thước có thể thay đổi, khi full thì tự động mở rộng bằng 200% lần kích thước hiện tại</td>
+                                    <td>Kích thước có thể thay đổi, khi full thì tự động mở rộng, đuộc gọi là double linked list.</td>
+                                </tr>
+                                <tr>
+                                    <td>Đối tượng áp dụng</td>
+                                    <td>Có thể chứa được cả đối tượng nguyên thủy lẫn objects</td>
+                                    <td colspan="3">Chỉ lưu trữ được đối tượng Object, không lưu được đối tượng nguyên thủy. Khi push một đối tượng
+                                    nguyên thủy vào, nó được chuyển thành kiểu đối tượng (Xem khái niệm auto-boxing ở các bài trước).</td>
+                                </tr>
+                                <tr>
+                                    <td>Tốc độ</td>
+                                    <td>Lưu trữ và thao tác (thêm, xóa) nhanh (Vì bị giới hạn từ đầu, đánh dấu theo index.)</td>
+                                    <td colspan="3">Tốc độ lưu trữ và thao tác chậm hơn.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Các method hỗ trợ.</td>
+                                    <td>Chỉ có thuộc tính length</td>
+                                    <td colspan="3">Có nhiều method hơn</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Vấn đề về khởi tạo và gán giá trị.</td>
+                                    <td>Luôn luôn phải xác định trước kích thước của mảng. Chỉ có thể sử dụng toán tử gán
+                                    để gán giá trị cho mảng.</td>
+                                    <td colspan="3">Sử dụng toán tử add để add một phần tử bất kì vào mảng</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Generic</td>
+                                    <td>Không thể sử dụng. Luôn luôn phải push cùng 1 kiểu dữ liệu vào đây.</td>
+                                    <td colspan="3">Cho phép sử dụng Generics, có thể push các Objects khác nhau vào đây.
+                                    Tuy nhiên nó sẽ throw ra error trong một vài trường hợp nếu cái Object đó ko tương thích
+                                    với các Object khác của Collection.</td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="100%">Chi tiết về 3 cái đặc biệt kia</th>
+                                </tr>
+                                <tr>
+                                    <td>Bản chất.</td>
+                                    <td></td>
+                                    <td colspan="2">Sử dụng mảng động để lưu trữ các phần tử. Nó là một cấu trúc dữ liệu dựa trên chỉ số (index)
+                                    trong đó mỗi phần tử được liên kết với 1 chỉ mục</td>
+                                    <td>Sử dụng danh sách liên kết đôi để lưu trữ các phần tử. Cấu trúc dữ liệu của Linked List bao gồm các node,
+                                    nhưng bản thân nó chỉ lưu địa chỉ của node đầu tiên và node cuối cùng.</td>
+                                </tr>
+                                <tr>
+                                    <td>Địa chỉ vùng nhớ</td>
+                                    <td></td>
+                                    <td colspan="2">Địa chỉ vùng nhớ liên tục, khi có 1 sự thay đổi về giá trị, nếu list cần được mở rộng, nó sẽ xin một vùng nhớ khác
+                                    để sao chép và đánh lại thứ tự.</td>
+                                    <td>Địa chỉ các ô nhớ rời rạc và không liên tục, thích ở đâu thì ở, Nó duy trì thứ tự của các phần tử thêm vào.</td>
+                                </tr>
+                                <tr>
+                                    <td>Synchronized</td>
+                                    <td></td>
+                                    <td>Không</td>
+                                    <td>Có</td>
+                                    <td>Không</td>
+                                </tr>
+                                <tr>
+                                    <td>Insert và Delete</td>
+                                    <td></td>
+                                    <td colspan="2">Việc thêm một object hay xóa nó đi đều dẫn đến trường hợp cần phải resize lại mảng. Điều này khiến cho nó
+                                    sẽ bị ảnh hưởng rất lớn vì việc copy và giải phóng bộ nhớ. Vì vậy, độ phức tạp của nó là O(n).</td>
+
+                                    <td>Việc thêm phần tử vào Linked List sẽ rất nhanh nếu nó là phần tử đầu tiên hoặc cuối cùng. Theo bản chất của
+                                    Linked List ở trên kia, nó chỉ lưu thông tin của Head và Tail, nên thêm vào 2 cái này thì độ phức tạp là O(1), trong khi
+                                    chèn vào các vị trí khác thì độ phức tạp của nó sẽ là O(n). Đối với việc delete thì cũng xảy ra tương tự.</td>
+                                </tr>
+                                <tr>
+                                    <td>Get element</td>
+                                    <td></td>
+                                    <td colspan="2">Hỗ trợ truy xuất theo chỉ mục, nên lúc nào cần thì nó có thể căn cứ vào chỉ mục mà lấy ra ngay, chả cần phải duyệt.
+                                    Do đó độ phức tạo của nó là O(1). Đối với cái thằng này, ta cần ghi nhớ, nó luôn hỗ trợ access random.</td>
+
+                                    <td>Do bản chất của nó là chỉ lưu trữ head và tail, nên khi cần tìm 1 phần tử trong Linked List, nó đều phải duyệt từ
+                                    đầu đến cuối. Do đó, việc truy xuất vào các phần tử rất chậm, độ phức tạp là O(n).</td>
+                                </tr>
+                                <tr>
+                                    <td>Cách sử dụng</td>
+
+                                    <td>Dùng với đối tượng nguyên thủy, khi đã biết trước kích thước</td>
+
+                                    <td>Dùng với các đối tượng, nhưng ko cần biết đến kích thước của mảng, và trong môi trường single-thread. Dùng nó trong trường
+                                    hợp cần truy cập đến các đối tượng trong mảng.</td>
+
+                                    <td>Dùng với các đối tượng, không cần biết kích thước của mảng, và có thể xài trong môi trường multiple-thread.  Dùng nó trong trường
+                                        hợp cần truy cập đến các đối tượng trong mảng.</td>
+
+                                    <td>Dùng với các đối tượng, không cần biết đến kích thước của mảng, không quan tâm tới việc lấy phần tử theo index, mà chỉ
+                                    quan tâm tới việc thêm vào danh sách và duyệt các phần tử trong danh sách theo thứ tự mặc định.</td>
+                                </tr>
+                            </table>
+
+                           <blockquote>
+                               <p>
+                                   ** (Linked List thì có 2 loại, single và double. Trong Java khi nói
+                                   đến Linked List tức là nói đến kiểu dữ liệu Double Linked nhé - double linked chứa thông tin của cả cái node
+                                   ở trước và sau nó, khác với single linked - chỉ lưu thông tin thằng tiếp theo)
+                               </p>
+
+                               <p>
+                                   (Truy cập ngẫu nhiên tức là truy cập vào một vị trí bất kì. Vì Array List nó lưu theo chỉ mục
+                                   , nên cần lấy theo giá trị index nào thì nó cứ tìm tới index đó, lấy ra là xong.
+                                   Trong khi cái Linked list thì phải duyệt qua từng cái 1).
+                               </p>
+                           </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Tóm lại</h5>
+                        <div class="text-dark pt-3">
+                            <p>Khi cần thực hiện nhiều thao tác thêm hoặc xóa element vào List, ta ưu tiên dùng LinkedList.</p>
+
+                            <p>Khi cần thực hiện nhiều đối với thao tác get element trên List, ta ưu tiên dùng ArrayList</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Set Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi nói tới cái này, ta sẽ phải nhớ đến các Class nổi tiếng của nó bao gồm: </p>
+
+                        <ul>
+                            <li>Hash Set</li>
+
+                            <li>Linked Hash Set</li>
+
+                            <li>Tree Set</li>
+                        </ul>
+
+                        <img src="../assests/basic/treeset-trong-java.png" class="img-fluid"/>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Đặc điểm</h5>
+                        <div class="text-dark pt-3">
+                           <p>Set là một cấu trúc dữ liệu dùng để lưu trữ các phần tử không trùng lặp.</p>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Cách sử dụng</h5>
+                        <div class="text-dark pt-3">
+                            <table class="table tab-content table-bordered">
+                                <tr>
+                                    <th style="width: 25%"></th>
+                                    <th style="width: 25%">Hash Set</th>
+                                    <th style="width: 25%">Linked Hash Set</th>
+                                    <th style="width: 25%">Tree Set</th>
+                                </tr>
+
+                                <tr>
+                                    <td>Bản chất.</td>
+
+                                    <td>được implements bằng cách sử dụng 1 Hash table để lưu trũ. Một Hash table lưu trữ
+                                        thông tin bởi sử dụng 1 kĩ thuật được gọi là hashing. Trong hashing, nội dung của
+                                        một key đc sử dụng để quyết định 1 value duy nhất, gọi là hash code. Hash code
+                                        sau đó được sử dụng như 1 index, tại đó dữ liệu mà liên kết với key được lưu trữ.
+                                        Phép biến đổi từ key này sang hash code được thực hiện tự động.</td>
+
+                                    <td>
+                                        được implements như một hash table, nhưng nó có sự khác biệt với cái trên kia ở chỗ :
+                                    Mỗi phần tử trong mảng băm này sẽ trỏ đến phần tử đầu tiên trong một Linked list. Linked list
+                                    này lưu trữ thông tin của các Entry theo thứ tự mà nó được insert vào set. Nên nói một cách
+                                    khác, set này khác với Hash set ở chỗ, nó là một Set có thứ tự.
+                                    Hash code sau đó được sử dụng như một index, tại đó dữ liệu được liên kết với key đã được lưu trữ.
+                                    Phép biến đổi của key này vào trong hash code đc thực hiện tự động.</td>
+
+                                    <td>Nó sử dụng tree để lưu trữ các đối tượng. Các đối tượng này bắt buộc phải implement method compareTo để có thể sắp xếp
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Thứ tự duyệt</td>
+                                    <td>Không theo thứ tự, đúng ra thì khi mà convert từ object để lấy hash code được sử dụng như key, key này là index, và nó
+                                    sort theo index. Tuy nhiên vì cơ chế này hoạt động tự động nên ta ko hiểu giá trị index của nó được tính ntn.</td>
+
+                                    <td>Thứ tự khi dùng iterator duyệt là thứ tự insert của các Objects vào set. Thông tin này được nó lưu trữ trong Linked list.</td>
+
+                                    <td>Nó sử dụng tree để lưu trữ, các Object được sắp xếp theo thứ tự tăng dần của nó.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Thêm / remove</td>
+                                    <td>Độ phức tạp là O(1).</td>
+                                    <td>Độ phức tạp là O(1)</td>
+                                    <td>Độ phức tạp là O(log(n)) - vì cần sắp xếp lại dãy nếu có bất cứ sự thay đổi nào (Add-remove-contain)</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Objects</td>
+                                    <td>không trùng lặp và cho phép null</td>
+                                    <td>không trùng lặp và cho phép null</td>
+                                    <td>không trùng lặp và không được null. Ngoài ra nó còn phải override method compareTo để có thể sắp xếp.</td>
+                                </tr>
+                                <tr>
+                                    <td>Synchronized</td>
+                                    <td>Không</td>
+                                    <td>Không</td>
+                                    <td>Không</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Truy cập</td>
+                                    <td>Truy cập chậm</td>
+                                    <td></td>
+                                    <td>Try cập nhanh. </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cách sử dụng</td>
+                                    <td>Sử dụng để lưu trữ các thông tin mà ko có sự trùng lặp</td>
+                                    <td>Sử dụng để lưu trữ các thông tin mà ko có sự trùng lặp và duyệt theo giá trị mà nó được chèn vào</td>
+                                    <td>Sử dụng để lưu trữ các thông tin mà ko có sự trùng lặp và duyệt theo thứ tự tăng dần.
+                                        Vì tính chất sắp xếp của nó nên nó thường được lựa chọn khi lưu giữ một lượng thông tin lớn
+                                    đã xếp thứ tự và phải được tìm kiếm nhanh chóng.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Map Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi nói tới cái này, ta sẽ phải nhớ đến các Interface nổi tiếng của nó bao gồm: </p>
+
+                        <ul>
+                            <li>Hash Map</li>
+
+                            <li>Linked Hash Map</li>
+
+                            <li>Hash Table</li>
+
+                            <li>Tree Map</li>
+                        </ul>
+
+                        <img src="../assests/basic/hashmap-trong-java.png" class="img-fluid"/>
+
+                        <img src="../assests/basic/hashtable-hierarchy.png" class="img-fluid"/>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Cách sử dụng</h5>
+                        <div class="text-dark pt-3">
+                            <p>Trong Java, map được sử dụng để lưu trữ và truy xuất dữ liệu theo cặp dưới dạng key - value.</p>
+
+                            <p>Mỗi key - value được gọi là các entry.</p>
+
+                            <p>Map trong java chỉ chứa một giá trị key duy nhất.</p>
+
+                            <p>Map thường được sử dụng nếu ta cần tìm kiếm, update, delete elements dựa trên key.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Điểm giống</h5>
+                        <div class="text-dark pt-3">
+                            <p>lưu trữ dữ liệu dưới dạng cặp key và value.</p>
+                            <p>Chứa các key duy nhất</p>
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Điểm khác biệt</h5>
+                        <div class="text-dark pt-3">
+                            <table class="table tab-content table-bordered">
+                                <tr>
+                                    <th style="width: 20%"></th>
+                                    <th style="width: 20%">Hash Map</th>
+                                    <th style="width: 20%">Linked Hash Map</th>
+                                    <th style="width: 20%">Tree Map</th>
+                                    <th style="width: 20%">Hash Table</th>
+                                </tr>
+                                <tr>
+                                    <td>Bản chất</td>
+                                    <td colspan="2">Lưu trữ dữ liệu dưới dạng key-value</td>
+                                    <td colspan="1">Sử dụng tree để lưu trữ các key.</td>
+                                    <td colspan="1">Hash table là một array của các list. Mỗi list được xem như là 1 bucket (vùng chứa
+                                        các phần tử). Vị trị của bucket được xác định bằng việc gọi phương thức hash code. Cụ thể hơn thì xem lại bài trước
+                                        <img src="../assests/basic/hash_table.png" class="img-fluid">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Object</td>
+                                    <td>Có thể có 1 key null và nhiều value null.</td>
+                                    <td>Có thể có 1 key null và nhiều value null.</td>
+                                    <td>Không cho phép bất cứ key nào là null, nhưng cho phép nhiều value null</td>
+                                    <td>Không cho phép bất cứ key nào là null hoặc value null</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Thứ tự</td>
+                                    <td>Không</td>
+                                    <td>Duy trì các phần tử theo thứ tự chèn</td>
+                                    <td>Lưu trữ theo thứ tự tăng dần của key</td>
+                                    <td>Không</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Đồng bộ</td>
+                                    <td colspan="3">Không</td>
+                                    <td>Có.</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cách duyệt</td>
+                                    <td colspan="3">Iterator</td>
+                                    <td>Iterator và Enumeration</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Fail-fast</td>
+                                    <td colspan="3">Có</td>
+                                    <td>Không</td>
+                                </tr>
+
+                                <tr>
+                                    <td>HIệu năng</td>
+                                    <td colspan="3">Nhanh và ít tốn bộ nhớ. Độ phức tạp O(1).</td>
+                                    <td>Chậm và tốn bộ nhớ. Bản chất của hash table đó là cứ với mỗi key, nó sẽ cần 1 hash function
+                                    để tìm ra 1 giá trị index chỉ tới bucket chứa objects đó. Vì vậy, thay vì việc nó sẽ
+                                        lấy giá trị đó trực tiếp trong map, giờ đây nó phải sử dụng hash function để băm cái key đó ra
+                                    và tìm tới giá trị tương ứng. Do đó nó sẽ tốn thời gian hơn. Tuy nhiên, độ phức tạp của nó vẫn là O(1)</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sử dụng</td>
+                                    <td colspan="3">Trong môi trường non-thread.</td>
+                                    <td>Trong môi trường multiple-thread.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HashMap và HashTable</h3>
+                    <div class="text-dark pt-3">
+
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

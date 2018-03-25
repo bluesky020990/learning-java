@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Collections Framework</h1>
+            <div class="lead">
+                <p>Cái thuở ban đầu, Java chỉ gồm mấy cái như Dictionary, Vector, Stack, và Properties. Mặc dù chúng ban đầu
+                khá hữu ích, nhưng mà nó lại tách biệt và rời rạc. Ví dụ cách mà ta sử dựng Vector, nó khác với cách mà ta sử dụng
+                với Properties.</p>
+
+                <p>Collection framework được thiết kế để đáp ứng những mục tiêu sau:</p>
+
+                <ul>
+                    <li>Hiệu năng cao</li>
+                    <li>Cho phép những thằng collection khác nhau, có thể hoạt động tương tự nhau và mức độ phù hợp cao.</li>
+                    <li>Cho phép mở rộng một cách dễ dàng.</li>
+                </ul>
+
+                <p>Hướng tới mục đích đó, toàn bộ collections framework được thiết kế xung quanh một bộ interface chuẩn (đồng bộ) </p>
+
+                <p>Linked List, HashSet và TreeSet của cái này cho phép ta có thể sử dụng nó tương tự như nhau (hợp nhấp)</p>
+
+                <p>Toàn bộ Collections Framework chứa các thành phần sau :</p>
+
+                <ul>
+                    <li>Interfaces: These are abstract data types that represent collections. Interfaces
+                        allow collections to be manipulated independently of the details of their
+                        representation. In object-oriented languages, interfaces generally form a
+                        hierarchy</li>
+
+                    <li>Implementations, i.e., Classes: These are the concrete implementations of the
+                        collection interfaces. In essence, they are reusable data structures.</li>
+
+                    <li>Algorithms: These are the methods that perform useful computations, such as
+                        searching and sorting, on objects that implement collection interfaces. The
+                        algorithms are said to be polymorphic: that is, the same method can be used on
+                        many different implementations of the appropriate collection interface.</li>
+                </ul>
+
+                <p>Ngoài các collections trên, framework còn định nghĩa một số interface maps và classes.  Maps store
+                 từng cặp key/ value. Mặc dù maps ko thuộc collections, nhưng mà nó nó vẫn được tích hợp hoàn toàn với
+                collections.</p>
+
+                <a href="https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html" title="Click to view source article">
+                    <img src="../assests/basic/colls-coreInterfaces.gif" class="img-fluid"/></a>
+
+                <a href="https://www.javatpoint.com/collections-in-java" title="Click to view source article" style="background: white; display: inline-block">
+                    <img src="../assests/basic/collection-hierarchy.png" class="img-fluid"/></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Collection Interfaces</h3>
+                    <div class="text-dark pt-3">
+                        <p>Java cung cấp 1 list các interface dưới đây để support cho cái Frameworks này.</p>
+
+                        <img src="../assests/basic/java-collection-hierarchy.jpeg" class="img-fluid"/>
+
+                        <table class="table table-bordered" style="width: 100%">
+                            <tbody><tr>
+                                <th>Sr.No.</th>
+                                <th style="text-align:center;">Interface &amp; Description</th>
+                                <th style="text-align:center; width: 40%">Lưu ý</th>
+                            </tr>
+                            <tr>
+                                <td class="ts">1</td>
+                                <td><a href="/java/java_collection_interface.htm">The Collection Interface</a>
+                                    <p>This enables you to work with groups of objects; it is at the top of the collections hierarchy.</p>
+                                </td>
+                                <td>Cái này là cái interface cha</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">2</td>
+                                <td><a href="/java/java_list_interface.htm">The List Interface</a>
+                                    <p>This extends <b>Collection</b> and an instance of List stores an ordered collection of elements.</p>
+                                </td>
+                                <td>Cái này là cái cơ bản nhất của Collections, đưa các elements vào 1 danh sách, 1 list.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">3</td>
+                                <td><a href="/java/java_set_interface.htm">The Set</a>
+                                    <p>This extends Collection to handle sets, which must contain unique elements.</p>
+                                </td>
+                                <td>Khác với cái trên kia, đối với cái này, mỗi element là 1 phần tử unique. List thì có
+                                    thể có nhiều thằng giống nhau, còn cái này chỉ tồn tại duy nhất 1 objects trong dãy
+                                    (nó chỉ xuất hiện 1 lần thì đúng hơn).</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">4</td>
+                                <td><a href="/java/java_sortedset_interface.htm">The SortedSet</a>
+                                    <p>This extends Set to handle sorted sets.</p>
+                                </td>
+                                <td>Nó là extends từ cái Set trên kia, khác là nó có thứ tự. Cái Set add vào sao thì nó luôn
+                                như vậy, nhưng cái này nó sẽ được sắp xếp lại.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">5</td>
+                                <td><a href="/java/java_map_interface.htm">The Map</a>
+                                    <p>This maps unique keys to values.</p>
+                                </td>
+                                <td>Map là một tập hợp key - value. Trong một map thì Key là unique.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">6</td>
+                                <td><a href="/java/java_mapentry_interface.htm">The Map.Entry</a>
+                                    <p>This describes an element (a key/value pair) in a map. This is an inner class of Map.</p>
+                                </td>
+                                <td>Nó là 1 Inner Class của thằng Map trên kia. Nó mô tả (describes) các elements bên trong Map.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">7</td>
+                                <td><a href="/java/java_sortedmap_interface.htm">The SortedMap</a>
+                                    <p>This extends Map so that the keys are maintained in an ascending order.</p>
+                                </td>
+                                <td>Cái này là exends từ cái Map trên kia, chỉ khác là các key vào nó sẽ được order lại. Tức là nó ko quan tâm
+                                thứ tự việc push vào các key, vì sau đó nó sẽ sắp xếp lại nó.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">8</td>
+                                <td><a href="/java/java_enumeration_interface.htm">The Enumeration</a>
+                                    <p>This is legacy interface defines the methods by which you can enumerate (obtain
+                                        one at a time) the elements in a collection of objects. This legacy interface
+                                        has been superceded by Iterator.</p>
+                                </td>
+
+                                <td>Cái Enumeration này là một Interface giúp duyệt các elements trong 1 collections mà đã học hôm trước.
+                                    Thằng này và cái Iterator khá giống nhau, nhưng thằng Iterator là mở rộng hơn của nó thôi.</td>
+                            </tr>
+                            </tbody></table>
+
+                        <p></p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Collection Classes</h3>
+                    <div class="text-dark pt-3">
+                        <p>Java cũng cung cấp 1 set standard collection classes để thực hiện việc implements các interface
+                        trên kia. Một số classes cung cấp đầy đủ việc triển khai các interface trên kia, nhưng cũng có
+                        các abstract class cung cấp các khung xương  được sử dụng làm điểm bắt đầu để tạo ra các collections
+                        cụ thể.</p>
+
+                        <table class="table table-bordered" style="width: 100%">
+                            <tbody><tr>
+                                <th>Sr.No.</th>
+                                <th style="text-align:center;">Class &amp; Description</th>
+                                <th style="text-align:center; width: 40%">Lưu ý</th>
+                            </tr>
+                            <tr>
+                                <td class="ts">1</td>
+                                <td><p><b>AbstractCollection</b></p>
+                                    <p>Implements most of the Collection interface.</p>
+                                </td>
+                                <td>Thằng này là cha tất cả.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">2</td>
+                                <td><p><b>AbstractList</b></p>
+                                    <p>Extends AbstractCollection and implements most of the List interface.</p>
+                                </td>
+                                <td>Nó là cái implements của List Interface</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">3</td>
+                                <td><p><b>AbstractSequentialList</b></p>
+                                    <p>Extends AbstractList for use by a collection that uses sequential rather than
+                                        random access of its elements.</p>
+                                </td>
+                                <td>Collections tuần tự, tức là chỉ có thể duyệt từ trên xuống dưới</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">4</td>
+                                <td><a href="/java/java_linkedlist_class.htm">LinkedList</a>
+                                    <p>Implements a linked list by extending AbstractSequentialList.</p>
+                                </td>
+                                <td>
+                                    Các Elements chứa thông tin của next và previous elements của nó, khi duyệt khá chậm
+                                    vì phải duyệt theo thông tin elements, ko phải là index.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ts">5</td>
+                                <td><a href="/java/java_arraylist_class.htm">ArrayList</a>
+                                    <p>Implements a dynamic array by extending AbstractList.</p>
+                                </td>
+                                <td>Tạo ra một dynamic array bằng cách extens Abstract List. Cái này duyệt theo index nên khá nhanh.</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">6</td>
+                                <td><p><b>AbstractSet</b></p>
+                                    <p>Extends AbstractCollection and implements most of the Set interface.</p>
+                                </td>
+                                <td>Abstract Set</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">7</td>
+                                <td><a href="/java/java_hashset_class.htm">HashSet</a>
+                                    <p>Extends AbstractSet for use with a hash table.</p>
+                                </td>
+                                <td>HashSet là một extend của Abstract Set. Nó ko thread-safe, và không cho phép store duplication objects.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="ts">8</td>
+                                <td><a href="/java/java_linkedhashset_class.htm">LinkedHashSet</a>
+                                    <p>Extends HashSet to allow insertion-order iterations.</p>
+                                </td>
+
+                                <td>Linked Hash Set khác với cái Hash Set ở chỗ, nó là có thứ tự (insertion-order). Tương tự
+                                    Hash Set, Nó ko thread-safe, và không cho phép store duplication objects.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="ts">9</td>
+                                <td><a href="/java/java_treeset_class.htm">TreeSet</a>
+                                    <p>Implements a set stored in a tree. Extends AbstractSet.</p>
+                                </td>
+                                <td>Tree set được extends từ AbstractSet. Mục đích chính của Tree Set đó là sorting. Sorting
+                                    này không phải theo thứ tự insert vào, mà theo thứ tự cây của key value. Tương tự
+                                    Hash Set, Nó ko thread-safe, và không cho phép store duplication objects.</td>
+                            </tr>
+
+                            <tr>
+                                <td class="ts">10</td>
+                                <td><p><b>AbstractMap</b></p>
+                                    <p>Implements most of the Map interface.</p>
+                                </td>
+                                <td>____________________</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">11</td>
+                                <td><a href="/java/java_hashmap_class.htm">HashMap</a>
+                                    <p>Extends AbstractMap to use a hash table.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ts">12</td>
+                                <td><a href="/java/java_treemap_class.htm">TreeMap</a>
+                                    <p>Extends AbstractMap to use a tree.</p>
+                                </td>
+                                <td>____________________</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">13</td>
+                                <td><a href="/java/java_weakhashmap_class.htm">WeakHashMap</a>
+                                    <p>Extends AbstractMap to use a hash table with weak keys.</p>
+                                </td>
+                                <td>____________________</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">14</td>
+                                <td><a href="/java/java_linkedhashmap_class.htm">LinkedHashMap</a>
+                                    <p>Extends HashMap to allow insertion-order iterations.</p>
+                                </td>
+                                <td>____________________</td>
+                            </tr>
+                            <tr>
+                                <td class="ts">15</td>
+                                <td><a href="/java/java_identityhashmap_class.htm">IdentityHashMap</a>
+                                    <p>Extends AbstractMap and uses reference equality when comparing documents.</p>
+                                </td>
+                                <td>____________________</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">So sánh Hash Set, Tree Set và Linked Hash Set.</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dưới dây là sự giống và khác biệt giữa 3 cái này</p>
+                        <table class="table tab-content table-bordered">
+                            <tr>
+                                <th style="width: 25%"></th>
+                                <th style="width: 25%">Hash Set</th>
+                                <th style="width: 25%">Linked Hash Set</th>
+                                <th style="width: 25%">Tree Set</th>
+                            </tr>
+                            <tr>
+                                <th colspan="100%" style="">Giống nhau</th>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">Push object vào một storage. Không cho phép duplication objects</td>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">Đều khong phải là thread-safe. Đối với môi trường Multiple Thread, thì cần synchronized nó.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">Fail-Fast Iterator. Nếu Map bị thay đổi sau khi được khởi tạo (mà ko phải bởi
+                                method remove của Iterator) thì sẽ ném ra ConcurrenceModificationExceptions.</td>
+                            </tr>
+                            <tr>
+                                <th colspan="100%">Điểm khác biệt</th>
+                            </tr>
+                            <tr>
+                                <td>Performance and Speed</td>
+                                <td>Nhanh nhất. O(1)</td>
+                                <td>Đứng thứ 2. O(1)</td>
+                                <td>Chậm nhất. Vì sau mỗi lần insert vào nó cần sort lại. O(log(n)</td>
+                            </tr>
+
+                            <tr>
+                                <td>Ordering </td>
+                                <td>Không, và cũng chả hiểu nó sắp xếp như thế nào luôn.</td>
+                                <td>Order của nó là thứ tự push-insertion vào</td>
+                                <td>Order của nó là order từ method Sort của TreeSet.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Internal Implementation</td>
+                                <td>Implement HashMap Interface</td>
+                                <td>Implements HashSet Interface và LinkedList</td>
+                                <td>Tree map.</td>
+                            </tr>
+
+                            <tr>
+                                <td>null ???</td>
+                                <td>Cho phép</td>
+                                <td>Cho phép</td>
+                                <td>Không cho phép, throw ra null pointer exception.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Comparison </td>
+                                <td>Sử dụng method equals()</td>
+                                <td>Sử dụng method equals()</td>
+                                <td>Sử dụng compareTo()</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">So sánh ArrayList, Vector and LinkedList</h3>
+                    <div class="text-dark pt-3">
+                        <table class="table tab-content table-bordered">
+                            <tr>
+                                <th style="width: 25%"></th>
+                                <th style="width: 25%">ArrayList</th>
+                                <th style="width: 25%">Vector</th>
+                                <th style="width: 25%">LinkedList</th>
+                            </tr>
+                            <tr>
+                                <th colspan="100%" style="">Giống nhau</th>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">Cùng chung mục đích là dùng để lưu trữ object - collections, nhưng mà cách nó impelements
+                                các method không giống nhau.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="100%">Đều cho phép duplicate object</td>
+                            </tr>
+                            <tr>
+                                <th colspan="100%">Điểm khác biệt</th>
+                            </tr>
+                            <tr>
+                                <td>Mục đích</td>
+                                <td>Dynamic scale, tự tăng kích thước khi cần. Và nó luôn là 150% so với kích thước hiện tại.
+
+                                </td>
+                                <td>Tương tự như cái Array list. Cái này khác với cái trên kia là nó cần 200% so với kích thước thật.</td>
+                                <td>
+                                    Bản chất cái này là push vào một collection, trong đó thông tin của object có chứa cả thông tin của thằng trước và sau nó.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Performance and Speed</td>
+                                <td colspan="2">
+                                    Vì yếu tố scale, nên khi add 1 object vào full list, nó cần phải resize lại list với 150% kích thước hiện tại
+                                    cũng như copy object, nên việc add và remove rất chậm.<br />
+                                    Bù lại, nó có khả năng truy cập trực tiếp tới element bằng index nên cái method get nó vô cùng nhanh.<br />
+                                    (Có lẽ vùng nhớ của thằng này liên tục nên nó nhanh)
+                                </td>
+                                <td>
+                                    Nó không hỗ trợ access trực tiếp bằng index, mà phải duyệt qua từng phần tử nên get method rất chậm.<br />
+                                    Bù lại, việc add hay remove 1 object của nó khá đơn giản, vì nó chỉ cần update lại thông tin của previous và next object<br />
+                                    nên nó nhanh hơn. (Có lẽ vùng nhớ của nó có thể phân tán được, nên đọc ghi mới chậm).<br />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Synchronize </td>
+                                <td>KHÔNG. Nó là not thread-safe, nên cần check điều này.</td>
+                                <td>SYNCHRONIZED. </td>
+                                <td>KHÔNG BIẾT, chắc ko.</td>
+                            </tr>
+
+                            <tr>
+                                <td>Internal Implementation</td>
+                                <td colspan="2">
+                                    get(int index) : độ phức tạp O(1)<br />
+                                    add(int index, E element) : độ phức tạp O(1) nhưng lại tốn O(n) time bởi vì nó cần phải resize array và copy object<br />
+                                    remove(int index) : độ phức tạp O(n - 1), và là O(1) nếu là last element.<br />
+                                </td>
+                                <td><br />
+                                    get(int index) : độ phức tạp O(n)<br />
+                                    add(int index, E element) : độ phức tạp O(1) (nếu add ở đầu hoặc cuối) nhưng O(n) nếu ở vị trí nào đó <br />
+                                    remove(int index) : độ phức tạp O(1) (nếu remove ở đầu hoặc cuối) nhưng O(n) nếu ở vị trí nào đó <br />
+                                    ngoài ra nó còn có thêm các method khác như : offer(), peek(), poll() vì implements interface Queue
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The List Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>List Interface extends từ Collections và định nghĩa các phương thức của collection
+                        để lưu trữ một chuỗi tuần tự các elements. Tuần tự tức là nó sẽ theo thứ tự khi add vào.</p>
+
+                        <p>Nó có những đặc điểm sau :</p>
+
+                        <ul>
+                            <li>Element có thể được insert hoặc truy cập trực tiếp bằng vị trí của nó trong list. Nó sử dụng
+                            0 là giá trị bắt đầu.</li>
+                            <li>List có thể có duplicate elements.</li>
+                            <li>Nó có các method được định nghĩa bởi collection và những method của riêng nó.</li>
+                            <li>Một số method sẽ ném ra lỗi UnsupportedOperationException nếu collection
+                                không thể bị sửa  dổi và ClassCastException  nếu như đối tượng ko tương thích với thằng khác. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Set Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Set interface là một Collection mà trong đó các elements ko được phép trùng lặp</p>
+
+                        <p>Nó chứa duy nhất các method kế từ cái Collections và thêm yếu tố hạn chế là không cho phép trùng lặp</p>
+
+                        <p></p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The SortedSet Interface</h5>
+                        <div class="text-dark pt-3">
+                            <p>Sorted Set interface là một interface được extends từ Set, và định nghĩa các phương thức của
+                            một set được sắp xếp theo thứ tự tăng dần.</p>
+
+                            <p>Nó có thể throw ra NoSuchElementException nếu ko có elements nào trong set, hoặc ClassCastException nếu
+                            như object nào đó không tương thích với những thằng còn lại.</p>
+
+                            <p>Và NullPointerException nếu có 1 thằng nào đó null (null object). Ghi nhớ, Null object không được cho phép ở đây (chắc
+                            là vì cái sort method của nó).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Map Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Map interface sử dụng unique key - value</p>
+
+                        <ul>
+                            <li>Sử dụng key và value, ta có thể lưu value trong Map object. Sau khi nó được lưu ta có thể lấy
+                            nó ra bằng cách sử dụng key đã add vào.</li>
+                            <li>Có thể throw NoSuchElementException nếu không có phần tử nào trong map.</li>
+                            <li>NullPointerException sẽ throw nếu như có một null object ở trong đó. Null ko được cho phép ở đây.
+                            GHi nhớ, NULL OBJECT là NULL OBJECT VALUE nhé.</li>
+                            <li>UnsupportedOperationException sẽ throw nếu như mà có một cố gắng thay đổi nó.</li>
+                        </ul>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">The Map.Entry Interface</h5>
+                        <div class="text-dark pt-3">
+                            <p>Cái này cho phép làm việc với các Entry bên trong Map. entrySet() method định nghĩa bởi Map Interface
+                            sẽ trả về một set những entry bên trong Map.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h3 class="border-bottom border-gray pb-2 mb-0">The SortedMap Interface</h3>
+                        <div class="text-dark pt-3">
+                            <p>Thằng này cũng extend từ Map. Nó đảm bảo rằng các entry sẽ được lưu trữ trong một thứ tự tăng dần</p>
+                            <p>Đó cũng là điểm duy nhất nó khác thằng Map Interface trên kia.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Enumeration Interface</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cái này cũ rồi, đuộc thay thế bởi Iterator rồi.</p>
+                    </div>
+                </div>
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The LinkedList Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>The LinkedList class extends AbstractSequentialList and implements the List interface. It
+                            provides a linked-list data structure.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The ArrayList Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>The ArrayList class extends AbstractList and implements the List interface. ArrayList
+                            supports dynamic arrays that can grow as needed</p>
+
+                        <p>
+                            Standard Java arrays are of a fixed length. After arrays are created, they cannot grow or
+                            shrink, which means that you must know in advance how many elements an array will
+                            hold.
+                        </p>
+
+                        <p>
+                            Array lists are created with an initial size. When this size is exceeded, the collection is
+                            automatically enlarged. When objects are removed, the array may be shrunk.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The HashSet Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>HashSet extends AbstractSet and implements the Set interface. It creates a collection that
+                            uses a hash table for storage.
+                        </p>
+
+                        <p>A hash table stores information by using a mechanism called hashing. In hashing, the
+                        informational content of a key is used to determine a unique value, called its hash code.
+                        </p>
+
+                        <p>
+                        The hash code is then used as the index at which the data associated with the key is
+                        stored. The transformation of the key into its hash code is performed automatically.</p>
+
+                        <p>Lưu ý ở đây, Hash Set sử dụng Hash Table để lưu trữ. Hash Table sử dụng một cơ chế gọi là mảng băm.
+                        Nó sẽ băm thông tin của content của key để xác định 1 giá trị duy nhất và giá trị này - hash code - được dùng
+                        làm index để truy cập đén các element.</p>
+
+                        <p>Nói nôm na, một object được đưa vào, nó sẽ bị băm ra để lấy hash code, và cái này sử dụng 1 dạng hash table
+                        để lưu trữ hash code (index) - object.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The LinkedHashSet Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            This class extends HashSet, but adds no members of its own. </p>
+
+                        <p>set, in the order in which they were inserted. This allows insertion-order iteration over the set.</p>
+
+                        <p>That is, when cycling through a LinkedHashSet using an iterator, the elements will be
+                            returned in the order in which they were inserted.</p>
+
+                        <p>The hash code is then used as the index at which the data associated with the key is
+                            stored. The transformation of the key into its hash code is performed automatically.</p>
+
+                        <p>Cái này khác cái trên kia ở chỗ, nó giữ theo đúng thứ tự mà nó được insert vào. Vì vậy nó cho phép order by indexx</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The TreeSet Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>TreeSet provides an implementation of the Set interface that uses a tree for storage.
+                            Objects are stored in a sorted and ascending order.</p>
+
+                        <p>Access and retrieval times are quite fast, which makes TreeSet an excellent choice when
+                            storing large amounts of sorted information that must be found quickly.</p>
+
+                        <p>Khác với 2 thằng trên kia, thằng này nó sử dụng tree để lưu trữ. Objects được lưu trong này sẽ được sắp xếp theo thứ tự tăng dần.</p>
+
+                        <p>Vì vậy, nó thường được sử dụng với mục đích là để tìm kiếm khi mà nó có số lượng lớn các objects được lưu trữ.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The HashMapClass</h3>
+                    <div class="text-dark pt-3">
+                        <p>The HashMap class uses a hashtable to implement the Map interface. This allows the
+                            execution time of basic operations, such as get( ) and put( ), to remain constant even for
+                            large sets.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The TreeMapClass
+                    </h3>
+                    <div class="text-dark pt-3">
+                        <p>The TreeMap class implements the Map interface by using a tree. A TreeMap provides an
+                            efficient means of storing key/value pairs in sorted order, and allows rapid retrieval.</p>
+
+                        <p>You should note that, unlike a hash map, a tree map guarantees that its elements will be
+                            sorted in an ascending key order.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The LinkedHashMap Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>This class extends HashMap and maintains a linked list of the entries in the map, in the
+                            order in which they were inserted. This allows insertion-order iteration over the map. That
+                            is, when iterating a LinkedHashMap, the elements will be returned in the order in which
+                            they were inserted.</p>
+                        <p>
+                            You can also create a LinkedHashMap that returns its elements in the order in which they
+                            were last accessed</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Vector Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>Vector implements a dynamic array. It is similar to ArrayList, but with two differences: </p>
+                        <ul>
+                            <li>Vector is synchronized.</li>
+                            <li>Vector contains many legacy methods that are not part of the collections
+                                framework.</li>
+
+                        </ul>
+                        <p>
+                        Vector proves to be very useful if you don't know the size of the array in advance or you
+                            just need one that can change sizes over the lifetime of a program.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Stack Class
+                    </h3>
+                    <div class="text-dark pt-3">
+                        <p>Stack is a subclass of Vector that implements a standard last-in, first-out stack.</p>
+
+                        <p>Stack only defines the default constructor, which creates an empty stack. Stack includes
+                        all the methods defined by Vector, and adds several of its own.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Dictionary Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dictionary is an abstract class that represents a key/value storage repository and operates
+                            much like Map.</p>
+
+                        <p>Given a key and value, you can store the value in a Dictionary object. Once the value is
+                            stored, you can retrieve it by using its key. Thus, like a map, a dictionary can be thought
+                            of as a list of key/value pairs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The WeakHashMap Class</h3>
+                    <div class="text-dark pt-3">
+                        <p>WeakHashMap is an implementation of the Map interface that stores only weak references
+                        to its keys. Storing only weak references allows a key-value pair to be garbage-collected
+                        when its key is no longer referenced outside of the WeakHashMap.</p>
+                        <p>
+                        This class provides the easiest way to harness the power of weak references. It is useful
+                        for implementing "registry-like" data structures, where the utility of an entry vanishes
+                        when its key is no longer reachable by any thread.</p>
+                        <p>
+                        The WeakHashMap functions identically to the HashMap with one very important
+                        exception: if the Java memory manager no longer has a strong reference to the object
+                        specified as a key, then the entry in the map will be removed.</p>
+                        <p>
+                        Weak Reference: If the only references to an object are weak references, the garbage
+                        collector can reclaim the object's memory at any time.it doesn't have to wait until the
+                        system runs out of memory. Usually, it will be freed the next time the garbage collector
+                            runs.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Hash table</h3>
+                    <div class="text-dark pt-3">
+                        <h5>Hash table là gì</h5>
+
+                        <p>Cấu trúc dữ liệu Hash Table là một cấu trúc dữ liệu lưu giữ dữ liệu theo cách thức liên hợp.
+                            Trong Hash Table, dữ liệu được lưu giữ trong định dạng mảng, trong đó các giá trị dữ liệu có
+                            giá trị chỉ mục riêng. Việc truy cập dữ liệu trở nên nhanh hơn nếu chúng ta biết chỉ mục của
+                            dữ liệu cần tìm.</p>
+
+                        <p>Do đó, với loại cấu trúc dữ liệu Hash Table này thì các hoạt động chèn và hoạt động tìm kiếm
+                            sẽ diễn ra rất nhanh, bất chấp kích cỡ của dữ liệu là bao nhiêu. Hash Table sử dụng mảng như
+                            là một kho lưu giữ trung gian và sử dụng kỹ thuật Hash để tạo chỉ mục tại nơi phần tử được
+                            chèn vào.</p>
+
+                        <h5>Kỹ thuật Hashing</h5>
+
+                        <img src="../assests/basic/hash_function.jpg">
+
+                        <p>Hashing là một kỹ thuật để chuyển đổi một dãy các giá trị khóa (key) vào trong một dãy các
+                            giá trị chỉ mục (index) của một mảng. Chúng ta đang sử dụng <b>toán tử lấy phần dư</b> để
+                            thu được một dãy các giá trị khóa. Giả sử có một HashTable có kích cỡ là 20, và dưới đây là
+                            các phần tử cần được lưu giữ. Phần tử trong định dạng (key, value).</p>
+
+                        <table class="table table-bordered">
+                            <tbody><tr>
+                                <th style="text-align:center;">Stt</th>
+                                <th style="text-align:center;">Key</th>
+                                <th style="text-align:center;">Hash</th>
+                                <th style="text-align:center;">Chỉ mục mảng</th>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1 % 20 = 1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2 % 20 = 2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>3</td>
+                                <td>42</td>
+                                <td>42 % 20 = 2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>4</td>
+                                <td>4</td>
+                                <td>4 % 20 = 4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>5</td>
+                                <td>12</td>
+                                <td>12 % 20 = 12</td>
+                                <td>12</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>6</td>
+                                <td>14</td>
+                                <td>14 % 20 = 14</td>
+                                <td>14</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>7</td>
+                                <td>17</td>
+                                <td>17 % 20 = 17</td>
+                                <td>17</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>8</td>
+                                <td>13</td>
+                                <td>13 % 20 = 13</td>
+                                <td>13</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>9</td>
+                                <td>37</td>
+                                <td>37 % 20 = 17</td>
+                                <td>17</td>
+                            </tr>
+                            </tbody></table>
+
+                        <h5>Kỹ thuật Dò tuyến tính (Linear Probing)</h5>
+
+                        <p>Chúng ta thấy rằng có thể xảy ra trường hợp mà kỹ thuật Hashing được sử dụng để tạo chỉ mục
+                            đã tồn tại trong mảng. Trong tình huống này, chúng ta cần tìm kiếm vị trí trống kế tiếp
+                            trong mảng bằng việc nhìn vào trong ô tiếp theo cho tới khi chúng ta tìm thấy một ô trống.
+                            Kỹ thuật này được gọi là <b>Dò tuyến tính (Linear Probing)</b>.</p>
+
+                        <table class="table table-bordered">
+                            <tbody><tr>
+                                <th>Stt</th>
+                                <th>Key</th>
+                                <th>Hash</th>
+                                <th>Chỉ mục mảng</th>
+                                <th>Sau kỹ thuật Linear Probing, chỉ mục mảng</th>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1 % 20 = 1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2 % 20 = 2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>3</td>
+                                <td>42</td>
+                                <td>42 % 20 = 2</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>4</td>
+                                <td>4</td>
+                                <td>4 % 20 = 4</td>
+                                <td>4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>5</td>
+                                <td>12</td>
+                                <td>12 % 20 = 12</td>
+                                <td>12</td>
+                                <td>12</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>6</td>
+                                <td>14</td>
+                                <td>14 % 20 = 14</td>
+                                <td>14</td>
+                                <td>14</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>7</td>
+                                <td>17</td>
+                                <td>17 % 20 = 17</td>
+                                <td>17</td>
+                                <td>17</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>8</td>
+                                <td>13</td>
+                                <td>13 % 20 = 13</td>
+                                <td>13</td>
+                                <td>13</td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <td>9</td>
+                                <td>37</td>
+                                <td>37 % 20 = 17</td>
+                                <td>17</td>
+                                <td>18</td>
+                            </tr>
+                            </tbody></table>
+
+                        Xem thêm tại
+                        <a href="http://vietjack.com/cau-truc-du-lieu-va-giai-thuat/cau-truc-du-lieu-hash-table.jsp">cau
+                            truc-du-lieu-hash-table</a>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

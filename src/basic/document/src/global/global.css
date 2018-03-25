@@ -56,3 +56,8 @@ footer.blog-footer{
 .box-shadow li{
     margin: 10px 0px;
 }
+
+table.table.tab-content tr th{
+    text-align: center;
+    background: #cccccc;
+}
