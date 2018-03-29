@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Maven Project</h1>
+            <div class="lead">
+                <p>Xong phần Java căn bản rồi, giờ ta đi sang phần khác thôi.</p>
+
+                <p>Hôm nay ta sẽ tìm hiểu về Maven.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Maven Project</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dưới đây là một cấu trúc của Maven projects</p>
+
+                        <table class="table tab-content table-bordered">
+                            <tr>
+                                <th style="width: 30%">Item</th>
+                                <th style="width: 70%">Default</th>
+                            </tr>
+                            <tr>
+                                <td>source code </td>
+                                <td>${basedir}/src/main/java</td>
+                            </tr>
+                            <tr>
+                                <td>Resources </td>
+                                <td>${basedir}/src/main/resources</td>
+                            </tr>
+                            <tr>
+                                <td>Tests </td>
+                                <td>${basedir}/src/test</td>
+                            </tr>
+                            <tr>
+                                <td>Complied byte code </td>
+                                <td>${basedir}/target</td>
+                            </tr>
+                            <tr>
+                                <td>distributable JAR </td>
+                                <td>${basedir}/target/classes</td>
+                            </tr>
+                        </table>
+
+                        <p>Bản chất của Maven là một đống các file POM.xml. Mỗi module nó sẽ được liên kết với nhau bằng
+                        các thiết lập trong file pom. Vì vậy sẽ vô cùng đơn giản khi muốn tách/ import một cái gì đó vào.</p>
+
+                        <p>Thêm vào đó, Maven còn cung cấp một repository plugin vô cùng lớn, và nếu như làm Java thì chắc
+                        cũng đã đủ xài. Quan trọng là google search ntn thôi.</p>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Features of Maven</h5>
+                        <div class="text-dark pt-3">
+                            <p>Maven đem lại rất nhiều lợi ích trong quá trình quản lý project. Cụ thể:</p>
+
+                            <ul>
+                                <li>Consistent usage across all projects.</li>
+                                <li>Dependency management including automatic updating.</li>
+                                <li>A large and growing repository of libraries.</li>
+                                <li>Extensible, with the ability to easily write plugins in java or scripting
+                                    languages.</li>
+                                <li>Instant access to new features with little or no extra configuration.</li>
+                            </ul>
+
+                            <blockquote>
+                                1. Nó mang lại sự thống nhất cho tất cả các dự án. Nó định ra cái gọi là POM.xml, mỗi project
+                                đều phải tuân thủ theo điều đó. Và đó là cơ sở cho sự thống nhất mà nó đã mô tả.<br />
+                                2. Tự động update những dependence.
+                                3. Có một lượng lớn các thư viện
+                                4. Có khả năng mở rộng 1 cách dễ dàng.
+                                5. Bổ nghĩa cho cái trên thôi.
+                            </blockquote>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">POM</h3>
+                    <div class="text-dark pt-3">
+                        <p>POM là từ viết tắt của <b>P</b>robject <b>O</b>bject <b>M</b>odel. Đây cũng chính là những unit cơ bản của Maven</p>
+
+                        <p>NÓ là một file XML, nằm trong thư mục của project/ module.</p>
+
+                        <p>POM chứa thông tin về project và chi tiết các cấu hình khác nhau, được sử dụng bởi Maven để build project. </p>
+
+                        <p>POM cũng chứa các mục tiêu (file war hay file ear sau khi build xong) và các pluggin.</p>
+
+                        <p>Cách hoạt động của MAVEN như sau, nó đọc file POM, thu thập các thông tin cấu hình và executes - (build) - mục tiêu.</p>
+
+                        <p>Dưới đây là một vài cấu hình mà có thể được xác định trong POM:</p>
+
+                        <ul>
+                            <li>project dependencies</li>
+                            <li>plugins</li>
+                            <li>goals</li>
+                            <li>build profiles</li>
+                            <li>project version</li>
+                            <li>developers</li>
+                            <li>mailing list</li>
+                        </ul>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">POM Example</h5>
+                        <div class="text-dark pt-3">
+                            <p>Before creating a POM, we should first decide the project group (groupId),
+                                its name (artifactId) and its version as these attributes help in uniquely
+                                identifying the project in repository.</p>
+
+                            <p>Mỗi project, ta cần phải định ra cho nó một cái gọi là groupID, và tên của nó (artifactId)</p>
+
+                            <blockquote>
+                                &lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+                                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                                         http://maven.apache.org/xsd/maven-4.0.0.xsd"><br />
+                                <br />
+                                &lt;modelVersion>4.0.0&lt;/modelVersion><br />
+                                &lt;groupId>com.khanhtran.moimoi&lt;/groupId><br />
+                                &lt;artifactId>project&lt;/artifactId><br />
+                                &lt;version>1.0&lt;/version><br />
+                                <br />
+                                &lt;/project><br />
+                            </blockquote>
+
+                            <p>Lưu ý</p>
+
+                            <h5>Mỗi một project thì cần có 1 file POM</h5>
+                            <h5>Toàn bộ file POM đều yêu cầu 3 thứ, groupId, artifactId, và version</h5>
+                            <h5>Projects notation in repository is groupId:artifactId:version.</h5>
+                            <h5>Projects notation in repository is groupId:artifactId:version.</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h5>
+                        <div class="text-dark pt-3">
+                            <table class="table table-bordered">
+                                <tbody><tr>
+                                </tr><tr>
+                                    <th>Sr.No.</th>
+                                    <th style="text-align:center;">Node &amp; Description</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td style="vertical-align:middle;"><p><b>Project root</b></p>
+                                        <p>This is project root tag. You need to specify the basic schema settings such as apache schema and w3.org specification.</p></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td style="vertical-align:middle;"><p><b>Model version</b></p>
+                                        <p>Model version should be 4.0.0.</p></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td style="vertical-align:middle;"><p><b>groupId</b></p>
+                                        <p>This is an Id of project's group. This is generally unique amongst an organization or a project. For example, a banking group com.company.bank has all bank related projects.</p></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td style="vertical-align:middle;"><p><b>artifactId</b></p>
+                                        <p>This is an Id of the project. This is generally name of the project. For example, consumer-banking. Along with the groupId, the artifactId defines the artifact's location within the repository.</p></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td style="vertical-align:middle;"><p><b>version</b></p>
+                                        <p>This is the version of the project. Along with the groupId, It is used within an artifact's repository to separate versions from each other. For example −</p>
+                                        <p><b>com.company.bank:consumer-banking:1.0</b></p>
+                                        <p><b>com.company.bank:consumer-banking:1.1.</b></p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Super POM</h5>
+                        <div class="text-dark pt-3">
+                            <p>Supper POM là POM mặc định của Maven. Toàn bộ POM đều được kế thừa từ một thằng khác hoặc default.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h5 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h5>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

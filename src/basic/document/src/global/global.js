@@ -26,6 +26,8 @@ const LIST_LESSON_DATA = [
     {url: "lesson_24_Java_Collections_Framework.html", titleDisplay: "Java Collections Framework"},
     {url: "lesson_25_Collections_Sumary.html", titleDisplay: "Java Collection Summary"},
     {url: "lesson_26_Java_Generic.html", titleDisplay: "Java Generic"},
+    {url: "lesson_27_Maven_Project.html", titleDisplay: "Maven Apache"},
+
 
     // {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
