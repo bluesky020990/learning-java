@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Java Generic</h1>
+            <div class="lead">
+                <p>Trong những bài trước, ta đã làm việc qua với nhiều kiểu dữ liệu khác nhau. Tuy nhiên hầu hết trong số
+                chúng đều là cùng một kiểu Object.</p>
+
+                <p>Trong một vài trường hợp, ta muốn nó vừa xử lý kiểu đối tượng này, vừa xử lý kiểu đối tượng kia, vậy thì
+                cần phải làm gì</p>
+
+                <p>Java cung cấp một biện pháp để giải quyết những vấn đề đó, nó được gọi là Generic (chung). Các ví dụ trong
+                bài học này vui lòng xem tại GenericClassExample.class</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Generic Methods</h3>
+                    <div class="text-dark pt-3">
+                        <p>Chúng ta có thể viết một method mà nó có thể xử lý nhiều kiểu dữ liệu khác nhau, tùy thuộc vào tham số
+                        truyền vào. Compiler sẽ căn cứ vào từng đối tượng cụ thể để mà có thể xử lý từng phương thức
+                        một cách phù hợp.</p>
+
+                        <p>Sau đây là các rule của nó:</p>
+
+                        <ul>
+                            <li>Tất cả khai báo phương thức generic có một khu vực tham số kiểu được giới hạn bởi các
+                                dấu ngoặc nhọn (< và >) mà đứng trước kiểu trả về của phương thức ( < E > trong ví dụ sau đây).</li>
+
+                            <li>Mỗi khu vực tham số kiểu chứa một hoặc nhiều tham số kiểu phân biệt nhau bởi dấu phảy.
+                                Một tham số kiểu, cũng được biết như là biến kiểu, là một định danh mà xác định một tên kiểu generic.</li>
+
+                            <li>Các tham số kiểu có thể được sử dụng để khai báo kiểu trả về và hoạt động như là nơi giữ
+                                (placeholder) cho các kiểu của các tham số được truyền tới phương thức generic, mà được
+                                biết như là các tham số kiểu thực sự.</li>
+
+                            <li>Phần thân phương thức generic được khai báo giống như bất kỳ phương thức nào khác. Ghi
+                                chú rằng các tham số kiểu chỉ có thể biểu diễn các kiểu tham chiếu, không phải là các
+                                kiểu gốc (như int, double, và char).</li>
+                        </ul>
+
+                        <p>Xem ví dụ:</p>
+
+                        <blockquote>
+                            public static void testGenericMethod (){<br/>
+                            &nbsp; &nbsp; Integer [] listIntegerNumber = {10, 20, 30, 40, 50, 60, 70, 80};<br/>
+                            &nbsp; &nbsp; Long [] listDoubleNumber = {0l, 10l, 20l, 30l, 40l, 50l, 100l};<br/>
+                            <br/>
+                            &nbsp; &nbsp; displayValueOfArray(listIntegerNumber, "Show value of generic integer array ");<br/>
+                            &nbsp; &nbsp; displayValueOfArray(listDoubleNumber, "Show value of generic long array ");<br/>
+                            }<br/>
+                            // example 1<br/>
+                            public static <b>&lt;E></b> void displayValueOfArray (<b>E</b> array[], <b>E</b> message){<br/>
+                            &nbsp; &nbsp; System.out.println(message);<br/>
+                            &nbsp; &nbsp; for(<b>E</b> element : array){<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; displayValueOfElement(element);<br/>
+                            &nbsp; &nbsp; }<br/>
+                            }<br/>
+                            // example 2<br/>
+                            public static <b>&lt;E></b> void displayValueOfElement (<b>E</b> element){<br/>
+                            &nbsp; &nbsp; System.out.println("This value is  " + element);<br/>
+                            }<br/>
+                        </blockquote>
+
+                        <blockquote>
+                            1. Các parameter là generic param phải được khai báo bên trong dấu < >. Một method là Generic bắt buộc
+                            phải khai báo <b>&lt;E></b> ở đầu. Xem ví dụ 1 và 2.<br />
+                            2. Các parameter cách nhau bằng 1 dấu ,<br />
+                            3. Kiểu generic parameter này có thể được sử dụng làm kiểu trả về, hoặc cũng có thể được dùng để pass vào
+                            một generic method khác. Xem trong ví dụ 1.<br />
+                            4. Không được sử dụng các kiểu dữ liệu nguyên thủy đối với Generic Method.<br />
+                        </blockquote>
+
+                        <p>Tóm lại, trong cái này, ta cần lưu ý, trong một method là Generic cần phải tuân thủ đủ những yêu cầu trên.
+                        Và trong trường hợp này, ta thấy kiểu dữ liệu mà ta làm việc nó chỉ là Kiểu Wrapper mà thôi. Trong trường hợp ta
+                        cần thao tác với các class phức tạp hơn, thì ta cần chuyển sang phần tiếp theo</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bounded Type Parameters - Tham số giới hạn</h3>
+                    <div class="text-dark pt-3">
+                        <p>Ta thấy, ở ví dụ trên kia, tất cả những method mà ta có thể làm việc được với kiểu Generic là vô cùng ít ỏi,
+                        chỉ là mấy kiểu của Object Class mà thôi.</p>
+
+                        <p>Vì vậy, trong một vài trường hợp, ta muốn giới hạn kiểu Tham số truyền vào, hoặc là quy chụp nó
+                        về một nhóm nào đó để sử dụng các method của nhóm đó, khi đó ta cần sử dụng bounded type parameter.</p>
+
+                        <p>Để làm được điều này, ta khai báo thêm cho nó extend từ một cái nào đó. Ví dụ</p>
+
+                        <blockquote>
+                            public static &lt;T <b>extend Comparable&lt;T></b>> .....
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Generic Classes</h3>
+                    <div class="text-dark pt-3">
+                        <p>Ta thấy ở cái bounded type parameters trên kia, cái parameters thường bị giới hạn bởi cái Interface
+                        mà nó implements thì mới được thêm 1 vài method. Trong trường hợp ta muốn thao tác với 1 list các Object khác nhau,
+                            thì ta cần làm gì??</p>
+
+                        <p>Xem thêm ở đây. https://o7planning.org/vi/10403/huong-dan-su-dung-java-generics</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
