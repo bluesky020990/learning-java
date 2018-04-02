@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Design Pattern</h1>
+            <div class="lead">
+                <p>Sau những bài học về Java chán ngắt, thì h ta chuyển sang học một cái vô cùng thú vị: Design pattern</p>
+
+                <p>Design pattern vô cùng hay, bởi nó chính là mẫu thiết kế - và đã được phân tích cũng như kiểm định để đưa
+                    ra các giải pháp tối ưu.</p>
+
+                <p>Vấn đề bây giờ là phải tìm hiểu xem từng thằng nó hoạt động ntn và xem những trường hợp cần thiết áp dụng nó
+                    mà thôi.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Types of Design Patterns</h3>
+                    <div class="text-dark pt-3">
+                        <p>Theo phân loại thì ta có khoảng 23 thằng, mỗi thằng lại có một mục đích sử dụng khác nhau, nhưng chủ yếu
+                            được phân thành bốn nhóm dưới đây :</p>
+
+                        <table class="table table-bordered">
+                            <tbody><tr><th style="width:5%;">S.N.</th><th>Pattern &amp; Description</th></tr>
+                            <tr><td>1</td><td><b>Creational Patterns</b><br>These design patterns provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator. This gives program more flexibility in deciding which objects need to be created for a given use case.</td></tr>
+                            <tr><td>2</td><td><b>Structural Patterns</b><br>These design patterns concern class and object composition. Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities.</td></tr>
+                            <tr><td>3</td><td><b>Behavioral Patterns</b><br>These design patterns are specifically concerned with communication between objects.</td></tr>
+                            <tr><td>4</td><td><b>J2EE Patterns</b><br>These design patterns are specifically concerned with the presentation tier. These patterns are identified by Sun Java Center.</td></tr>
+                            </tbody>
+                        </table>
+
+                        <blockquote>
+                            Nhóm Creational Patterns cung cấp cho ta cách thức để tạo nên object mà ko phải sử dụng constructor
+                            mặc định. Nói chính xác hơn thì nó cung cấp cho ta các cách để quản lý việc khởi tạo object.
+                        </blockquote>
+
+                        <blockquote>
+                            Nhóm Structural Patterns focus chủ yếu vào các thành phần của object, sẽ đi chi tiết sau.
+                        </blockquote>
+
+                        <blockquote>
+                            Nhóm Behavioral Patterns liên quan đến hành vi của object, cũng đi chi tiết sau.
+                        </blockquote>
+
+                        <blockquote>
+                            J2EE Patterns đi chi tiết sau.
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

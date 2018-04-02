@@ -1,4 +1,4 @@
-package practice.designpattern.singleton;
+package practice.designpattern.creational.singleton;
 
 public class SingletonExample {
     public static boolean isSingleTonIsCreated = false;

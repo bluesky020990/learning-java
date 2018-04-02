@@ -31,33 +31,73 @@ const LIST_LESSON_DATA = [
 
     // {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
+const LIST_DESIGN_PATTERN_LESSON_DATA = [
+    {url: "lesson_01_Design_Pattern.html", titleDisplay: "Design Pattern Overview"},
+    {url: "lesson_02_Factory_Pattern.html", titleDisplay: "Factory Pattern"},
+    {url: "______________________.html", titleDisplay: "Design Pattern Overview"},
+]
 
-initPageData();
 
-function initPageData(){
+
+
+
+generateCategory();
+
+function generateCategory (){
+    var lessonCategoryArray = new Array();
+
+    var category = $('body').attr("category") != null && $('body').attr("category").trim() != "" ? $('body').attr("category") : null;
+
+    if(category == "design-pattern"){
+        lessonCategoryArray.push(["Design Pattern", LIST_DESIGN_PATTERN_LESSON_DATA, "design_pattern"]);
+        lessonCategoryArray.push(["Java Basic",     LIST_LESSON_DATA, "lesson"                      ]);
+    } else {
+        lessonCategoryArray.push(["Java Basic",     LIST_LESSON_DATA, "lesson"                      ]);
+        lessonCategoryArray.push(["Design Pattern", LIST_DESIGN_PATTERN_LESSON_DATA, "design_pattern"]);
+    }
+
+    initPageData(lessonCategoryArray);
+}
+
+function initPageData(lessonCategoryArray){
     var previousPageData = null;
     var currentPageData = null;
     var nextPageData = null;
     var currentPageURL = getCurrentPageURL();
 
-    var menuHTML = new Array();
-    for(var i = 0; i < LIST_LESSON_DATA.length; i++){
-        var lessonData = LIST_LESSON_DATA[i];
+    var $mainLessonMenu = $('#main-lesson-menu');
+    $mainLessonMenu.empty();
 
-        if(lessonData.url.indexOf(currentPageURL) == 0){
-            menuHTML.push('<li><a class="active">' + lessonData.titleDisplay + '</a></li>');
-            currentPageData = lessonData;
+    for(var k = 0; k < lessonCategoryArray.length; k++){
+        var lessonCategory = lessonCategoryArray[k];
+        var headerDisplay  = lessonCategory[0];
+        var listLessonData = lessonCategory[1];
+        var prefixUrl      = lessonCategory[2];
 
-            if(i > 0){
-                previousPageData = LIST_LESSON_DATA[i - 1];
+        var categoryContentHTML = new Array();
+
+        categoryContentHTML.push('<h4 class="font-italic">' + headerDisplay +'</h4>');
+        categoryContentHTML.push('<ol>');
+        for(var i = 0; i < listLessonData.length; i++){
+            var lessonData = listLessonData[i];
+
+            if(lessonData.url.indexOf(currentPageURL) == 0){
+                categoryContentHTML.push('<li><a class="active">' + lessonData.titleDisplay + '</a></li>');
+                currentPageData = lessonData;
+
+                if(i > 0){
+                    previousPageData = listLessonData[i - 1];
+                }
+
+                if(i < listLessonData.length - 1){
+                    nextPageData = listLessonData[i + 1];
+                }
+            } else {
+                categoryContentHTML.push('<li><a href="' + generatePageUrl(lessonData.url, prefixUrl) + '">' + lessonData.titleDisplay + '</a></li>');
             }
-
-            if(i < LIST_LESSON_DATA.length - 1){
-                nextPageData = LIST_LESSON_DATA[i + 1];
-            }
-        } else {
-            menuHTML.push('<li><a href="' + generatePageUrl(lessonData.url) + '">' + lessonData.titleDisplay + '</a></li>');
         }
+        categoryContentHTML.push('</ol>');
+        $mainLessonMenu.append($(categoryContentHTML.join("")));
     }
 
     if(currentPageData != null){
@@ -80,8 +120,7 @@ function initPageData(){
         $('.blog-pagination').find('.btn-outline-secondary').addClass("disabled");
     }
 
-    var $mainLessonMenu = $('#main-lesson-menu');
-    $mainLessonMenu.find('.list-unstyled').empty().append(menuHTML.join(""));
+
 
 
     function getCurrentPageURL (){
@@ -90,8 +129,8 @@ function initPageData(){
         return currentURL.substring(currentURL.lastIndexOf("/") + 1);
     }
 
-    function generatePageUrl(pageUrl){
-        return '../lesson/' + pageUrl;
+    function generatePageUrl(pageUrl, prefixUrl){
+        return '../' + prefixUrl + '/' + pageUrl;
     }
 
 }
