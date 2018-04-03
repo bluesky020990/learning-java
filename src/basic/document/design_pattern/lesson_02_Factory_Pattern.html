@@ -34,14 +34,14 @@
         <div class="col-md-12 px-0">
             <h1>Factory Pattern - Creational Pattern</h1>
             <div class="lead">
-                <p>Factory Pattern là một trong số các mẫu thiết kế được sử dụng nhiều nhất trong Java. </p>
+                <p>Factory method, đầy đủ là Factory method pattern, là thiết kế mẫu hướng đối tượng trong việc thiết kế
+                    phần mềm cho máy tính, nhằm giải quyết vấn đề tạo một đối tượng mà không cần thiết chỉ ra một cách
+                    chính xác lớp nào sẽ được tạo. Factory method giải quyết vấn đề này bằng cách định nghĩa một phương
+                    thức cho việc tạo đối tượng, và các lớp con thừa kế có thể override để chỉ rõ đối tượng nào sẽ được
+                    tạo. Nói chung, "factory method" thường được áp dụng cho những phương thức mà nhiệm vụ chính của nó
+                    là tạo ra đối tượng </p>
 
-                <p>Nó nằm trong nhóm Creational Pattern và đảm nhận chức năng create ra những object phù hợp với một nhu cầu.</p>
-
-                <p>Trong mô hình này, chúng ta tạo ra đối tượng mà che dấu việc creation nó như thế nào đối với client và tham khảo
-                tới đối tượng mới tạo sử dụng một common interface.</p>
-
-                <p>Nói thì rắc rối, thôi đi tiếp.</p>
+                <p>Nó nằm trong nhóm Creational Pattern</p>
             </div>
         </div>
     </div>
@@ -52,47 +52,135 @@
         <div class="col-md-8 blog-main">
             <div class="blog-post">
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giới thiệu</h3>
                     <div class="text-dark pt-3">
-                        <p>Trong bài toán này, giả sử ta muốn tạo ra một object là một hình. Là một hình thì nó sẽ có những
-                        method đặc trưng như tính diện tích, tính chu vi chẳng hạn ...</p>
+                        <p>
+                            Factory Pattern là một trong những pattern phổ biến nhất trong lập trình hướng đối tượng.
+                        </p>
 
-                        <p>Trong toán học thì có rất nhiều hình, hình vuông, hình tròn, hình chữ nhật, hình tam giác, tứ giác ....
-                        Mỗi hình trong số đó lại có những đặc điểm khác nhau (tính chất điểm, tính chất đỉnh, ...)</p>
+                        <p>Nhiệm vụ của nó là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đối tượng
+                        một cách linh hoạt hơn.</p>
 
-                        <p>Nếu làm một cách bình thường, ta sẽ phải tạo ra từng cái Class lần lượt, kiểu như là CircleClass, SquareClass, ....
-                        này nọ. Và điều đó khiến cho việc định nghĩa nó trở nên phức tạp và rắc rối.</p>
-
-                        <p>Khách hàng thì không muốn vậy. Họ muốn là tôi có một hình chữ nhật, tôi lấy ra diện tích của nó. Chỉ đơn giản vậy thôi</p>
-                    </div>
-                </div>
-
-                <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
-                    <div class="text-dark pt-3">
-                        <p>Ta xây dựng một nhà máy, khách hàng chỉ cần yêu cầu hình tròn, thì ta sẽ gửi ra cho họ cái hình tròn.</p>
-                        <p>Toàn bộ object của ta đều nằm trong đó. Và vì vậy nó mới được đặt tên là nhà máy. Bởi bản chất của nó là
-                        sản xuất ra các loại OBJECT phù hợp với từng yêu cầu.</p>
+                        <p>Bản chất của Factory là <b>Định nghĩa một giao diện (interface) cho việc tạo một đối tượng, nhưng
+                        để các lớp con quyết định lớp nào sẽ được tạo. <i>Factory method</i> giao việc khởi tạo đối tượng cụ thể
+                        cho lớp con.</b></p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
                     <div class="text-dark pt-3">
-                        <p>Implement nó gồm có các bước sau:</p>
+                        <p>Ta thường sử dụng Factory khi mà chúng ta có 1 super class và multiple sub-classes. Và tùy theo
+                        input truyền vào, ta cần phải trả lại 1 trong số các subclass ở trên kia.</p>
 
-                        <ol>
-                            <li>Tạo một interface quy định các behavior của các Object</li>
-                            <li>Xây dựng một list các class cùng implement cái interface đó</li>
-                            <li>Xây dựng một nhà máy để sản xuất ra các Object. Nhà máy đó phải có một method là interface_ : getObject
-                            trong đó method getObject sẽ trả về 1 trong số các Class đã implements cái interface kia.</li>
-                        </ol>
+                        <p>Factory pattern mang nhiệm vụ instance của class từ client đến Factory. Và việc của bạn còn lại
+                        rất đơn giản, getFactoryObjectByType, và nó sẽ trả ra object mà bạn cần.</p>
+
+                        <p>Dưới đây là mô tả về việc implement của nó</p>
+
+                        <ul>
+                            <li>Super class - Có thể là interface / abstract</li>
+
+                            <li>Subclass -- Các class implements interface trên kia / extend từ abstract class trên kia.</li>
+
+                            <li>Factory Class với một static method handle việc initialize và return lại subclass từ
+                                tham số client truyền vào </li>
+                        </ul>
+
+                        <p>Những lưu ý thêm về việc implement pattern này:</p>
+
+                        <blockquote>
+                            1. Bản chất của Factory pattern là quản lý việc khởi tạo các object. Vì vậy ta nên khai báo
+                            private cho constructor của subclass để ngăn cho nó không được khởi tạo từ bên ngoài của Factory.
+
+                            2. Factory class được sử dụng như một Utils Class (utils - sử dụng). Vì vậy ta nên biến cái Factory
+                            Class thành một Singleton Class / hoặc khai báo static cho cái method getFactoryObjectByType của nó
+                            để có thể sử dụng ở bất cứ đâu.
+                        </blockquote>
 
                         <p>Xem ví dụ trong FactoryPatternExample</p>
                     </div>
                 </div>
 
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những lợi ích mà nó mang lại</h3>
+                    <div class="text-dark pt-3">
+                        <p>Bản chất Factory pattern đó chính là quản lý việc khởi tạo instance phù hợp với các yêu cầu khác nhau.
+                        Vì vậy nó sẽ giải quyết những vấn đề sau:</p>
 
+                        <ul>
+                            <li>Tạo ra một cách mới trong việc khởi tạo các objects, thông qua một interface chung</li>
+                            <li>Khởi tạo các object mà che dấu đi logic của việc khởi tạo</li>
+                            <li>Giảm sự gắn kết giữa các module, các logic với các class cụ thể, mà chỉ phụ thuộc vào
+                                abstract hoặc interface</li>
+                        </ul>
+
+                        <p>Giải thích chi tiết thêm về các ưu điểm kia:</p>
+
+                        <blockquote>
+                            1. Đối với các nhà máy - factory - thì nó sẽ có 1 cái method, để xử lý request từ phía client - bên ngoài -
+                            và trả lại object hợp lý.<br />
+                            <br />
+                            2. Tất cả những gì client nhận được, là 1 interface/ abstract class được trả về từ request. Việc bản chất
+                            của object đó như thế nào hoàn toàn bị che dấu bởi factory và client chỉ biết là họ đã có cái họ cần mà thôi.
+                            <br />
+                            3. Rõ ràng, vì việc khởi tạo object như thế nào là công việc bên trong của Factory, nên nếu như ta cần thay đổi
+                            (một đối tượng / một nhóm các đối tượng) thì những gì ta cần làm chỉ là update lại cái method của factory mà ko cần
+                            thay đổi những vị trí sử dụng của nó. Do đó, sự liên kết sẽ bị hạn chế.
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những giới hạn của nó</h3>
+                    <div class="text-dark pt-3">
+                        <p>Một Factory pattern có thể giải quyết khá nhiều vấn đề, tuy nhiên cũng có những vấn đề mà nó
+                        không thể giải quyết được. Dưới đây là những hạn chế - và nếu rơi vào trường hợp này thì ta cần
+                        cân nhắc xem có áp dụng pattern này trong việc lập trình hay ko.</p>
+
+                        <ul>
+                            <li>Khi có một class đã xài quá nhiều, việc sửa đổi - refactoring - sẽ kéo theo : Hoặc là bạn phải
+                            cập nhật tất cả các đoạn code khởi tạo nó = cái Factory, hoặc là nó có thể bị lỗi. Tuy nhiên cái
+                            intellj nó có thể refactor cái này nên có thể xem như nó ko thật sự quan trọng. Nhưng biết đâu một
+                            ngày đẹp trời ta lại phát hiện ra đâu đó 1 thằng mà nó init lên khác với những thằng còn lại
+                            - khác với factory. Vậy là lại nảy sinh vấn đề.</li>
+
+                            <li>Trong Factory pattern, cách duy nhất để bạn khởi tạo 1 object là phải thông qua Factory.
+                            và vì vậy mà những object này ko thể được mở rộng thêm nữa. Vì vậy, nếu bạn cần một object có
+                            khả năng mở rộng sau này thì nó ko phải là một lựa chọn hay.</li>
+
+                            <li>Nếu ta muốn sử dụng nó theo cách có thể mở rộng, bằng việc khai báo protected cho các constructor,
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Khi nào ta cần sử dụng Factory Pattern</h3>
+                    <div class="text-dark pt-3">
+                        <p>Theo như cái ưu điểm trên kia mà ta đã liệt kê, thì những trường hợp sau ta có thể sử dụng Factory Pattern</p>
+
+                        <ul>
+                            <li>Khi ta có 1 nhóm các object cùng chức năng / ta muốn sử dụng một phương thức khác để tạo ra object</li>
+
+                            <li>Khi ta có một object mà việc khởi tạo của nó quá phức tạp, và ta muốn che dấu chi tiết bên trong/ đơn giản
+                                hóa việc khởi tạo</li>
+
+                            <li>Khi ta muốn làm giảm sự phụ thuộc vào các object đó.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Factory Pattern Trong JDK</h3>
+                    <div class="text-dark pt-3">
+                        1. java.util.Calendar
+                        2. ResourceBundle
+                        3. NumberFormat getInstance() method
+                        4. valueOf method (Trong Boolean, Integer)
+                    </div>
+                </div>
             </div>
 
             <nav class="blog-pagination">

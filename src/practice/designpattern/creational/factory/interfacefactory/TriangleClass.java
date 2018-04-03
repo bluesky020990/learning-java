@@ -1,4 +1,4 @@
-package practice.designpattern.creational.factory;
+package practice.designpattern.creational.factory.interfacefactory;
 
 public class TriangleClass implements ShapeInterface {
 

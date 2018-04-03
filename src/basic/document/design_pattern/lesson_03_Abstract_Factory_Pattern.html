@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Abstract Factory Pattern - Creational Pattern </h1>
+            <div class="lead">
+                <p>Hôm trước chúng ta đã tìm hiểu qua về cái Factory Pattern. Trong cái pattern này, chúng ta che dấu việc
+                khởi tạo các object như thế nào và chỉ hiển thị cho người dùng 1 method createObject chung chung.</p>
+
+                <p>Factory có nghĩa là nhà máy, nơi chúng ta sẽ khởi tạo các object khác nhau tùy thuộc vào tham số truyền vào</p>
+
+                <p>Hôm nay chúng ta đi qua một cái khác, cũng tương tự, đó là Abstract Factory. Vậy, so với cái kia, cái này có những
+                điểm khác biệt gì.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Giả sử ta có 1 đối tượng là xe hơi. Trong đối tượng này ta sẽ có các bộ phận như bánh trước, bánh
+                        sau, động cơ, màu sơn, bình xăng này nọ.</p>
+
+                        <p>Mỗi một bộ phận lại có nhiều nhóm object khác nhau, ví dụ động cơ thì có động cơ 150cc, động cơ 125
+                        hay các động cơ khác, màu sơn thì có màu xanh đỏ tím vàng, bình xăng thì có bình 3 lit, có bình 5 lit, có
+                        bình 8 lit.</p>
+
+                        <p>Ta đã biết, Factory Patter sẽ nhóm các Object có cùng tính năng với nhau, để đưa vào cùng 1 nhà máy.</p>
+
+                        <p>Trong trường hợp này, với mỗi bộ phận, ta sẽ có 1 Factory khác nhau, ví dụ Factory màu sơn, Factory
+                        động cơ, Factory Bình xăng .....
+                        </p>
+
+                        <p>Giờ, giả sử, ta muốn tạo 1 cái xe với các thông số sau:</p>
+
+                        <blockquote>
+                            dong_co = DongCoFactory.getDongCo(125cc);
+                            banh_xe = BanhXeFactory.getBanhXe(110cm);
+                            binh_xang = BinhXangFactory.getBinhXang(5l);
+                        </blockquote>
+
+                        <p>Bản chất của Hướng đối tượng đó là tính bao đóng, che dấu các chi tiết bên trong, nhưng riêng cái này
+                        nhìn vào đã thấy rườm rà rồi, ko còn bao đóng nữa.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Giải pháp của bài toán này, là ta sẽ xây dựng 1 cái Factory XeMay, mà trong đó nó gồm nhiều Factory
+                        khác, mỗi Factory sẽ đảm nhận một chức năng khác nhau, và cái đó được gọi là Abstract Factory.</p>
+
+                        <p>Về cơ bản, abstract factory là tập hợp nhiều factory con. Mỗi factory được nhóm lại theo 1 interface
+                        đảm nhận nhiệm vụ của riêng nó. Và có 1 factory chính đảm nhận việc quản lý cái đống này.</p>
+
+                        <p>Vì vậy, abstract factory còn được biết đến dưới cái tên khác, nhà máy của nhà máy.,</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Note</h3>
+                    <div class="text-dark pt-3">
+                        <p>Thực ra thì ta đã hiểu sai khái niệm của abstract Factory rồi. Abtract Factory tức là nhà máy sản xuất
+                        ra factory chứ ko phải là sản xuất ra nhiều bộ phận như trên kia.</p>
+
+                        <p>Cứ cảm giác như nó là một cái tủ đựng đồ đa năng, khi nào cần cái gì thì ta lấy ra
+                        cái đó</p>
+
+                        <p>Và cái mà ta lấy ra đó, là cái Factory.</p>
+
+                        <p>Còn cái tủ, nó là Abstract Factory.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

@@ -1,6 +1,12 @@
-package practice.designpattern.creational.factory;
+package practice.designpattern.creational.factory.abstractfactory;
 
-public class RectangleClass implements ShapeInterface {
+
+public class RectangleClass extends ShapeClass {
+
+    protected RectangleClass() {
+
+    }
+
     @Override
     public void draw() {
         System.out.println("This is draw method of Rectangle ");

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Singleton Pattern</h1>
+            <div class="lead">
+                <p>Singleton Pattern thì ta đã có cơ hội tìm hiểu ở những bài trước rồi. Tại đây ta chỉ tóm tắt lại thôi
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong một vài trường hợp, ta muốn tạo duy nhất 1 đối tượng trong cả hệ thống mà thôi. Ví dụ
+                        các connect tới db, các Utils Object, các Object quản lý đọc file, ....</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Singleton là một giải pháp thú vị để giải quyết vấn đề trên.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Để tạo ra một Singleton, ta cần làm các bước sau:</p>
+
+                        <ul>
+                            <li>Khóa toàn bộ các constructor của Class đó.</li>
+
+                            <li>Khai báo biến và xây dựng method để có thể lưu trữ và trả về đối tượng duy nhất này.</li>
+
+                            <li>Quản lý việc truy cập và khởi tạo của các method liên quan đến instance duy nhất này.</li>
+                        </ul>
+
+                        <p>Để làm điều 1, chỉ cần khai báo private cho constructor để ko thể gọi nó từ bên ngoài,
+                            khai báo final để nó không thể được kế thừa.</p>
+
+                        <p>Để làm điều 2, khai báo 1 method static là instance để lưu trữ cái instance duy nhất đó, và
+                            method getInstance sẽ kiểm tra, nếu instance chưa được khởi tạo, thì khởi tạo nó, còn nếu ko
+                        thì trả về instance hiện tại. Vậy là ta chỉ có 1 instance đại diện cho 1 Class duy nhất trong cả hệ thống</p>
+
+                        <p>Để làm điều 3, hơi phức tạp, xem các cách tiếp cận dưới đây.</p>
+                    </div>
+
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Static binding.</h5>
+                        <div class="text-dark pt-3">
+                            <p>Cách đơn giản nhất để đảm bảo 1 object là duy nhất, đó là chúng ta sẽ khai báo static final
+                                và khởi tạo nó ngay từ thời điểm load class.</p>
+
+                            <p>Nhược điểm của cái này đó là đôi lúc không sử dụng object đó nhưng nó vẫn được khởi tạo,
+                                vì vậy nó gây lãng phí và ảnh hưởng đến hiệu năng của hệ thống.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Lazy Loader</h5>
+                        <div class="text-dark pt-3">
+                            <p>Lazy holder tức là trì hoãn việc khởi tạo object. Khác với trường hợp static binding, cái này lúc đầu
+                            nó chưa init Instance vội, mà đợi khi có method getInstance - tức là khi nó được sử dụng - thì lúc này
+                            nó mới init lên.</p>
+
+                            <p>Nhược điểm của cái này đó chính là trong môi trường multiple thread, có thể xảy ra trường hợp 2 thread
+                            cùng gọi method getInstance này khi nó chưa được khởi tạo, và vô tình cả 2 cùng create lên 2 object. Điều này
+                            làm vi phạm tính chất của singleton. Do đó, trong kĩ thuật này người ta sẽ phải khai báo synchronized để
+                            đồng bộ hóa 2 thread này, và đảm bảo là chỉ có 1 method được gọi - được khởi tạo - instance này tại 1 thời điểm.</p>
+
+                            <p>Chính vì cái synchronized mà hiệu năng của hệ thống sẽ chậm.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Double Check Singleton</h5>
+                        <div class="text-dark pt-3">
+                            <p>Double check Singleton là một kĩ thuật ra đời nhằm khác phục nhược điểm của cái Lazy Loader trên kia.
+                            Bản chất nó cũng là 1 lazy holder, và nó cũng tiếp cận theo cách - Chỉ khởi tạo object khi nó được sử dụng.</p>
+
+                            <p>Tuy nhiên, thay vì synchronized cái method getInstance thì nó lại synchronized cái block code lúc khởi tạo object
+                            và sử dụng từ khóa volatile để cập nhật lại trạng thái của các thread khác khi thread này kết thúc.</p>
+
+                            <p>Với kĩ thuật này, nó kiểm tra 2 lần, 1 lần check khi bắt đầu chuẩn bị new instance, một lần check trước khi khởi tạo object
+                            trong đoạn synchronized code và đó là lý do mà nó được gọi là Double Check.</p>
+
+                            <p>Double Check giải quyết được vấn đề của Lazy Loader nhưng nó chưa phải là cách hay nhất.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Lazy Holder</h5>
+                        <div class="text-dark pt-3">
+                            <p>Kĩ thuật này được đánh giá là hay nhất trong việc khai báo một singleton</p>
+
+                            <p>Như ta đã biết, Trong java, khi một class được sử dụng, thì nó mới được load vào bởi Class Loader.
+                                Và trong quá trình này, Class Loader sẽ làm các bước bao gồm loading, linking, initialization.
+                                Chính tại bước Initialization này các giá trị static của nó sẽ được init và khởi tạo</p>
+
+                            <p>Chính nhờ yếu tố này, ta sẽ trì hoãn việc khởi tạo các instance bằng cách khai báo các inner class.</p>
+
+                            <p>Chỉ khi inner class được gọi, nó mới được load vào thông quan Class Loader, khi nó đang load thì ko có thread nào
+                            có thể sử dụng, khi nó load xong rồi thì cũng đã init rồi. Vì vậy, cái này vừa ko phải lo vấn đề multiple thread, vừa không
+                            cần phải khai báo synchronized và vừa là lazy loaded. Do đó nó là tối ưu nhất.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Enum</h5>
+                        <div class="text-dark pt-3">
+                            <p>Tương tự Lazy holder, Class chỉ được load khi mà nó được gọi lần đầu tiên. Và tính chất của nó
+                            thì tương tự trên kia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
