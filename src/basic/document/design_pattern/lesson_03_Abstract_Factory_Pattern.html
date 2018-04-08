@@ -34,13 +34,17 @@
         <div class="col-md-12 px-0">
             <h1>Abstract Factory Pattern - Creational Pattern </h1>
             <div class="lead">
-                <p>Hôm trước chúng ta đã tìm hiểu qua về cái Factory Pattern. Trong cái pattern này, chúng ta che dấu việc
-                khởi tạo các object như thế nào và chỉ hiển thị cho người dùng 1 method createObject chung chung.</p>
+               <p>Abstract Factory, đầy đủ là Abstract Factory pattern, là thiết kế mẫu hướng đối tượng trong việc thiết
+                   kế phần mềm cho máy tính, cung cấp một giao diện lớp có chức năng tạo ra một tập hợp các đối tượng
+                   liên quan hoặc phụ thuộc lẫn nhau mà không chỉ ra đó là những lớp cụ thể nào tại thời điểm thiết kế.[1]
+               </p>
 
-                <p>Factory có nghĩa là nhà máy, nơi chúng ta sẽ khởi tạo các object khác nhau tùy thuộc vào tham số truyền vào</p>
+                <p>Mẫu thiết kế Abstract Factory đóng gói một nhóm những lớp đóng vai trò "sản xuất" (Factory) trong ứng
+                   dụng, đây là những lớp được dùng để tạo lập các đối tượng. Các lớp sản xuất này có chung một giao diện
+                   lập trình được kế thừa từ một lớp cha thuần ảo gọi là "lớp sản xuất ảo".</p>
 
-                <p>Hôm nay chúng ta đi qua một cái khác, cũng tương tự, đó là Abstract Factory. Vậy, so với cái kia, cái này có những
-                điểm khác biệt gì.</p>
+                <p>Bản chất của Abstract Factory chính là : <b>Cung cấp một interface cho việc tạo ra những object liên quan,
+                hoặc phụ thuộc mà không chỉ rõ các class cụ thể của nó.</b></p>
             </div>
         </div>
     </div>
@@ -51,75 +55,87 @@
         <div class="col-md-8 blog-main">
             <div class="blog-post">
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giới thiệu</h3>
                     <div class="text-dark pt-3">
-                        <p>Giả sử ta có 1 đối tượng là xe hơi. Trong đối tượng này ta sẽ có các bộ phận như bánh trước, bánh
-                        sau, động cơ, màu sơn, bình xăng này nọ.</p>
+                        <p>Abstract Factory có nhiệm vụ đóng gói một nhóm những lớp đóng vai trò sản xuất - Factory.</p>
 
-                        <p>Mỗi một bộ phận lại có nhiều nhóm object khác nhau, ví dụ động cơ thì có động cơ 150cc, động cơ 125
-                        hay các động cơ khác, màu sơn thì có màu xanh đỏ tím vàng, bình xăng thì có bình 3 lit, có bình 5 lit, có
-                        bình 8 lit.</p>
+                        <p>Đối với Factory Pattern, ta có thể biết chính xác là object nào sẽ được tạo, tùy thuộc vào tham
+                        số truyền vào.</p>
 
-                        <p>Ta đã biết, Factory Patter sẽ nhóm các Object có cùng tính năng với nhau, để đưa vào cùng 1 nhà máy.</p>
-
-                        <p>Trong trường hợp này, với mỗi bộ phận, ta sẽ có 1 Factory khác nhau, ví dụ Factory màu sơn, Factory
-                        động cơ, Factory Bình xăng .....
-                        </p>
-
-                        <p>Giờ, giả sử, ta muốn tạo 1 cái xe với các thông số sau:</p>
-
-                        <blockquote>
-                            dong_co = DongCoFactory.getDongCo(125cc);
-                            banh_xe = BanhXeFactory.getBanhXe(110cm);
-                            binh_xang = BinhXangFactory.getBinhXang(5l);
-                        </blockquote>
-
-                        <p>Bản chất của Hướng đối tượng đó là tính bao đóng, che dấu các chi tiết bên trong, nhưng riêng cái này
-                        nhìn vào đã thấy rườm rà rồi, ko còn bao đóng nữa.</p>
-                    </div>
-                </div>
-
-                <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
-                    <div class="text-dark pt-3">
-                        <p>Giải pháp của bài toán này, là ta sẽ xây dựng 1 cái Factory XeMay, mà trong đó nó gồm nhiều Factory
-                        khác, mỗi Factory sẽ đảm nhận một chức năng khác nhau, và cái đó được gọi là Abstract Factory.</p>
-
-                        <p>Về cơ bản, abstract factory là tập hợp nhiều factory con. Mỗi factory được nhóm lại theo 1 interface
-                        đảm nhận nhiệm vụ của riêng nó. Và có 1 factory chính đảm nhận việc quản lý cái đống này.</p>
-
-                        <p>Vì vậy, abstract factory còn được biết đến dưới cái tên khác, nhà máy của nhà máy.,</p>
+                        <p>Đối với Abstract Factory, ta không biết chính xác là object nào sẽ được tạo, vì nó phụ thuộc vào
+                        Factory mà clients gọi</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Một abstract Factory gồm những thành phần sau :</p>
+
+                        <ul>
+                            <li>AbstractFactory : Định nghĩa một interface cho thao tác khởi tạo các Abstract Product</li>
+                            <li>ConcreteFactory : Thực thi Abstract Factory để cho ra một đối tượng cụ thể</li>
+                            <li>Factory </li>
+                        </ul>
+
+                        <img src="../assests/design_pattern/factory_pattern.png" class="img-fluid">
+
+                        <p>Xem ví dụ của nó trong file <b>TestAbstractFactory</b></p>
+
+
+                        <p>Về bản chất, Abstract Factory cung cấp các list để get ra các factory interface. Và client lại
+                        tiếp tục sử dụng cái factory này để lấy ra object mà họ cần.</p>
+
+                        <p>Nhiệm vụ của factory rất đơn giản, mỗi factory sẽ cung cấp ra một object phụ thuộc
+                        và tham số truyền vào.</p>
+
+                        <p>Trong khi đó, đối với abstract factory, nó có sự phức tạp trong việc init object. Nó có thể có
+                        những khai báo phức tạp phù thuộc vào môi trường, hoặc bản thân object phụ thuộc vào các object
+                        khác - từ các factory khác - quan hệ have. Vì vậy tính chất của factory không thể giải quyết được trường hợp
+                        này hoặc là kém hiệu quả. Thay vì như vậy, người ta sử dụng 1 abstract method để có thể get ra một object
+                        được tạo từ các factory khác.</p>
+
+                        <p>
+                            Như vậy, một abstract factory gồm có các phần.
+                        </p>
+
+                        <ul>
+                            <li>Các factory - tất nhiên rồi</li>
+                            <li>1 AbstractFactory trong này khai báo các interface mà một FACTORY cần phải có để tạo ra một object cụ thể</li>
+                            <li>Các Concrete Factory : implement cái Abstract Factory trên.</li>
+                            <li>Client sẽ gọi các Concreate Factory để lấy ra các Factory tương ứng, và từ factory đó tạo ra object mình cần.</li>
+                        </ul>
+                        <p>Cả 2 ví dụ trong example_1 và example_2 đều sai, sẽ tạo ra một cái mới sau.</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Note</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những lợi ích mà nó mang lại</h3>
                     <div class="text-dark pt-3">
-                        <p>Thực ra thì ta đã hiểu sai khái niệm của abstract Factory rồi. Abtract Factory tức là nhà máy sản xuất
-                        ra factory chứ ko phải là sản xuất ra nhiều bộ phận như trên kia.</p>
-
-                        <p>Cứ cảm giác như nó là một cái tủ đựng đồ đa năng, khi nào cần cái gì thì ta lấy ra
-                        cái đó</p>
-
-                        <p>Và cái mà ta lấy ra đó, là cái Factory.</p>
-
-                        <p>Còn cái tủ, nó là Abstract Factory.</p>
+                        <p>1. Nó tách biệt việc initialize của Object ra khỏi code. Nó chỉ phụ thuộc vào Abstract Factory.
+                        Client chỉ cần gọi cái abstract factory và sử dụng cái abstract factory đó để tạo ra object mà mình cần.</p>
+                        <p>2. Nó che dấu việc khởi  tạo object</p>
+                        <p>3. Giảm sự chặt chẽ của code, giúp dễ dàng sửa đổi và mở rộng. Khi cần thì cứ thêm abstract factory interface thôi</p>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những giới hạn của nó</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+
                     </div>
                 </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Khi nào ta cần sử dụng Abstract Factory Pattern</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dễ hiểu, khi bạn có 1 object mà việc khởi tạo nó khá là phức tạp và được sử dụng nhiều</p>
+
+                        <p>Khi mà các object đó phụ thuộc lẫn nhau.</p>
+                    </div>
+                </div>
+
+
             </div>
 
             <nav class="blog-pagination">
