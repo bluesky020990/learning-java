@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Builder Pattern</h1>
+            <div class="lead">
+                <p>Builder Pattern dùng trong việc quản lý những đối tượng một cách phức tạp. Nếu như Abstract Factory tiếp cận theo kiểu
+                    có thực đơn trước, rồi tạo ra luôn sản phẩm, thì Builder Pattern tiếp cận theo hướng sử dụng step by step để đạt được mục đích cuối cùng.
+                </p>
+
+                <p>Cùng trở lại cửa hàng góc phố thôi nào.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cửa hàng đã nhộn nhịp hơn xưa. Bây giờ cửa hàng ko tập trung vào tầng lớp bình dân nữa, mà giờ đây cửa hàng
+                        lại tập trung vào tâng lớp trung lưu và quý xờ tộc, những người có tiền.</p>
+
+                        <p>Tất nhiên có tiền thì sẽ có quyền, và yêu cầu của họ sẽ phức tạp hơn, anh đầu bếp cũng mệt mỏi
+                            hơn khi chế biến, và anh phục vụ cũng phải học cách để chiều lòng khách hàng.</p>
+
+                        <p>Một ngày nọ đẹp trời, một cô gái xinh xắn đi cùng một anh già dê vào nhà hàng. Anh già dê thì
+                            khá dễ tính, nhưng cô bồ thì khá chảnh chọe.</p>
+
+                        <p>Cô nhìn vào thực đơn và gọi: "một dĩa bò xào khoai tây nha em."</p>
+
+                        <p>Anh phục vụ hí hoái ghi vào.</p>
+
+                        <p>À, mà dặn anh đầu bếp cho thêm ít nấm hương nữa nhé.</p>
+
+                        <p>À quên, nhớ bỏ thêm ít tiêu cho cay đấy.</p>
+
+                        <p>Lấy chị bánh mì sandwich thay vì bánh mì ổ nhé.</p>
+
+                        <p>Nhớ là ít rau nhiều thịt nhé.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Tất nhiên thứ mà chị yêu cầu trên kia, chả nằm trong cái thực đơn của nhà hàng rồi. Anh phục
+                            vụ sau khi nghe xong, cất vội thực đơn, và bắt đầu lấy giấy ra ghi chép:</p>
+
+                        <blockquote>
+                            Bò xào khoai tây <br />
+                            <br />
+                            thêm nấm <br />
+                            thêm tiêu, <br />
+                            <br />
+                            thay bánh mì sandwich,<br />
+                            it rau nhiều bò    <br />
+                        </blockquote>
+
+                        <p>Và đưa mảnh giấy đó cho anh đầu bếp để anh đầu bếp căn </p>
+
+                        <p>Trong trường hợp này, cái khai nguyên liệu - sản phẩm của anh phụ bếp - Abstract Factory kia
+                            tỏ ra vô dụng rồi. Tuy nhiên, anh đầu bếp vẫn có thể chế biến món ăn mà chị kia yêu cầu,
+                        nhờ vào cái miếng giấy anh phục vụ đưa.</p>
+
+                        <p>Miếng giấy ấy là một ví dụ của Builder Pattern.</p>
+
+                        <p>Builder Pattern sử dụng trong trường hợp object phức tạp và không theo một khuôn khổ nào. Việc
+                            truyền parameter vào constructor của Object không thực sự khả thi ở đây, khi mà các properties
+                        của nó thay đổi xoành xạch. Thay vì thế, nó hướng tới cách tiếp cận từng phần.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giới thiệu</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi một object được tạo ra từ quá nhiều arguments thì ta cần quan tâm thứ tự của nó, thậm chí những tham số mà
+                            không sử dụng, thì cần khai báo null cho nó. Điều này khiên ta dễ gặp phải những rủi ro trong lúc tạo object.</p>
+
+                        <p>Factory và Abstract Factory ko thể giải quyết vấn đề này. Thay vì vậy ta sẽ sử dụng một pattern khác thay thế, đó là Builder Pattern</p>
+
+                        <p>Builder Pattern không sử dụng toàn bộ tham số để create object ngay lập tức, mà nó sử dụng từng thông tin truyền vào, từng bộ phận trước khi quyết định kết quả sẽ trả về là cái gì.</p>
+
+                        <p>Xem ví dụ về cái ở trên kia, rõ ràng ta thấy việc sử dụng thực đơn là vô nghĩa trong trường hợp này, mà ta cần phải xây dựng từng phần - bằng danh sách liệt kê trong tờ giấy đấy. Kết quả trả về cuối cùng
+                        là món ăn của cô gái.</p>
+
+                        <p>Tóm lại</p>
+
+                        <blockquote>
+                            <p>Builder Pattern là một Pattern rất hữu dụng. Nó có tác dụng build một object step by step.</p>
+
+                            <p>Mục đích sử dụng chính của nó đó là tạo nên những object phức tạp, theo từng bước, dựa vào tham số truyền vào.</p>
+
+                            <p>Ngoài ra nó còn được sử dụng rất nhiều trong việc mở rộng dựa vào các object hiện tại.</p>
+                        </blockquote>
+
+                        <p>Ví dụ ở nhà hàng kia đã có món cá mú hấp xì dầu thơm ngon rồi. Giờ đây ông chủ muốn đổi thành
+                            cá mú hấp xì dầu tự chọn (thêm tôm, hay thêm bò, hoặc là tùy chọn rau củ quả gì đó chẳng hạn), thì việc sử dụng Builder trong trường hợp này là hiệu quả hơn cả.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong Java, để tạo ra một Builder ta cần làm như sau:</p>
+
+                        <ol>
+                            <li>First of all you need to create a <a href="https://www.journaldev.com/996/java-inner-class">static nested class</a>
+                                and then copy all the arguments from the outer class to the Builder class. We should follow
+                                the naming convention and if the class name is <code>Computer</code> then builder class
+                                should be named as <code>ComputerBuilder</code>.</li>
+
+                            <li>Java Builder class should have a public constructor with all the required attributes as
+                                parameters.</li>
+
+                            <li>Java Builder class should have methods to set the optional parameters and it should return
+                                the same Builder object after setting the optional attribute.</li>
+
+                            <li>The final step is to provide a <code>build()</code> method in the builder class that will
+                                return the Object needed by client program. For this we need to have a private constructor
+                                in the Class with Builder class as argument.</li>
+                        </ol>
+
+                        <p>Lợi ích của nó, là do nó tiếp cận từng phần, nên nếu như có 1 phần nào đó ko phù hợp thì ta viết 1 cái khác thay thế dễ dàng.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Builder Trong JDK</h3>
+                    <div class="text-dark pt-3">
+                        java.lang.StringBuilder#append() (unsynchronized)<br />
+                        java.lang.StringBuffer#append() (synchronized)<br />
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

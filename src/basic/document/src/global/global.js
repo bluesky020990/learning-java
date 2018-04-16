@@ -36,6 +36,7 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_02_Factory_Pattern.html", titleDisplay: "Factory Pattern"},
     {url: "lesson_03_Abstract_Factory_Pattern.html", titleDisplay: "Abstract Factory Pattern"},
     {url: "lesson_04_Singleton_Pattern.html", titleDisplay: "Singleton Pattern"},
+    {url: "lesson_05_Builder_Pattern.html", titleDisplay: "Builder Pattern"},
     {url: "______________________.html", titleDisplay: "Design Pattern Overview"},
 ]
 
