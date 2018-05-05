@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Bridge Pattern - Structural Pattern</h1>
+            <div class="lead">
+                <p>Mục đích của Bridge Pattern đó là tách riêng tính trừu tượng ra khỏi thực thể, để nó có thể làm việc một cách độc lập.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Sau một thời gian kinh doanh, ông chủ quyết định chuyển sang một lĩnh vực khác : Làm bánh.</p>
+
+                        <p>Việc làm bánh vừa có thể cung cấp thêm món tráng miệng cho khách hàng, hay phục vụ các em nhỏ, và cũng có thể
+                        bán ra trong các dịp đặc biệt. Thế là ông quyết định mở luôn một nhà hàng bên cạnh góc phố.</p>
+
+                        <p>Sau đó, ông bắt đầu thu thập các khảo sát về nhu cầu của khách hàng. Ông thấy rằng đa số khách
+                            hàng thích cái bánh hình tròn, và chỉ mua tặng trong dịp sinh nhật.</p>
+
+                        <p>Vậy là ông thuê một ông thợ lành nghề, làm luôn cái khuôn hình tròn, và khắc sẵn các họa tiết trên đó. Chỉ cần đổ bột vào,
+                            cho vào lò và chờ 10 đến 15 phút, là ta đã có ngay một cái bánh sinh nhật xinh xắn mà ko cần phải làm thêm bất cứ thứ gì khác.</p>
+
+                        <p>Tiện thể, ông làm luôn cái khuôn hình vuông dể sản xuất những chiếc bánh tráng miệng ăn điểm tâm hoặc nhâm nhi bên ly trà nóng.</p>
+
+                        <p>Ông thấy nó cũng khá hợp lý, vì chả tốn quá nhiều thời gian, mà vẫn có được những sản phẩm tuyệt vời đến tay người dùng.</p>
+
+                        <p>Tháng đầu tiên khai trường, cửa hàng đông ngùn ngụt. Khách hàng được phục vụ tận tình chu đáo mà ko phải chờ đợi lâu. Thợ làm bánh
+                        chỉ việc đổ nguyên liệu đã trộn sẵn vào, chờ 10p rồi mang ra cho khách hàng. Rất nhanh mà ko phức tạp.</p>
+
+                        <p>Tuy nhiên, sau đó một tháng, ông lại gặp vấn đề. Lượng khách giảm rõ rệt vì cái khuôn cũ không còn phù hợp với thị hiếu. Giờ người ta chuộng cái bánh hình tam giác
+                        hoặc nhìn ngũ giác, lục giác mang cảm giác mới lạ hơn, và việc trang trí hoa lá hẹ ban đầu cũng ko còn phù hợp nữa.</p>
+
+                        <p>Ông quyết định bổ sung thêm các khuôn bánh để phục vụ cho khách hàng. Ông mua thêm khuôn hình tròn, khuôn hình vuông, khuôn hình chữ nhật,
+                            ... được khắc sẵn những họa tiết trang trí khác nhau, đẹp hơn, sinh động hơn, và mọi thứ được giải quyết sau đó.</p>
+
+                        <p>Tuy nhiên, một ngày đẹp trời, có một ông khách tới hỏi mua một cái bánh hình vuông, nhưng mà lại có họa tiết trang trí giống cái bánh hình tròn mà cửa hàng đã làm ra
+                        trước đó. Cô đầu bếp tìm mãi mà lại ko thấy có cái nào như vậy đành say sorry và để ông khách ra đi trong tiếc nuối.</p>
+
+                        <p>Cô thưa lại với ông chủ, ông chủ ngồi suy nghĩ, và nhận ra rằng, hóa ra việc mình sử dụng các khuôn làm bánh đó, tuy nhanh nhưng mà lại ko thể chiều lòng được những thị
+                        hiếu của khách hàng. Vậy giờ phải làm sao để tách riêng hình dạng của những cái bánh (vuông, tròn, méo mó) ra, vừa có thể trang trí cho
+                        nó bằng những họa tiết hoa lá hẹ tùy chọn.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Rõ ràng trong trường hợp này, cái trang trí và hình dáng cái bánh, là 2 thứ độc lập và không phụ thuộc vào nhau. Sai lầm của ông chủ
+                        là đã cố gắng gắn kết nó lại với nhau một cách cứng nhắc. Vì vậy khi khách hàng đòi một cái bánh hình vuông với họa tiết trang trí của cái khuôn hình
+                        tròn, thì cửa hàng không đáp ứng được.</p>
+
+                        <p>Chưa kể giờ đây, yêu cầu của ông chủ đưa ra ảnh hưởng đến toàn bộ cái khuôn cũ. Chúng ko thể sử dụng lại vì bất cứ một mục đích nào.</p>
+
+                        <p>Sau bài học rút ra đó, ông chủ quyết định sẽ mua những cái khuôn bánh độc lập, và những họa tiết trang trí độc lập. Khi khách hàng cần một cái bánh hình
+                        tròn và với họa tiết trang trí A, thì ông sẽ kêu cô đầu bếp dùng cái khuôn hình tròn để đúc bánh, rồi sau đó lại đưa sang một cái khuôn nữa, để nó ép cái họa tiết kia vào
+                        theo yêu cầu của khách hàng.</p>
+
+                        <p>Việc tách cái họa tiết trang trí - thuộc tính trừu tượng, ra khỏi cái bánh - thực thể - để chúng có thể hoạt động một cách độc lập, được gọi là Bridge Pattern.</p>
+
+                        <p>Ý nghĩa của Bridge ở đây, đó là cầu nối - nối những thuộc tính trừu tượng với những thực thể. Từ đó, việc implements các thuộc tính trừu tượng đó, không làm ảnh hưởng
+                        đến cái thực thể ban đầu. Sau này, nếu như khách hàng muốn một cái bánh có hình con ong con bướm đang thịnh hành, thì ông chủ chỉ cần mua cái khuôn họa tiết đó về,
+                        chứ không cần phải mua luôn trọn bộ như trước kia.</p>
+
+                        <p>Trong lập trình cũng vậy, vì thời gian gấp rút, muốn nhanh mà ta cứ gộp chung mọi thứ lại thành một. Điều này giống như cái Conversion của Product CRCT mà mình đã từng làm,
+                        chạy thì OK, nhưng để mở rộng thì ôi thôi : sửa rất nhiều, sửa xong ko biết cái cũ có còn chạy được ko nữa.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong Design, ta cũng sẽ sử dụng các properties, để quyết định các tính trừu tượng của nó.</p>
+
+                        <p>Bản chất của Pattern này đó là sẽ tách những thuộc tính trừu tượng, biến nó thành các Interface, và sử dụng nhiều Class để implememts cho các Interface đó.</p>
+
+                        <p>Khi đó, Object được tạo sẽ độc lập với các thuộc tính trừu tượng.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Kết luận</h3>
+                    <div class="text-dark pt-3">
+                        <p>Việc phân tích trước khi thiết kế là khâu quan trọng nhất. Trong trường hợp này ông chủ chỉ quan tâm tới khuôn mẫu và thời gian sản xuất
+                            mà quên mất đi rằng hình dáng và họa tiết là những thuộc tính luôn luôn thay đổi tùy theo sở thích của khách hàng.</p>
+
+                        <p>Khi đã xác định những thuộc tính mà có thể thường xuyên bị thay đổi, thì ta có thể sử dụng Pattern này để tha hồ mở rộng mà ko cần thay đổi lại những thứ sẵn có.</p>
+
+                        <p>Nói chung, thứ hay nhất của nó, đó là khâu phân tích để nhận ra vấn đề.</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

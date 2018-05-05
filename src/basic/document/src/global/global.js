@@ -39,6 +39,7 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_05_Builder_Pattern.html", titleDisplay: "Builder Pattern"},
     {url: "lesson_06_prototype_pattern.html", titleDisplay: "Prototype Pattern"},
     {url: "lesson_07_adapter_pattern.html", titleDisplay: "Adapter Pattern"},
+    {url: "lesson_08_bridge_pattern.html", titleDisplay: "Bridge Pattern"},
 ];
 
 const JAVA_CONTENT_LIST = [{
