@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Adapter Design Pattern - Structural Pattern</h1>
+            <div class="lead">
+                <p>Adapter Pattern được định nghĩa là một mẫu thiết kế cho phép bạn sửa đổi một giao diện giữa đối tượng
+                    và một lớp mà không phải sửa đổi trực tiếp lên chúng. Hay nói ngắn gọn nó là một bộ chuyển đổi.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Một ngày đẹp trời, ông chủ quyết định sẽ nâng cấp toàn bộ máy móc cho các anh đầu bếp. Ổng mua
+                            đâu được bên Nhật về một mớ hàng xịn, kêu thợ vận chuyển tới lắp đặt này nọ.</p>
+
+                        <p>Mọi việc sẽ ko có vấn đề gì nếu như : Nó chạy bằng điện 110v trong khi hệ thống điện của VN lại là 220v</p>
+
+                        <p>Và giờ làm sao để có thể sử dụng được những thiết bị này : Hay thôi trả nó lại và mất thêm một khoản phí kha khá.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Lên google search một hồi, Ổng quyết định ra tiệm điện gần nhà, mua một cái ổn áp, đầu vào 220v, đầu ra
+                        có thể là 110v hoặc 220v. Vậy là hệ thống thiết bị mới này sẽ được nối riêng ra, thông qua một cục chuyển áp.</p>
+
+                        <p>Cục chuyển áp kia là một ví dụ của Adapter.</p>
+
+                        <p>Mục đích của nó là làm cho các thiết bị/ interface không tương thích, có thể hoạt động/ giao tiếp với nhau.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Có hai loại Adapter phổ biến, Object Adapter và Class Adapter. Ví dụ về tờ giấy trên kia là một ví dụ về Object Adapter.</p>
+
+                        <p>Class Adapter sử dụng kế thừa và extend một interface nào đó.</p>
+
+                        <p>Object Adapter sử dụng Java Composition</p>
+
+                        <p>Cách triển khai:</p>
+
+                        <h5>Class Adapter: Triển khai theo mối quan hệ IS-A</h5>
+
+                        <h5>Object Adapter: Triển khai theo mối quan hệ HAS-A</h5>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Kết luận</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Ghi chú thêm</h3>
+                    <div class="text-dark pt-3">
+                        <blockquote>
+                            IS-A là mối quan hệ cha - con, trong đó thằng mới được extends từ thằng ban đầu.
+                            Trong mối quan hệ này, thì thằng mới kia có thể override các method của thằng cha lại cho phù hợp
+                            với ngữ nghĩa của nó.
+                        </blockquote>
+
+                        <blockquote>
+                            HAS-A thì sử dụng cách khác, nó đưa thằng cha vào làm một properties của thằng mới
+                            Thằng mới chỉ có thể sử dụng lại các method của thằng ban đầu
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

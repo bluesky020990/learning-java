@@ -27,10 +27,10 @@ const LIST_LESSON_DATA = [
     {url: "lesson_25_Collections_Sumary.html", titleDisplay: "Java Collection Summary"},
     {url: "lesson_26_Java_Generic.html", titleDisplay: "Java Generic"},
     {url: "lesson_27_Maven_Project.html", titleDisplay: "Maven Apache"},
-
-
     // {url: "zz_template_files.html", titleDisplay: "___________"},
 ];
+
+
 const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_01_Design_Pattern.html", titleDisplay: "Design Pattern Overview"},
     {url: "lesson_02_Factory_Pattern.html", titleDisplay: "Factory Pattern"},
@@ -38,11 +38,18 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_04_Singleton_Pattern.html", titleDisplay: "Singleton Pattern"},
     {url: "lesson_05_Builder_Pattern.html", titleDisplay: "Builder Pattern"},
     {url: "lesson_06_prototype_pattern.html", titleDisplay: "Prototype Pattern"},
-]
+    {url: "lesson_07_adapter_pattern.html", titleDisplay: "Adapter Pattern"},
+];
 
-
-
-
+const JAVA_CONTENT_LIST = [{
+    category : "Java Basic",
+    prefixUrl: "lesson",
+    contents: LIST_LESSON_DATA
+}, {
+    category : "Design Pattern",
+    prefixUrl: "design_pattern",
+    contents: LIST_LESSON_DATA
+}];
 
 generateCategory();
 
