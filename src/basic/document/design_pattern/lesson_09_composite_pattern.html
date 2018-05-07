@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Composite Pattern - Structural Pattern</h1>
+            <div class="lead">
+                <p>Composite cho phép thực hiện các tương tác với tất cả các đối tượng trong mẫu tương tự nhau.</p>
+
+                <p>Một đối tượng Composite được tạo thành từ một hay nhiều đối tượng tương tư nhau, hoặc có những chức năng tương tự nhau.</p>
+
+                <p>Ý tưởng của Composite đó là việc thao tác trên một nhóm đối tượng, cũng giống như thao tác trên một đối tượng duy nhất.</p>
+
+                <p>Composite có thể được gọi là “đa hợp”</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cửa hàng của ông chủ dạo gần đây thường bị khách hàng than phiền là để họ chờ đợi quá lâu, vào gọi
+                        đồ ăn mà 30p chưa lên được. Điều này làm ông chủ lấy làm khó chịu lắm.</p>
+
+                        <p>Ông đắn đo suy nghĩ, nguyên nhân là gì nhỉ, tại cô phục vụ đưa Order cho anh đầu bếp chậm, hay tại anh phụ
+                        bếp làm việc không hiệu quả, hay là anh đầu bếp lại lười biếng ham chơi.</p>
+
+                        <p>Vậy là cuối ngày, ổng tập hợp danh sách các nhân viên lại để xem xét xem trung bình họ làm một món ăn
+                        hết bao nhiêu, và nó có thật sự là chậm như lời khách hàng phàn nàn ko?</p>
+
+                        <p>Nhưng, tính ntn nhỉ.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Việc phục vụ món ăn có nhiều công đoạn.</p>
+
+                        <p>Đầu tiên, cô phục vụ sẽ đem menu lên cho khách hàng và đợi order món.</p>
+
+                        <p>Sau đó, cô mang order đó gửi cho anh phụ bếp.</p>
+
+                        <p>Anh phụ bếp căn cứ món ăn mà khách hàng yêu cầu, chuẩn bị nguyên liệu và mang vào cho anh đầu bếp.</p>
+
+                        <p>Anh đầu bếp chế biến và trang trí món ăn.</p>
+
+                        <p>Cô phục vụ lại hối hả mang cho khách hàng.</p>
+
+                        <p>Mỗi công đoạn này đều tốn một thời gian nhất định. Tổng thời gian của nó là thời gian mà món ăn hoàn thành.</p>
+
+                        <p>Vì vậy, chỉ cần mỗi nhân viên cung cấp ước lượng cho ông thời gian của mỗi quy trình của họ, thì ông dễ dàng tính được thời gian
+                        của từng món mà khách hàng yêu cầu.</p>
+
+                        <p>Trong lập trình, ta cũng gặp những trường hợp tương tự. Một object có thể có nhiều đối tượng bên trong nó, và các đối tượng đó, có thể
+                        có các hành vi giống nhau. Ví dụ ở đây, món ăn tốn x thời gian, các công đoạn cũng tốn x' thời gian.</p>
+
+                        <p>Nếu như ta tách các object ra độc lập, thì việc xây dựng nó sẽ rất phiền hà, khi ta phải lặp lại việc gọi các method ở nhiều chỗ khác nhau.</p>
+
+                        <p>Thay vào đó, tại sao ta không gom nó thành một nhóm, và dùng một method cho toàn bộ.</p>
+
+                        <p>Kĩ thuật đó gọi là Composite.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Bản chất của composite đó là gom các object tương tự nhau thành một, implement method chung cho nó, sau đó sử dụng một cái thằng component để
+                            chứa toàn bộ, và cũng dùng component đó để thao tác hàng loạt.</p>
+
+                        <p>Theo như nội dung trên, ta sẽ xây dựng nó như sau :</p>
+
+                        <blockquote>
+                            <ol>
+                                <li>Xây dựng các interface khai báo các method chung.</li>
+                                <li>Các nút lá</li>
+                                <li>Composite object (chứa các nút lá ở trên).</li>
+                            </ol>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
