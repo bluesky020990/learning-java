@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Facade Pattern  - Structural Pattern </h1>
+            <div class="lead">
+                <p>Về mặt bản chất, Facade tương tự như Factory, chỉ khác đó là Factory che dấu việc khởi tạo Object, còn
+                Facade che dấu behavior của Interface.</p>
+
+                <p>Thông thường, Facade thường được sử dụng khi mà một method quá phức tạo, và ta muốn nhóm nó lại cho
+                    dễ quản lý, đồng thời cung cấp một interface đơn giản đối với người dùng.</p>
+
+                <p>Khái niệm của nó được định nghĩa như sau :</p>
+
+                <blockquote>
+                    "just provide a unified and simplified interface to a set of interfaces in a subsystem, therefore it hides the complexities of the subsystem from the client"
+                </blockquote>
+
+                <p>Facade patern đơn giản hóa một tập các giao diện trong hệ thống con và chỉ một cung cấp giao diện chung duy nhất cho client. Đó là ý nghĩa của nó.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Ta cùng quay lại cửa hàng góc phố nhé :) </p>
+
+                        <p>Cửa hàng ngày càng đông, nhân viên thì ko đủ. Nhưng mà ông chủ keo, nên quyết định sẽ thay đổi phương pháp phục vụ.</p>
+
+                        <p>Từ giờ, khách hàng vào cửa hàng, tự xem thực đơn, tự order món, tự đưa cho anh phục vụ.</p>
+
+                        <p>Anh phục vụ chỉ việc ngồi một chỗ, nhận Order, rồi đưa cho đầu bếp.</p>
+
+                        <p>Còn khách hàng thì lại tiếp tục ngồi chờ để tự nhận món ăn, tự bưng ra, tự chủ động thanh toán tiền.</p>
+
+                        <p>Ông chủ nghĩ rằng việc này sẽ không phải tốn thêm nhân sự nữa, thế là lại tiết kiệm một đống tiền.</p>
+
+                        <p>Tuy nhiên, mọi thứ ko như ông nghĩ. Chỉ ngày đầu áp dụng, cửa hàng ông đã rối tung rối mù lên. Những khách hàng
+                        quen thì không sao, nhưng những khách mới vào thì bỡ ngỡ, chả biết đi đâu để gọi đồ, cũng chả biết khi nào đến lượt mình, cũng chả biết
+                        nhận món ăn từ đâu. Mọi thứ cứ thế rối tung rối mù lên</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Rõ ràng là quyết định của ông chủ là một quyết định sai lầm. Quy trình quá phức tạp khiến cho mọi thứ rối tung lên.</p>
+
+                        <p>Và ông chủ nhận ra rằng, vị trí của anh giúp việc là vô cùng quan trọng. Vì vậy, ổng cũng chịu cúi đầu tuyển thêm một anh nữa vào làm.</p>
+
+                        <p>Thế là từ giờ, cửa hàng có thêm một anh phục vụ. Hai anh tự phân công công việc cho nhau, một anh thì lo việc order và tính tiền, một anh thì chịu trách nhiệm
+                        đưa order đến tay ông đầu bếp, rồi chờ mang món ăn ra cho khách hàng.</p>
+
+                        <p>Trong ví dụ này, thì 2 anh giúp việc, chính là 2 Facade.</p>
+
+                        <p>Trong lập trình cũng vậy, có đôi khi ta có những method mà quá trình xử lý nó quá phức tạp. Nó là tập hợp của nhiều method con và nó có thể xảy ra ở bất cứ đâu trong hệ thống.</p>
+
+                        <p>Thay vì để nó rải rác như vậy, ta sẽ gom nó lại làm một, và chỉ cung cấp một interface để client
+                        có thể tương tác với hệ thống thông qua nó. Đó là ý nghĩa của Facade Pattern</p>
+
+                        <p>Nhìn một khía cạnh khác, Facade cũng tương tự như Factory, chỉ khác ở chỗ, Factory che dấu việc khởi tạo Object, còn
+                        Facade che dấu các method bên trong nó hoạt động ntn.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Tổng kết</h3>
+                    <div class="text-dark pt-3">
+                        <p>Facade - mặt tiền, có thể hiểu như một người giao dịch viên ở ngân hàng vậy, khách hàng chỉ cần làm việc với họ, mà không cần quan tâm tới các nghiệp vụ
+                        ngân hàng bên dưới xảy ra như thế nào.</p>
+
+                        <p>Facade cũng tương tự như Factory.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

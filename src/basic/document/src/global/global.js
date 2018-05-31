@@ -25,6 +25,7 @@ const LIST_LESSON_DATA = [
     {url: "lesson_23_Java_Data_Structure2.html", titleDisplay: "Java Data Structures"},
     {url: "lesson_24_Java_Collections_Framework.html", titleDisplay: "Java Collections Framework"},
     {url: "lesson_25_Collections_Sumary.html", titleDisplay: "Java Collection Summary"},
+    {url: "lesson_26_String_in_Java.html", titleDisplay: "String in Java"},
     {url: "lesson_26_Java_Generic.html", titleDisplay: "Java Generic"},
     {url: "lesson_27_Maven_Project.html", titleDisplay: "Maven Apache"},
     // {url: "zz_template_files.html", titleDisplay: "___________"},
@@ -42,6 +43,8 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_08_bridge_pattern.html", titleDisplay: "Bridge Pattern"},
     {url: "lesson_09_composite_pattern.html", titleDisplay: "Composite Pattern"},
     {url: "lesson_10_decorate_pattern.html", titleDisplay: "Decorate Pattern"},
+    {url: "lesson_11_facade_pattern.html", titleDisplay: "Facade Pattern"},
+    {url: "lesson_12_flyweight.html", titleDisplay: "Flyweight Pattern"},
 ];
 
 const JAVA_CONTENT_LIST = [{

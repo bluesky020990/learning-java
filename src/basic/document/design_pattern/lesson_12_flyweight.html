@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Flyweight Pattern -  Structural Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Flyweight đó là tái sử dụng kết quả của những cái cũ, và chỉ bổ sung khi có một kết quả mới..</p>
+
+                <p>Vì vậy, nó thường được sử dụng trong môi trường mà ta cần xử lý nhiều thứ, trong đó kết quả của cái này có liên quan tới kết quả của 1 cái đã đc xử lý trước đó.</p>
+
+                <p>Hoặc cũng đơn thuần làm cache, lấy object lên khi nó ko tồn tại, hoặc trả ra ngay nếu nó tồn tại trong map, thế thôi.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Ai cũng biết dãy số Fibonacci rồi phải không, công thức tổng quát của nó là n3 = n2 + n1. Và giờ ta cần tìm số Fibonacci thứ N chẳng hạn</p>
+
+                        <p>Và ta sẽ sử dụng Flyweight để giải quyết bài toán đó, bằng cách sử dụng Flyweight.</p>
+
+                        <p>Ta nhận ra rằng, để biết được kết quả của số F(n), ta cần biết kết quả của F(n - 1), F(n - 2). Để biết F(n - 1) ta lại cần biết  F(n - 2), F(n - 3).</p>
+
+                        <p>Rõ ràng giá trị của F(n - 2) được sử dụng ở trong phép tính F(n -1)  và của bản thân nó. Do đó, nếu như ko có 1 cơ chế lưu trữ,
+                            ta lại phải mất thời gian để tính toán lại nó.</p>
+
+                        <p>Vì vậy, ta xây dựng một hash map để lưu trữ các giá trị Fibonacci đã được tính, chỉ tính và thêm vào khi mà giá trị đó chưa có.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Bước một, ta sẽ phân tách đối tượng thành 2 phần, intrinsic và extrinsic. Những thuộc tính instrinsic là những thuộc tính của riêng đối tượng đó - unique, để đánh dấu
+                        sự khác biệt của nó và những cái khác. Và ta sẽ căn cứ trên nó để làm key tham chiếu.</p>
+
+                        <p>Xây dựng một Flyweight Factory. Bản chất của nó là một hash map, dựa trên cái key kia để xác định.</p>
+
+                        <p>Sau đó thì đơn giản thôi, nếu có trong Map thì trả ra, ko có thì tính toán, create new rồi add vào map rồi trả về.</p>
+
+                        <p>
+                            Xem trong ví dụ ấy. Nói chung cũng chả có gì. Nó đơn thuần là xây dựng một cái Hash Map. Nếu 1 object nào
+                            đó có trong Hash Map thì trả ra, ko thì nó tạo ra object đó, và push vào trong map.
+                        </p>
+
+                        <p>Thông thường, nếu như mà muốn trả ra là một Object, thì ta sẽ sử dụng kèm với Prototype để clone ra Object theo đúng nghĩa.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những lưu ý</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            The number of Objects to be created by application should be huge.
+                        </p>
+                        <p>
+                            The object creation is heavy on memory and it can be time consuming too.
+                        </p>
+                        <p>
+                            The object properties can be divided into intrinsic and extrinsic properties, extrinsic properties of an Object should be defined by the client program.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Những hạn chế</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                            Ta căn cứ vào 2 thứ:
+                        </p>
+                        <p>
+                            1. Unique - intrinsic. Nếu Object ít thì nó đơn giản, nhưng nếu Object nhiều thì cần kiểm tra tính đúng đắn của nó. Nếu nó bị vi phạm là đi luôn.
+                        </p>
+                        <p>
+                            2. Nếu số lượng Object quá lớn, thì chi phí duy trì và tìm kiếm trên đó cũng cực lớn. Khi này chính cái Flyweight lại làm hệ thống chậm chạp.
+
+                            Thử nghĩ xem nếu ta có tầm 100.000 object được lưu trữ, trong khi đó có 1 vài thằng chỉ được sử dụng vài lần trong suốt cuộc đời của nó, mà ta vẫn phải
+                            tốn bộ nhớ, tốn luôn cơm luôn gạo nuôi nó suốt từng ấy thời gian mặc dù nó chả làm đc gì. Vậy thì ko hiệu quả.
+                        </p>
+
+                        <p>Giải pháp đó là khi push cái Object này vào một cái Map, ta sẽ giới hạn lại số lượng Item của Map. Mỗi một Object được sử dụng, ta sẽ tăng chỉ số của nó lên.
+                            Và sau một thời gian ta sẽ remove những Object mà có chỉ số thấp - ít được sử dụng - để giải phóng bộ nhớ.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Pattern trong JDK</h3>
+                    <div class="text-dark pt-3">
+                        <p>
+                           String là một ví dụ của Pattern này. Trong Java, String được lưu trữ tại một vùng có tên là String pools.
+                            Khi một giá trị String mới được tạo, nó sẽ được lưu trữ trong này và sử dụng cho các lần tiếp theo.
+                            Nếu giá trị đó bị thay đổi - thì 1 Object khác sẽ được tạo (vì bản thân nó là mutable object mà) và cũng được lưu trong này nốt.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
