@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Command Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Command Pattern cũng như Chain of Responsibility, đó là tạo ra các khớp nối lỏng lẻo giữa các service / Object</p>
+
+                <p>Bản chất của Command đó là sử dụng một Command object, đóng vai trò là một người điều khiển để thực hiện các action của Client - khi Client không biết nên làm thế nào.</p>
+
+                <p>Nó sử dụng trong các tình huống, mà ở đó ta có nhiều action, và ta muốn tách biệt nó ra để dễ quản lý.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Sau một thời gian làm việc vất vả, ông chủ quyết định đóng cửa hàng của mình vài ngày và tổ chức cho nhân viên đi du lịch</p>
+
+                        <p>Ông bắt đầu lên kế hoạch du lichj, đầu tiên là xác định địa điểm : Đi Vũng Tàu, thời gian : cuối tuần, kì nghỉ diễn ra trong 3 ngày 2 đêm.</p>
+
+                        <p>Vì là 2 đêm nên phải ngủ lại, nhưng ngủ lại thì phải có khách sạn.</p>
+
+                        <p>Vì đi du lịch là phần thưởng nên ông chủ sẽ lo cơm ăn 3 bữa, mà như vậy thì phải đặt nhà hàng.</p>
+
+                        <p>Vì đi chơi vừa là đi nghỉ ngơi ăn uống, vừa tăng tính đoàn kết nên đoàn quyết định tham quan vài nơi cho vui, thế là phải tìm thêm địa điểm vui chơi.</p>
+
+                        <p>3 điều này khiến ông chủ thấy khá là đau đầu vì ông chưa tổ chức như thế bao giờ. Thế nên ông không biết phải làm ntn.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cuối cùng, ông chủ quyết định gọi điện sang một công ti du lịch và nhờ họ cung cấp dịch vụ</p>
+
+                        <p>Công ti này lo các tour du lịch trong nước. Sau khi nghe ông trình bày, họ cung cấp cho ông một anh hướng dẫn viên, chuyên dẫn tour Vũng Tàu.</p>
+
+                        <p>Vậy là ông ko cần lo lắng những điều trên, mà vẫn có thể thoải mái vui vẻ đi chơi.</p>
+
+                        <p>Anh Hướng dẫn viên kia là một ví dụ cụ thể của Command.</p>
+
+                        <p>Vậy, Command pattern là gì. Command đó là một người chỉ huy/ điều khiển, được gửi kèm cùng với yêu cầu để giúp object / ông chủ thực hiện được những yêu cầu đó.</p>
+
+                        <p>Vì client không đủ thông tin và quyền hạn để thực hiện yêu cầu, nên ta sẽ đóng gói nó và một cái Command - người điều khiển chung, và khi nó gọi method, thì chính là command được gọi.</p>
+
+                        <p>Command sử dụng mối quan hệ HAS - A để tăng tính lỏng lẻo.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Việc implement tuân thủ các nguyên tắc sau :</p>
+
+                        <ol>
+                            <li>Tạo một Command Interface đại diện cho một đống Command, và một đống Command implements interface đó.</li>
+                            <li>Tạo một Command Receiver Interface và một đống Command Receiver Implement nó.</li>
+                            <li>Tạo một Invoker. Invoker này có vai trò đóng gói Command và gửi đến client</li>
+                            <li>Tạo một Client để test.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Bản chất của Command đó là xác định một contract tới implementation.</p>
+
+                        <p>Receive implementation phải được tách biệt với Command implementation.</p>
+
+                        <p>Command implementation class chọn phương thức để gọi trên object nhận được. Nó hoạt động
+                        như một cầu nối giữa receive và action method.</p>
+
+                        <p>Client chịu trách nhiệm khởi tạo và receive phù hợp, và sau đó liên kết chúng lại với nhau.</p>
+
+                        <p>Client cũng chịu trách nhiệm khởi tạo đối tượng invoker và liên kết command object với nó và thực thi phương thức action.</p>
+
+                        <p>Command Pattern dễ dàng mở rộng vì chúng ta có thể dễ dàng add thêm các action method mới vào trong receiver và
+                        create new Command implements mà không làm ảnh hưởng đến code.</p>
+
+                        <p>Nhược điểm của nó là code sẽ rất lớn và phức tạp, và dễ gây nhầm lẫn với một số lượng lớn action vì có quá nhiều liên kết.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Chain of Responsibility Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Chain of Responsibility Pattern đó là đưa 1 request thông qua một chuỗi các object - Chain, và để cho những phần tử trong chuỗi đó
+                tự quyết định xem nó sẽ xử lý hay sẽ chuyển tiếp request đó đến phần tử/ đối tượng kế tiếp.</p>
+
+                <p>Nó thường được áp dụng khi mà ta có quá nhiều process trong một hệ thống, và ta không biết nên gửi nó chính xác từ đâu/ hay ta muốn cho cái hệ thống
+                của ta trở nên lỏng lẻo.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Một ví dụ đơn giản của Chain of responsibility - Chuỗi trách nhiệm, đó là thư chuyền tay.</p>
+
+                        <p>Thư chuyền tay là cái trò mà lũ học sinh nào cũng khoái dùng. Bạn viết 1 lá thư, và muốn gửi cho một cô gái ngồi bàn đầu trong giờ học.</p>
+
+                        <p>Tất nhiên bạn ko thể chạy lên và đưa trực tiếp cho cô ấy được rồi. Thay vào đó, bạn ghi tên của cô gái lên đó, và đưa lên cho cậu bạn ngồi bàn trên.</p>
+
+                        <p>Cậu bạn ấy sẽ nhìn lên lá thư, và biết sẽ phải chuyển nó đến đâu. Và vậy là từ từ lá thư của bạn cũng đến đc. Khi cô ấy nhìn lên lá thư, thấy tên mình, cô ấy sẽ
+                        ngạc nhiên mở ra và đọc nó.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Đó là một ví dụ nho nhỏ về Chain of responsibility.</p>
+
+                        <p>Mục đích của Chain of Responsibility đó là làm hệ thống lỏng lẻo hơn. Cùng xem xét nhé:</p>
+
+                        <p>Giả sử hệ thống của bạn được phục vụ cho một mục đích nào đó, ví dụ như thanh toán. Bạn yêu cầu khách hàng điền vào những thông tin đó, rồi gửi lên hệ thống và sau đó xử lý.</p>
+
+                        <p>Bạn thiết kế hệ thống dựa trên những yêu cầu đó, Gồm một chức năng post, một chức năng receive n process và một chức năng saving. Mọi thứ OK, ko có vấn đề gì cả.</p>
+
+                        <p>Một ngày đẹp trời, một khách hàng quen phàn nàn rằng, tôi mua hàng rất nhiều nhưng mỗi lần như vậy lại phải điền lại cái hồ sơ đó. Tại sao anh không lấy hoặc cung cấp cho tôi những
+                        chức năng để có thể sử dụng lại những thông tin cũ.</p>
+
+                        <p>Và ôi thôi, bạn nhận ra, hệ thống mình chỉ biết tuân thủ theo nguyên tắc như vậy, nó trở nên quá cứng nhắc và khó để thay đổi.</p>
+
+                        <p>Chain of Responsibility ra đời nhằm mục đích đó, thay vì việc thiết kế một flow theo tiêu chuẩn, nó lại cung cấp một chuỗi các service.</p>
+
+                        <p>Khi một request được gửi vào, Chuỗi sẽ xác định xem đối tượng/ service hiện tại có "trách nhiệm" xử lý nó hay không, nếu không nó sẽ giao đối tượng đó cho một service tiếp theo trong chuỗi.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Việc implements nó gồm có những điểm cần lưu ý:</p>
+
+                        <p>Các service phải được thiết kế nhằm 2 mục đích chính, xử lý request nếu như nó có trách nhiệm, và chuyển tiếp cho đối tượng khác.</p>
+
+                        <p>Vì vậy, ta xây dựng một object với những method đó, đồng thời tạo ra một pipe để lưu trữ nó.</p>
+
+                        <p>Và tất nhiên, request được gửi tới cho đối tượng đầu tiên của chuỗi rồi.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Chain of Responsibility in JDK</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong JDK, một ví dụ của Chain of Responsibility đó chính là try catch.</p>
+
+                        <p>Bản chất của Try Catch, nếu nó có trách nhiệm xử lý exception đó (catch) thì nó sẽ xử lý, nếu không, nó ném exception lên cho cái đoạn
+                        function/ block trên kia để xử lý.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Có những điểm cần chú ý đối với Pattern này:</p>
+
+                        <ol>
+                            <li>Client không biết chính xác sẽ gửi request cho ai, nó chỉ biết gửi request cho first object của chain.</li>
+                            <li>Mỗi Object của Chain sẽ tự implement method process của nó, hoặc full, hoặc partial hoặc là gửi nó cho một object khác.</li>
+                            <li>Việc tạo ra Chain phải vô cùng cẩn thận, nếu không có thể có 1 request không bao giờ được gửi đi
+                            hoặc là không có đối tượng nào xử lý nó.</li>
+                            <li>Cái này nó tăng tính lỏng lẻo của chương trình, nhưng bù lại nó có rất nhiều class cùng implements method
+                            process và sẽ gặp vấn đề khi bảo trì nếu như code là common trong các triển khai. Nói cách khác, nếu bạn muốn revise
+                            một method process bạn sẽ phải xem hết cái đống đó.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
