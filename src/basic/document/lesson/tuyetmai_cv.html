@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;
+            }
+
+            body{
+                margin: 30mm 20mm 20mm 25mm;
+            }
+
+            .cv-content-group{
+                break-inside: avoid;
+            }
+        }
+
+        .main-container{
+            font-size: 20px;
+        }
+
+        .main-container *{
+            box-sizing: border-box;
+        }
+
+        .cv-information {
+            padding: 10px;
+            clear: both;
+            margin-top: 20px;
+        }
+
+        .cv-info {
+            display: inline-block;
+            width: calc(70% - 20px);
+            float: left;
+        }
+
+        .cv-avatar {
+            display: inline-block;
+            min-width: 30%;
+            min-height: 160px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        .cv-header{
+            font-weight: bold;
+            font-size: 26px;
+            border-bottom: 2px solid #4e555b;
+            line-height: 60px;
+        }
+
+        .cv-content-inside {
+            padding: 20px 0px;
+        }
+
+        .position {
+            font-size: 32px;
+        }
+
+        .time {
+            line-height: 2em;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid main-container">
+    <div class="row">
+        <div class="col-sm-8">
+           <div class="cv-information">
+               <div class="cv-avatar">
+                    IMAGE Của Mọi Mọi
+               </div>
+
+               <div class="cv-info">
+                   <h2>Vũ Thị Tuyết Mai</h2>
+                   <h3>Kế toán tổng hợp</h3>
+                   <h3>Leader</h3>
+                   <h3>Hồ Chí Minh</h3>
+               </div>
+           </div>
+
+            <div class="cv-information">
+                <div class="cv-header">
+                    Giới thiệu
+                </div>
+
+                <div class="cv-content">
+                    <div class="cv-content-group">
+                        <span class="cv-date">09/2016 - Nay</span>
+                        <div class="cv-content-inside">
+                            Tốt nghiệp trường Sư phạm kĩ thuật tp Hồ Chí Minh
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="cv-information">
+                <div class="cv-header">
+                   Thông tin liên lạc
+                </div>
+
+                <div class="cv-content">
+                    Số đt : 0975 622 617
+                    Email : Mọi Mọi dở hơi
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="cv-information">
+                <div class="cv-header">
+                    Kinh nghiệm làm việc
+                </div>
+
+                <div class="cv-content">
+                    <div class="cv-content-group">
+                        <div class="cv-content-inside">
+                            <div class="position">Leader</div>
+                            <div class="time">05/2018 - Nay</div>
+                            <div class="description">
+                                Kế toán tổng hợp công ti AM NOT
+                            </div>
+                            <div class="list-task">
+                                Kiểm tra hồ sơ sổ sách của các member<br />
+                                Lập báo cáo quý, tháng<br />
+                                Kiểm tra định kì này nọ<br />
+                                Kiểm tra hồ sơ sổ sách của các member<br />
+                                Lập báo cáo quý, tháng<br />
+                                Kiểm tra định kì này nọ<br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-content-group">
+                        <div class="cv-content-inside">
+                            <div class="position">Leader</div>
+                            <div class="time">09/2016 - 05/2018</div>
+                            <div class="description">
+                                Kế toán tổng hợp công ti AM NOT
+                            </div>
+                            <div class="list-task">
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-content-group">
+                        <div class="cv-content-inside">
+                            <div class="position">Nhân viên</div>
+                            <div class="time">09/2014 - 09/2016</div>
+                            <div class="description">
+                                Kế toán công ty thủy sản bán cá ươn cá chết
+                            </div>
+                            <div class="list-task">
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-content-group">
+                        <span class="cv-date"></span>
+                        <div class="cv-content-inside">
+                            <div class="position">Nhân viên</div>
+                            <div class="time">09/2013 - 09/2014</div>
+                            <div class="description">
+                                Kế toán mới ra trường bị bóc lột đủ bề
+                            </div>
+                            <div class="list-task">
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                                Làm sổ sách kế toán cho công ti ABCDEF về lĩnh vực kinh doanh gì gì đó.<br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cv-information">
+                <div class="cv-header">
+                    Quá trình học tập
+                </div>
+
+                <div class="cv-content">
+                    <div class="cv-content-group">
+                        <span class="cv-date">09/2016 - Nay</span>
+                        <div class="cv-content-inside">
+                            Tốt nghiệp trường Sư phạm kĩ thuật tp Hồ Chí Minh
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <div class="cv-information">
+                <div class="cv-header">
+                    Kĩ năng
+                </div>
+
+                <div class="cv-content">
+                    Excel :<br />
+                    _______________<br />
+                    Power Point : <br />
+                    _______________<br />
+                    Nghiệp vụ:<br />
+                    Kế toán trốn thuế<br />
+                    _________________<br />
+                    Kế toán công nợ<br />
+                    _________________<br />
+                    Kế toán đòi nợ<br />
+                    _________________<br />
+                    Kế toán quỵt nợ<br />
+                    _________________<br />
+                    Kế toán trốn nợ<br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+</div>
+<div class="container">
+
+</div>
+
+
+
+<!--<footer class="blog-footer">-->
+    <!--<p>Created by Khanh Tran</p>-->
+<!--</footer>-->
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

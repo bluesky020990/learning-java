@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Iterator Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Iterator Pattern </p>
+
+                <p>Bản chất của Iterator đó là cho phép ta duyệt qua các phần tử của mảng mà ko cần quan tâm tới bản chất của nó.</p>
+
+                <blockquote>
+                    Provides a way to access the elements of an aggregate object without exposing its underlying represenation.
+                </blockquote>
+
+                <p>Nó ko chỉ phục vụ cho mục đích duyệt qua các phần tử, mà nó còn hỗ trợ filter tùy theo yêu cầu.</p>
+
+                <p>Nó được sử dụng trong trường hợp ta muốn cung cấp một method chung cho phép client có thể duyệt qua các phần
+                tử của những collection khác nhau một cách thống nhất.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                       <p>Quay lại nhà hàng góc phố. Hôm nay ông chủ quyết định xây dựng một menu thực đơn mới để phục vụ người dùng tốt hơn.</p>
+
+                        <p>Menu của ông tổng hợp lại những món ăn mà nhà hàng có thể phục vụ. Những người khách cứ việc đến, tìm kiếm và gọi món rồi một lát sau sẽ được phục vụ liền.</p>
+
+                        <p>Tuy nhiên, để cho dễ nhìn và dễ nhận biết, dưới mỗi món ăn ông đầu bếp sẽ phân loại món á hay âu, món chay hay mặn, món điểm tâm hay ăn chính.</p>
+
+                        <p>Thế rồi có một ngày một gia đình ngoại quốc vào nhà hàng ông ăn. Nhưng mà có sự khác biệt. Bà mẹ thì theo đạo Phật chỉ ăn chay ko ăn thịt, ông bố thì
+                        theo đạo Hồi, ko chịu ăn bò, và cậu con của họ thì cái gì cũng xơi tuốt. Bàn đông nên chỉ còn 1 quyển sổ, và vậy là gia đình kia
+                        mất cả buổi cũng ko thể tìm được món ăn mà mình cần giữa một đống danh mục ngổn ngang.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Bởi vì thực đơn chỉ được phân loại theo một quy tắc mà ông chủ đã đặt ra nên nó trở nên cứng nhắc đối với người dùng khi họ muốn tìm kiếm.</p>
+
+                        <p>Thế là ông chủ quyết định cho anh phục vụ nguyên một ngày để học các món ăn, khi khách tới, tùy vào yêu cầu mà anh ấy có thể tìm kiếm cho vị khách những món
+                        phù hợp với mong muốn của họ.</p>
+
+                        <p>Trong bài toán này, anh phục vụ (sau khi đã đc đào tạo nhé) là iterator.</p>
+
+                        <p>Iterator Pattern ra đời để giải quyết bài toán duyệt qua các phần tử của mảng mà không quan
+                            tâm tới bản chất các phần tử.</p>
+
+                        <p>Nếu đã từng làm với Java, thì chắc chả ai là ko biết tới cái Hash Map. Và một trong số những
+                            cách duyệt qua các phần tử của Hash Map
+                            cũng được sử dụng 1 cái gọi là iterator.</p>
+
+                        <blockquote>
+                            Iterator it = mp.entrySet().iterator();<br/>
+                            while (it.hasNext()) {<br/>
+                            &nbsp; &nbsp; Map.Entry pair = (Map.Entry)it.next();<br/>
+                            &nbsp; &nbsp; System.out.println(pair.getKey() + " = " + pair.getValue());<br/>
+                            &nbsp; &nbsp; it.remove(); // avoids a ConcurrentModificationException<br/>
+                            }<br/>
+                        </blockquote>
+
+                        <p>Iterator with array list.</p>
+
+                        <blockquote>
+
+                            Iterator&lt;String> iterator = list.iterator();
+                            while (iterator.hasNext()) {
+                            &nbsp; &nbsp; System.out.println(iterator.next());
+                            }
+                        </blockquote>
+
+                        <p>Và trong trường hợp này anh phục vụ cũng vậy, anh có thể lấy ra được danh sách các món ăn theo yêu cầu, mà ko cần
+                        quan tâm tới bản chất của món ăn đó ntn, là chay hay mặn, là ngọt hay béo ....</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Một iterator thì cần có những method sau:</p>
+
+                        <ul>
+                            <li>Một Collection Interface để define những thuộc tính chung của nó:
+                                <ul>
+                                    <li>addElement(Element)</li>
+                                    <li>removeElement(Element)</li>
+                                    <li>iterator (params)</li>
+                                </ul>
+                            </li>
+
+                            <li>Một Iterator cho Collection đó:
+                                <ul>
+                                    <li>boolean hasNext()</li>
+                                    <li>Element  next()</li>
+                                </ul>
+                            </li>
+
+                            <li>Các collection implement nó.</li>
+                        </ul>
+
+                        <p>Còn cách sử dụng ấy hả, xem trong hash map của java ấy.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Sử dụng iterator khi ta muốn cung cấp một cách thức tiêu chuẩn để có thể duyệt qua một collection
+                        và che dấu đi việc implement code từ phía client.</p>
+
+                        <p>Dùng iterator trong các collection cho phép khách hàng sử dụng lại nó một cách dễ dàng - tạo sự chuẩn hóa.</p>
+
+                        <h3>Note:</h3>
+
+                        <p>Có nhiều cách để implement iterator, nhưng để cho thống nhất trong việc sử dụng thì tốt nhất
+                            ta cần phải tuân thủ theo đúng nguyên tắc này.</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

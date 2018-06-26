@@ -46,7 +46,10 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_11_facade_pattern.html", titleDisplay: "Facade Pattern"},
     {url: "lesson_12_flyweight.html", titleDisplay: "Flyweight Pattern"},
     {url: "lesson_13_proxy_pattern.html", titleDisplay: "Proxy Pattern"},
-    {url: "lesson_14_chain_of_responsibility_pattern.html", titleDisplay: "Proxy Pattern"},
+    {url: "lesson_14_chain_of_responsibility_pattern.html", titleDisplay: "Chain of Responsibility Pattern"},
+    {url: "lesson_15_command_pattern.html", titleDisplay: "Command Pattern"},
+    {url: "lesson_16_interpreter_pattern.html", titleDisplay: "Interpreter Pattern"},
+    {url: "lesson_17_interator_pattern.html", titleDisplay: "Iterator Pattern"},
 ];
 
 const JAVA_CONTENT_LIST = [{
