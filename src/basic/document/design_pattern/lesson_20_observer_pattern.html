@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Observer Design Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Observer - người quan sát : đó là nó sẽ ghi nhận sự thay đổi của 1 object nào đó, và thông báo cho các object khác.</p>
+
+                <p>Cái này thường gặp nhiều, thường thì là tình huống, khi một object thay đổi, nó kéo theo các object khác thay đổi theo. Redux của facebook
+                sử dụng chính là cái pattern này.</p
+
+                <blockquote>
+                    Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Quay lại nhà hàng cuối phố.</p>
+
+                        <p>Mỗi ngày nhân viên phục vụ lại nhận order của khách hàng, sau đó mang vào bếp đưa cho các anh đầu bếp.</p>
+
+                        <p>Sau đó, cứ một khoảng thời gian, anh lại chạy vào, tìm xem có đầu bếp nào đã hoàn thành món ăn và mang ra cho khách hàng.</p>
+
+                        <p>Tuy nhiên, anh phục vụ cũng lười nên lâu lâu mới vào kiểm tra một lần. Vì vậy đôi khi khiến cho
+                            khách hàng ko hài lòng vì đợi lâu.</p>
+
+                        <p>Điều này khiến ông chủ không hài lòng, ông quyết định phải sửa đổi lại cách làm việc.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Sau một thời gian suy xét, ông chủ quyết định như sau:</p>
+
+                        <p>Chia khu vực nội bộ làm hai, khu vực bếp và khu vực phục vụ.</p>
+
+                        <p>Mỗi ngày, người phục vụ sẽ đưa các order vào một xấp giấy và chồng trước bếp, một anh phụ bếp sẽ lấy nó, phân chia
+                            cho các đầu bếp. Sau đó khi đầu bếp nấu xong, họ để qua một bên, và người phụ bếp này lại đi thu thập và mang ra khu dịch vụ để.</p>
+
+                        <p>Sau đó, anh ta thông báo cho các nhân viên phục vụ để họ có thể biết, và quay vào quầy lấy và mang ra cho khách hàng.</p>
+
+                        <p>Anh phụ bếp trong tình huống này là Observer.</p>
+
+                        <p>Khi có một sự thay đổi (món ăn đã sẵn sàng) thì Observer sẽ notify lên cho các object đang listen nó biết. Khách hàng là người
+                        ko cần biết, ông chủ là người không cần biết, chỉ có anh phục vụ là cần biết thôi.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong mô hình hình Observer, có 2 đối tượng chính, Observer đóng vai trò người quan sát, và một Subject, đóng vai trò là đối tượng cần giám sát.</p>
+
+                        <p>Việc triển khai cái này cũng khá đơn giản.</p>
+
+                        <p>Ví dụ trong kia chỉ là ví dụ đơn giản, và mang tính một chiều, tức là chỉ có thằng subject notify cho mấy thằng con biết.</p>
+
+                        <p>Trong mô hình thực tế, ta sẽ gặp trường hợp, các object cùng lắng nghe nhau, khi có 1 object thay đổi, nó sẽ thông báo cho tất cả được biết.</p>
+
+                        <img class="img-fluid" src="../assests/design_pattern/observer-pattern.png"/>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Observer design pattern is also called as publish-subscribe pattern. Some of it’s implementations are;</p>
+
+                        <ul>
+                            <li>java.util.EventListener in Swing</li>
+                            <li>javax.servlet.http.HttpSessionBindingListener</li>
+                            <li>javax.servlet.http.HttpSessionAttributeListener</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

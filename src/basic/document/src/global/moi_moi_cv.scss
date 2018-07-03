@@ -1,0 +1,132 @@
+.list-items{
+  dl {
+    margin-bottom: 30px;
+
+    dd {
+      padding: 10px 10px 10px 0px;
+    }
+  }
+
+
+  ul{
+    list-style-type: none;
+    padding: 0px;
+
+    li{
+      padding: 10px 0px;
+    }
+
+  }
+}
+
+
+.main-container{
+  //width: 1654px;
+  //margin: 0 auto;
+  outline: 2px solid lightgray;
+  display: flex;
+
+  font-size: 22px;
+
+  .cv-column{
+    padding: 0px 15px;
+
+    &.information{
+      background: lightskyblue;
+
+
+    }
+
+    &.job-information{
+      padding: 20px 20px 20px 30px;
+    }
+  }
+
+  .cv-avatar{
+    text-align: center;
+
+    .circle-image{
+      border-radius: 100%;
+      border: 10px solid lightskyblue;
+      display: inline-block;
+      overflow: hidden;
+      margin: 10px;
+
+      img{
+        max-width: 100%
+      }
+    }
+
+    h2 {
+      font-size: 30px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+.cv-information-main {
+  margin-bottom: 30px;
+
+  .icon{
+    margin-right: 15px;
+  }
+
+  h3 {
+    font-size: 36px;
+    line-height: 50px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    font-size: 32px;
+    line-height: 1em;
+    margin-bottom: 12px;
+  }
+
+  h5 {
+    font-size: 28px;
+    line-height: 1em;
+  }
+}
+
+
+.cv-content {
+  margin-bottom: 20px;
+
+  .company {
+    font-size: 30px;
+    line-height: 2;
+
+    span.time {
+      float: right;
+      font-style: italic;
+      font-size: 90%;
+    }
+  }
+
+  .position {
+    font-size: 30px;
+  }
+}
+
+
+
+span.process {
+  width: 100%;
+  background: lightgray;
+  height: 8px;
+  display: inline-block;
+  position: relative;
+
+  .process-bar {
+    background: dodgerblue;
+    height: 8px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+}
+
