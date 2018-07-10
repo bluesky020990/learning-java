@@ -1,7 +1,7 @@
  
 
 const JAVA_LESSON = {
-    prefixUrl : "lesson", 
+    prefixUrl : "java_basic",
     category : "Java Basic",
     lesson : [
         {url: "lesson_00_Beginning_Learning_java.html", titleDisplay: "Introduce Java"},
@@ -67,6 +67,14 @@ const JAVA_DESIGN_PATTERN_LESSON = {
     ]
 };
 
+const JAVA_CONCURRENCY_LESSON = {
+    prefixUrl : "concurrency",
+    category : "Java Concurrency",
+    lesson : [
+        {url: "lesson_01_java_concurrency.html", titleDisplay: "Java Concurrency Overview"},
+    ]
+};
+
 generateCategory();
 
 function generateCategory (){
@@ -75,10 +83,15 @@ function generateCategory (){
 
     function getListLessonCategory (){
         var category = $('body').attr("category") != null && $('body').attr("category").trim() != "" ? $('body').attr("category") : null;
-        if(category == "design-pattern"){
-            return [JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON];
+
+        if(category == "design-pattern") {
+            return [JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON, JAVA_CONCURRENCY_LESSON];
+
+        } else  if(category == "concurrency"){
+            return [JAVA_CONCURRENCY_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON];
+
         } else {
-            return [JAVA_LESSON, JAVA_DESIGN_PATTERN_LESSON];
+            return [JAVA_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_CONCURRENCY_LESSON];
         }
     }
 }
@@ -88,7 +101,6 @@ function initPageData(lessonGroupData){
     var currentPageData = null;
     var nextPageData = null;
     var currentPageURL = getCurrentPageURL();
-
 
     //clear right menu.
     var $mainLessonMenu = $('#main-lesson-menu');
