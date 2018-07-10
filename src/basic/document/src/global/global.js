@@ -51,6 +51,13 @@ const LIST_DESIGN_PATTERN_LESSON_DATA = [
     {url: "lesson_16_interpreter_pattern.html", titleDisplay: "Interpreter Pattern"},
     {url: "lesson_17_interator_pattern.html", titleDisplay: "Iterator Pattern"},
     {url: "lesson_18_mediator_pattern.html", titleDisplay: "Mediator Pattern"},
+    {url: "lesson_19_memento_pattern.html", titleDisplay: "Memento Pattern"},
+    {url: "lesson_20_observer_pattern.html", titleDisplay: "Observer Pattern"},
+    {url: "lesson_21_state_design_pattern.html", titleDisplay: "State Pattern"},
+    {url: "lesson_22_template_pattern.html", titleDisplay: "Template Pattern"},
+    {url: "lesson_23_strategy_pattern.html", titleDisplay: "Strategies Pattern"},
+    {url: "lesson_24_visitor_pattern.html", titleDisplay: "Visitor Pattern"},
+
 ];
 
 const JAVA_CONTENT_LIST = [{

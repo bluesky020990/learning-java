@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Template Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Template Pattern đó là nó định nghĩa sẵn một cấu trúc các method sẽ thực hiện, sau đó cho
+                các thằng con override các method đó theo từng bản chất của nó.</p>
+
+                <p>Template được sử dụng khi ta có sẵn một cấu trúc từ trước, và muốn mở rộng nó thêm.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Quay sang cửa hàng làm bánh nhòm ngó tí nào. Đối với B thì cuộc đời chỉ ăn và uống mà thôi.</p>
+
+                        <p>Cửa hàng làm bánh giờ đã phát triển hơn. Và khối lượng công việc cũng ngày nhiều hơn. Nhân viên
+                        có vẻ làm không kịp dù cửa hàng đã tuyển thêm khá nhiều.</p>
+
+                        <p>Ông chủ khá đau đầu và vẫn chưa tìm ra giải pháp để xử lý.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+
+                        <p>Nghe lời cô làm bánh, ông chủ quyết định sẽ chuyên môn hóa công việc.</p>
+
+                        <p>Chuyên môn hóa ở đây tức là ông sẽ tách các công đoạn ra thành những bước độc lập, và để những con người vào đó
+                            để giải quyết công việc đó.</p>
+
+                        <p>Công đoạn làm bánh gồm 3 bước, theo đúng thứ tự, nhào bột, đem nướng và trang trí.</p>
+
+                        <p>Giờ đây cửa hàng sẽ không còn 10 thợ làm bánh nữa, thay vào đó sẽ có 3 thợ nhào bột, 1 thợ nướng bánh và 3 thợ trang trí.</p>
+
+                        <p>Và tùy thuộc vào từng loại bánh mà nguyên liệu khác nhau, hình dáng khác nhau và trang trí khác nhau.</p>
+
+                        <p>Việc chia nhỏ các bước ra và giao các bước này cho từng người, đó là ví dụ của Template.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi đọc sơ qua về Template Pattern, ta sẽ liên tưởng ngay đến một Pattern có tính chất tương tự, Builder Pattern.</p>
+
+                        <p>Tuy nhiên, Builder Pattern khác ở chỗ, các bước build của nó không cần thiết theo thứ tự, nó có thể xảy ra trước hoặc sau mà không làm ảnh hưởng
+                        tới Object cuối cùng.</p>
+
+                        <p>Nhưng Template Pattern lại yêu cầu các bước phải chính xác như vậy. Đó cũng chính là ý nghĩa của Chữ "Template" Mẫu thiết kế.</p>
+
+                        <p>Ví dụ, không thể trang trí trước khi nướng bánh, ko nướng lấy đâu ra bánh để mà trang trí, và càng không thể nướng khi mà chưa nhào bột, chưa
+                        nhào bột thì nướng cái khỉ gì.</p>
+
+                        <p>Theo như mô tả, ta sẽ có 1 Abstract Class / Class cha để quy định các bước thực hiện, và để cho các Extends Class / Child Class quyết định xem
+                        nó sẽ thực hiện điều đó như thế nào</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important Things</h3>
+                    <div class="text-dark pt-3">
+                     <p>Các bước thực hiện trong Template phải là cố định và được định nghĩa là final để tránh các lớp con ghi đè nó.</p>
+
+                        <p>Việc kế thừa thường mang mục đích tái sử dụng các method của cha, nhưng trong trường hợp này, lớp cha lại gọi các
+                        method của lớp con. Cái này được gọi là "Don't call us, we will call you".</p>
+
+                        <p>Các method trong base class mà ta ko muốn các lớp con ghi đè được gọi là Hooks. Nó có thể bị ghi đè bởi các lớp con,
+                        nếu muốn ngăn chặn thì ta phải set final cho nó.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Template Pattern in Java</h3>
+                    <div class="text-dark pt-3">
+                        All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.<br />
+                        All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

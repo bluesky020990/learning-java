@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Visitor Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Visitor đó là tách việc xử lý business ra khỏi object, và giao trách nhiệm đó cho 1 Visitor Object.</p>
+
+                <p>Để làm được điều này ta sử dụng đặc tính quá tải toán tử (overload) của Java.</p>
+
+                <p>Nó thường được sử dụng trong môi trường, ta có nhiều object, và có một chức năng liên quan chung giữa chúng, mà ta muốn gom
+                lại cho dễ quản lý.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cửa hàng bánh kem giờ đã mở rộng hơn. Bây giờ không phải chỉ làm bánh mang đi, mà h đã có riêng
+                        một đại sảnh, cho khách vào ngồi ăn bánh và uống cf nhâm nhi nữa.</p>
+
+                        <p>Tuy nhiên, nước uống ko phải là thế mạnh của ông chủ, nên ông quyết định cùng hợp tác với bạn mình.</p>
+
+                        <p>Thế nhưng, điều này gây khó cho cô thu ngân, khi cô không thể biết thông tin giá cả của 2 bên, nên mỗi lần tính tiền, thường chạy đi chạy lại rất mất thời gian.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Sau một thời gian xem xét, ông chủ quyết định kêu bạn ông mang theo 1 cô thu ngân sang nữa.</p>
+
+                        <p>Bây giờ, với mỗi order, người phục vụ sẽ phân loại ra thành 2 loại, loại đồ ăn thì để cửa hàng xử lý, loại đồ uống thì mang cho cô kia tính.</p>
+
+                        <p>Rõ ràng việc tính tiền là một nhiệm vụ, nhưng đối tượng mà nó xử lý lại không giống nhau.</p>
+
+                        <p>Một bên là tính theo giá ghi trên menu, một bên lại phụ thuộc vào option của khách hàng, ví dụ gọi trà sữa thêm hạt trân châu này nọ,
+                        thì rõ ràng việc tính toán nó sẽ phụ thuộc vào yêu cầu của khách hàng, chứ ko phải là đã được xác định trước.</p>
+
+                        <p>Vì vậy ta không thể xây dựng chung một phương thức tính tiền cho cả 2 được (vì bản chất nó khác nhau mà).</p>
+
+                        <p>Trong lập trình cũng vậy, đôi lúc ta cần thao tác trên các nhóm Object khác nhau, nhưng việc thao tác đó (logic) lại phụ thuộc vào từng
+                        loại object. Thay vì việc xây dựng một method tổng quát, thì ta sẽ tách riêng nó ra để có thể làm hệ thống linh động hơn.</p>
+
+                        <p>Đó chính là mục đích của visitor.</p>
+
+                        <p>Bản chất của Visitor đó là việc overload toán tử, phụ thuộc vào từng tham số đầu vào mà điều chỉnh hành vi cho phù hợp.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Visitor được gửi như là một tham số tới việc thực hiện task. Nó xây dựng những method tính toán, dựa trên group các loại
+                            object, và vì vậy mà nó giúp hệ thống của ta trở nên lỏng lẻo hơn.</p>
+
+
+                        <p>Việc xây dựng như sau:</p>
+
+                        <p>Đầu tiên ta xây dựng một Visitor interface với method + các Object cho phù hợp.</p>
+
+                        <p>Tiếp đến ta xây dựng một Element Interface/ Abstract gì cũng được, định nghĩa một method cho phép truyền Visitor vào trong đó.</p>
+
+                        <p>Tiếp theo nữa, ta xây dựng Một Visitor Implement, implement cái trên.</p>
+
+                        <p>Và cuối cùng là một test thôi.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

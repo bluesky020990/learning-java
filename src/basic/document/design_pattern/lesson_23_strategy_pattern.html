@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Strategies Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của Strategy Pattern (Policy Pattern) đó là cung cấp 1 đống Option (nói là option, nhưng chính xác
+                thì nó là phương thức - strategy) cho client sử dụng trong lúc Run-time.</p>
+
+                <p>Strategies thường được dùng khi ta có 1 danh sách các thuật toán cho một nhiệm vụ cụ thể và client quyết định
+                    sẽ sử dụng ntn trong quá trình run-time.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Cửa hàng giờ đã mở rộng hơn, vì vậy khách hàng cũng đông hơn.</p>
+
+                        <p>Hiện giờ ông chủ đã cho phép đặt bàn từ trước, nhưng lâu lâu lại có những khách hàng bùng kèo,
+                        làm cho ông chủ tức tối lắm. Vì vậy, ông quyết định sẽ bắt họ phải thanh toán một khoản nhỏ cho việc đặt
+                        chỗ, nhằm tránh các khách hàng thiếu trách nhiệm.</p>
+
+                        <p>Tuy nhiên, cửa hàng hiện tại chỉ có mỗi quầy thu ngân tiền mặt làm nhiệm vụ thu tiền, mà khách hàng
+                        muốn đặt chỗ chả nhẽ lại phải mất công ra cửa hàng thanh toán.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Ngày hôm sau ông ra ngân hàng mở thẻ, cho phép khách hàng từ xa chuyển khoản.</p>
+
+                        <p>Ông cũng đăng kí luôn cái quẹt thẻ, giờ khách hàng chỉ cần đến và roẹt cái là xong.</p>
+
+                        <p>Vậy là bây giờ, sau khi ăn xong, khách hàng có thể lựa chọn, thanh toán bằng tiền mặt, chuyển khoản
+                        hay quẹt thẻ.</p>
+
+                        <p>Rõ ràng ông chủ không biết trước khách hàng sẽ chọn hình thức thanh toán nào, tuy nhiên, với 3 option trên
+                        mọi vấn đề sẽ được giải quyết. Tuy nhiên, tùy vào từng option mà các hình thức làm việc sẽ khác nhau, ví dụ chuyển khoản
+                            thì cần thông tin tài khoản của cửa hàng, còn quẹt thẻ lại cần thông tin của khách hàng.
+                        </p>
+
+                        <p>Việc ông chủ cung cấp 3 option cho khách hàng lựa chọn được gọi là Strategy Pattenr.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Khi chúng ta có cùng nhiều class cùng implements một method thì cái đầu tiên cần có, đó là interface.</p>
+
+                        <p>Sau đó, ta sẽ có 1 đống danh sách implement cái interface đó.</p>
+
+                        <p>Và ta sẽ có 1 cái test để kiểm tra cái đó. Đơn giản vậy thôi.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Strategy và State Pattern có nhiều điểm khá tương đồng, xem cách mà nó triển khai sẽ thấy, đều được truyền
+                        theo object theo mối quan hệ HAS - A, tuy nhiên, Context chứa multiple task còn Strategy thì chỉ phục vụ cho 1 Task
+                        mà thôi. Ngoài ra, đối với State thì ban đầu ta đã định ra một cái Context, phụ thuộc vào context, System sẽ hoạt động
+                        khác nhau, còn Strategy thì ta truyền nó đi như một tham số.</p>
+
+                        <p>Strategy Pattern rất hữu ích khi chúng ta có nhiều thuật toán cho một nhiệm vụ cụ thể, và chúng ta muốn hệ thống
+                        có thể linh hoạt trong việc lựa chọn các thuật toán tại thời điểm run-time. Đây là điểm mà cái State ko đạt được, vì State
+                        nào thì chỉ có những method của nó mới được gọi, và nếu muốn chuyển đổi method, ta phải chuyển đổi state đồng thời cũng làm
+                        ảnh hưởng toàn bộ những thứ liên quan đến nó.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

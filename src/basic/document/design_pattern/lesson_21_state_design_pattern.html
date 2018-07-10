@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>State Pattern - Behavioral Pattern</h1>
+            <div class="lead">
+                <p>Bản chất của State đó là làm Object thay đổi hành vi dựa trên trạng thái (State) của nó.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Vẫn là câu chuyện ở cửa hàng góc phố thôi.</p>
+
+                        <p>Công việc của anh phục vụ là tiếp đón khách hàng, nhận order và đưa cho anh đầu bếp.</p>
+
+                        <p>Nhưng đó là khoảng thời gian lúc trước, từ ngày anh quen cô thu ngân, ví anh rỗng nhanh đi trông thấy. Vậy là anh xin ông chủ được làm
+                        thêm để kiếm thêm tiền.</p>
+
+                        <p>Ông chủ cũng thoải mái và dễ tính, vậy là cho anh luôn chức dọn dẹp sau mỗi ngày.</p>
+
+                        <p>Vậy là bây giờ, từ 8 đến 20h anh là anh phục vụ, từ 20h đến 22h anh lại là anh dọn dẹp.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+                        <p>Việc anh phục vụ - một người nhưng thay đổi công việc vào 2 giai đoạn - 2 state khác nhau, đó là bản chất của State Pattern.</p>
+
+                        <p>Vậy việc implement nó ntn. Rõ ràng ta có 1 hàm main doTheJob, một hàm đổi status, và vậy là đủ rồi.</p>
+
+                        <p>Tuy nhiên, cái này ảnh hưởng khi mà một hệ thống lớn lên, thì sử dụng nó khiến cho code ko rõ ràng, và mọi thứ cũng nhập nhằng hơn. Ngoài ra,
+                        client phải biết chính xác state của Object để mà change. Đó là điều hạn chế và ko hay khi sử dụng ở đây.</p>
+
+                        <p>Do đó, ta không sử dụng hàm changeState nữa, mà thay vào đó, ta truyền vào 1 context. Content này đóng vai trò là state của Object
+                        và behavior của Object sẽ thay đổi phụ thuộc vào context này.</p>
+
+                        <p>Ưu điểm của cái này đó là nó sẽ định nghĩa các method của từng State vào cùng 1 Object, và sử dụng nó vào trong cái Context. Do đó
+                        nó dễ quản lý hơn, và khi có 1 context thay đổi, các behavior phụ thuộc vào nó sẽ thay đổi theo mà ko cần change state cho từng Object.</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
