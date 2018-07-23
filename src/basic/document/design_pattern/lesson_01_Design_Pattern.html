@@ -85,6 +85,289 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Creational Design Patterns</h3>
+                    <div class="text-dark pt-3">
+                        <p>Nhóm Creational Design pattern cung cấp những giải pháp để khởi tạo object một cách tốt nhất phù thuộc vào từng tình huống cụ thể</p>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Singleton Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Singleton nhằm giới hạn số lượng Object được khởi tạo, và đảm bảo chỉ có 1 Object của lớp tồn tại trong JVM. Nghe thì có vẻ đơn giản
+                                nhưng lúc triển khai nó có vô vàn vấn đề cần quan tâm. Nếu muốn sử dụng cái này, vui lòng xem cách mà nó sẽ được handle để xác định xem cách thức
+                                nào là phù hợp nhất nhé.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Factory Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Factory Pattern được sử dụng khi ta có một lớp các Object cùng loại (bằng Abstract Class hoặc Interface)
+                                    và dựa trên điều kiện đầu vào.</p>
+
+                                <p>Mô hình này chuyển trách nhiệm khởi tạo từ client đến các Factory, nhằm che dấu việc khởi tạo Object cũng như làm cho code trở nên gọn gàng hơn.</p>
+
+                                <p>Ta có thể sử dụng các method static để tạo ra các interface phục vụ cho mục đích khởi tạo Object, hoặc cũng có thể tạo ra các Singleton cho những nhà máy này.</p>
+
+                                <p>Đây là một trong số các Design Pattern được sử dụng rộng rãi nhất.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Abstract Factory</h5>
+                            <div class="text-dark pt-3">
+                                <p>Nếu Factory trả lại một Object, thì Abstract Factory trả lại một "factory".</p>
+
+                                <p>Trong mô hình Abstract Factory, ta loại bỏ điều kiện if - else mà Factory sử dụng, thay vào đó ta sử dụng các Factory để trả lại dữ liệu cho phù hợp.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Builder</h5>
+                            <div class="text-dark pt-3">
+                                <p>Builder ra đời nhằm giải quyết hạn chế của Factory và Abstract Factory. Factory chỉ tạo
+                                ra 1 Object dựa theo input đầu vào, do đó, khi Object phức tạp và được xây dựng từng phần thì
+                                cách thức này sẽ không giải quyết được.</p>
+
+                                <p>Builder có nhiệm vụ xây dựng Object từng phần, và sau đó trả lại 1 Object toàn vẹn.</p>
+
+                                <p>Nó sử dụng Inner class để làm điều đó.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Prototype</h5>
+                            <div class="text-dark pt-3">
+                                <p>Gọi Prototype tạo Object cũng ko đúng, mà đúng ra nó có nghĩa là nhân bản. Tức là trước hết, ta phải có
+                                1 Object đã được khởi tạo.  Sau đó, ta quyết định copy nó một phần hoặc tất cả.</p>
+
+                                <p>Prototype yêu cầu Object cần nhân bản phải cung cấp tính năng Copy.</p>
+
+                                <p>Có 2 loại copy, shadow copy (Copy địa chỉ tham chiếu) hoặc deep copy (copy bằng giá trị) và chọn cách nào phụ thuộc vào quyết định của ta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Structural Design Patterns</h3>
+                    <div class="text-dark pt-3">
+                        <p>Structural Pattern cung cấp nhiều cách để tạo nên Class structure để tạo nên các class "lớn hơn" từ các class "nhỏ"</p>
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Adapter Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Adapter được sử dụng để giúp cho 2 interface không tương thích, có thể hoạt động được với nhau.</p>
+
+                                <p>Để làm được điều này, thì nó cần có 1 bộ chuyển đổi - Adapter.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Composite pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Composite được sử dụng khi ta có 1 cấu trúc mà trong 1 đối tượng chứa nhiều đối tượng, và cách mà ta xử lý 1 đối tượng, cũng chính là cách mà ta xử lý
+                                các đối tượng bên trong nó. Tóm lại, nó là 1 cấu trúc cây, với mối đối tượng là mỗi node.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Proxy Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Mục đích của Proxy Pattern đó là cung cấp người đại diện cho một đối tượng khác để kiểm soát quyền truy cập vào đối tượng đó.</p>
+
+                                <p>Nói một cách dễ hiểu thì Proxy được sử dụng khi ta muốn cung cấp quyền truy cập có kiểm soát của một chức năng.</p>
+
+                                <p>Proxy pattern gồm có 3 loại, Visual Proxy để quản lý quyền truy cập tới tài nguyên của hệ thống,
+                                    Protected Proxy để kiểm soát quyền hạn truy cập tới các tài nguyên cần được bảo vệ, và remove proxy, chuyển đổi yêu cầu của client đến các proxy khác. </p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Flyweight Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Flyweight được sử dụng trong mục đích chia sẻ các đối tượng của một lớp. Giả sử ta có 1 bank các đối tượng, và ta muốn reuse lại chúng giữa các object khác
+                                thì Flyweight là một lựa chọn tuyệt với nhất.</p>
+
+                                <p>Flyweight tạo ra một Map các object để chia sẻ, và khi cần lấy 1 Object nào đó, thì Flyweight sẽ kiểm tra trong Map hiện tại của nó hay không, nếu có thì đưa luôn, nếu
+                                không thì nó sẽ đi request lấy cái đó, và save lại trong Map cho những lần tìm kiếm tiếp theo.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Facade Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Mục đích của Facade là giúp cho client Application dễ dàng tương tác với hệ thống. Nó che dấu việc implement các service bên trong và chỉ cung cấp 1 interface
+                                ra bên ngoài để Client có thể dễ dàng tương tác.</p>
+
+                                <p>Về mặt bản chất, Facade khá giống với Factory, chỉ khác, Factory trả về các Object, còn Facade sẽ run các service dựa vào tham số đầu vào.</p>
+
+                                <p>Ví dụ ta có 2 service xử lý file doc và file xml. Khi đó ta xây dựng 2 service để process 2 loại file này, và cung cấp 1 Method, mà ở đó, người dùng
+                                chỉ cần truyền vào "XML" hay là "DOC" để đạt được mục đích mình mong đợi.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Bridge Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Bridge được dùng để tách các interface ra khỏi implementation và che dấu việc implement từ phía client.</p>
+
+                                <p>Nói thì khó hiểu vậy thôi chứ thực ra Bridge nso xây dựng một list các Interface, và tùy vào tham số đầu vào, nó quyết
+                                định interface nào sẽ được gọi.</p>
+
+                                <p>Bridge cũng giống như là Facade, chỉ khác, Facade là cung cấp 1 service dựa vào tham số đầu vào,
+                                    còn Bridge là nhiều interface phụ thuộc vào nhiều tham số đầu vào.</p>
+
+                                <p>Về bản chất, việc implement Bridge tuân thủ theo quan niệm "Composition" - HAS A hơn là Inheritance - IS A.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Decorator Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Decorate được sử dụng khi ta muốn thay đổi/ mở rộng behavior của Object tại thời điểm run-time.</p>
+
+                                <p>Ta có 2 cách để có thể thực hiện điều này, sử dụng thừa kế IS-A hoặc là Sử dụng composite - HAS A, tuy nhiên, dùng cách nào
+                                thì nó cũng sẽ ảnh hưởng lên object hiện tại và nó có thể gây ảnh hưởng cho bất cứ thành phần nào của class.</p>
+
+                                <p>Còn đối với decorate, ta có thể sử dụng các feature của nó 1 cách độc lập. Và ở đó, ta có thể xây dựng 1 Object, vừa có tính năng B,
+                                vừa có tình năng C.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Behavioral Design Patterns</h3>
+                    <div class="text-dark pt-3">
+                        <p>Behavioral design pattern cung cấp các giải pháp cho sự tương tác tốt hơn giữa các object và cung cấp
+                        các mối quan hệ lỏng lẻo và linh hoạt để có thể mở rộng 1 cách dễ dàng.</p>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Template Method Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Template được sử dụng khi ta muốn trì hoãn việc implement các method.</p>
+
+                                <p>Bản chất của template đó là nó các bước để thực hiện 1 service và nó có thể cung cấp các method chung hoặc giao việc implement
+                                các method đó cho lớp con.</p>
+
+                                <p>Nó được sử dụng khi ta có 1 cấu trúc gồm các method bất di bất dịch, và ta muốn chính những thằng con sẽ quyết định xem nó sẽ implement các method đó ntn.</p>
+
+                                <p>Điểm lưu ý trong cái design này đó là ta không thể thay đổi thứ tự các method được thực hiện.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Mediator Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Mediator được sử dụng để cung cấp một phương tiện truyền thông tập trung giữa các đối tượng khác nhau trong một hệ thống.</p>
+
+                                <p>Nếu không có mediator, các Object sẽ phải trực tiếp tương tác với nhau và khiến cho các thành phần của hệ thống bị kết nối với nhau chặt chẽ.</p>
+
+                                <p>Thay vì vậy, Mediator cung cấp một giải pháp trung gian giữa các đối tượng để giao tiếp và giúp  cho việc implement trở nên linh hoạt hơn.</p>
+
+                                <p>Air Traffic là một ví dụ cụ thể cho cái này. Mỗi chuyến bay ko thể biết được lịch trình của nhau, thay vì vậy chúng thông qua Air Traffic để nhờ nó
+                                điều khiển và quản lý hành trình các chuyến bay.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Chain of Responsibility Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Chain of Responsibility được sử dụng để hạn chế tính cứng nhắc của việc thiết kế ra các service.</p>
+
+                                <p>Thay vào việc ta xây dựng các service để handle request từ client 1 cách cứng nhắc, thì giờ đây ta xây dựng một chuỗi các service để giải quyết điều này.</p>
+
+                                <p>Một request sẽ được gửi đến một entry point - đầu chuỗi, và di chuyển xuyên qua các Objec bên trong chuỗi, thằng nào có liên quan, nó sẽ tự động handle việc đó, còn nếu ko
+                                nó sẽ gửi request đó cho thằng tiếp theo trong chuỗi.</p>
+
+                                <p>Hạn chế của cái này đó là nếu ko xây dựng ok, thì ta sẽ không biết cái request đó đi đâu về đâu, cũng như ko biết được nó có được xử lý hay ko.</p>
+
+                                <p>Ví dụ của nó đó là cái Broadcast message mà ngày xưa học trên mạng, một IP phát ra 1 message cho toàn bộ hệ thống, nhưng chỉ có thằng nào có IP trùng với IP trong
+                                request đó thì nó mới được xử lý mà thôi.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Observer Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Observer cung cấp giải pháp để ta có thể giúp các Object khác nhận biết được sử thay đổi trạng thái của 1 object mà nó đang lắng nghe.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Strategy Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Strategy được sử dụng, khi ta có nhiều phương pháp giải quyết 1 vấn đề, và ta muốn để cho client xác định họ sẽ
+                                lựa chọn phương án nào để giải quyết ngay trong run-time.</p>
+
+                                <p>Strategy còn được gọi là Policy Pattern. Nó định nghĩa nhiều thuật toán, và cho phép client truyền nó đi như một tham số.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Command Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Command đóng vai trò như một người điều khiển để thực hiện các action của client, khi client đó không biết nên thực hiện điều đó ntn.</p>
+
+                                <p>Command là 1 design pattern khó và phức tạp, cần phải hiểu kĩ thì mới sử dụng được. Tuy nhiên, việc mở rộng cái này là vô cùng dễ dàng.</p>
+
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">State Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>State pattern được sử dụng khi ta muốn thay đổi hành vi của Object dựa trên trạng thái của nó.</p>
+
+                                <p>Có 2 cách để ta làm điều này, cách thứ nhất ta tạo 1 state trong Object, và thêm điều kiện if - else trong
+                                behavior của nó. Cách này chỉ sử dụng khi Object đơn giản và không phức tạp.</p>
+
+                                <p>Cách thứ 2: ta sử dụng composite - HAS A - biến nó thành 1 thành phần của Object, và xây dựng các behavior
+                                riêng biệt cho từng trạng thái, sau đó set nó vào Object như một tham số.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Visitor Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Visitor được sử dụng khi ta muốn thực hiện một thao tác trên một đống các Object khác nhau.</p>
+
+                                <p>Để làm được điều này, ta có thể xây dựng 1 interface cho riêng cái đống object đó, và cho cái đống đó implement
+                                cái interface đó. Tuy nhiên cách này ko thực sự hay.</p>
+
+                                <p>Thay vào đó, đối với visitor, ta xây dựng một Object riêng, mà Object đó có 1 method process, nhận tham số đầu vào
+                                là các Object trong danh sách, rồi dựa vào Overriding của Java để mà thực thi cái đó.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Interpreter Pattern</h5>
+                            <div class="text-dark pt-3">
+                                BODY_CONTENT
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Iterator Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Iterator được sử dụng để cung cấp 1 tiêu chuẩn duyệt qua một nhóm các đối tượng.</p>
+
+                                <p>Iterator không chỉ được sử dụng cho mục đích đó, mà nó còn có thể duyệt với điều kiện, tùy cách ta implements.</p>
+
+                                <p>Hơn tất cả, nó cung cấp 1 tiêu chuẩn, và vì vậy nếu tuân thủ nó ta cũng có thể mở rộng dễ dàng hơn.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Memento Pattern</h5>
+                            <div class="text-dark pt-3">
+                                <p>Memeto được sử dụng khi ta muốn lưu trữ trạng thái cũ của Object nhằm cho mục đích restore.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Tổng kết</h3>
                     <div class="text-dark pt-3">
                         <p>Sau khi đã đi qua một vài Interface cơ bản, thì giờ ta quay lại để thống kê lại mục đích của cái này như sau:</p>

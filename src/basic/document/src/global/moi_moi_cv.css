@@ -5,15 +5,23 @@
     /* you can also specify margins here: */
     margin: 20mm;
     margin-right: 45mm;
-    /* for compatibility with both A4 and Letter */ }
+    /* for compatibility with both A4 and Letter */
+  }
+
   @top-center {
-    content: element(pageHeader); }
+    content: element(pageHeader);
+  }
+
   @bottom-center {
-    content: element(pageFooter); }
+    content: element(pageFooter);
+  }
   .cv-information,
   .cv-content,
   .break-content-together {
-    page-break-inside: avoid; } }
+    page-break-inside: avoid;
+  }
+}
+
 body {
   width: 1100px;
   height: 3200px;

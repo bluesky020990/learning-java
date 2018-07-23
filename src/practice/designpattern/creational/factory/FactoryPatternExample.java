@@ -6,8 +6,8 @@ import practice.designpattern.creational.factory.interfacefactory.ShapeInterface
 
 public class FactoryPatternExample {
     public static void main(String args[]){
-//        testFactoryInterface();
-//        testFactoryAbstract();
+        testFactoryInterface();
+        testFactoryAbstract();
         testStaticFactoryAbstract();
     }
 

@@ -160,6 +160,38 @@
                         <p>Khi mà các object đó phụ thuộc lẫn nhau.</p>
                     </div>
                 </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Extend</h3>
+                    <div class="text-dark pt-3">
+                        <p>Nếu đọc cái trên kia xong, ta sẽ thấy Abstract Factory là một thứ rất mơ hồ. Tuy nhiên, về 1 góc cạnh nào đó, thì nó lại khá là dễ hiểu.</p>
+
+                        <p>Đầu tiên, ta xây dựng một hệ thống đơn giản. Để nó đơn giản hơn ta sử dụng các Factory để quản lý việc khởi tạo Object.</p>
+
+                        <p>Một thời gian sau, cái hệ thống đó trở nên bành trướng, và khi đó, ta có nhiều nhiều Factory hơn rồi. Điều đó khiến cho ta khó quản lý nó hơn.</p>
+
+                        <p>Abstract Factory ra đời để nhóm những thứ đó lại với nhau cho gọn hơn, tóm lại chỉ thế mà thôi.</p>
+
+                        <p>Vẫn chưa hiểu, xem lại cái Outlook exchange server mà hôm trước anh Trọng nói:</p>
+
+                        <p>Thằng Microsoft nó có rất nhiều server, office, exchange này nọ, cứ mỗi cái server như thế nó cung cấp 1 cái entry point cho phép tụi kia nó có thể gọi vào và truy xuất dữ liệu.</p>
+
+                        <p>Nhưng mà sau này nó phát triển và trở nên quá phức tạp, việc gọi mấy cái đó cần đồng bộ hóa dữ liệu. Vì vậy mà ngta quyết định gom nó lại thành 1 cục là cái Microsoft Graph và chỉ cung cấp 1 entry point mà thôi.</p>
+
+                        <p>Khi có 1 request gọi đến thì cái này tự điều phối request, tổng hợp dữ liệu từ các server và trả về. Đó cũng là một ứng dụng của Abstract Factory.</p>
+
+                        <p>Trong ví dụ example 1, ta sử dụng 1 Abstract Factory để lấy ra các Factory hiện có. (vi phạm)</p>
+
+                        <p>Trong ví dụ example 2, ta sử dụng 1 Abstract Factory lấy ra 1 group các Factory hiện có.</p>
+
+
+                        <p>Những important thing mà ta cần nhắc lại:</p>
+
+                        <blockquote>
+                            <p>Abstract Factory không sử dụng if else để handle việc trả về Factory, thay vào đó, nó sẽ tạo ra các interface, mỗi interface này trả về 1 list các Factory.</p>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
 
             <nav class="blog-pagination">

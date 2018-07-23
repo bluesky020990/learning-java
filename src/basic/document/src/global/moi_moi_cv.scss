@@ -22,13 +22,13 @@ $blackColor : #000000;
     margin-right: 45mm; /* for compatibility with both A4 and Letter */
   }
 
-    @top-center {
-      content: element(pageHeader);
-    }
+  @top-center {
+    content: element(pageHeader);
+  }
 
-    @bottom-center {
-      content: element(pageFooter);
-    }
+  @bottom-center {
+    content: element(pageFooter);
+  }
 
   .cv-information,
   .cv-content,
