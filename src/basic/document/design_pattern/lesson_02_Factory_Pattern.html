@@ -34,20 +34,13 @@
         <div class="col-md-12 px-0">
             <h1>Factory Pattern - Creational Pattern</h1>
             <div class="lead">
-                <p>Factory pattern che dấu hoàn toàn việc khởi tạo object, thay vì dùng toán tử new, nó sử dụng một function
-                thuộc một Factory Class để tạo ra object.</p>
+                <p>Factory pattern che dấu hoàn toàn việc khởi tạo object, ta không thể sử dụng toán tử new để lấy được object
+                    mà ta muốn, thay vào đó, Factory sẽ cung cấp cho ta 1 interface để làm việc đó.</p>
 
-                <p>Factory Pattern được sử dụng trong tình huống, khi ta có nhiều Object cùng thuộc 1 loại (hoặc là cùng
-                    bản chất - abstract, hoặc là cùng method - interface) và ta muốn gom nó lại thành 1 cục cho dễ quản lý.</p>
+                <p>Factory Pattern được dùng trong trường hợp ta có một nhóm object, và muốn code trở nên thống nhất đồng thời
+                che dấu đi việc khởi tạo của chúng. Client chỉ cần gọi interface với tham số mà ta cung cấp, và mọi thứ sẽ ok hết thôi.</p>
 
-                <p>Factory method, đầy đủ là Factory method pattern, là thiết kế mẫu hướng đối tượng trong việc thiết kế
-                    phần mềm cho máy tính, nhằm giải quyết vấn đề tạo một đối tượng mà không cần thiết chỉ ra một cách
-                    chính xác lớp nào sẽ được tạo. Factory method giải quyết vấn đề này bằng cách định nghĩa một phương
-                    thức cho việc tạo đối tượng, và các lớp con thừa kế có thể override để chỉ rõ đối tượng nào sẽ được
-                    tạo. Nói chung, "factory method" thường được áp dụng cho những phương thức mà nhiệm vụ chính của nó
-                    là tạo ra đối tượng </p>
-
-                <p>Nó nằm trong nhóm Creational Pattern</p>
+                <p>Tóm lại, nó là một Factory - Nhà máy - và nhiệm vụ của nó là sản xuất object.</p>
             </div>
         </div>
     </div>
@@ -60,11 +53,14 @@
                 <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
                     <div class="text-dark pt-3">
-                        <p>Ở nhà hàng nọ có 1 anh đầu bếp rất tài ba. Vì khả năng nấu nướng tuyệt vời của mình nên lúc nào
-                        cửa hàng của anh cũng đông khách. Anh luôn phải tất bật làm việc, từ đi chuẩn bị rau củ, đến rã đông cá cua,
-                        rồi băm chặt đủ thứ.</p>
+                        <p>Ở nhà hàng nọ có 1 anh đầu bếp rất tài ba. Vì khả năng nấu nướng tuyệt vời của mình nên lúc
+                            nào
+                            cửa hàng của anh cũng đông khách. Anh luôn phải tất bật làm việc, từ đi chuẩn bị rau củ, đến
+                            rã đông cá cua,
+                            rồi băm chặt đủ thứ.</p>
 
-                        <p>Cửa hàng ngày càng đông, sức anh ko làm được. Thế là một hôm, anh mới than phiền với ông chủ về điều này.
+                        <p>Cửa hàng ngày càng đông, sức anh ko làm được. Thế là một hôm, anh mới than phiền với ông chủ
+                            về điều này.
                             Và ông chủ hứa sẽ tuyển cho anh một trợ lý.</p>
                     </div>
                 </div>
@@ -72,19 +68,25 @@
                 <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
                     <div class="text-dark pt-3">
-                        <p>Trợ lý của anh chả biết gì về ẩm thực. Tất nhiên, tiền thuê đầu bếp lúc nào cũng rẻ hơn tiền thuê đứa rửa bát mà. </p>
+                        <p>Trợ lý của anh chả biết gì về ẩm thực. Tất nhiên, tiền thuê đầu bếp lúc nào cũng rẻ hơn tiền
+                            thuê đứa rửa bát mà. </p>
 
-                        <p>Và nhiệm vụ của nó là sẵn sàng cung cấp cho anh các loại thực phẩm mà anh cần. Anh chỉ việc yêu cầu và nó sẽ mang tới cho anh chỉ sau vài giây.</p>
+                        <p>Và nhiệm vụ của nó là sẵn sàng cung cấp cho anh các loại thực phẩm mà anh cần. Anh chỉ việc
+                            yêu cầu và nó sẽ mang tới cho anh chỉ sau vài giây.</p>
 
-                        <p>Từ đó, anh đầu bếp chỉ hí húi bên cái bếp lửa của mình và mọi việc còn lại đã có anh phụ bếp này lo.</p>
+                        <p>Từ đó, anh đầu bếp chỉ hí húi bên cái bếp lửa của mình và mọi việc còn lại đã có anh phụ bếp
+                            này lo.</p>
 
                         <p>Anh trợ lý / phụ bếp này chính là Factory.</p>
 
-                        <p>Trong lập trình cũng vậy, có đôi khi ta có quá nhiều object, và ta muốn quản lý việc khai báo chúng, khi đó ta sử dụng Factory như một anh trợ lý, để cung
-                        cấp các object theo yêu cầu.</p>
+                        <p>Trong lập trình cũng vậy, có đôi khi ta có quá nhiều object, và ta muốn quản lý việc khai báo
+                            chúng, khi đó ta sử dụng Factory như một anh trợ lý, để cung
+                            cấp các object theo yêu cầu.</p>
 
-                        <p>Nếu như cửa hàng mở rộng thêm, và ông chủ tuyển thêm một anh đầu bếp khác nữa, thì anh ta cũng
-                            chỉ cần quan tâm tới việc nấu nướng của mình, còn việc cung ứng nguyên liệu, vẫn là do anh phụ
+                        <p>Nếu như cửa hàng mở rộng thêm, và ông chủ tuyển thêm một anh đầu bếp khác nữa, thì anh ta
+                            cũng
+                            chỉ cần quan tâm tới việc nấu nướng của mình, còn việc cung ứng nguyên liệu, vẫn là do anh
+                            phụ
                             bếp này quản lý. Và khi anh ấy yêu cầu Trứng gà, thì chắc chắn anh ta ko mất thời gian để đi
                             tìm nó giữa la liệt đống trứng ngỗng. </p>
                     </div>
@@ -98,12 +100,20 @@
                             Factory Pattern là một trong những pattern phổ biến nhất trong lập trình hướng đối tượng.
                         </p>
 
-                        <p>Nhiệm vụ của nó là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đối tượng
-                        một cách linh hoạt hơn.</p>
+                        <p>Nhiệm vụ của nó là quản lý và trả về các đối tượng theo yêu cầu, giúp cho việc khởi tạo đối
+                            tượng
+                            một cách linh hoạt hơn.</p>
 
-                        <p>Bản chất của Factory là <b>Định nghĩa một giao diện (interface) cho việc tạo một đối tượng, nhưng
-                        để các lớp con quyết định lớp nào sẽ được tạo. <i>Factory method</i> giao việc khởi tạo đối tượng cụ thể
-                        cho lớp con.</b></p>
+                        <p>Bản chất của Factory là <b>Định nghĩa một giao diện (interface) cho việc tạo một đối tượng,
+                            nhưng
+                            để các lớp con quyết định lớp nào sẽ được tạo. <i>Factory method</i> giao việc khởi tạo đối
+                            tượng cụ thể
+                            cho lớp con.</b></p>
+
+                        <p>Nói giao việc khởi tạo cho lớp con, ko có nghĩa là có cái lớp con nào đó và override cái method đó,
+                        mà lớp con sẽ sử dụng interface + danh sách các tham số mà Factory cung cấp, và quyết định xem nó muốn cái gì.</p>
+
+                        <p>Tức là nó kêu, tao muốn trứng gà, thì nó gọi interface + "trung-ga" chẳng hạn.</p>
                     </div>
                 </div>
 
@@ -113,38 +123,47 @@
 
                         <p>Nhóm các object cùng chức năng thành một loại, có thể dụng Abstract Class hoặc Interface</p>
 
-                        <p>Xây dựng một Factory để lấy ra một object trong nhóm đó, tùy thuộc vào tham số truyền vào.</p>
+                        <p>Xây dựng một Factory để lấy ra một object trong nhóm đó, tùy thuộc vào tham số truyền
+                            vào.</p>
 
-                        <p>Ví dụ, ta xếp trứng gà, trứng vịt, trứng ngỗng, trứng khủng long vào cùng một rổ. Mỗi khi anh đầu bếp yêu cầu trứng gà, thì anh
-                        trợ lý sẽ vào và lấy quả trưng theo yêu cầu ra. </p>
+                        <p>Ví dụ, ta xếp trứng gà, trứng vịt, trứng ngỗng, trứng khủng long vào cùng một rổ. Mỗi khi anh
+                            đầu bếp yêu cầu trứng gà, thì anh
+                            trợ lý sẽ vào và lấy quả trưng theo yêu cầu ra. </p>
 
 
+                        <p>Ta thường sử dụng Factory khi mà chúng ta có 1 super class và multiple sub-classes. Và tùy
+                            theo
+                            input truyền vào, ta cần phải trả lại 1 trong số các subclass ở trên kia.</p>
 
-                        <p>Ta thường sử dụng Factory khi mà chúng ta có 1 super class và multiple sub-classes. Và tùy theo
-                        input truyền vào, ta cần phải trả lại 1 trong số các subclass ở trên kia.</p>
-
-                        <p>Factory pattern mang nhiệm vụ instance của class từ client đến Factory. Và việc của bạn còn lại
-                        rất đơn giản, getFactoryObjectByType, và nó sẽ trả ra object mà bạn cần.</p>
+                        <p>Factory pattern mang nhiệm vụ instance của class từ client đến Factory. Và việc của bạn còn
+                            lại
+                            rất đơn giản, getFactoryObjectByType, và nó sẽ trả ra object mà bạn cần.</p>
 
                         <p>Dưới đây là mô tả về việc implement của nó</p>
 
                         <ul>
                             <li>Super class - Có thể là interface / abstract</li>
 
-                            <li>Subclass -- Các class implements interface trên kia / extend từ abstract class trên kia.</li>
+                            <li>Subclass -- Các class implements interface trên kia / extend từ abstract class trên
+                                kia.
+                            </li>
 
                             <li>Factory Class với một static method handle việc initialize và return lại subclass từ
-                                tham số client truyền vào </li>
+                                tham số client truyền vào
+                            </li>
                         </ul>
 
                         <p>Những lưu ý thêm về việc implement pattern này:</p>
 
                         <blockquote>
                             1. Bản chất của Factory pattern là quản lý việc khởi tạo các object. Vì vậy ta nên khai báo
-                            private cho constructor của subclass để ngăn cho nó không được khởi tạo từ bên ngoài của Factory.
+                            private cho constructor của subclass để ngăn cho nó không được khởi tạo từ bên ngoài của
+                            Factory.
 
-                            2. Factory class được sử dụng như một Utils Class (utils - sử dụng). Vì vậy ta nên biến cái Factory
-                            Class thành một Singleton Class / hoặc khai báo static cho cái method getFactoryObjectByType của nó
+                            2. Factory class được sử dụng như một Utils Class (utils - sử dụng). Vì vậy ta nên biến cái
+                            Factory
+                            Class thành một Singleton Class / hoặc khai báo static cho cái method getFactoryObjectByType
+                            của nó
                             để có thể sử dụng ở bất cứ đâu.
                         </blockquote>
 
@@ -155,29 +174,48 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Important things</h3>
+                    <div class="text-dark pt-3">
+                        <p>Thông thường, để tránh cho việc ta có thể khởi tạo 1 Object mà ko thông qua Factory, thì ta hide đi cái
+                        constructor của nó là xong. Vấn đề là làm sao vừa hide đi constructor mà lại có thể khởi tạo object? Ta có thể sử dụng từ khóa protected để giới hạn điều này.</p>
+
+                        <p>Luôn nhớ rằng, Factory ra đời để có thể tạo 1 list các Object cùng category. Thế nên khi lựa chọn nó để
+                        đưa vào làm super class của Factory thì cần xem xét cho kĩ.</p>
+
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Những lợi ích mà nó mang lại</h3>
                     <div class="text-dark pt-3">
-                        <p>Bản chất Factory pattern đó chính là quản lý việc khởi tạo instance phù hợp với các yêu cầu khác nhau.
-                        Vì vậy nó sẽ giải quyết những vấn đề sau:</p>
+                        <p>Bản chất Factory pattern đó chính là quản lý việc khởi tạo instance phù hợp với các yêu cầu
+                            khác nhau.
+                            Vì vậy nó sẽ giải quyết những vấn đề sau:</p>
 
                         <ul>
                             <li>Tạo ra một cách mới trong việc khởi tạo các objects, thông qua một interface chung</li>
                             <li>Khởi tạo các object mà che dấu đi logic của việc khởi tạo</li>
                             <li>Giảm sự gắn kết giữa các module, các logic với các class cụ thể, mà chỉ phụ thuộc vào
-                                abstract hoặc interface</li>
+                                abstract hoặc interface
+                            </li>
                         </ul>
 
                         <p>Giải thích chi tiết thêm về các ưu điểm kia:</p>
 
                         <blockquote>
-                            1. Đối với các nhà máy - factory - thì nó sẽ có 1 cái method, để xử lý request từ phía client - bên ngoài -
-                            và trả lại object hợp lý.<br />
-                            <br />
-                            2. Tất cả những gì client nhận được, là 1 interface/ abstract class được trả về từ request. Việc bản chất
-                            của object đó như thế nào hoàn toàn bị che dấu bởi factory và client chỉ biết là họ đã có cái họ cần mà thôi.
-                            <br />
-                            3. Rõ ràng, vì việc khởi tạo object như thế nào là công việc bên trong của Factory, nên nếu như ta cần thay đổi
-                            (một đối tượng / một nhóm các đối tượng) thì những gì ta cần làm chỉ là update lại cái method của factory mà ko cần
+                            1. Đối với các nhà máy - factory - thì nó sẽ có 1 cái method, để xử lý request từ phía
+                            client - bên ngoài -
+                            và trả lại object hợp lý.<br/>
+                            <br/>
+                            2. Tất cả những gì client nhận được, là 1 interface/ abstract class được trả về từ request.
+                            Việc bản chất
+                            của object đó như thế nào hoàn toàn bị che dấu bởi factory và client chỉ biết là họ đã có
+                            cái họ cần mà thôi.  <br/>
+                            <br/>
+                            3. Rõ ràng, vì việc khởi tạo object như thế nào là công việc bên trong của Factory, nên nếu
+                            như ta cần thay đổi
+                            (một đối tượng / một nhóm các đối tượng) thì những gì ta cần làm chỉ là update lại cái
+                            method của factory mà ko cần
                             thay đổi những vị trí sử dụng của nó. Do đó, sự liên kết sẽ bị hạn chế.
                         </blockquote>
                     </div>
@@ -187,21 +225,29 @@
                     <h3 class="border-bottom border-gray pb-2 mb-0">Những giới hạn của nó</h3>
                     <div class="text-dark pt-3">
                         <p>Một Factory pattern có thể giải quyết khá nhiều vấn đề, tuy nhiên cũng có những vấn đề mà nó
-                        không thể giải quyết được. Dưới đây là những hạn chế - và nếu rơi vào trường hợp này thì ta cần
-                        cân nhắc xem có áp dụng pattern này trong việc lập trình hay ko.</p>
-
+                            không thể giải quyết được. Dưới đây là những hạn chế - và nếu rơi vào trường hợp này thì ta
+                            cần
+                            cân nhắc xem có áp dụng pattern này trong việc lập trình hay ko.</p>
                         <ul>
-                            <li>Khi có một class đã xài quá nhiều, việc sửa đổi - refactoring - sẽ kéo theo : Hoặc là bạn phải
-                            cập nhật tất cả các đoạn code khởi tạo nó = cái Factory, hoặc là nó có thể bị lỗi. Tuy nhiên cái
-                            intellj nó có thể refactor cái này nên có thể xem như nó ko thật sự quan trọng. Nhưng biết đâu một
-                            ngày đẹp trời ta lại phát hiện ra đâu đó 1 thằng mà nó init lên khác với những thằng còn lại
-                            - khác với factory. Vậy là lại nảy sinh vấn đề.</li>
+
+                            <li>Khi có một class đã xài quá nhiều, việc sửa đổi - refactoring - sẽ kéo theo : Hoặc là
+                                bạn phải
+                                cập nhật tất cả các đoạn code khởi tạo nó = cái Factory, hoặc là nó có thể bị lỗi. Tuy
+                                nhiên cái
+                                intellj nó có thể refactor cái này nên có thể xem như nó ko thật sự quan trọng. Nhưng
+                                biết đâu một
+                                ngày đẹp trời ta lại phát hiện ra đâu đó 1 thằng mà nó init lên khác với những thằng còn
+                                lại
+                                - khác với factory. Vậy là lại nảy sinh vấn đề.
+                            </li>
 
                             <li>Trong Factory pattern, cách duy nhất để bạn khởi tạo 1 object là phải thông qua Factory.
-                            và vì vậy mà những object này ko thể được mở rộng thêm nữa. Vì vậy, nếu bạn cần một object có
-                            khả năng mở rộng sau này thì nó ko phải là một lựa chọn hay.</li>
+                                và vì vậy mà những object này ko thể được mở rộng thêm nữa. Vì vậy, nếu bạn cần một
+                                object có khả năng mở rộng sau này thì nó ko phải là một lựa chọn hay.
+                            </li>
 
-                            <li>Nếu ta muốn sử dụng nó theo cách có thể mở rộng, bằng việc khai báo protected cho các constructor,
+                            <li>Nếu ta muốn sử dụng nó theo cách có thể mở rộng, bằng việc khai báo protected cho các
+                                constructor,
                             </li>
 
                         </ul>
@@ -211,13 +257,18 @@
                 <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Khi nào ta cần sử dụng Factory Pattern</h3>
                     <div class="text-dark pt-3">
-                        <p>Theo như cái ưu điểm trên kia mà ta đã liệt kê, thì những trường hợp sau ta có thể sử dụng Factory Pattern</p>
+                        <p>Theo như cái ưu điểm trên kia mà ta đã liệt kê, thì những trường hợp sau ta có thể sử dụng
+                            Factory Pattern</p>
 
                         <ul>
-                            <li>Khi ta có 1 nhóm các object cùng chức năng / ta muốn sử dụng một phương thức khác để tạo ra object</li>
+                            <li>Khi ta có 1 nhóm các object cùng chức năng / ta muốn sử dụng một phương thức khác để tạo
+                                ra object
+                            </li>
 
-                            <li>Khi ta có một object mà việc khởi tạo của nó quá phức tạp, và ta muốn che dấu chi tiết bên trong/ đơn giản
-                                hóa việc khởi tạo</li>
+                            <li>Khi ta có một object mà việc khởi tạo của nó quá phức tạp, và ta muốn che dấu chi tiết
+                                bên trong/ đơn giản
+                                hóa việc khởi tạo
+                            </li>
 
                             <li>Khi ta muốn làm giảm sự phụ thuộc vào các object đó.</li>
                         </ul>
@@ -231,6 +282,58 @@
                         2. ResourceBundle
                         3. NumberFormat getInstance() method
                         4. valueOf method (Trong Boolean, Integer)
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Extends</h3>
+                    <div class="text-dark pt-3">
+                        <p>Theo như cái trên kia, rõ ràng ta có thể có 2 cách để tạo 1 Object bằng Factory..</p>
+
+                        <p>Cách thứ nhất, ta cung cấp một đống interface, và cứ khi nào client cần gì thì gọi cái đó,
+                            như sau: </p>
+                        <blockquote>
+                            public static Animal getDog(){<br/>
+                            &nbsp; &nbsp; return new Dog();<br/>
+                            &nbsp; &nbsp; }<br/>
+                            <br/>
+                            public static Animal getCat(){<br/>
+                            &nbsp; &nbsp; return new Cat();<br/>
+                            }<br/>
+                        </blockquote>
+
+                        <p>Cách thứ 2, ta che dấu toàn bộ, chỉ cung cấp 1 interface mà thôi. </p>
+
+                        <blockquote>
+                            public Animal getAnimal(String type){<br/>
+                            &nbsp; &nbsp; if (type.equals("cat")) {<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; return new Cat();<br/>
+                            &nbsp; &nbsp; } else if (type.equals("dog")){<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; return new Dog();<br/>
+                            &nbsp; &nbsp; } else {<br/>
+                            &nbsp; &nbsp; &nbsp; &nbsp; return null;<br/>
+                            &nbsp; &nbsp; }<br/>
+                            }<br/>
+                        </blockquote>
+
+                        <p>Vậy, cái nào là tốt hơn??</p>
+
+                        <p>Quan điểm của Factory đó là che dấu đi quá trình khởi tạo / implement bằng cách cung cấp 1
+                            interface Trong cả hai cách trên, ta đều che dấu di việc khởi tạo Object ntn mà chỉ cung cấp
+                            một
+                            abstract class mà thôi. Rõ ràng cả 2 cái đều thỏa mãn point of view của Factory.
+                        </p>
+
+                        <p>Factory 1 có vẻ như rõ ràng và dễ hiểu, đọc cái là biết ngay nó định làm gì. Tuy nhiên điều
+                            gì sẽ xảy ra khi mà bạn thêm vào đó 1 con bò.</p>
+
+                        <p>Trong trường hợp thứ nhất toàn bộ client được thông báo rằng có 1 cái interface được tạo, và
+                            họ thấy ngạc nhiên, vì
+                            họ đâu cần con bò đâu. Rõ ràng, code ở đây đã bị ảnh hưởng. (Bị ảnh hưởng ở đây là việc biên
+                            dịch lại và redeploy lại,
+                            chứ không hẳn là source code bị thay đổi.)</p>
+
+                        <p>Do đó, mặc dù code thứ 2 khó đọc hơn, nhưng mà nó lại thực sự tốt hơn.</p>
                     </div>
                 </div>
             </div>
