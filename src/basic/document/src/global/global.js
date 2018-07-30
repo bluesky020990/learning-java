@@ -63,7 +63,19 @@ const JAVA_DESIGN_PATTERN_LESSON = {
         {url: "lesson_21_state_design_pattern.html", titleDisplay: "State Pattern"},
         {url: "lesson_22_template_pattern.html", titleDisplay: "Template Pattern"},
         {url: "lesson_23_strategy_pattern.html", titleDisplay: "Strategies Pattern"},
-        {url: "lesson_24_visitor_pattern.html", titleDisplay: "Visitor Pattern"}
+        {url: "lesson_24_visitor_pattern.html", titleDisplay: "Visitor Pattern"},
+        {url: "lesson_25_java_dependence_ịnjection.html", titleDisplay: "DI Pattern"}
+    ]
+};
+
+
+
+const CODING_EXPERIENCE_LESSON = {
+    prefixUrl : "coding_experience",
+    category : "Coding Experience",
+    lesson : [
+        {url: "lesson_01_coding_experience.html", titleDisplay: "Coding Experience Overview"},
+        {url: "lesson_02_design_pakage.html", titleDisplay: "Design Package"},
     ]
 };
 
@@ -85,13 +97,16 @@ function generateCategory (){
         var category = $('body').attr("category") != null && $('body').attr("category").trim() != "" ? $('body').attr("category") : null;
 
         if(category == "design-pattern") {
-            return [JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON, JAVA_CONCURRENCY_LESSON];
+            return [JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON, CODING_EXPERIENCE_LESSON, JAVA_CONCURRENCY_LESSON];
 
         } else  if(category == "concurrency"){
-            return [JAVA_CONCURRENCY_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON];
+            return [JAVA_CONCURRENCY_LESSON, CODING_EXPERIENCE_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON];
+
+        } else  if(category == "coding-experience"){
+            return [CODING_EXPERIENCE_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_LESSON, JAVA_CONCURRENCY_LESSON];
 
         } else {
-            return [JAVA_LESSON, JAVA_DESIGN_PATTERN_LESSON, JAVA_CONCURRENCY_LESSON];
+            return [JAVA_LESSON, JAVA_DESIGN_PATTERN_LESSON, CODING_EXPERIENCE_LESSON, JAVA_CONCURRENCY_LESSON];
         }
     }
 }

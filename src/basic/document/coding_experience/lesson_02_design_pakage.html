@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="coding-experience">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Design Package</h1>
+            <div class="lead">
+                <p>Trong lúc làm việc, chắc chắn 1 điều rằng bạn sẽ phải xây dựng các Package để phục vụ công việc nào đó của mình.</p>
+
+                <p>Vậy, có những lưu ý nào cần quan tâm trong việc này?</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Tại sao phải quan tâm đến vấn đề này?</h3>
+                    <div class="text-dark pt-3">
+                        <p>Thông thường, khi làm việc, ta thường có thói quen xếp các class liên quan lại thành 1 group. Giống
+                        như cách trước đây ta vẫn thường làm với Spring, gom các DTO vào 1 cục, gom các Util vào 1 cục, gom các
+                        validator vào 1 cục, gom tiếp các controller vào 1 cục.</p>
+
+                        <p>Điều đó mang lại cho ta những lợi ích gì, đơn giản chỉ là ta sẽ thuận tiện hơn trong việc sắp xếp và tìm kiếm.</p>
+
+                        <p>Tuy nhiên, điều đó vẫn chưa thực sự đúng. Phân loại các object một cách hợp lý, còn mang lại cho ta nhiều lợi ích hơn thế.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Một ngày đẹp trời, sếp kêu với bạn, "Ê, bên cái dự án kia có function kia kìa, mày sang copy nó sang bỏ vô đây tao cái."</p>
+
+                        <p>Theo lời sếp, bạn sang đó, nhìn và thấy 1 đống tùm lum tà la. Bạn ko hiểu sẽ phải mang theo những gì, khi nó được xếp vào nguyên trong 1 package. Thôi thì chép đại.</p>
+
+                        <p>Thế là vô tình, bạn mang theo cả 1 đống rác, mà chính bản thân bạn cũng chả hiểu nó để làm gì, hay nó có liên quan gì đến function mà mình cần copy hay ko.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp.</h3>
+                    <div class="text-dark pt-3">
+                        <p>Vấn đề không phải là bạn copy ko được tốt, ko được hay, mà là cách người đi trước phân tích, và tổ chức các package.</p>
+
+                        <p>Điều bạn mong muốn là gì, copy 1 phát, và nó mang đầy đủ các tính năng mà mình mong đợi, sang luôn cái bên này, ko thừa ko thiếu.</p>
+
+                        <p>Đó cũng là điều mà công nghệ phần mềm hướng đến, hoặc hơn ai hết, đó là công việc của những người xây dựng hệ thống cần làm.</p>
+
+                        <p>Mục đích phân loại các object vào từng package để phục vụ cho việc tìm kiếm hiện giờ đã ko còn quá quan trọng nữa. Vào ide, gõ Ctrl Shift N và enter tên Class
+                        bạn cần tìm vào, nó sẽ xổ ra 1 đống.</p>
+
+                        <p>Mục đích chính mà ta cần phân loại các Class, đó là để gom các Object phụ thuộc với nhau thành 1 cục, giảm thiểu sự ảnh hưởng của nó đến những thằng khác.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implement</h3>
+                    <div class="text-dark pt-3">
+                        <p>Dưới đây là những nguyên lý cần tuân thủ trong việc thiết kế package</p>
+
+                        <dl>
+                            <dt>Granularity - Mức độ chi tiết</dt>
+                            <dd>Mỗi package phải đủ nhỏ vì nếu quá to thì sẽ ảnh hưởng tới các package chỉ phụ thuộc vào 1 phần của nó.</dd>
+
+                            <dt>Stability - Tính ổn định</dt>
+                            <dd>Mỗi khi có sự thay đổi xảy ra thì số lượng package bị ảnh hưởng là ít nhất</dd>
+                        </dl>
+
+                        <p>Uncle Bob đưa ra 6 nguyên lý để đảm bảo tính hiệu quả của việc chia class.</p>
+
+                        <ol>
+                            <li>
+                                The Reuse/Release Equivalence Principle [Granularity]:
+                                <blockquote>
+                                    The granule of reuse is the granule of release.
+                                </blockquote>
+
+                                <p>Một phần mềm tốt thì tính reuse của nó phải cao. Một người nào đó muốn reuse cái package này, nhưng nó lại bị phụ thuộc
+                                và các package khác, nên vô tình họ phải phụ thuộc vào cả chúng. Vì vậy, cần hạn chế số lượng package phụ thuộc càng ít càng tốt.
+                                0 là con số lý tưởng nhất.</p>
+
+                            </li>
+
+                            <li>
+                                The Common Reuse Principle [Granularity]
+
+                                <blockquote>
+                                    The classes in a component are reused together. If you reuse one of the classes in a component, you reuse them all.
+                                </blockquote>
+
+                                <p>Theo như điều trên kia, thì ta cần nhồi nhét các class có liên quan với nhau chung một package, càng nhiều càng tốt.</p>
+
+                                <p>Điều kiện lý tưởng ods là package đầy ắp các class ta muốn sử dụng cùng nhau.</p>
+
+                                <p>2 điều kiện trên liên quan chặt chẽ đến nhau, chỉ cần thỏa mãn cái này thì sẽ thỏa mãn cái kia.</p>
+                            </li>
+
+
+                            <li>The Common Closure Principle [Granularity]
+                                <blockquote>
+                                    The classes in a component should be closed together against the same kinds of
+                                    changes. A change that affects a
+                                    component affects all the classes in that component and no other components.
+                                </blockquote>
+
+                                <p>
+                                    Cái phát biểu này có vẻ hơi khó hiểu, nhưng chỉ cần hiểu, đối với Package, ta cũng nên xem nó như một class
+                                    chỉ đảm nhận 1 nhiệm vụ duy nhất - Single responsibility.
+                                </p>
+
+                            </li>
+
+                            <li>The Acyclic Dependencies Principle [Stability]
+
+                                <blockquote>
+                                    Allow no cycles in the component dependency graph.
+                                </blockquote>
+
+                                <p>Chắc chắn một điều mà ta cần hướng tới, là không có bất cứ một quan hệ phụ thuộc nào mà nó xây dựng thành 1 vòng tròn, vì khi ấy, ta
+                                chả có thể reuse lại cái nào cả, khi mà tất cả đều phải được sử dụng.</p>
+
+                                <p>Đồng nghĩa với nó, khi có 1 sử thay đổi, thì toàn bộ các package đều bị thay đổi theo. Ops.</p>
+                            </li>
+
+                            <li>
+                                The Stable-Dependencies Principle [Stability]
+
+                                <blockquote>
+                                    Depend in the direction of stability.
+                                </blockquote>
+
+                                <p>Không nên phụ thuộc vào các package dễ bị thay đổi, hay nói cách khác, nên phụ thuộc vào các package ít bị thay đỏi.</p>
+                            </li>
+
+
+                            <li>
+                                The Stable-Abstractions Principle
+                                <blockquote>
+                                    A component should be as abstract as it is stable.
+                                </blockquote>
+
+                                <p> Nguyên lý này bổ sung cho cái trên kia, Một package ổn định thì nên có tính trừu tượng cao, chứa nhiều absstract class.
+                                    Ngược lại, một package hay thay đổi thì không nên trừu tượng để có thể dễ thay đổi.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>

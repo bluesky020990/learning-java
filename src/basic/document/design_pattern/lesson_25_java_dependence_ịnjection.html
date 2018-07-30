@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="design-pattern">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>DI - Dependence Injection Pattern</h1>
+            <div class="lead">
+                <p>Dependence Injection - Nghịch đảo phụ thuộc  là một trong số các design pattern được sử dụng trong Spring Framework.</p>
+
+                <p>Ý tưởng của DI rất hay, nó khiến cho việc thiết kế các service trong hệ thống trở nên lỏng lẻo hơn và dễ mở rộng hơn.</p>
+
+                <p>Nó tuân thủ nguyên tắc, Don't call us, we call you.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Bài toán</h3>
+                    <div class="text-dark pt-3">
+                        <p>Thông thường, để xây dựng 1 ứng dụng, ta xây dựng các service để thực hiện các nhiệm vụ khác nhau.</p>
+
+                        <p>Một service có thể liên quan đến 1 hay nhiều service khác, và nếu ko phân tích kĩ lưỡng, thì các service sẽ bị liên
+                        kết với nhau một cách cứng nhắc.</p>
+
+                        <p>Điều này hạn chế việc mở rộng, hay bảo trì chúng. Vì mỗi một thay đổi có thể ảnh hưởng tới nhiều service khác.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Giải pháp</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trong một ứng dụng bình thường, để có thể sử dụng 1 service, ta hoặc sử dụng inheritance hoặc sử dụng composite.</p>
+
+                        <p>Tuy nhiên, rõ ràng các service nó hoàn toàn không giống nhau, nên việc sử dụng inheritance nó có nhiều hạn chế. THay vào đó
+                        người ta sẽ sử dụng composite để đạt được mục đích tốt hơn.</p>
+
+                        <p>Vì là composite nên ta cần phải biến các service này thành thuộc tính của service khác.</p>
+
+                        <p>Lúc này, ta gặp trường hợp, khi muốn khởi tạo 1 service, ta cần phải khởi tạo các service bên trong nó. Và cứ như thế, ta sẽ rơi vào
+                        1 vòng luẩn quẩn, nếu như A chứa B và B chứa A.</p>
+
+                        <p>Dependence Injection ra đời để giải quyết điều đó.</p>
+
+                        <p>Thay vì phải gọi tới các thằng service con bên trong, thì giờ đây, các service con có thể được "tiêm" vào thằng cha. Đó là ý tưởng của
+                        "Don't call us, We call you" mà đầu bài đã đề cập.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
+                    <div class="text-dark pt-3">
+
+                        <p>Việc implement DI trong Spring được tiến hành như sau:</p>
+
+                        <ol>
+                            <li>Xây dựng các service cho từng chức năng</li>
+                            <li>Inject service vào các service khác bằng @Autowired annotation.</li>
+                            <li>Xây dựng 1 file xml để chứa thông tin các service cũng như implement của nó.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Cách thức hoạt động của DI trong Spring</h3>
+                    <div class="text-dark pt-3">
+                        <p>Spring sẽ đọc file config, init lên các service. Các service này đều là các singleton.</p>
+
+                        <p>Khi sử dụng 1 service nào đó, ta sử dụng annotation @Autowired. Annotation này đánh dấu để hệ thống biết mà sinh ra các getter và setter
+                        để có thể inject các service con vào. Nếu ko thích sử dụng nó, thì ta có thể xây dựng các method get set cho các service bên trong đó là được.</p>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
