@@ -34,7 +34,8 @@
         <div class="col-md-12 px-0">
             <h1>Thread in Java</h1>
             <div class="lead">
-                Thread in Java
+                <p>Trong lesson này, ta ko đi sâu vào chi tiết việc Java implement thread như thế nào mà ta chỉ đi qua các khái niệm của nó
+                phân tích những đặc điểm của thread và concurrency đồng thời cũng tổng quan lại mô hình hoạt động, trước khi đi sâu vào thực hành.</p>
             </div>
         </div>
     </div>
@@ -142,6 +143,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="text-dark pt-3">
                             <div class="my-4 p-3 bg-white rounded box-shadow">
                                 <h5 class="border-bottom border-gray pb-2 mb-0">Volatile</h5>
@@ -162,23 +164,172 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">The Java memory model</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Overview</h5>
+                            <div class="text-dark pt-3">
+                                <p>Để hiểu rõ hơn về các issue của Concurrency trong Java, ta cùng tìm hiểu mô hình Java Memory trước.</p>
+
+                                <p>Java memory model mô tả sự giao tiếp giữa memory của các thread và main memory của application. </p>
+
+                                <p>Nó định nhĩa các quy tắc
+                                làm sao để thay đổi memory được thực hiện bởi các thread và propagate - lan truyền ra cho các thread khác. (làm sao để khi
+                                shared data của 1 thread thay đổi thì các thread liên quan nhận được sư thay đổi đó).</p>
+
+                                <p>Nó cũng mô tả các tình huống mà thread có thể re-fresh lại data của nó từ memory.</p>
+
+                                <p>Nó cũng mô tả các operation nguyên tử và thứ tự của các operation.</p>
+
+
+                                <p>Xem thêm tại <a href="https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java" target="_blank">đây</a>.</p>
+                            </div>
+                        </div>
+
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Atomic operation</h5>
+                            <div class="text-dark pt-3">
+                                <p>Atomic Operation - Hoạt động nguyên tử, được hiểu là một hoạt động hay một thao tác
+                                    tính toán mà trong quá trình đó, một processor
+                                    có thể đồng bộ việc đọc và ghi trên cùng 1 bus tính toán. Điều này ngăn cản các
+                                    processor khác/ hoặc các thiết bị I/O khác từ việc ghi hay
+                                    đọc bộ nhớ cho đến khi hoạt động atomic được hoàn tất.
+                                </p>
+
+                                <p>Ý nghĩa của nguyên tử - atomic ở đây đó là nó không thể chia hoặc giản lược. Do đó,
+                                    một atomic operation hoặc là phải được thực hiện hoàn toàn, hoặc là
+                                    không gì cả. Nói nôm na là nó có thể run hoặc stop chứ ko có chuyện waiting.</p>
+
+                                <p>Do đó, ta có thể hiểu nôm na về atomic trong Java như sau:</p>
+
+                                <p>Một atomic operation là một hoạt động được thực hiện như 1 đơn vị công việc mà không
+                                    có kar năng can thiệ từ các operation khác.</p>
+
+                                <p>Java đảm bảo rằng, việc reading or writing guarantees việc đọc hoặc viết 1 biến là
+                                    một atomic operation (trừ khi variable là kiểu long hoặc double)*.
+
+                                    Operation variable của long và double chỉ là atomic nếu như nó được khai báo là
+                                    volatile.
+                                </p>
+
+                                <p>Giả sử rằng ta định nghĩa một biến i là int, khi đó i++ operation KHÔNG PHẢI là một
+                                    atomic operation trong Java. Điều này cũng được áp dụng cho các kiểu số nguyên khác
+                                    như long chẳng hạn. Vậy vì sao lại thế @@.</p>
+
+                                <p>Ta nhìn vào operation này, i++ operation thực chất thực hiện theo 2 bước, bước 1 nó
+                                    đọc giá trị hiện tại đang được lưu trữ trong i, sau đó nó thêm cho nó 1 (++ - atomic operation).
+                                    Nhưng giữa việc đọc và ghi giá trị của i có thể thay đổi. Ơ, tại sao lại thế nhỉ ???
+                                </p>
+
+                                <p>Vì chỉ việc đọc hoặc ghi mới được xem là atomic operation, nên rõ ràng lúc này, có thể
+                                    tồn tại 1 trạng thái trung gian, mà ở đó, có một thread khác có thể thấy giá trị của nó lúc chưa đổi.</p>
+
+                                <p>Tương tự với kiểu long, long abc_temp = 123456L, abc_temp được định nghĩa bởi 2 thao tác,
+                                    một thao tác ghi 32 bit ở đầu, và 1 thao tác ghi 32 bit cuối. Điều đó đồng nghĩa với
+                                    việc có thể có 1 thread nào đó, đọc được giá trị này khi nó chưa ghi xong - ở trạng thái trung gian.</p>
+
+                                <p>Để khắc phục điều đó, từ Java 1.5 đã cung cấp các atomic variable như là AtomicInteger or AtomicLong với
+                                provide các method như getAndDecrement(), getAndIncrement() and getAndSet().</p>
+
+                                <p>Một vấn đề khác, ta có thể biến kiểu Long thành atomic variable nếu như sử dụng từ khóa volatile.
+                                    Volatile chỉ có 1 bản chính mà sẽ được cập nhật giá trị đồng bộ với các thread khác nhau khi có 1 thread nào đó thay đổi giá trị của nó.</p>
+
+                                <p>Tóm lại, việc thiết kế các atomic operation bằng cách sử dụng cơ chế đồng bộ nhằm đảm bảo
+                                rằng các hoạt động thấy được, từ bất kì thread khác, là một thao tác duy nhất. Có nghĩa là bất kì một thread khác, một khi thao tác
+                                được thực hiện nguyên tử, hoặc sẽ thấy giá trị của biến trước khi được gán, hoặc là sau khi được gán, mà không thấy được các giá trị trung gian.</p>
+                            </div>
+                        </div>
+
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Memory updates in synchronized code.</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Java memory đảm bảo rằng, một thread enter vào 1 synchronized block sẽ thấy hiệu ứng
+                                        của các modification trước đó, mà được bảo vệ cùng 1 khóa.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Immutability and Defensive Copies</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
-                    </div>
-                </div>
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Immutability</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Một trong số những cách thức nhằm ngăn chặn những problem của concurrency đó là chỉ
+                                        share các immutable data giữa các thread. Không cho nó update thì làm sao mà thay đổi được, đúng ko.</p>
 
-                <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
-                    <div class="text-dark pt-3">
-                        BODY_CONTENT
+                                    <p>Ghi nhớ lại immutable class: Đó là class mà ko thể thay đổi được giá trị của nó,
+                                        tức là nó tồn tại tại thời điểm class được khởi tạo và cứ thế mãi mãi, ko thể thay
+                                        đổi đc giá trị của nó, trừ khi khởi tạo 1 object khác.</p>
+
+                                    <p>Cách thức để tạo một immutable class như sau:</p>
+
+                                    <ul>
+                                        <li>khai báo các biến của nó là final </li>
+                                        <li>Định nghĩa class là final luôn.</li>
+                                        <li>set cho các field của nó là private - ngăn chặn truy cập, final - ngăn chặn thay đổi, </li>
+                                        <li>nếu có mutable data thì đảm bảo rằng data đó ko thể bị thay đổi từ bên ngoài.</li>
+                                    </ul>
+
+                                    <p>Thông thường, ta chỉ mutable một vài thuộc tính của nó, còn lại vẫn có thể có một vài mutable data để quản lý state của nó,
+                                    và vô tình, ta tạo điều kiện cho các thread khác có thể thay đổi dữ liệu của nó, từ bên ngoài.</p>
+
+                                    <p>Để hạn chế điều này, đối với các mutable filed như Array chẳng hạn, khi ta truyền nó từ bên ngoài vào class trong constructor phrase, class cần phải tạo một defensive-copy
+                                    của các element để đảm bảo rằng không có object nào từ bên ngoài có thể thay đổi data của nó. Xem tiếp defensive copy ở dưới</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Defensive Copies</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Khi sử dụng một immutable class, ta hi vọng state của nó KHÔNG THỂ BỊ THAY ĐỔI từ bên ngoài - thread khác - thông qua calling code.</p>
+
+                                    <p>Trong trường hợp dữ liệu của ta là final, thì mọi thứ ko sao, tuy nhiên, khi data của ta không phải là immutable, thì nó vẫn có thể bị thay đổi từ bên ngoài.</p>
+
+                                    <p>Để hạn chế điều này, ta cần phải copy data mà ta nhận được, và return copy data tới calling code.</p>
+
+                                    <p>Xem ví dụ: </p>
+
+                                    <blockquote>
+                                        public class MyDataStructure {<br />
+                                        List&lt;String> list = new ArrayList&lt;String>();<br />
+                                        <br />
+                                        public void add(String s) {<br />
+                                        list.add(s);<br />
+                                        }<br />
+                                        <br />
+                                        /**<br />
+                                        * Makes a defensive copy of the List and return it<br />
+                                        * This way cannot modify the list itself<br />
+                                        *<br />
+                                        * @return List&lt;String><br />
+                                            */<br />
+                                            public List&lt;String> getList() {<br />
+                                            return Collections.unmodifiableList(list);<br />
+                                            }<br />
+                                            }<br />
+                                    </blockquote>
+
+                                    <p>Ví dụ trên kia tạo ra một copy list của Array và return copy list cho các calling code. Vì vậy, khi có 1 sự thay đổi từ bên ngoài thì data bên
+                                    trong mutable vẫn ko thay đổi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Tóm lại</h5>
+                        <div class="text-dark pt-3">
+                            <p>Immutable class nhằm đảm bảo dữ liệu không thể được thay đổi từ bên ngoài.</p>
+
+                            <p>Nếu ta export ra một field, mà field đó ko phải là immutable fied, thì ta phải biến nó thành defensive-copy nhằm ngăn chặn nó bị thay đổi từ bên ngoài.</p>
+                        </div>
                     </div>
                 </div>
             </div>

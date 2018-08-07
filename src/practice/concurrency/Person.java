@@ -1,12 +1,12 @@
 package practice.concurrency;
 
 public class Person {
-    private static Person instance = new Person("Khanh Tran", "Quan 2");
-    private static volatile Person volatileInstance = new Person("Moi Moi", "Quan 2");
+    private static Person instance = new Person("Khanh Tran", "Quan 2", 28);
+    private static volatile Person volatileInstance = new Person("Moi Moi", "Quan 2", 25);
 
     private String name;
     private String address;
-    private boolean active;
+    private volatile int age;
 
     public static Person getInstance (){
         return instance;
@@ -25,10 +25,10 @@ public class Person {
     }
 
 
-    public Person(String name, String address) {
+    public Person(String name, String address, int age) {
         this.name = name;
         this.address = address;
-        this.active = false;
+        this.age = age;
     }
 
     public String getName() {
@@ -47,11 +47,23 @@ public class Person {
         this.address = address;
     }
 
-    public boolean isActive() {
-        return active;
+    public static void setInstance(Person instance) {
+        Person.instance = instance;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public static void setVolatileInstance(Person volatileInstance) {
+        Person.volatileInstance = volatileInstance;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void increaseAge(){
+        ++age;
     }
 }

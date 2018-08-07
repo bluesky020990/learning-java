@@ -1,7 +1,7 @@
 package practice.concurrency;
 
-public class MyRunable implements Runnable {
-    private Person person;
+public class MyRunable extends  Thread {
+    private final Person person;
 
     public MyRunable(Person person) {
         this.person = person;
@@ -11,15 +11,16 @@ public class MyRunable implements Runnable {
         return person;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
 
     @Override
     public void run() {
-        boolean isActive = person.isActive();
-        for(int i = 0; i < 100; i++){
-            System.out.println("current state of person is  " + (isActive ? "TRUE" : "FALSE ") + "............................. TASK 1 ");
-        }
+        int currentValue = person.getAge();
+
+        System.out.println("Thread " + Thread.currentThread().getId() + " - old value :  " + currentValue);
+
+        person.increaseAge();
+
+        int newValue = person.getAge();
+        System.out.println("Thread " + Thread.currentThread().getId() + " - new value :  " + newValue);
     }
 }

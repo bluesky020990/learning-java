@@ -5,7 +5,10 @@ import practice.concurrency.MyRunable;
 import practice.concurrency.Person;
 
 public class VolatileExample {
-    public static void main(String args[]){
+    private final static int TOTAL_THREADS = 2;
+
+
+    public static void main(String args[]) throws InterruptedException {
 //        testVolatile();
 
         testUnvolatile();
@@ -22,7 +25,7 @@ public class VolatileExample {
         Thread worker2 = new Thread(task2);
 
         try{
-            Thread.sleep(100);
+            worker.sleep(100);
 
             worker.start();
             worker2.start();
@@ -32,25 +35,22 @@ public class VolatileExample {
         }
     }
 
-    public static void testUnvolatile(){
+
+    public static void testUnvolatile() throws InterruptedException {
         Person person = Person.getInstance();
 
-        Runnable task = new MyRunable(person);
-        Thread worker = new Thread(task);
+        Thread[] threads = new Thread[TOTAL_THREADS];
+        for(int i = 0; i < TOTAL_THREADS; ++i){
+            threads[i] = new MyRunable(person);
+        }
+
+        for(int i = 0; i < TOTAL_THREADS; ++i){
+            threads[i].start();
+        }
 
 
-        Runnable task2 = new EditMyRunnable(person);
-        Thread worker2 = new Thread(task2);
-
-        try{
-            worker.sleep(100);
-            worker2.sleep(100);
-
-            worker.start();
-            worker2.start();
-
-        } catch (Exception e){
-
+        for(int i = 0; i < TOTAL_THREADS; ++i){
+            threads[i].join();
         }
     }
 }

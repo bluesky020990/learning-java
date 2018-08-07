@@ -84,6 +84,7 @@ const JAVA_CONCURRENCY_LESSON = {
     category : "Java Concurrency",
     lesson : [
         {url: "lesson_01_java_concurrency.html", titleDisplay: "Java Concurrency Overview"},
+        {url: "lesson_02_concurrency_02.html", titleDisplay: "Thread in Java"},
     ]
 };
 
