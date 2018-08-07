@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title of page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/global/global.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../src/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-secondary" category="concurrency">
+<div class="container">
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">World</a>
+            <a class="p-2 text-muted" href="#">U.S.</a>
+            <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a>
+        </nav>
+    </div>
+
+    <div class="p-3 p-md-12 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+            <h1>Thread in Java</h1>
+            <div class="lead">
+                Thread in Java
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <div class="blog-post">
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Improvements and issues with concurrency</h3>
+                    <p>Trước khi đi vào thread trong Java, ta đi sơ qua về những ưu, nhược điểm của concurrency và từ đó xây dựng các bài toán giải quyết cho phù hợp.</p>
+
+                    <div class="text-dark pt-3">
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Lợi ích của concurrency</h5>
+                            <div class="text-dark pt-3">
+                                <p>Trong một ứng dụng Java, ta có thể làm việc với nhiều thread để đạt được parallel processing hoặc
+                                asynchronous behavior. Concurrency hứa hẹn thực hiện các tác vụ nhanh hơn vì cá tác vụ này có thể chia thành các subtask và có thể
+                                được thực thi song song. Tất nhiên là thời gian chạy được giới hạn bởi các tác vụ có thể thực hiện được song song.</p>
+
+                                <p>Nó có công thức tính hiệu năng hẳn hỏi, và được gọi là Amdahl's law, phát biểu như sau:</p>
+
+                                <blockquote>
+                                    If F is the percentage of the program which can not run in parallel and N is the number of
+                                    processes, then the maximum performance gain is 1 / (F+ ((1-F)/n))T
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-dark pt-3">
+                        <div class="my-4 p-3 bg-white rounded box-shadow">
+                            <h5 class="border-bottom border-gray pb-2 mb-0">Những vấn đề của concurrency</h5>
+                            <div class="text-dark pt-3">
+                                <p>Mỗi thread có call stack của riêng nó, nhưng cũng có thể truy cập vào shared data. Vì vậy, nó dẫn đến 2 vấn đề cơ bản :
+                                visibility và access problems.</p>
+
+                                <p>Visibility problem xuất hiện nếu Thread đọc 1 shared data mà sau đó, nó được thay đổi bởi 1 thread B khác, và thread A không biết
+                                về sự thay đổi của dữ liệu được chia sẻ này.</p>
+
+                                <p>Access problem xuất hiện khi có một vài thread cùng truy cập vào một shared data và thay đổi cùng 1 dữ liệu trong cùng một thời điểm.</p>
+
+                                <p>Những lỗi trên có thể dẫn đến : </p>
+
+                                <ul>
+                                    <li>Liveness failure: Chương trình ko thể tương tác được khi gặp các lỗi nghiêm trọng, như deadlock, nói nôm na là treo máy :)</li>
+                                    <li>Safety Failure: Chương trình creates những incorrect data.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Concurrency in Java</h3>
+                    <div class="text-dark pt-3">
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Processes and Threads</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Java program chạy trong tiến trình riêng của nó và mặc định trong một thread. Java hỗ trợ threads như là một phần của Java language
+                                    thông qua Thread code. Java application có thể create new thread thông qua Class này.</p>
+
+                                    <p>Java 1.5 cũng cung cấp những hỗ trợ cải thiện cho concurrency với java.util.concurrent package.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Locks and thread synchronization</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Java cung cấp locks để bảo vệ các thành phần nhất định của code được thực thi bởi nhiều thread trong cùng một thời điểm.</p>
+
+                                    <p>Cách thức đơn giản nhất để locking một certain methods or java class đó là define method hoặc class đó bằng từ khóa synchronize. \
+                                        Xem lại double check trong Singleton pattern để biết thêm chi tiết.</p>
+
+                                    <p>Từ khóa synchronized trong Java đảm bảo 2 điều sau :</p>
+
+                                    <ul>
+                                        <li>Chỉ duy nhất 1 thread có thể thực thi một block code tại một thời điểm.</li>
+                                        <li>Toàn bộ các thread truy cập vào một synchronized block code có thể thấy được hiệu ứng của các modification trước đó mà được bảo vệ
+                                        bởi cùng 1 khóa.</li>
+                                    </ul>
+
+                                    <p>Hai khái niệm trên kia, cái đầu đảm bảo rằng chỉ có 1 thread được thực thi một synchronized block tại một thời điểm, còn cái thứ 2 thì hơi khó hiểu, nhưng
+                                    có thể hiểu nôm na như sau: Nếu có 1 thread process xong một block code/ một class, thì những thằng vào sau sẽ thấy được sự thay đổi dữ liệu/ state của block đó.</p>
+
+                                    <p>Synchronized là thực sự cần thiết để việc truy cập lẫn nhau giữa các block và tạo nên các giao tiếp đáng tin cậy giữa các thread.</p>
+
+                                    <p>Ta có thể sử dụng synchronized để định nghĩa cho một phương thức. Điều này đảm bảo rằng chỉ có 1 thread được truy cập đến method này tại cùng 1 thời điểm
+                                    và các thread khác sẽ phải đợi cho đến khi thread này rời khỏi method đó.</p>
+
+                                    <blockquote>
+                                        public synchronized void critial() {<br />
+                                        // some thread critical stuff here<br />
+                                        }<br />
+                                    </blockquote>
+
+                                    <p>Ta cũng có thể sử dụng synchronized để bảo vệ các block trong một method. Block này được bảo vệ bởi 1 key, có thể
+                                    là string hoặc object. Và cái này được gọi là lock. Sẽ đề cập đến sau.</p>
+
+                                    <p>Toàn bộ các code mà được bảo vệ cùng 1 same lock thì có thể được thực thi bởi 1 method tại một thời điểm.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-dark pt-3">
+                            <div class="my-4 p-3 bg-white rounded box-shadow">
+                                <h5 class="border-bottom border-gray pb-2 mb-0">Volatile</h5>
+                                <div class="text-dark pt-3">
+                                    <p>Khi một variable được định nghĩa là volatile thì nó được đảm bảo rằng, bất cứ thread nào mà đọc this field thì sẽ thấy được giá
+                                    trị được viết gần đấy. Volatile không thực hiện bất cứ khóa độc quyền trên các biến.</p>
+
+                                    <p>Nói cách khác, giả sử có 2 thread A và B cùng truy cập vào 1 variable được định nghĩa là volatile, khi thread A thay đổi giá trị của nó,
+                                    thì thread B cũng thấy được sự thay đổi đó, và ngược lại. Điều này khác biệt với việc khai báo 1 biến ko phải là volatile. Xem double check SIngleton
+                                    để biết thêm về cách sử dụng của nó.</p>
+
+                                    <p>Volatile còn có thể sử dụng cho các trường hợp đặc biệt như, nếu khai báo volatile cho 1 object, thì khi các field bên trong nó bị thay đổi, thì các thread
+                                    truy cập đến nó cũng nhận được sự thay đổi đó. Ví dụ volatile một cái person, thì khi địa chỉ của person thay đổi, thread khác cũng nhận được.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <div class="text-dark pt-3">
+                        BODY_CONTENT
+                    </div>
+                </div>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            </nav>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-3 my-4 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Created by <strong>Khanh Tran</strong></p>
+                <p class="mb-0">Email: <strong>quockhanhqb011@gmail.com</strong></p>
+                <p class="mb-0">Phone: <strong>(+84) 989 890 960</strong></p>
+            </div>
+
+            <div class="p-3 my-4 bg-light rounded" id="main-lesson-menu">
+                <h4 class="font-italic">Lesson</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+
+                </ol>
+            </div>
+        </aside>
+    </div>
+</main>
+<footer class="blog-footer">
+    <p>Created by Khanh Tran</p>
+</footer>
+<script type="text/javascript" src="../src/global/global.js"></script>
+</body>
+</html>
