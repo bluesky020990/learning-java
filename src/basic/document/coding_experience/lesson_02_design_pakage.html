@@ -37,6 +37,8 @@
                 <p>Trong lúc làm việc, chắc chắn 1 điều rằng bạn sẽ phải xây dựng các Package để phục vụ công việc nào đó của mình.</p>
 
                 <p>Vậy, có những lưu ý nào cần quan tâm trong việc này?</p>
+
+                source : <a href="http://www.codingthearchitecture.com/2015/03/08/package_by_component_and_architecturally_aligned_testing.html">Click here</a>
             </div>
         </div>
     </div>
@@ -87,7 +89,7 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">Implement</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Principle </h3>
                     <div class="text-dark pt-3">
                         <p>Dưới đây là những nguyên lý cần tuân thủ trong việc thiết kế package</p>
 
@@ -181,9 +183,131 @@
                 </div>
 
                 <div class="my-4 p-3 bg-white rounded box-shadow">
-                    <h3 class="border-bottom border-gray pb-2 mb-0">HEADER_CONTENT</h3>
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Implement</h3>
                     <div class="text-dark pt-3">
-                        BODY_CONTENT
+                        <p>Căn cứ vào những nguyên lý ở trên, ta có những cách thiết kế package như sau:</p>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Package by layer</h5>
+                        <div class="text-dark pt-3">
+                            <p>Ta cũng biết, đối với 1 app, ta thường có thói quen chia nó thành nhiều layer để quản lý. Điều này thường
+                            được sử dụng, và hiện tại trong các framework của công ti cũng đang được xây dựng dựa trên nguyên tắc này.</p>
+
+                            <img src="../assests/experience/design_package/package-by-layer.png" class="img-fluid"/>
+
+                            <p>Package by layer đó là việc ta phân nhóm các codebase dựa theo chức năng kĩ thuật. </p>
+
+                            <p>Trong mô hình này ta chia nhỏ package thành các layer, và mỗi layer đóng 1 vai trò nhất định. Controller
+                                handle request, service cung cấp các dịch vụ và data access quản lý việc kết nối và thao tác với database.</p>
+
+                            <p>Cách tiếp cận này còn được gọi là separation of concerns - và được đánh giá là "good think". Nếu cần thay đổi database,
+                            ko sao, ta chỉ cần sửa lại ở package data layer là đủ.</p>
+
+                            <p>Mỗi layer này có thể được test với các thành phần liên quan xung quanh nó.</p>
+
+                            <p>Tuy nhiên, nó có 1 nhược điểm, khi nó phát triển, nó sẽ trở nên quá cồng kềnh và phức tạp, kiểu như bạn tống
+                            tất cả mọi thứ vào trong một cái nhà kho vậy.</p>
+
+                            <p>Và khi nó phát triển, sẽ là chuyện bình thường khi ta cần sử dụng các public class để chia sẻ các tính năng. Khi này,
+                            ta sẽ rơi vào bài toán, bị ràng buộc lần nhau.</p>
+
+                            <p>Quay lại bài toán ở trên, giờ ta chỉ muốn lấy 1 feature từ cái system này, eo ôi, ta phải tự chọn lọc và copy nó
+                            trong cả 3 layer, và thậm chí cũng ko thể biết được rằng có dư thừa gì ko. (Thiếu thì combine bị lỗi, ko sao :) ).</p>
+
+                            <p>Mô hình này còn được gọi là Horizontal slicing.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Package by feature</h5>
+                        <div class="text-dark pt-3">
+                            <p>Trong một hệ thống, ta thường sẽ có những tính năng độc lập. Và vì vậy việc tiếp cận theo cách này cũng
+                            có vẻ là 1 giải pháp hay.</p>
+
+                            <p>Thay vì tổ chức theo chiều dọc giống như cái package by layer, thì ở đây ta làm ngược lại, tổ chức codebase
+                            theo chiều thẳng đứng  - Vertical slicing.</p>
+
+                            <img src="../assests/experience/design_package/package-by-feature.png" class="img-fluid"/>
+
+                            <p>Ở mô hình này, mọi thứ được sắp xếp theo những feature độc lập - hoặc một bộ các tính năng.</p>
+
+                            <p>Ở đây ta vẫn có kiến trúc phân lớp, tuy nhiên các layer lại nằm ở bên trong các feature.</p>
+
+                            <p>Ưu điểm của cái này, đó là khi bạn cần thay đổi một feature, ít nhất, nó ko ảnh hưởng đến các feature khác (nếu nó
+                            là độc lập). Và việc testing các feature của nó cũng trở nên dễ dàng hơn.</p>
+
+                            <p>Vậy nhược điểm là gì? Giả sử feature A muốn sử dụng một vài chức năng của Feature B, ta lại phải mở các
+                            public class để chia sẻ, và cái vấn đề ràng buộc lại xuất hiện.</p>
+
+                            <p>Khi có một sự thay đổi ở một layer, thì toàn bộ các feature có liên quan cũng cần cập nhật lại. Ví dụ đổi database,
+                            ngày xưa thì chỉ ở data layer bị thay dổi, giờ thì cả 3 feature cũng bị ảnh hưởng theo, nếu như ko có giải
+                            pháp  đúng đắn.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Package by Component</h5>
+                        <div class="text-dark pt-3">
+                            <p>Cách tiếp cận của Package by component là coi các package như các component độc lập, và mối
+                            liên hệ giữa chúng phải thông qua các interface.</p>
+
+                            <img src="../assests/experience/design_package/package-by-component.png" class="img-fluid"/>
+
+
+                            <p>Điểm mấu chốt của cái này nằm ở từ component. Khái niệm component cần phải hiểu chính xác.</p>
+
+                            <blockquote>
+                                a part that combines with other parts to form something bigger
+                            </blockquote>
+
+                            <p>Thường có 1 sự nhầm lẫn giữa module và component. Component phải là một bộ phận độc lập, nó có data
+                            riêng và các behavior riêng. Nó giao tiếp với các component khác thông qua các interface.</p>
+
+                            <p>Còn module chính là một thành phần của hệ thống. Về mặt vậy lý, module là tập hợp của nhiều component, tuy nhiên
+                            module thường có sự ràng buộc lẫn nhau, trong khi đó, component lại mang tính độc lập.</p>
+
+                            <p>Thế nó có khác nhau quái gì với cái trên kia đâu, khi mà nó cũng cần public các interface để giao tiếp???</p>
+
+                            <p>Khác, khác chứ. Trong 2 mô hình trên, rõ ràng khi Layer này muốn truy cập vào Layer kia, nó có thể sử dụng các public class
+                            bên trong Layer đó. Và chính điều đó khiến cho nó trở nên bị ràng buộc lẫn nhau.</p>
+
+                            <p>Còn ở đây, Component che dấu hoàn toàn các detail bên trong nó, và chỉ giao tiếp thông qua interface mà thôi. Do
+                            đó, khi cần copy, ta chỉ việc mang các component đó sang, và sử dụng các inteface của nó mà ko cần quan tâm chi tiết bên
+                            trong nó có gì. Dư thừa ư, chắc chắn là có, nhưng thứ ta quan tâm ở đây ko phải là tiết kiệm dung lượng, mà là giảm sự
+                            ràng buộc.</p>
+
+                            <p>Một so sánh nho nhỏ giữa 2 cái kia, Thằng hàng xóm tới mượn bạn con dao, bạn trả lời, để trong bếp và nó xộc vào nhà xáo
+                            tung mọi thứ lên để tìm. Trong khi đó, với component, khi thằng hàng xóm mượn, bạn bảo để tao lấy cho. Và lát sau mang ra cho nó.</p>
+
+                            <p>Cái này có vẻ hay đấy, ưu điểm thấy rồi, nhưng nhược điểm là gì?</p>
+
+                            <p>Tất nhiên đó là viết nó phức tạp hơn. Việc đầu tiên là cần bỏ thói quen sử dụng class public - thứ khiến cho mọi thứ trở nên
+                            ràng buộc. Thay vào đó phải áp dụng đúng khái niệm của component để thiết kế. Luôn nhớ, component là độc lập về mặt dữ liệu, che dấu
+                            tất cả và chỉ public các interface ra bên ngoài mà thôi.</p>
+
+                            <p>Nhược điểm thứ 2 là sự phức tạp. Vì nó che dấu đi tất cả detail bên trong, nên sẽ ko ai biết vấn đề xảy ra ở đâu, khi có 1
+                            request được truyền đi giữa nhiều component. Mà cũng ko sao, nếu là bt thì thằng nào cũng thế.</p>
+                        </div>
+                    </div>
+
+                    <div class="my-4 p-3 bg-white rounded box-shadow">
+                        <h5 class="border-bottom border-gray pb-2 mb-0">Vậy ta nên xài cái nào???</h5>
+                        <div class="text-dark pt-3">
+                            <p>Sẽ không bao giờ có 1 sự gợi ý nào chính xác ở đây cả. Tùy từng mô hình và tùy tình huống mà ta
+                            cứ việc lựa chọn. Nếu nhỏ lẻ thì làm luôn cái số 1 cho nhanh, nếu hơi nhiều và có định hướng theo micro-service thì
+                            theo cái số 2. Còn nếu như thấy hệ thống phức tạp quá, có đủ thời gian để làm từ từ thì theo cái số 3 cho an toàn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Summary</h3>
+                    <div class="text-dark pt-3">
+                        <p>Tóm lại, cách thức nào cũng có những ưu và khuyết điểm riêng của nó. Thực sự thì bài toán trên vẫn ko được
+                        giải quyết hoàn toàn, tuy nhiên nó cũng đưa ra cho ta các cách thức để quyết định trong việc xây dựng các package.
+                        Bài học rút ra là phân tích, là chìa khóa của mọi thành công.</p>
                     </div>
                 </div>
             </div>
