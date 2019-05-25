@@ -49,6 +49,7 @@ const JAVA_DESIGN_PATTERN_LESSON = {
         {url: "lesson_07_adapter_pattern.html", titleDisplay: "Adapter Pattern"},
         {url: "lesson_08_bridge_pattern.html", titleDisplay: "Bridge Pattern"},
         {url: "lesson_09_composite_pattern.html", titleDisplay: "Composite Pattern"},
+        {url: "lesson_10_filter_pattern.html", titleDisplay: "Filter Pattern *****"},
         {url: "lesson_10_decorate_pattern.html", titleDisplay: "Decorate Pattern"},
         {url: "lesson_11_facade_pattern.html", titleDisplay: "Facade Pattern"},
         {url: "lesson_12_flyweight.html", titleDisplay: "Flyweight Pattern"},

@@ -34,13 +34,7 @@
         <div class="col-md-12 px-0">
             <h1>Factory Pattern - Creational Pattern</h1>
             <div class="lead">
-                <p>Factory pattern che dấu hoàn toàn việc khởi tạo object, ta không thể sử dụng toán tử new để lấy được object
-                    mà ta muốn, thay vào đó, Factory sẽ cung cấp cho ta 1 interface để làm việc đó.</p>
 
-                <p>Factory Pattern được dùng trong trường hợp ta có một nhóm object, và muốn code trở nên thống nhất đồng thời
-                che dấu đi việc khởi tạo của chúng. Client chỉ cần gọi interface với tham số mà ta cung cấp, và mọi thứ sẽ ok hết thôi.</p>
-
-                <p>Tóm lại, nó là một Factory - Nhà máy - và nhiệm vụ của nó là sản xuất object.</p>
             </div>
         </div>
     </div>
@@ -121,55 +115,7 @@
                     <h3 class="border-bottom border-gray pb-2 mb-0">Implements</h3>
                     <div class="text-dark pt-3">
 
-                        <p>Nhóm các object cùng chức năng thành một loại, có thể dụng Abstract Class hoặc Interface</p>
 
-                        <p>Xây dựng một Factory để lấy ra một object trong nhóm đó, tùy thuộc vào tham số truyền
-                            vào.</p>
-
-                        <p>Ví dụ, ta xếp trứng gà, trứng vịt, trứng ngỗng, trứng khủng long vào cùng một rổ. Mỗi khi anh
-                            đầu bếp yêu cầu trứng gà, thì anh
-                            trợ lý sẽ vào và lấy quả trưng theo yêu cầu ra. </p>
-
-
-                        <p>Ta thường sử dụng Factory khi mà chúng ta có 1 super class và multiple sub-classes. Và tùy
-                            theo
-                            input truyền vào, ta cần phải trả lại 1 trong số các subclass ở trên kia.</p>
-
-                        <p>Factory pattern mang nhiệm vụ instance của class từ client đến Factory. Và việc của bạn còn
-                            lại
-                            rất đơn giản, getFactoryObjectByType, và nó sẽ trả ra object mà bạn cần.</p>
-
-                        <p>Dưới đây là mô tả về việc implement của nó</p>
-
-                        <ul>
-                            <li>Super class - Có thể là interface / abstract</li>
-
-                            <li>Subclass -- Các class implements interface trên kia / extend từ abstract class trên
-                                kia.
-                            </li>
-
-                            <li>Factory Class với một static method handle việc initialize và return lại subclass từ
-                                tham số client truyền vào
-                            </li>
-                        </ul>
-
-                        <p>Những lưu ý thêm về việc implement pattern này:</p>
-
-                        <blockquote>
-                            1. Bản chất của Factory pattern là quản lý việc khởi tạo các object. Vì vậy ta nên khai báo
-                            private cho constructor của subclass để ngăn cho nó không được khởi tạo từ bên ngoài của
-                            Factory.
-
-                            2. Factory class được sử dụng như một Utils Class (utils - sử dụng). Vì vậy ta nên biến cái
-                            Factory
-                            Class thành một Singleton Class / hoặc khai báo static cho cái method getFactoryObjectByType
-                            của nó
-                            để có thể sử dụng ở bất cứ đâu.
-                        </blockquote>
-
-                        <p>Xem ví dụ trong FactoryPatternExample</p>
-
-                        <img src="../assests/design_pattern/factory_pattern.png" class="img-fluid">
                     </div>
                 </div>
 

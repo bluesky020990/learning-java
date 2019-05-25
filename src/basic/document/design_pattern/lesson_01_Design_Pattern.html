@@ -51,36 +51,125 @@
         <div class="col-md-8 blog-main">
             <div class="blog-post">
                 <div class="my-4 p-3 bg-white rounded box-shadow">
+                    <h3 class="border-bottom border-gray pb-2 mb-0">Class Diagram</h3>
+                    <div class="text-dark pt-3">
+                        <p>Trước khi cùng tìm hiểu vào các Design Pattern, trước hết ta cần tìm hiểu về Class Diagram. Hiểu được
+                        Diagram này mới hiểu được cách ta implement theo các diagram.</p>
+
+                        <p>Trong Class Diagram, có 4 loại quan hệ.</p>
+
+                        <dl>
+                            <dt>Realization - Hiện thực hóa </dt>
+                            <dd>
+                                Mối quan hệ giữa 1 class implement 1 interface được gọi là quan hệ realization,
+                                được biểu diễn bởi đường đứt nét có hình mũi tên tam giác chỉ vào interface.<br />
+                            </dd>
+
+                            <blockquote>
+                                <img src="../assests/design_pattern/uml_diagram/overview/reliazation.png" class="img-fluid">
+                            </blockquote>
+
+                            <dt>Generation hay còn gọi là Inheritance (Quan hệ tổng quát hóa, quan hệ khái quát hóa, quan hệ kế thừa)</dt>
+                            <dd>
+                                Đối tượng cụ thể (concrete) sẽ kế thừa các thuộc tính và phương thức của đối tượng tổng quát (general).<br />
+                                <br />
+                                Quan hệ này được kí hiệu là <b> A is-a B</b> và thể hiện bằng một mũi tên trắng, chỉ từ class con lên class cha (Từ Concrete lên General).
+
+                            </dd>
+                            <blockquote>
+                                <img src="../assests/design_pattern/uml_diagram/overview/generalization.png" class="img-fluid">
+                            </blockquote>
+
+                            <dt>Dependency - Phụ thuộc</dt>
+                            <dd>
+                                Biểu diễn quan hệ giữa 2 phần tử trong mô hình mà nếu thay đổi ở phần tử này (phần tử độc lập)
+                                có thể gây ra thay đổi ở phần tử kia(phần tử phụ thuộc).<br />
+                                <br />
+                                Quan hệ này được kí hiệu là <b>A use-a B</b> và được thể hiện bằng 1 mũi tên nét đứt từ đối
+                                tượng phụ thuộc (client) sang đối tượng độc lập (supplier).<br />
+                                <br />
+                                Dependence thường sử dụng các khuôn mẫu sau:
+
+                                <dl>
+                                    <dt>use</dt>
+                                    <dd>Chỉ rằng ngữ nghĩa của lớp gốc phụ thuộc vào lớp ngọn, đặc biệt trong trường hợp lớp gốc dùng
+                                    lớp ngọn làm tham số của nó.</dd>
+
+
+                                    <dt>permit</dt>
+                                    <dd>Chỉ rằng lớp gốc được quyền truy cập 1 cách đặc biệt vào lớp ngọn, chẳng hạn truy cập
+                                    vào các thuộc tính protected, hay các method protected....</dd>
+
+
+                                    <dt>refine</dt>
+                                    <dd>Chỉ rằng lớp gốc ở 1 mức độ tinh thế cao hơn lớp ngọn.</dd>
+                                </dl>
+
+                            </dd>
+                            <blockquote>
+                                <img src="../assests/design_pattern/uml_diagram/overview/dependency.png" class="img-fluid">
+                            </blockquote>
+
+                            <dt>Association - Kết hợp</dt>
+                            <dd>
+                                Tập hợp các kết nối cùng loại (cùng ý nghĩa) giữa các object của 2 lớp tạo thành mối liên
+                                kết association , quan hệ giữa 2 tập hợp (2 lớp).<br />
+                                <br />
+                                Là mỗi liên hệ giữa 2 lớp có  role, role là tên vai trò của mối liên kết : vd như : của ,
+                                cho , có , liên kết tới , trao đối với , …. (thường tên role có kèm theo 1 mũi tên để chỉ
+                                hướng quan hệ áp dụng từ lớp nào sang lớp nào)<br />
+                                <br />
+                                Kí hiệu <b>A has-a B</b> và được biểu diễn bằng 1 gạch nối/ mũi tên không có chiều hoặc có chiều.<br />
+                                <br />
+                                Ta ngầm hiểu khi nói A -- B điều đó có nghĩa hoặc là trong B có thuộc tính là A, hoặc trong A
+                                có thuộc tính là B. Cùng tìm hiểu thêm về 2 loại này nhé.
+
+                                <blockquote>
+                                    <img src="../assests/design_pattern/uml_diagram/overview/association.png" class="img-fluid">
+                                </blockquote>
+
+                                <dl>
+                                    <dt>Aggregation - Quan hệ thu nạp</dt>
+                                    <dd>
+                                        A và B có quan hệ Associate với nhau.<br />
+                                        Trong A có chứa B<br />
+                                        Nếu A bị hủy thì chưa chắc B đã bị hủy, đôi khi B còn được sử dụng ở 1 chỗ nào khác.<br />
+                                        Nó còn được gọi là shared-aggregation.Một dạng của nối kết, trong đó một phần tử này chứa các phần tử khác.<br />
+                                        <br />
+                                        kí hiệu <b>Whole A – Part B</b> : A được tạo ra từ nhiều B kết hợp lại, B có thể
+                                        tạo ra độc lập mà ko phụ thuộc vào A. B cũng có thể thuộc một Whole C nào đó khác A.<br />
+                                        <br />
+                                        <b>Share</b> ở đây có nghĩa, B có thể là bộ phận của 1 Whole khác. nên A bị thì chưa chắc
+                                        B bị hủy.
+                                    </dd>
+
+                                    <blockquote>
+                                        <img src="../assests/design_pattern/uml_diagram/overview/aggregation.png" class="img-fluid">
+                                    </blockquote>
+
+                                    <dt>Composition - Hợp thành</dt>
+                                    <dd>
+                                        Mối quan hệ của cái này chặt chẽ hơn aggregation, nó còn được gọi là non-share aggregation.<br />
+                                        Nó khác với cái trên ở chỗ, B là của riêng A, B ko tồn tại một mình mà luôn xuất hiện bên trong
+                                        một A nào đó. Vì vậy A bị hủy thì B cũng đi luôn.<br />
+                                        Tất nhiên là A chết thì B đi luôn, B đi luôn thì A vẫn còn.<br />
+                                        Whole ở đây thể hiện B nằm trọn trong A, chỉ thuộc 1 mình A mà thôi.<br />
+                                    </dd>
+
+                                    <blockquote>
+                                        <img src="../assests/design_pattern/uml_diagram/overview/composition.png" class="img-fluid">
+                                    </blockquote>
+                                </dl>
+                            </dd>
+
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="my-4 p-3 bg-white rounded box-shadow">
                     <h3 class="border-bottom border-gray pb-2 mb-0">Types of Design Patterns</h3>
                     <div class="text-dark pt-3">
-                        <p>Theo phân loại thì ta có khoảng 23 thằng, mỗi thằng lại có một mục đích sử dụng khác nhau, nhưng chủ yếu
-                            được phân thành bốn nhóm dưới đây :</p>
 
-                        <table class="table table-bordered">
-                            <tbody><tr><th style="width:5%;">S.N.</th><th>Pattern &amp; Description</th></tr>
-                            <tr><td>1</td><td><b>Creational Patterns</b><br>These design patterns provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator. This gives program more flexibility in deciding which objects need to be created for a given use case.</td></tr>
-                            <tr><td>2</td><td><b>Structural Patterns</b><br>These design patterns concern class and object composition. Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities.</td></tr>
-                            <tr><td>3</td><td><b>Behavioral Patterns</b><br>These design patterns are specifically concerned with communication between objects.</td></tr>
-                            <tr><td>4</td><td><b>J2EE Patterns</b><br>These design patterns are specifically concerned with the presentation tier. These patterns are identified by Sun Java Center.</td></tr>
-                            </tbody>
-                        </table>
-
-                        <blockquote>
-                            Nhóm Creational Patterns cung cấp cho ta cách thức để tạo nên object mà ko phải sử dụng constructor
-                            mặc định. Nói chính xác hơn thì nó cung cấp cho ta các cách để quản lý việc khởi tạo object.
-                        </blockquote>
-
-                        <blockquote>
-                            Nhóm Structural Patterns focus chủ yếu vào các thành phần của object, sẽ đi chi tiết sau.
-                        </blockquote>
-
-                        <blockquote>
-                            Nhóm Behavioral Patterns liên quan đến hành vi của object, cũng đi chi tiết sau.
-                        </blockquote>
-
-                        <blockquote>
-                            J2EE Patterns đi chi tiết sau.
-                        </blockquote>
                     </div>
                 </div>
 
