@@ -58,14 +58,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1 {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 26px;
-  line-height: 34px;
+  font-size: 24px;
+  line-height: 1.2;
 
   .sub{
     float: right;
@@ -76,13 +76,13 @@ h2 {
 }
 
 h3 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 h4 {
   font-size: 20px;
-  line-height: 25px;
+  line-height: 1.2;
 }
 
 h5 {
@@ -116,7 +116,7 @@ h6 {
   }
 
   &.user-info{
-    font-size: 20px;
+    font-size: 18px;
 
     li{
       position: relative;
@@ -153,6 +153,7 @@ h6 {
 
   .cv-avatar{
     text-align: center;
+    margin-bottom: 16px;
 
     .circle-image{
       border-radius: 100%;
@@ -175,8 +176,8 @@ h6 {
 
 
 .cv-information {
-  margin-bottom: 25px;
-  padding: 0px 10px;
+  margin-bottom: 40px;
+  padding: 0px 8px;
 
   h2{
     font-size: 22px;
@@ -184,16 +185,14 @@ h6 {
 }
 
 .cv-information-main {
-  margin-bottom: 40px;
-  padding: 0px 10px;
+  margin-bottom: 24px;
 
   h1{
     color: $darkGreenColor;
   }
 
   h2 {
-
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   //span.icon{
@@ -207,10 +206,10 @@ h6 {
 
 
 .cv-content {
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
   background: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   .odd{
     background: #f3f3f3;
