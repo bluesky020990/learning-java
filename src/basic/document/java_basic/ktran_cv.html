@@ -12,7 +12,7 @@
 <script type="text/javascript" src="../src/boostrap/js/bootstrap.min.js"></script>
 
 
-<div class="main-container">
+<div class="main-container" style="min-height: 100vh">
     <div class="cv-column information" style="width: 30%;">
         <div class="cv-avatar">
             <div class="circle-image">
@@ -25,7 +25,7 @@
 
         <div class="cv-information">
             <div class="list-items user-info">
-                <ul>
+                <ul style="list-style: none">
                     <li><i class="fas fa-calendar-alt"></i> 02/09/1990</li>
                     <li><i class="fas fa-phone"></i> 0989890960</li>
                     <li><i class="far fa-envelope"></i> quockhanhqb011@gmail.com</li>
@@ -39,12 +39,11 @@
 
             <div class="list-items">
                 <ul>
-                    <li>11 years in software development, including 7 years in management roles.</li>
-                    <li>Known for a conscientious and serious attitudes, ensuring tasks are approached with unwavering
-                        responsibility.
-                    </li>
-                    <li>Proficient in researching, training, and management.
-                    </li>
+                    <li>With 13 years of work experience, in roles as a front-end developer, back-end developer, and team leader.</li>
+
+                    <li>Serious, diligent, independent, and self-motivated attitude. Proactively communicates to gather the necessary information.</li>
+
+                    <li>Experience in self-learning, self-research, sharing and training, as well as in management.</li>
                 </ul>
             </div>
         </div>
@@ -54,27 +53,17 @@
 
             <div class="list-items">
                 <ul>
-                    <li>Proficient in CSS, jQuery, HTML, and JavaScript, with advanced skills in TypeScript, ReactJS,
-                        and Next.js.
-                    </li>
+                    <li>Knowledge of algorithms, how to apply design patterns, and microservice patterns.</li>
 
-                    <li>Familiar with Java, Spring Boot, and Spring Cloud, adept at developing microservices
-                        architectures and serverless solutions.
-                    </li>
+                    <li>Understanding concurrency models and having experience in implementing these models.</li>
 
-                    <li>Extensive knowledge of OOP and design patterns, with a focus on microservice patterns for
-                        scalable solutions.
-                    </li>
-                </ul>
-            </div>
-        </div>
+                    <li>Understanding the execution strategy of the database, how it is organized, and how to optimize slow queries.</li>
 
-        <div class="cv-information">
-            <h2>Next Target</h2>
+                    <li>Understanding the importance of UX and how it determines the backend architecture.</li>
 
-            <div class="list-items">
-                <ul>
-                    <li>Become a System designer in 3 years.</li>
+                    <li>Knowledge of system deployment models on Docker and Kubernetes (K8s).</li>
+
+                    <li>Awareness of the importance of security and adherence to security regulations during the API development phase.</li>
                 </ul>
             </div>
         </div>
@@ -93,239 +82,250 @@
         <div class="cv-information-main">
             <h1><span class="icon"><i class="fas fa-briefcase"></i></span> Work Experience</h1>
 
+            <h2 class="company"><i class="fas fa-home"></i> Arbin Instruments Company <span class="sub">06/2024 - 30/04/2025</span> </h2>
+
             <div class="cv-content ">
-                <h2 class="company">Senior Developer (Bstar Solutions) <span class="sub">07/2023 - 04/2024</span></h2>
+                <h3 class="position">Senior Developer - TMS (US)</h3>
 
                 <div class="list-items">
                     <ul>
-                        <li>Designs application structures and databases, providing innovative solutions tailored to
-                            meet customer needs.
-                        </li>
+                        <li>Design structure for an IoT Platform. Working with CTO to provide solutions and implements the requirements.</li>
 
-                        <li>Develops targeted solutions, crafting comprehensive guidelines to address customer
-                            challenges.
-                        </li>
+                        <li>Help Firmware team to resolve their performance issue (1 device try to send 3 heavy requests in a second).</li>
 
-                        <li>Leads training programs in Spring Boot + ReactJS, mentoring a team of five in building a
-                            mini e-commerce platform within five weeks.
-                        </li>
+                        <li>Provide the solution to aggregate data were sent from multiple devices, querying data and recovering strategies when one of them disconnect/ reconnect.</li>
 
-                        <li>Hosts workshops to share knowledge and improving code quality.</li>
+                        <li>Provide the solution to realtime update the important data based park of device status (in-memory, redis, kafka, events).</li>
+
+                        <li>Build an Authentication Service based on Keycloak and integrate with Thingsboard Platform.</li>
+
+                        <li>Refactor current Front end app to keep them more readable, maintainable.
+                            Change polling to Websocket, change UI & UX, improve performance of a form with more than 10k records and 10 fields for each row.</li>
+
+                        <li>Define a solution and the UI for automation workflow - manage and control automated equipment inside a battery manufacturing plant and related products</li>
+
+                        <li>Review, refactor code, guide other team member to complete their task.</li>
+                    </ul>
+                </div>
+
+                <p>Skills: Spring Cloud, Reactive (Webflux), Spring API Gateway, Kafka, Redis, Cassandra, IoT (Thingsboard Platform), Keycloak.</p>
+            </div>
+
+            <h2 class="company"><i class="fas fa-home"></i> Bstar Solutions Company <span class="sub">07/2023 - 04/2024</span> </h2>
+
+            <div class="cv-content ">
+                <h3 class="position">Senior Developer - CTFX (JAPAN)</h3>
+
+                <div class="list-items">
+                    <ul>
+                        <li>Propose a solution to connect two systems - legacy system with SESSION_ID and modem system with JWT.
+                            Support the Front end team to communicate with both of them and allow. It is implemented by apply Strangler Fig pattern and use NodeJs.</li>
+
+                        <li>Define a code structure for Batch processing using Spring Batch. The code structure is applied for 5 sub-projects. Apply unit test, integration test, functional test
+                            to keep the code quality in an automatically manner.</li>
+
+                        <li>Working with BrE and team lead to analyze the customer problems, provide solutions as detail designs (diagrams, functional design).
+                            Crafting comprehensive guidelines to address customer challenges.</li>
+
+                        <li>Help another team to complete an VueJs project one week earlier. The leader of this project was fired and the deadline was approaching.</li>
+
+                        <li>Leads training programs in Spring Boot + ReactJS, mentoring a team of five in building a mini e-commerce platform within 5 weeks.</li>
+
+                        <li>Conduct some meeting for sharing knowledge (JPA, Spring Bath, ReactJs, Database) and improving code quality.</li>
 
                         <li>Review and refactor code to keep them more simple and easy for maintenance.</li>
 
-                        <li>Projects: Co2Emission, Fxi24, Carry-on, Kouza and Yakujou (Japan)</li>
-
-                        <li>Skill: Spring Boot, Spring Batch Job, write Unit test & integration Test, Redis, Kafka....
-                        </li>
-                        <li>NodeJs (Express), ReactJs, Redux Toolkit, Antd, VueJs</li>
+                        <li>The Customer Satisfaction Score of the Japan team is improved from 65 to 90.</li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="cv-content odd">
-                <h2 class="company"> Freelancer Fullstack (Gstudy) <span class="sub">9/2022 - 5/2023</span></h2>
+                <p>Projects: Co2Emission, Fxi24, Carry-on, Kouza and Yakujou (Japan)</p>
 
-                <div class="list-items">
-                    <ul>
-                        <li>Gstudy is an education platform designed with non-professional users in mind, emphasizing
-                            intuitive UI/UX and interactive features.
-                        </li>
-
-                        <li>Design intuitive UI/UX for Virtual Classroom and Lesson Composition.</li>
-                        <li>Develop end-to-end system: frontend, backend, database, deployment.
-                        </li>
-                        <li>Demonstrate autonomy and accountability in work.</li>
-
-                        <li>Ref: <a href="https://gstudy.net" target="_blank">https://gstudy.net</a></li>
-                        <li>Skill used: NextJs, ReactJs, Java, Spring Boot, Postgres.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="cv-content">
-                <h2 class="company">FrontEnd Supervisor (Ban Vien Company) <span class="sub">2013 - 8/2022</span></h2>
-
-                <div class="list-items">
-                    <ul>
-                        <li>Lead frontend team (30+ members)</li>
-                        <li>Establish Front-End project structure</li>
-                        <li>Set and evaluate KPIs</li>
-                        <li>Develop ReactJs + NextJs training</li>
-                        <li>Oversee planning, assignment, and monitoring</li>
-
-                        <li>Skill used: ReactJs, NextJs, Javascript, Postgres</li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="cv-content odd">
-                <h3 class="position">Sadlier Codebase Refactoring</h3>
-                <div class="list-items">
-                    <ul>
-                        <li>Convert Monolith App to Microservices</li>
-                        <li>Structure and Library Decisions for Front-End, integrate with Backend</li>
-                        <li>Planning, Assigning, and Monitoring,</li>
-                        <li>Support Team with Logic Rules Implementation</li>
-
-                        <li>Ref: <a href="https://cqa2.sadlierconnect.com"
-                                    target="_blank">https://sadlierconnect.com</a></li>
-                        <li>Skill used: ReactJs, Javascript, Postgres</li>
-                    </ul>
-                </div>
+                <p>Skill: Spring Boot, Spring Batch Job, Unit Test & integration Test, Redis, Kafka, NodeJs (Express),
+                    ReactJs, Redux Toolkit, Antd, VueJs</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="main-container">
+<div class="main-container" style="margin-top: 12px">
     <div class="cv-column information" style="width: 30%;">
         <div class="cv-information">
-            <h2>Skill</h2>
+            <h2>Next Target</h2>
+            <p>Become a System designer</p>
+        </div>
 
-            <dl style="margin-bottom: 3em">
-                <dt>Javascript/ Jquery/ Css/ HTML</dt>
-                <dd><span class="process" value="85"></span></dd>
-                <dt>React Js</dt>
-                <dd><span class="process" value="85"></span></dd>
-                <dt>NextJs</dt>
-                <dd><span class="process" value="65"></span></dd>
-            </dl>
+        <div class="cv-information">
+            <h2>Weaknesses</h2>
 
-            <dl style="margin-bottom: 3em">
-                <dt>Java</dt>
-                <dd><span class="process" value="85"></span></dd>
+            <div class="list-items">
+            <ul>
+                <li>English is my biggest weakness, however, I have a plan to improve it in the next 6 months.</li>
+                <li>Cloud computing platforms like AWS and GCP are my second weakness, and I need time to learn about them.</li>
+                <li>I cannot drink alcoholic beverages, so I often limit my participation in team building events.</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="cv-information">
+            <h2>Skills</h2>
+
+            <dl style="margin-top: 2em">
+                <dt>Java Core</dt>
+                <dd><span class="process" value="80"></span></dd>
                 <dt>Spring Boot</dt>
-                <dd><span class="process" value="85"></span></dd>
+                <dd><span class="process" value="80"></span></dd>
                 <dt>Spring Cloud</dt>
                 <dd><span class="process" value="70"></span></dd>
             </dl>
 
-            <dl style="margin-bottom: 3em">
+            <dl style="margin-top: 2em">
                 <dt>OOP</dt>
-                <dd><span class="process" value="85"></span></dd>
+                <dd><span class="process" value="80"></span></dd>
 
                 <dt>Design Pattern</dt>
-                <dd><span class="process" value="85"></span></dd>
+                <dd><span class="process" value="80"></span></dd>
 
                 <dt>MicroService</dt>
-                <dd><span class="process" value="80"></span></dd>
+                <dd><span class="process" value="70"></span></dd>
 
                 <dt>System Design</dt>
                 <dd><span class="process" value="70"></span></dd>
-
-                <dt>Database</dt>
-                <dd><span class="process" value="80"></span></dd>
             </dl>
 
-            <dl>
+            <dl style="margin-top: 2em">
+                <dt>Postgres</dt>
+                <dd><span class="process" value="75"></span></dd>
+
+                <dt>Cassandra</dt>
+                <dd><span class="process" value="70"></span></dd>
+
+                <dt>Redis</dt>
+                <dd><span class="process" value="70"></span></dd>
+            </dl>
+
+            <dl style="margin-top: 2em">
+                <dt>Javascript, Jquery, HTML, CSS</dt>
+                <dd><span class="process" value="80"></span></dd>
+
+                <dt>TypeScript, React Js</dt>
+                <dd><span class="process" value="80"></span></dd>
+
+                <dt>UI/UX</dt>
+                <dd><span class="process" value="70"></span></dd>
+            </dl>
+
+            <dl style="margin-top: 2em">
+                <dt>Dev-ops (K8s, Docker)</dt>
+                <dd><span class="process" value="60"></span></dd>
+            </dl>
+
+            <dl style="margin-top: 2em">
                 <dt>English</dt>
-                <dd><span class="process" value="65"></span></dd>
+                <dd><span class="process" value="55"></span></dd>
             </dl>
         </div>
     </div>
 
     <div class="cv-column job-information" style="width: 70%;">
         <div class="cv-information-main">
-            <div class="cv-content">
-                <h2 class="company">Senior Developer (Ban Vien Company)<span class="sub">2013 - 9/2022</span></h2>
-                <h3 class="position">eMarket - Frontend Developer</h3>
+            <h2 class="company"><i class="fas fa-home"></i> Freelancer <span class="sub">9/2022 - 5/2023</span></h2>
+            <div class="cv-content odd">
+                <h3 class="position">Fullstack Developer - <a href="https://gstudy.net" target="_blank">Gstudy</a></h3>
+
                 <div class="list-items">
                     <ul>
-                        <li>The eMarket application serves as a stall management tool utilized by the Government of the
-                            Philippines. Through the system, users have the capability to conceal a stall within a
-                            supermarket setting.
-                        </li>
-                        <li>Implement manage stalls and manage applications features.</li>
-                        <li>Working as Front end developer.</li>
-                        <li>Ref: <a href="https://emarket.quezoncity.gov.ph" target="_blank">https://emarket.quezoncity.gov.ph</a>
-                        </li>
-                        <li>Skill used: ReactJs, NextJs, RaphaelJs</li>
+                        <li>Built an education platform from the scratch. The product focus on supporting non-professional users to create a complex lesson and book.</li>
+
+                        <li>Design intuitive UI/UX for Virtual Classroom and Lesson Composition.</li>
+
+                        <li>Develop end-to-end system: frontend, backend, database, deployment. </li>
                     </ul>
                 </div>
+
+                <p>Skills: Java, Spring Boot, Spring Cloud, Microservice, Postgres, NextJs, ReactJs, AWS (S3, Video Converter).</p>
+            </div>
+
+            <h2 class="company">
+                <i class="fas fa-home"></i> Ban Vien Company <span class="sub">2013 - 8/2022</span>
+            </h2>
+
+            <div class="cv-content">
+                <h3 class="position">
+                    Supervisor Frontend Team - <a href="https://cqa2.sadlierconnect.com" target="_blank">SC Codebase Refactoring</a> <span class="sub">01/2021 - 08/2022</span>
+                </h3>
+
+                <div class="list-items">
+                    <ul>
+                        <li>Moving to lead a front-end team (30+ members), establish Front end code structure and develop ReactJs training program.</li>
+
+                        <li>Set and evaluate KPIs for team members, oversee planning, assignment and monitoring.</li>
+
+                        <li>Convert Sadlier Platform from monolith to microservice, not only frontend side, but also backend side. </li>
+
+                        <li>Reading old code and explain the logic and guide team member to converting from JS + JSP to ReactJs.</li>
+
+                        <li>Refactor code to support some pages (JSP) with new backend - instead of converting everything, we decided to keep a few components in the old architecture.</li>
+                    </ul>
+                </div>
+
+                <p>Skills: ReactJs, Redux Toolkit, Antd, Java, Spring Boot, Microservice.</p>
+            </div>
+
+            <div class="cv-content">
+                <h3 class="position">Supervisor Frontend Team - <a href="https://emarket.quezoncity.gov.ph" target="_blank">eMarket</a> <span class="sub">06/2020 - 01/2021</span></h3>
+                <div class="list-items">
+                    <ul>
+                        <li>Manage front end team, help them to resolve the difficult problems.</li>
+                        <li>Create a stall management by using React + RaphaelJs to draw the floor image.</li>
+                    </ul>
+                </div>
+
+                <p>Skill used: NextJs, RaphaelJs</p>
             </div>
 
             <div class="cv-content odd">
-                <h3 class="position">Opla - Developer</h3>
+                <h3 class="position">Senior Developer - <a href="https://www.oplacrm.com" target="_blank">OplaCRM</a> <span class="sub">2020 - 2021</span></h3>
 
                 <div class="list-items">
                     <ul>
-                        <li>Opla is a Customer Management Relationship (CMR) system. The system evaluates relationships
-                            based on daily actions, with each action relating to certain important properties. When a
-                            user
-                            performs an action, the system calculates their health score as a seller and customer, along
-                            with the opportunity to sell a product.
-                        </li>
+                        <li>Implement scoring strategies for an ORM system.</li>
 
-                        <li>Utilizing Python to construct a Serverless system (aiming to reduce costs), develop
-                            complexity
-                            functions to compute the health score for a customer based on their actions. The output of
-                            these
-                            functions serves as fundamental information for future AI application.
-                        </li>
+                        <li>Build a serverless system to support the calculation of the health score for user relationships.
+                            Recalculate the health score value when the user performs actions and updates information for related entities.
+                            Recalculate the health score for the user at the end of the day.</li>
 
-                        <li>Implement daily scoring features.</li>
-                        <li>Ref: <a href="https://www.oplacrm.com" target="_blank">https://www.oplacrm.com</a></li>
-                        <li>Skill used: Python, Chalice, GraphQL</li>
+                        <li>Working with BA and Frontend team to define UX for the web and mobile app.</li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="cv-content">
-                <h3 class="position">Chocorun - Mini Game (HTML5) - Full stack Developer</h3>
-                <div class="list-items">
-                    <ul>
-                        <li>Chocorun is a prominent event hosted by Chocopie. It features an HTML5 game reminiscent of
-                            Flappy Bird, first introduced in 2017.
-                        </li>
-                        <li>Develop an HTML game (Choco Game) and integrate backend functionality for data storage.
-                        </li>
-                        <li>Implement a Wheel of Fortune feature to randomly select a lucky user from those with the
-                            highest scores.
-                        </li>
-                        <li>Ref: <a
-                                href="https://www.facebook.com/ChocopieVietnam/photos/a.359287850843637/1166875146751566/?type=3"
-                                target="_blank">Chocorun</a></li>
-                        <li>Implement Management features.</li>
-                        <li>Skill used: Spring MVC, HTML5, Postgres</li>
-                    </ul>
-                </div>
+                <p>Skills: Python, Chalice (Serverless), GraphQL, Jira</p>
             </div>
 
             <div class="cv-content odd">
-                <h3 class="position">SadlierConnect & CMS - Full stack Developer</h3>
+                <h3 class="position">Full stack Developer - <a href="https://sadlierconnect.com" target="_blank">https://sadlierconnect.com</a>
+                    <span class="sub">2013 - 2022</span>
+                </h3>
 
                 <div class="list-items">
                     <ul>
-                        <li>SadlierConnect is an education platform that offers comprehensive learning programs. Each
-                            client, such as
-                            schools, can utilize the platform to tailor learning paths. SadlierConnect includes
-                            features such as management school and license, lesson composition, lesson planner,
-                            reporting, and seamless integration with other systems.
-                        </li>
+                        <li>Maintain and develop an eLearning system (10 years) as a team lead.</li>
 
-                        <li>
-                            CMS, the content management system, is tailored for creating learning programs and
-                            seamlessly delivering content to the SadlierConnect System.
-                        </li>
+                        <li>Define standards (XML, DOC, Excel, ...) and support consuming to allow publishers to create a books and lessons.</li>
 
-                        <li>Collaborated with CMS team to convert PDFs, DOCs, and flash games into Interactive
-                            Assessment Resources, implementing essential features for full support.
-                        </li>
+                        <li>Working with customer to analyse requirements and implement them (lesson planner, calendar, manage license, assign assignments, reports, ...).</li>
 
-                        <li>Developed 40+ question types, including complex ones like Snap, Fraction, Pattern Block, and
-                            Coordinator questions.
-                        </li>
+                        <li>Developed 40+ question types, including complex ones like Snap, Fraction, Pattern Block, and Coordinator questions.</li>
 
-                        <li>Ref: <a href="https://sadlierconnect.com" target="_blank">https://sadlierconnect.com</a>
-                        </li>
+                        <li>Convert static resource (Pdf, Doc, HTML game) to interacting resource, allow evaluate the student score.</li>
 
-                        <li>Skill used: Java, Spring MVC, Redis, Jboss, Jquery, RaphaelJs, (SVG interaction Library),
-                            Postgres...
-                        </li>
+                        <li>Improve API Performance and SQL Performance.</li>
+
+                        <li>Employee of the year and customer love.</li>
                     </ul>
                 </div>
+
+                <p>Skills: Java, Spring MVC, Redis, Jboss, Bootstrap, Jquery, HTML & Css, Postgres...</p>
             </div>
         </div>
 

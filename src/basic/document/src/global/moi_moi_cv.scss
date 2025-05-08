@@ -68,11 +68,15 @@ h2 {
   line-height: 1.2;
 
   .sub{
-    float: right;
-    font-style: italic;
-    color: #687074;
     font-size: 18px;
   }
+}
+
+.sub{
+  float: right;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 h3 {
@@ -95,6 +99,11 @@ h6 {
 
 
 
+.cv-content p{
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
 
 .list-items{
   dl {
@@ -106,11 +115,11 @@ h6 {
   }
 
   ul{
-    list-style-type: none;
+    //list-style-type: none;
     padding: 0px;
 
     li{
-      padding: 5px 0px;
+      padding: 5px 0px 5px 20px;
     }
 
   }
